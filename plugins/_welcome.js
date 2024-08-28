@@ -1,4 +1,30 @@
-import { WAMessageStubType } from '@whiskeysockets/baileys';
+import {WAMessageStubType} from '@whiskeysockets/baileys'
+import fetch from 'node-fetch'
+
+export async function before(m, {conn, participants, groupMetadata}) {
+  if (!m.messageStubType || !m.isGroup) return !0;
+    let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://telegra.ph/file/e187b5df83527e1cf1c44.jpg')
+    let pp2 = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://telegra.ph/file/38c7e0d5b02b7e3eaf20e.jpg')
+  let img = await (await fetch(`${pp}`)).buffer()
+  let img2 = await (await fetch(`${pp2}`)).buffer()
+
+  let chat = global.db.data.chats[m.chat]
+
+  if (chat.welcome && m.messageStubType == 27) {
+    let welcome = `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝗶𝗱𝗼 ☁ 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝗶𝗱𝗼/𝗮\n   │🌺  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
+await conn.sendIan(m.chat, packname, dev, welcome, img, img, channel, fkontak)
+  }
+
+  if (chat.welcome && m.messageStubType == 28)= `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗔𝗗𝗜𝗢𝗦 🌸 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗦𝗲 𝗳𝘂𝗲\n   │🌺 𝗡𝘂𝗻𝗰𝗮 𝘁𝗲 𝗾𝘂𝗶𝘀𝗶𝗺𝗼𝘀 𝗮𝗾𝘂𝗶\n   └───────────────┈ ⳹`
+await conn.sendIan(m.chat, packname, dev, bye, img2, img2, channel, fkontak)
+  }
+
+  if (chat.welcome && m.messageStubType == 32) {
+    let kick = `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗔𝗗𝗜𝗢𝗦 🌸 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗦𝗲 𝗳𝘂𝗲\n   │🌺 𝗡𝘂𝗻𝗰𝗮 𝘁𝗲 𝗾𝘂𝗶𝘀𝗶𝗺𝗼𝘀 𝗮𝗾𝘂𝗶\n   └───────────────┈ ⳹`
+await conn.sendIan(m.chat, packname, dev, kick, img2, img2, channel, fkontak)
+}}
+
+/*import { WAMessageStubType } from '@whiskeysockets/baileys';
 import fetch from 'node-fetch';
 
 export async function before(m, { conn, participants, groupMetadata }) {
@@ -57,26 +83,4 @@ export async function before(m, { conn, participants, groupMetadata }) {
       }
     }, { quoted: fkontak });
   }
-}
-
-/*import {WAMessageStubType} from '@whiskeysockets/baileys'
-import fetch from 'node-fetch'
-
-export async function before(m, {conn, participants, groupMetadata}) {
-  if (!m.messageStubType || !m.isGroup) return !0;
-  let chat = global.db.data.chats[m.chat]
-
-  if (chat.welcome && m.messageStubType == 27) {
-    let bienvenido = `Bienvenido @${m.messageStubParameters[0].split`@`[0]}`
-await conn.sendMini(m.chat, packname, dev, bienvenido, welcome, welcome, channel, fkontak)
-  }
-
-  if (chat.welcome && m.messageStubType == 28) {
-    let bye = `Adios @${m.messageStubParameters[0].split`@`[0]}`
-await conn.sendMini(m.chat, packname, dev, bye, adios, adios, channel, fkontak)
-  }
-
-  if (chat.welcome && m.messageStubType == 32) {
-    let kick = `Adios @${m.messageStubParameters[0].split`@`[0]}`
-await conn.sendMini(m.chat, packname, dev, kick, adios, adios, channel, fkontak)
-}}*/
+}*/
