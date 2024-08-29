@@ -13,7 +13,7 @@ const handler = async (m, {conn, usedPrefix, command}) => {
   return;
     };
   if (!(who in global.db.data.users)) { 
-  conn.reply(m.chat, `*🚩 El usuario no está en mi base de datos.*`, m, rcanal)
+  conn.reply(m.chat, `*🚩 El usuario no se encuentra en mi base de datos.*`, m, rcanal)
 return;
   }
   const users = global.db.data.users[who];
