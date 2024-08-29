@@ -52,6 +52,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.restrict = isEnable
       break
 
+case 'antibot':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiBot = isEnable
+
   case 'autoread':
     case 'autoleer':
     case 'leermensajes':
@@ -242,6 +251,10 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 *Tipo:* antiprivado
 *Descripción:* No permite que el bot le escriban al privado
 *Ejemplo:* ${usedPrefix + command} antiprivado
+
+*Tipo:* antibot
+*Descripción:* Elimina a cualquier otro Bot que entre al grupo 
+*Ejemplo:* ${usedPrefix + command} antibot
 
 *Tipo:* reaccion
 *Descripción:* El Bot reacciona con emojisba cualquier mensaje
