@@ -4,7 +4,7 @@ import fetch from 'node-fetch'
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0;
     let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => welcome)
-    let pp2 = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => bye)
+    let pp2 = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => adios)
   let img = await (await fetch(`${pp}`)).buffer()
   let img2 = await (await fetch(`${pp2}`)).buffer()
 
@@ -17,7 +17,7 @@ await conn.sendMini(m.chat, packname, dev, wel, img, img, channel, fkontak)
 
   if (chat.welcome && m.messageStubType == 28) {
    let adios = `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗔𝗗𝗜𝗢𝗦 🌸 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗦𝗲 𝗳𝘂𝗲\n   │🌺 𝗡𝘂𝗻𝗰𝗮 𝘁𝗲 𝗾𝘂𝗶𝘀𝗶𝗺𝗼𝘀 𝗮𝗾𝘂𝗶\n   └───────────────┈ ⳹`
-await conn.sendMini(m.chat, packname, dev, adios, img2, img2, channel, fkontak)
+await conn.sendMini(m.chat, packname, dev, bye, img2, img2, channel, fkontak)
   }
 
   if (chat.welcome && m.messageStubType == 32) {
