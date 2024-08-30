@@ -32,7 +32,7 @@ const defaultMenu = {
 
 “ Hola *%name* soy *Ai-Yaemori*, %greeting ”
 
-┏━「🐢⸽⃕ *Info User* 🍁⃨፝⃕✰」━⊜
+┏━「🐢⸽⃕ *Info Bot* 🍁⃨፝⃕✰」━⊜
 ┃⋄ 🍟 *Bot:* Ai Yaemori - MD 
 ┃⋄ 🍂 *Modo* Público
 ┃⋄ ✨️ *Baileys:* Multi Device
