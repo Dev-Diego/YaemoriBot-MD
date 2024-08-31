@@ -158,7 +158,7 @@ text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length
 
 await m.react('⭐️') 
 
-conn.sendMessage(m.chat, {text: text.trim(), mentions: [...text.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), contextInfo: { mentionedJid: [...text.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net'), "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": packname, body: dev, "containsAutoReply": true, "mediaType": 1, "thumbnail": imagen1, "mediaUrl": global.channel, "sourceUrl": global.channel}}}, {quoted: m})
+await conn.sendMessage(m.chat, {text: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'YaemoriBot 🌱', newsletterJid: "120363192435027853@newsletter", }, externalAdReply: { title: packname, body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: 'https://github.com/Dev-Diego', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 
   } catch (e) {
     conn.reply(m.chat, '❌️ Lo sentimos, el menú tiene un error', m, rcanal, )
