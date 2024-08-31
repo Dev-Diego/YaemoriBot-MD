@@ -63,10 +63,17 @@ var git = 'https://github.com/Dev-Diego'
 var youtube = 'https://www.youtube.com/@OfcDiego' 
 var github = 'https://github.com/Dev-Diego/YaemoriBot-MD' 
 var facebook = 'https://www.facebook.com/diegosaroficial?mibextid=ZbWKwL' 
+var panel = 'https://ctrl.corinplus.com'
+var dash = 'https://dash.corinplus.com'
+var tienda = 'https://dash.corinplus.com/store'
+var status = 'https://status.corinplus.com'
+var discord = 'https://discord.com/invite/T7ksHu7mkz'
 let tiktok = 'https://tiktok.com/@theyaemoribot'
 let correo = 'theyaemoribot@gmail.com'
 
-global.redes = [canal, canal2, git, youtube, github, facebook, tiktok, correo].getRandom()
+global.redes = [canal, canal2, git, youtube, github, facebook, panel, dash, tienda, status, discord, tiktok, correo].getRandom()
+
+global.redeshost = [panel, dash, tienda, status, discord].getRandom()
 
 //Imagen
 let category = "imagen"
