@@ -1,4 +1,4 @@
-/*let cooldowns = {}
+let cooldowns = {}
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
@@ -58,16 +58,4 @@ export default handler
 function segundosAHMS(segundos) {
 let segundosRestantes = segundos % 60
 return `${segundosRestantes} segundos`
-}*/
-
-let handler = async (m) => {
-
-global.db.data.chats[m.chat].isBanned = true
-conn.reply(m.chat, `✅ *La Bot Ha Sido Desactivada En Este Chat*`, m, rcanal)
-
 }
-handler.help = ['banchat']
-handler.tags = ['owner']
-handler.command = ['banchat']
-handler.rowner = true 
-export default handler
