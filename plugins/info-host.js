@@ -51,5 +51,5 @@ sourceUrl: redeshost}}},
 } 
 handler.tags = ['main'] 
 handler.help = ['host', 'hosting'] 
-handler.command = ['host', 'olympus', 'olympushost', 'hosting']
+handler.command = ['host', 'corin', 'corinplus', 'hosting']
 export default handler
