@@ -29,7 +29,8 @@ console.log(`Error : ${e}`)
 
 let who = m.messageStubParameters[0] + '@s.whatsapp.net'
 let user = global.db.data.users[who]
-let pushname = user ? user.name : await conn.getName(who)
+//let pushname = user ? user.name : await conn.getName(who)
+let pushname = m.pushName || 'Sin nombre'
 
 //creador y otros
 global.creador = 'Wa.me/573012482597'
