@@ -33,7 +33,7 @@ const defaultMenu = {
 “ Hola *%name* soy *YaemoriBot*, %greeting ”
 
 ╭╾┅≼╼═⊰⸎҉🅫͢❥✨️❥🅫͢⸎҉⊱═╾≽╼╮
-├❥ᰰຼ  *INFO BOT 🦈*
+├❥ᰰຼ  *INFO BOT ☁️*
 ├╾┅≼╼═⊰⸎҉🅫͢❥✨️❥🅫͢⸎҉⊱═╾≽╼
 ├❥ᰰຼ 🚩 *Bot:* YaemoriBot-MD 
 ├❥ᰰຼ 🍂 *Modo* Público
