@@ -62,7 +62,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiBot = isEnable
 
- case 'modadmin':
+ case 'modoadmin':
     case 'soloadmin':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
