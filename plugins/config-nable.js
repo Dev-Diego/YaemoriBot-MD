@@ -52,7 +52,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.restrict = isEnable
       break
 
-case 'antibot':
+ case 'antibot':
+    case 'antibots':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -60,6 +61,16 @@ case 'antibot':
         }
       }
       chat.antiBot = isEnable
+
+ case 'modadmin':
+    case 'soloadmin':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.modoadmin = isEnable
 
   case 'autoread':
     case 'autoleer':
@@ -291,6 +302,10 @@ case 'antibot':
 *Tipo:* nsfw 
 *Descripción:* Permitir que los usuarios usen comandos +18
 *Ejemplo:* ${usedPrefix + command} nsfw
+
+*Tipo:* modoadmin 
+*Descripción:* Si esta función está activa el bot solo responderá a los administradores
+*Ejemplo:* ${usedPrefix + command} modoadmin
 
 *Tipo:* antilink 
 *Descripción:* Elimina al usuario que envie un link de algun grupo
