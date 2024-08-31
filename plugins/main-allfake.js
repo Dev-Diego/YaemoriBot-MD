@@ -27,9 +27,9 @@ return res.data
 console.log(`Error : ${e}`)
 }}
 
-let pp = ''
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-//let pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://telegra.ph/file/327f6ad853cb4f405aa80.jpg')
+let who = m.messageStubParameters[0] + '@s.whatsapp.net'
+let user = global.db.data.users[who]
+let pushname = user ? user.name : await conn.getName(who)
 
 //creador y otros
 global.creador = 'Wa.me/573012482597'
