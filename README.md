@@ -58,7 +58,7 @@
  <summary><b>:paperclip: Enlaces Importantes</b></summary>
 
 - **Dashboard:** [`Aquí`](https://dash.corinplus.com)
-- **Panel:** [`Aquí`](https://panel.corinplus.com)
+- **Panel:** [`Aquí`](https://ctrl.corinplus.com)
 - **Estado de servicios:** [`Aquí`](https://status.corinplus.com)
 - **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029VakUvreFHWpyWUr4Jr0g)
 - **Grupo - Soporte:** [`Aquí`](https://chat.whatsapp.com/K235lkvaGvlGRQKYm26xZP)
