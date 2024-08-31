@@ -295,12 +295,6 @@ let time = global.db.data.users[m.sender].spam + 3000
 if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[ SPAM ]`) 
 global.db.data.users[m.sender].spam = new Date * 1
 }
-          let hl = _prefix 
-          let adminMode = global.db.data.chats[m.chat].modoadmin
-       let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
-if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return   
-        continue
-          }
               //  m.plugin = name
                 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
                     let chat = global.db.data.chats[m.chat]
@@ -313,9 +307,13 @@ if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return
                     if (name != 'owner-unbanbot.js' && setting?.banned)
                         return
                 }
-                if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { 
-                    fail('owner', m, this)
-                    continue
+                let hl = _prefix 
+                let adminMode = global.db.data.chats[m.chat].modoadmin
+                let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
+               if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return   
+               if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { //número bot owner
+                   fail('owner', m, this)
+                   continue
                 }
                 if (plugin.rowner && !isROwner) { 
                     fail('rowner', m, this)
