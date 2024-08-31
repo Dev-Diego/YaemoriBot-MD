@@ -61,10 +61,10 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.antiBot = isEnable
+      break
 
  case 'modoadmin':
     case 'soloadmin':
-    isAll = false
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -72,6 +72,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.modoadmin = isEnable
+      break
 
   case 'autoread':
     case 'autoleer':
