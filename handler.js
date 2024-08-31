@@ -83,31 +83,33 @@ export async function handler(chatUpdate) {
             if (typeof chat !== 'object')
                 global.db.data.chats[m.chat] = {}
             if (chat) {
-                if (!('isBanned' in chat))
+               if (!('isBanned' in chat))
                     chat.isBanned = false
-                if (!('welcome' in chat))
+               if (!('welcome' in chat))
                     chat.welcome = true
-                if (!('audios' in chat))
+               if (!('audios' in chat))
                     chat.audios = false
-                if (!('detect' in chat))
+               if (!('detect' in chat))
                     chat.detect = true 
                if (!('antiBot' in chat))
                     chat.antiBot = false
-                if (!('antiLink' in chat))
+               if (!('modoadmin' in chat))                     
+                    chat.modoadmin = false   
+               if (!('antiLink' in chat))
                     chat.antiLink = false
-                if (!('onlyLatinos' in chat))
+               if (!('onlyLatinos' in chat))
                     chat.onlyLatinos = false
-                if (!('modohorny' in chat))
+               if (!('modohorny' in chat))
                     chat.modohorny = false
-                if (!('reaction' in chat))
+               if (!('reaction' in chat))
                     chat.reaction = false
-                if (!('simi' in chat))
+               if (!('simi' in chat))
                     chat.simi = false
-                if (!('antiver' in chat))
+               if (!('antiver' in chat))
                     chat.antiver = false
-                if (!('delete' in chat))
+               if (!('delete' in chat))
                     chat.delete = false
-                if (!isNumber(chat.expired))
+               if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
                 global.db.data.chats[m.chat] = {
@@ -117,6 +119,7 @@ export async function handler(chatUpdate) {
                     audios: false,
                     detect: true,
                     antiBot: false,
+                    modoadmin: false,
                     antiLink: false,
                     onlyLatinos: false,
                     simi: false,
@@ -292,6 +295,12 @@ let time = global.db.data.users[m.sender].spam + 3000
 if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[ SPAM ]`) 
 global.db.data.users[m.sender].spam = new Date * 1
 }
+          let hl = _prefix 
+          let adminMode = global.db.data.chats[m.chat].modoadmin
+       let mini = `${plugins.botAdmin || plugins.admin || plugins.group || plugins || noPrefix || hl ||  m.text.slice(0, 1) == hl || plugins.command}`
+if (adminMode && !isOwner && !isROwner && m.isGroup && !isAdmin && mini) return   
+        continue
+          }
               //  m.plugin = name
                 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
                     let chat = global.db.data.chats[m.chat]
