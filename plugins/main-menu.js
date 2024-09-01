@@ -43,7 +43,7 @@ const defaultMenu = {
 ┃•│ Modo: \`\`\`Publico\`\`\`
 ┃•│ Libreria: \`\`\`Baileys\`\`\`
 ┃•│ Actividad: \`\`\`%muptime\`\`\`
-│•┘ Usiarios: \`\`\`%totalreg\`\`\`
+│•┘ Usuarios: \`\`\`%totalreg\`\`\`
 ╰• •───• •───• •───•
 
 \t*L I S T A  -  D E  -  C O M A N D O S* 
