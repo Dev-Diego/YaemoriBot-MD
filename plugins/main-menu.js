@@ -1,4 +1,4 @@
-import { promises } from 'fs'
+➺➺import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
@@ -48,9 +48,9 @@ const defaultMenu = {
 
 \t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
-    header: '┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖\n┃. •꒰─• *%category* ･\n┃━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖',
-  body: '┃ %cmd',
-  footer: '┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖\n',
+    header: '┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖\n┃. •꒰─• *%category* ･\n┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖',
+  body: '➻ %cmd',
+  footer: '',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
