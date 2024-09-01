@@ -51,8 +51,8 @@ const defaultMenu = {
 \t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
     header: '┍━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖\n│. •꒰─• *%category* ･\n┕━━━━━━━━━━━━━━━━━━━•𖥔 ࣪˖',
-  body: '┌• %cmd',
-  footer: '└•⌕\n',
+  body: '┌• %cmd\n└•⌕%help',
+  footer: '\n',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
