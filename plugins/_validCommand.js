@@ -25,7 +25,7 @@ export async function before(m) {
       user.commands = 0;
     }
     user.commands += 1;
- //   await conn.sendPresenceUpdate('composing', m.chat);
+    await conn.sendPresenceUpdate('composing', m.chat);
   } else {
    const comando = m.text.trim().split(' ')[0];
    await m.reply(`⚡︎ El comando "${comando}" no es válido.\nUsa "#help" para ver los comandos disponibles.`);
