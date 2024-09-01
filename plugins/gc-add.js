@@ -18,7 +18,7 @@ m.reply(`🍟 *Enviando la invitación al privado de ${nom}*\n\n*📅 ${fecha}*\
 }
 handler.help = ['add']
 handler.tags = ['grupo']
-handler.command = ['add', 'agregar', 'invitar', 'invite', 'añadir']
+handler.command = ['add', 'agregar', 'añadir']
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
