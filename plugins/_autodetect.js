@@ -20,7 +20,7 @@ const mentionsContentM = [m.sender, m.messageStubParameters[0]]
 /*if (chat.detect && m.messageStubType == 2) {
 const chatId = m.isGroup ? m.chat : m.sender;
 const uniqid = chatId.split('@')[0];
-const sessionPath = './MiniSession/';
+const sessionPath = `./${sessions}/`;
 const files = await fs.readdir(sessionPath);
 let filesDeleted = 0;
 for (const file of files) {
