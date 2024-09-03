@@ -68,10 +68,11 @@ var dash = 'https://dash.corinplus.com'
 var tienda = 'https://dash.corinplus.com/store'
 var status = 'https://status.corinplus.com'
 var discord = 'https://discord.com/invite/T7ksHu7mkz'
+var paypal = 'https://paypal.me/corinplus2024'
 let tiktok = 'https://tiktok.com/@theyaemoribot'
 let correo = 'theyaemoribot@gmail.com'
 
-global.redes = [canal, canal2, git, youtube, github, facebook, panel, dash, tienda, status, discord, tiktok, correo].getRandom()
+global.redes = [canal, canal2, git, youtube, github, facebook, panel, dash, tienda, status, discord, paypal, tiktok, correo].getRandom()
 
 global.redeshost = [panel, dash, tienda, status, discord].getRandom()
 
