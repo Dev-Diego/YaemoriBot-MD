@@ -10,9 +10,9 @@ import moment from 'moment-timezone'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.owner = [
-   ['573012482597', 'Dev Diego 👑', true],
-   ['573218138672', 'Owner 🍭', true],
-   ['5351524614']
+   ['212658594530', 'senku ishigami 👑', true],
+   ['212626817129', 'Owner 🍭', true],
+   ['212626817129 ']
 ]
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -31,13 +31,13 @@ global.jadi = 'MiniJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = '⪛✰ 𝐀𝐢 𝐘𝐚𝐞𝐦𝐨𝐫𝐢 - 𝐌𝐃 ✰⪜'
-global.botname = '𝗔𝗶 𝗬𝗮𝗲𝗺𝗼𝗿𝗶 - 𝗠𝗗 🍭'
-global.wm = '𝗬𝗮𝗲𝗺𝗼𝗿𝗶 𝗕𝗼𝘁 - 𝗠𝗗 ⭐️'
-global.author = '𝖮𝖿𝖼.𝖣𝗂𝖾𝗀𝗈 👑'
-global.dev = '© Powered By Sunlight Team ⚡︎'
+global.packname = '⪛✰ SENKK - 𝐌𝐃 ✰⪜'
+global.botname = 'SENKU - 𝗠𝗗 🍭'
+global.wm = 'SENKU 𝗕𝗼𝘁 - 𝗠𝗗 ⭐️'
+global.author = 'SENKU 👑'
+global.dev = '© Powered By MOROCCO Team ⚡︎'
 6
-global.textbot = '𝗔𝗶 𝗬𝗮𝗲𝗺𝗼𝗿𝗶 : 𝗢𝗳𝗰𝗗𝗶𝗲𝗴𝗼 🚩'
+global.textbot = 'SENKU DEV : SENKU BOT 🚩'
 global.vs = '2.0.6'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -57,12 +57,12 @@ global.grupo = 'https://chat.whatsapp.com/BeukLUNoHtNJDKmMDTfQnd' //YaemoriBot
 global.grupo2 = 'https://chat.whatsapp.com/EVc2XJuZwjnKKdWUsRYmms' //YaemoriBot2
 global.grupo3 = 'https://chat.whatsapp.com/Fy74b6fgE9SJJpHVi6CKJY' //team oficial
 global.grupo4 = 'https://chat.whatsapp.com/Ksd32KH9zFoDmO1PJt44M7' //GataBot & YaemoriBot
-global.channel = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'
-global.channel2 = 'https://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z'
-global.md = 'https://github.com/Dev-Diego/YaemoriBot-MD' 
-global.yt = 'https://www.youtube.com/@OfcDiego'
-global.tiktok = 'https://tiktok.com/@theyaemoribot'
-global.correo = 'theyaemoribot@gmail.com'
+global.channel = 'https://whatsapp.com/channel/0029VaSWiq20bIdrePlzmD3v'
+global.channel2 = 'https://whatsapp.com/channel/0029VaSWiq20bIdrePlzmD3v'
+global.md = 'https://github.com/Ahmedaligue' 
+global.yt = 'https://www.youtube.com'
+global.tiktok = 'https://tiktok.com'
+global.correo = 'aligueahmed6@gmail.com'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
