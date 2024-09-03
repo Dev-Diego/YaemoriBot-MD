@@ -32,25 +32,25 @@ const defaultMenu = {
 
 “ Hola *%name* soy *Ai-Yaemori*, %greeting ”
 
-┏━「🐢⸽⃕ *Info User* 🍁⃨፝⃕✰」━⊜
-┃⋄ 🍟 *Bot:* Ai Yaemori - MD 
-┃⋄ 🍂 *Modo* Público
-┃⋄ ✨️ *Baileys:* Multi Device
-┃⋄ ⌛️ *Tiempo Activo:* %muptime
-┃⋄ 🫂 *Usuarios:* %totalreg
+┏━「🐢⸽⃕ *معلومات البوت* 🍁⃨፝⃕✰」━⊜
+┃⋄ 🍟 *Bot:* *SENKU* - MD 
+┃⋄ 🍂 *النوع* عام
+┃⋄ ✨️ *المطور:* +212658594530
+┃⋄ ⌛️ *وقت التشغيل :* %muptime
+┃⋄ 🫂 *السمتخدمين:* %totalreg
 ┗━━◘
 %readmore
-┏━「🐢⸽⃕ *Info User* 🍁⃨፝⃕✰」━⊜
-┃⋄ 🚩 *Cliente:* %name
-┃⋄ 💠 *Exp:* %exp
+┏━「🐢⸽⃕ *معلومات المستخدم* 🍁⃨፝⃕✰」━⊜
+┃⋄ 🚩 *السمتخدم:* %name
+┃⋄ 💠 *اكسبي:* %exp
 ┃⋄ 🌟 *Estrellas:* %estrellas
-┃⋄ 🐢 *Nivel:* %level
-┃⋄ ⚓ *Rango:* %role
+┃⋄ 🐢 *المستى:* %level
+┃⋄ ⚓ *الرتبة:* %role
 ┗━━◘
 %readmore
 *─ׄ─ׄ─⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ─⭒─ׄ─ׄ─⭒─ׄ─ׅ─*
 
-\t*L I S T A  -  D E  -  C O M A N D O S* 
+\t*اوامر سينكو بوت* 
 `.trimStart(),
     header: '*┏━⊜「 %category 」*',
   body: '*┃›* %cmd',
@@ -163,7 +163,7 @@ conn.sendMessage(m.chat, {text: text.trim(), mentions: [...text.matchAll(/@([0-9
 }
 handler.help = ['menu']
 handler.tags = ['main']
-handler.command = ['menu', 'help', 'menú', 'menuall', 'allmenú', 'allmenu', 'menucompleto'] 
+handler.command = ['menu', 'help', 'اوامر', 'menuall', 'allmenú', 'allmenu', 'menucompleto'] 
 handler.register = true
 
 export default handler
@@ -181,29 +181,29 @@ function clockString(ms) {
   var ase = new Date();
   var hour = ase.getHours();
 switch(hour){
-  case 0: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌙'; break;
-  case 1: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 💤'; break;
-  case 2: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🦉'; break;
-  case 3: hour = 'Bᴜᴇɴᴏs Dɪᴀs ✨'; break;
-  case 4: hour = 'Bᴜᴇɴᴏs Dɪᴀs 💫'; break;
-  case 5: hour = 'Bᴜᴇɴᴏs Dɪᴀs 🌅'; break;
-  case 6: hour = 'Bᴜᴇɴᴏs Dɪᴀs 🌄'; break;
-  case 7: hour = 'Bᴜᴇɴᴏs Dɪᴀs 🌅'; break;
-  case 8: hour = 'Bᴜᴇɴᴏs Dɪᴀs 💫'; break;
-  case 9: hour = 'Bᴜᴇɴᴏs Dɪᴀs ✨'; break;
-  case 10: hour = 'Bᴜᴇɴᴏs Dɪᴀs 🌞'; break;
-  case 11: hour = 'Bᴜᴇɴᴏs Dɪᴀs 🌨'; break;
-  case 12: hour = 'Bᴜᴇɴᴏs Dɪᴀs ❄'; break;
-  case 13: hour = 'Bᴜᴇɴᴏs Dɪᴀs 🌤'; break;
-  case 14: hour = 'Bᴜᴇɴᴀs Tᴀʀᴅᴇs 🌇'; break;
-  case 15: hour = 'Bᴜᴇɴᴀs Tᴀʀᴅᴇs 🥀'; break;
-  case 16: hour = 'Bᴜᴇɴᴀs Tᴀʀᴅᴇs 🌹'; break;
-  case 17: hour = 'Bᴜᴇɴᴀs Tᴀʀᴅᴇs 🌆'; break;
-  case 18: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌙'; break;
-  case 19: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌃'; break;
-  case 20: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌌'; break;
-  case 21: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌃'; break;
-  case 22: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌙'; break;
-  case 23: hour = 'Bᴜᴇɴᴀs Nᴏᴄʜᴇs 🌃'; break;
+  case 0: hour = 'مساء الخير 🌙'; break;
+  case 1: hour = 'مساء الخير 💤'; break;
+  case 2: hour = 'مساء الخير 🦉'; break;
+  case 3: hour = 'مساء الخير ✨'; break;
+  case 4: hour = 'مساء الخير 💫'; break;
+  case 5: hour = 'صباح الخير 🌅'; break;
+  case 6: hour = 'صباح الخير 🌄'; break;
+  case 7: hour = 'صباح الخير 🌅'; break;
+  case 8: hour = 'صباح الخير 💫'; break;
+  case 9: hour = 'صباح الخير ✨'; break;
+  case 10: hour = 'صباح الخير 🌞'; break;
+  case 11: hour = 'صباح الخير 🌨'; break;
+  case 12: hour = 'زوال ممتع 🗿'; break;
+  case 13: hour = 'زوال ممتع🌤'; break;
+  case 14: hour = 'جود افتر نون🌇'; break;
+  case 15: hour = 'جود افتر نون🥀'; break;
+  case 16: hour = 'جود افتر نون 🌹'; break;
+  case 17: hour = 'مساء الخير 🌆'; break;
+  case 18: hour = 'مساء الخير 🌙'; break;
+  case 19: hour = 'مسااء الخير 🌃'; break;
+  case 20: hour = 'مساء الخير 🌌'; break;
+  case 21: hour = 'مساء الخير 🌃'; break;
+  case 22: hour = 'مساء الخير 🌙'; break;
+  case 23: hour = 'مساء الخير 🌃'; break;
 }
   var greeting = hour;
