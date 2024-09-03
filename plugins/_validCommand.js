@@ -28,6 +28,6 @@ export async function before(m) {
     await conn.sendPresenceUpdate('composing', m.chat);
   } else {
    const comando = m.text.trim().split(' ')[0];
-   await m.reply(`⚡︎ El comando "${comando}" no es válido.\nUsa "#help" para ver los comandos disponibles.`);
+   await m.reply(`⚡︎ امر "${comando}" لا يوجد في بياناتي.\nاكتب  "#help" كي ترا الاوامر.`);
   }
 }
