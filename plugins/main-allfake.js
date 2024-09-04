@@ -74,7 +74,7 @@ let correo = 'theyaemoribot@gmail.com'
 
 global.redes = [canal, canal2, git, youtube, github, facebook, panel, dash, tienda, status, discord, paypal, tiktok, correo].getRandom()
 
-global.redeshost = [panel, dash, tienda, status, discord].getRandom()
+global.redeshost = [panel, dash, tienda, status, discord, paypal].getRandom()
 
 //Imagen
 let category = "imagen"
