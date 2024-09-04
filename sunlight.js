@@ -124,10 +124,10 @@ let jid = jidNormalizedUser(clave.remoteJid)
 let msg = await store.loadMessage(jid, clave.id)
 return msg?.message || ""
 },
-msgRetryCounterCache,
-msgRetryCounterMap,
-defaultQueryTimeoutMs: undefined,   
-version
+msgRetryCounterCache, // Resolver mensajes en espera
+msgRetryCounterMap, // Determinar si se debe volver a intentar enviar un mensaje o no
+defaultQueryTimeoutMs: undefined,
+version,  
 }
 
 global.conn = makeWASocket(connectionOptions);
