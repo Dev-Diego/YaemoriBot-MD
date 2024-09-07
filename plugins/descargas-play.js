@@ -17,8 +17,7 @@ let yt_play = await search(args.join(" "))
 let img = await (await fetch(`${yt_play[0].image}`)).buffer()
 
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
-
-let txt = `╭─⬣「 *YouTube Play* 」⬣\n`
+    txt += `╭─⬣「 *YouTube Play* 」⬣\n`
     txt += `│ 🚩 *Titulo:* ${yt_play[0].title}\n`
     txt += `│ 📅 *Publicado:* ${yt_play[0].ago}\n`
     txt += `│ 🕜 *Duración:* ${secondString(yt_play[0].duration.seconds)}\n`
