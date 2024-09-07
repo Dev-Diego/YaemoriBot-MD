@@ -12,6 +12,9 @@ try {
 let res = await Scraper.ytsearch(text)
 let { title, size, quality, thumbnail, dl_url } = await Scraper.ytmp4(res[0].url)
 if (size.includes('GB') || size.replace(' MB', '') > 300) { return await m.reply('El archivo pesa mas de 300 MB, se canceló la Descarga.')}
+let v = yt_play[0].url
+const yt = await youtubedl(v).catch(async _ => await youtubedlv2(v))
+const dl_url = await yt.video[q].download()
 let txt = `╭─⬣「 *YouTube Play* 」⬣\n`
     txt += `│ 🚩 *Titulo:* ${title}\n`
     txt += `│ 📅 *Publicado:* ${res[0].published}\n`
@@ -21,8 +24,8 @@ let txt = `╭─⬣「 *YouTube Play* 」⬣\n`
     txt += `│ 🪴 *Calidad:* ${quality}\n`
     txt += `│ ⚖ *Peso:* ${size}\n`
     txt += `╰─⬣`
-await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', txt, m)
-await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `error.mp4`, caption: `*🍭 Titulo ∙* ${title}\n*🪴 Calidad ∙* ${quality}`, thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: fkontak })  
+await conn.sendFile(m.chat, imagen1, 'thumbnail.jpg', txt, m)
+await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `error.mp4`, caption: `*🍭 Titulo ∙* ${title}\n*🪴 Calidad ∙* ${quality}`, thumbnail: await fetch(yt.thumbnail), mimetype: 'video/mp4' }, { quoted: fkontak })  
 } catch {
 }}
 handler.help = ["play2 <búsqueda>"]
