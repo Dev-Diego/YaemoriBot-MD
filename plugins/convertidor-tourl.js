@@ -5,21 +5,24 @@ let handler = async (m) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
   if (!mime) return conn.reply(m.chat, '🚩 Responde a una *Imagen* o *Vídeo.*', m, rcanal)
+  try {
+  await m.react(rwait)
   conn.reply(m.chat, '🚩 Convirtiendo imagen en *url*...', m, {
   contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
   title: packname,
   body: dev,
   previewType: 0, thumbnail: icons,
   sourceUrl: channel }}})
-  let media = await q.download()
-  let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
-  let link = await (isTele ? uploadImage : uploadFile)(media)
-  m.reply(`▢ ${media.length} Byte(s) 
+  const media = await q.download();
+  const isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime);
+  const link = await (isTele ? uploadImage : uploadFile)(media);
+  await conn.reply(m.chat, `🚩 *Url:* ${link}`, m, rcanal)
+  await m.react(done)
+  } else {
+  await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
+  await m.react(error)}
+ }
 
-• ${isTele ? '(Sin fecha de caducidad)' : '(Desconocido)'} 
-• *URL :* ${link}
-  `)
-}
 handler.help = ['tourl']
 handler.tags = ['transformador']
 handler.command = ['upload', 'tourl']
