@@ -18,7 +18,7 @@ let handler = async (m) => {
   const link = await (isTele ? uploadImage : uploadFile)(media);
   await conn.reply(m.chat, `🚩 *Url:* ${link}`, m, rcanal)
   await m.react(done)
-  } else {
+  } catch {
   await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
   await m.react(error)}
  }
