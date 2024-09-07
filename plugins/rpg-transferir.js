@@ -2,7 +2,7 @@ const items = ['cookies', 'exp'];
 const confirmation = {};
 
 async function handler(m, { conn, args, usedPrefix, command }) {
-  if (confirmation[m.sender]) return conn.sendMessage(m.chat, {text: '*💥 𝑨𝒖𝒏 𝒉𝒂𝒚 𝒇𝒐𝒏𝒅𝒐𝒔 𝒆𝒏 𝒕𝒓𝒂𝒏𝒔𝒇𝒆𝒓𝒆𝒏𝒄𝒊𝒂, 𝒂𝒈𝒖𝒂𝒓𝒅𝒂 𝒖𝒏 𝒎𝒐𝒎𝒆𝒏𝒕𝒐.*', mentions: [m.sender]}, {quoted: m});
+  if (confirmation[m.sender]) return conn.sendMessage(m.chat, {text: '*☁️ Aun hay fondos en transferencia, aguarda un momento...*', mentions: [m.sender]}, {quoted: m});
   const user = global.db.data.users[m.sender];
   const item = items.filter((v) => v in user && typeof user[v] == 'number');
   const lol = `*┏━┅┉┅┄┄┄⟞⟨⟡⟩⟝┄┄┄┉┉┉━┓*
