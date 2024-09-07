@@ -421,7 +421,7 @@ global.db.data.users[m.sender].spam = new Date * 1
         if (m) {
             if (m.sender && (user = global.db.data.users[m.sender])) {
                 user.exp += m.exp
-                user.estrellas -= m.estrellas * 1
+                user.cookies -= m.cookies * 1
             }
 
             let stat
