@@ -37,7 +37,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.exp))
                     user.exp = 0
                 if (!isNumber(user.cookies))
-                    user.estrellas = 10
+                    user.cookies = 10
                 if (!('premium' in user)) 
                     user.premium = false
                 if (!user.premium) 
