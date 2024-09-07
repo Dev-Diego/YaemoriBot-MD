@@ -6,22 +6,22 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
-    if (!who) throw '⚠️️ *Taguea al usuario*'
+    if (!who) return m.reply('⚠️️ *Taguea al usuario*')
     let txt = text.replace('@' + who.split`@`[0], '').trim()
-    if (!txt) throw '⚠️️ Ingrese la cantidad de *Galletas* que quiere añadir'
-    if (isNaN(txt)) throw '⚠️ *sólo números*'
+    if (!txt) return m.reply('⚠️️ Ingrese la cantidad de *Galletas* que quiere añadir')
+    if (isNaN(txt)) return m.reply('⚠️ *sólo números*')
     let dmt = parseInt(txt)
     let cookie = dmt
     let pjk = Math.ceil(dmt * impts)
     cookie += pjk
-    if (cookie < 1) throw '⚠️️ Mínimo es  *1*'
+    if (cookie < 1) return m.reply('⚠️️ Mínimo es  *1*')
     let users = global.db.data.users
    users[who].cookie += dmt
 
-    await m.reply(`⊜ *🍪 AÑADIDO*
+    await conn.reply(m.chat, `⊜ *🍪 AÑADIDO*
 ┏━━━━━━━━━━━⬣
 ┃⋄ *Total:* ${dmt}
-┗━━━━━━━━━━━⬣`)
+┗━━━━━━━━━━━⬣`, m, rcanal)
    conn.fakeReply(m.chat, `⊜ *_Recibiste_* \n\n *_+${dmt} Galletas 🍪_*`, who, m.text)
 }
 
