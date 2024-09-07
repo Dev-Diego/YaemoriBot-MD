@@ -36,7 +36,7 @@ const defaultMenu = {
 ┃│
 ┃│「🌱」 𝐂𝐥𝐢𝐞𝐧𝐭𝐞: \`\`\`%name\`\`\`
 ┃│「💫」 𝐄𝐱𝐩: \`\`\`%exp\`\`\`
-┃│「🌟」 𝐄𝐬𝐭𝐫𝐞𝐥𝐥𝐚𝐬: \`\`\`%estrellas\`\`\`
+┃│「🍪」 𝐂𝐨𝐨𝐤𝐢𝐞𝐬: \`\`\`%cookies\`\`\`
 ┃│「🌴」 𝐍𝐢𝐯𝐞𝐥: \`\`\`%level\`\`\`
 ┃│「☁️」 𝐑𝐚𝐧𝐠𝐨: \`\`\`%role\`\`\`
 ┃╰──────────────────╸
@@ -64,7 +64,7 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, estrellas, level, role } = global.db.data.users[m.sender]
+    let { exp, cookies, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -104,7 +104,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
         help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
         tags: Array.isArray(plugin.tags) ? plugin.tags : [plugin.tags],
         prefix: 'customPrefix' in plugin,
-        estrellas: plugin.estrellas,
+        cookies: plugin.cookies,
         premium: plugin.premium,
         enabled: !plugin.disabled,
       }
