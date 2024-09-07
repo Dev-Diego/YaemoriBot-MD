@@ -1,25 +1,25 @@
 import { addExif } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text }) => {
-  if (!m.quoted) await m.reply('*⚠ El sticker!*')
+  if (!m.quoted) return m.reply('*⚠ El sticker!*')
   let stiker = false
   try {
    await m.react(rwait)
     let [packname, ...author] = text.split('|')
     author = (author || []).join('|')
     let mime = m.quoted.mimetype || ''
-    if (!/webp/.test(mime)) await m.reply('⚠️ *Responde a un sticker*')
+    if (!/webp/.test(mime)) return m.reply('⚠️ *Responde a un sticker*')
     let img = await m.quoted.download()
-    if (!img) await m.reply('⚠ *Responde a un sticker!*')
+    if (!img) return m.reply('⚠ *Responde a un sticker!*')
     stiker = await addExif(img, packname || '', author || '')
   } catch (e) {
     console.error(e)
     if (Buffer.isBuffer(e)) stiker = e
   } finally {
-  await conn.reply(m.chat, global.wait, m)
+  // await conn.reply(m.chat, global.wait, m)
      if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: dev, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: fkontak })
   await m.react(done)
-    await m.reply('⚠️ *La conversión falló.*')
+     return m.reply('⚠️ *La conversión falló.*')
   }
 }
 handler.help = ['take *<nombre>|<autor>*']
