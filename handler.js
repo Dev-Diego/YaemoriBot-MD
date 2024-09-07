@@ -355,7 +355,7 @@ global.db.data.users[m.sender].spam = new Date * 1
                     m.reply('chirrido -_-')
                 else
                     m.exp += xp
-                if (!isPrems && plugin.estrellas && global.db.data.users[m.sender].cookies < plugin.cookies * 1) {
+                if (!isPrems && plugin.cookies && global.db.data.users[m.sender].cookies < plugin.cookies * 1) {
                     conn.reply(m.chat, `Se agotaron tus *🍪 Cookies*`, m, fake)
                     continue
                 }
