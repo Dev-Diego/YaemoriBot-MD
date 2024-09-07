@@ -28,7 +28,7 @@ export async function handler(chatUpdate) {
         if (!m)
             return
         m.exp = 0
-        m.estrellas = false
+        m.cookies = false
         try {
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object')
@@ -36,7 +36,7 @@ export async function handler(chatUpdate) {
             if (user) {
                 if (!isNumber(user.exp))
                     user.exp = 0
-                if (!isNumber(user.estrellas))
+                if (!isNumber(user.cookies))
                     user.estrellas = 10
                 if (!('premium' in user)) 
                     user.premium = false
@@ -67,7 +67,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    estrellas: 10,
+                    cookies: 10,
                     registered: false,
                     name: m.name,
                     age: -1,
@@ -355,8 +355,8 @@ global.db.data.users[m.sender].spam = new Date * 1
                     m.reply('chirrido -_-')
                 else
                     m.exp += xp
-                if (!isPrems && plugin.estrellas && global.db.data.users[m.sender].estrellas < plugin.estrellas * 1) {
-                    conn.reply(m.chat, `Se agotaron tus *⭐️ Estrellas*`, m, fake)
+                if (!isPrems && plugin.estrellas && global.db.data.users[m.sender].cookies < plugin.cookies * 1) {
+                    conn.reply(m.chat, `Se agotaron tus *🍪 Cookies*`, m, fake)
                     continue
                 }
                 let extra = {
@@ -385,7 +385,7 @@ global.db.data.users[m.sender].spam = new Date * 1
                 try {
                     await plugin.call(this, m, extra)
                     if (!isPrems)
-                        m.estrellas = m.estrellas || plugin.estrellas || false
+                        m.cookies = m.cookies || plugin.cookies || false
                 } catch (e) {
                     m.error = e
                     console.error(e)
@@ -403,8 +403,8 @@ global.db.data.users[m.sender].spam = new Date * 1
                             console.error(e)
                         }
                     }
-                    if (m.estrellas)
-                        conn.reply(m.chat, `Utilizaste *${+m.estrellas}* ⭐️`, m, fake)
+                    if (m.cookies)
+                        conn.reply(m.chat, `Utilizaste *${+m.cookies}* 🍪`, m, fake)
                 }
                 break
             }
