@@ -21,7 +21,7 @@ let handler = async (m) => {
   `)
 }
 handler.help = ['tourl']
-handler.tags = ['tools']
+handler.tags = ['transformador']
 handler.command = ['upload', 'tourl']
 
 export default handler
