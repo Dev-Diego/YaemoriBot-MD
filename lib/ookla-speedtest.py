@@ -1944,7 +1944,7 @@ def shell():
 
     printer('\n📚 *ISP:* %(isp)s' % speedtest.config['client'],
             quiet)
-    printer('🍭 *Servidor:* %(sponsor)s\n▢ *Ubicación:* %(name)s [%(d)0.2f km] '
+    printer('🍭 *Servidor:* %(sponsor)s\n🔮 *Ubicación:* %(name)s [%(d)0.2f km] '
             '\n✨️ *Latencia:* %(latency)s ms' % results.server, quiet)
 
     if args.download:
@@ -1977,7 +1977,7 @@ def shell():
         results.share()
 
     if args.simple:
-        printer('🛡 Latencia: %s ms\n▢ Descarga: %0.2f M%s/s\n\n▢ Subida: %0.2f M%s/s' %
+        printer('✨️ Latencia: %s ms\n🚀 Descarga: %0.2f M%s/s\n\n🌻 Subida: %0.2f M%s/s' %
                 (results.ping,
                  (results.download / 1000.0 / 1000.0) / args.units[1],
                  args.units[0],
