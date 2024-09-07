@@ -17,6 +17,4 @@ handler.tags = ['tools'];
 handler.command = ['spam', 'spamwa'];
 handler.group = false;
 handler.premium = true;
-// handler.private = true
-// handler.estrellas = true
 export default handler;
