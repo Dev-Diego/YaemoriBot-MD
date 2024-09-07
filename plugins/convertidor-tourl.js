@@ -5,13 +5,13 @@ import fetch from 'node-fetch'
 let handler = async (m) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) return conn.reply(m.chat, '💥 Responde a una *Imagen* o *Vídeo.*', m, rcanal)
+  if (!mime) return conn.reply(m.chat, '🚩 Responde a una *Imagen* o *Vídeo.*', m, rcanal)
   await m.react(rwait)
   try {
-  conn.reply(m.chat, global.wait, m, {
+  conn.reply(m.chat, '🚩 Convirtiendo imagen en *url*...', m, {
   contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
   title: packname,
-  body: wm,
+  body: dev,
   previewType: 0, thumbnail: icons,
   sourceUrl: channel }}})
   let media = await q.download()
