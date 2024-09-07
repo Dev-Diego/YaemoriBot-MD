@@ -6,7 +6,7 @@ await m.react(rwait)
 conn.reply(m.chat, '🚀 Buscando su información....', m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons, 
 sourceUrl: channel }}})
 let ss = await (await fetch(`https://image.thum.io/get/fullpage/${args[0]}`)).buffer()
