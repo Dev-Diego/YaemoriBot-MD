@@ -68,6 +68,11 @@
 - **Contacto:** [`Gata Dios`](https://wa.me/message/B3KTM5XN2JMRD1)
 - **Contacto:** [`elrebelde21`](https://facebook.com/elrebelde21)
 
+<details>
+<summary>**Ajustes del Servidor - YaemoriBot**</summary><img src="https://qu.ax/jFXV.jpg">
+
+</details>
+
 </details>
 
 ---
