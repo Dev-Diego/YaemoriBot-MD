@@ -20,8 +20,8 @@ let handler = async (m) => {
   let img = await (await fetch(`${link}`)).buffer()
   let txt = `乂  *L I N K - E N L A C E*  乂\n\n`
       txt += `*» Enlace* : ${link}\n`
-    //  txt += `*» Acortado* : ${await shortUrl(link)}\n`
-      txt += `*» Tamaño* : ${formatBytes(media.length)}\n`
+      txt += `*» Acortado* : ${await shortUrl(link)}\n`
+    //  txt += `*» Tamaño* : ${formatBytes(media.length)}\n`
      txt += `*» Expiración* : ${isTele ? 'No expira' : 'Desconocido'}\n\n`
       txt += `> *${dev}*`
 
