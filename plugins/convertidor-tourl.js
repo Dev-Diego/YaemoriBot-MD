@@ -10,7 +10,7 @@ let handler = async (m) => {
   let link = await (isTele ? uploadImage : uploadFile)(media)
   let img = await (await fetch(`${link}`)).buffer()
 
-let txt += `▢ ${media.length} Byte(s)\n`
+let txt = `▢ ${media.length} Byte(s)\n`
     txt += `• ${isTele ? '(Sin fecha de caducidad)' : '(Desconocido)'}\n`
     txt += `• *URL :* ${link}`
 
