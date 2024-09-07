@@ -19,7 +19,7 @@ let handler = async (m, { conn, text }) => {
   // await conn.reply(m.chat, global.wait, m)
      if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: dev, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: fkontak })
   m.react(`${done}`)
-     else throw '⚠️ *La conversión falló.*'
+     await else throw '⚠️ *La conversión falló.*'
   }
 }
 handler.help = ['take *<nombre>|<autor>*']
