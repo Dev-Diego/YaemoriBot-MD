@@ -1,6 +1,6 @@
 import {addExif} from '../lib/sticker.js';
 const handler = async (m, {conn, text}) => {
-  if (!m.quoted) throw return m.reply('⚠️ *Te faltó el sticker')
+  if (!m.quoted) return m.reply('⚠️ *Te faltó el sticker')
   let stiker = false;
   try {
     let [packname, ...author] = text.split('|');
