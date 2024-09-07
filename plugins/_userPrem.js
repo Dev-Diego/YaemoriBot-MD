@@ -1,12 +1,16 @@
-let handler = m => m
+const handler = (m) => m;
+
 export async function all(m) {
-    let user = global.db.data.users[m.sender]
-    if (m.chat.endsWith('broadcast')) return
-    if (user.premiumTime != 0 && user.prem) {
-        if (new Date() * 1 >= user.premiumTime) {
-          await m.reply(`Se agotó tu tiempo como usuario premium`)
-            user.premiumTime = 0
-            user.prem = false
-        }
+  for (const user of Object.values(global.db.data.users)) {
+    if (user.premiumTime != 0 && user.premium) {
+      if (new Date() * 1 >= user.premiumTime) {
+        user.premiumTime = 0;
+        user.premium = false;
+        const JID = Object.keys(global.db.data.users).find((key) => global.db.data.users[key] === user);
+        const usuarioJid = JID.split`@`[0];
+        const textoo = `Se agotó tu tiempo como usuario premium`;
+        await this.sendMessage(JID, {text: textoo, mentions: [JID]}, {quoted: fkontak });
+      }
     }
+  }
 }
