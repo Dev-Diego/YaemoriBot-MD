@@ -11,12 +11,12 @@ let handler = async (m, { conn, text }) => {
     if (!txt) return m.reply('⚠️️ Ingrese la cantidad de *Galletas* que quiere añadir')
     if (isNaN(txt)) return m.reply('⚠️ *sólo números*')
     let dmt = parseInt(txt)
-    let cookie = dmt
+    let cookies = dmt
     let pjk = Math.ceil(dmt * impts)
     cookie += pjk
-    if (cookie < 1) return m.reply('⚠️️ Mínimo es  *1*')
+    if (cookies < 1) return m.reply('⚠️️ Mínimo es  *1*')
     let users = global.db.data.users
-   users[who].cookie += dmt
+   users[who].cookies += dmt
 
     await conn.reply(m.chat, `⊜ *🍪 AÑADIDO*
 ┏━━━━━━━━━━━⬣
