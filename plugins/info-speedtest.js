@@ -11,7 +11,7 @@ const handler = async (m) => {
      body: dev,
      previewType: 0, thumbnail: icons, 
      sourceUrl: channel }}})
-     o = await exec('python3 speed.py');
+      o = await exec('python3 ./lib/ookla-speedtest.py --secure --share');
         const {stdout, stderr} = o;
         if (stdout.trim()) {
             const match = stdout.match(/http[^"]+\.png/);
