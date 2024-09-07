@@ -1,29 +1,25 @@
-import { addExif } from '../lib/sticker.js'
-
-
-let handler = async (m, { conn, text }) => {
-  if (!m.quoted) await m.reply('*⚠ El sticker!*')
-  let stiker = false
+import {addExif} from '../lib/sticker.js';
+const handler = async (m, {conn, text}) => {
+  if (!m.quoted) throw return m.reply('⚠️ *Te faltó el sticker')
+  let stiker = false;
   try {
-    let [packname, ...author] = text.split('|')
-    author = (author || []).join('|')
-    let mime = m.quoted.mimetype || ''
-    if (!/webp/.test(mime)) await m.reply('⚠️ *Responde a un sticker.*')
-    let img = await m.quoted.download()
-    if (!img) await m.reply('⚠ *Responde a un sticker!*')
-    stiker = await addExif(img, packname || '', author || '')
+    let [packname, ...author] = text.split('|');
+    author = (author || []).join('|');
+    const mime = m.quoted.mimetype || '';
+    if (!/webp/.test(mime)) return m.reply('⚠️ *Te faltó el sticker')
+    const img = await m.quoted.download();
+    if (!img) return m.reply('⚠️ *Te faltó el sticker')
+    stiker = await addExif(img, packname || global.packsticker, author || global.author)
   } catch (e) {
-    console.error(e)
-    if (Buffer.isBuffer(e)) stiker = e
+    console.error(e);
+    if (Buffer.isBuffer(e)) stiker = e;
   } finally {
-  await m.react(rwait)
-    if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: dev, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: fkontak })
-   // await m.react(done)
-    else throw '⚠️ *La conversión falló.*'
+        if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: packname, body: dev, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: fkontak })
+
+    else throw '🚩 *Ocurrió un error*'
   }
 }
-handler.help = ['take *<nombre>|<autor>*']
+handler.help = ['wm <packname>|<author>']
 handler.tags = ['sticker']
-handler.command = ['take', 'robar', 'wm'] 
-
+handler.command = ['take', 'wm']
 export default handler
