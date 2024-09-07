@@ -39,7 +39,7 @@ await m.react(error)
 await m.reply(`✘ *Ocurrío un error*`)
 }}}
 handler.help = ['video']
-handler.tags = ['descargas', 'youtube']
+handler.tags = ['descargas']
 handler.customPrefix = /^(1|Video|video)/
 handler.command = new RegExp
 handler.register = true
