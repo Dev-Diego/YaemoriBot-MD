@@ -24,8 +24,20 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `✨️ *Nota:* Para descargar responde a este mensaje con *1* o *2*.\n\n`
     txt += `*1:* Video\n*2:* Audio`
 
-await conn.sendMessage(m.chat, {text: txt, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'YaemoriBot 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: img, sourceUrl: yt_play[0].url, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
-
+await conn.sendMessage(m.chat, {
+text: txt,
+contextInfo: { 
+forwardingScore: 9999, 
+isForwarded: true, 
+externalAdReply: {
+title: `${yt_play[0].title}`,
+body: dev,
+thumbnailUrl: img,
+thumbnail: img,
+sourceUrl: `${yt_play[0].url}`,
+mediaType: 1,
+renderLargerThumbnail: true
+}}}, { quoted: fkontak})
 await m.react(done)
 } catch {
 await m.react(error)
