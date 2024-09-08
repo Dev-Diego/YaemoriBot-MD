@@ -38,6 +38,8 @@ export async function handler(chatUpdate) {
                     user.exp = 0
                 if (!isNumber(user.cookies))
                     user.cookies = 10
+                if (!('muto' in user))
+                    user.muto = false
                 if (!('premium' in user)) 
                     user.premium = false
                 if (!user.premium) 
@@ -68,6 +70,7 @@ export async function handler(chatUpdate) {
                 global.db.data.users[m.sender] = {
                     exp: 0,
                     cookies: 10,
+                    muto: false,
                     registered: false,
                     name: m.name,
                     age: -1,
