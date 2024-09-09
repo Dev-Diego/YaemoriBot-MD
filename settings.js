@@ -27,6 +27,7 @@ global.prems = []
 global.isBaileysFail = false
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.7'
+global.nameqr = 'Yaemori Bot - MD'
 global.sessions = 'MiniSession'
 global.jadi = 'MiniJadiBot'
 
