@@ -4,61 +4,53 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'INFO 📚',
-  'buscador': 'BUSQUEDAS 🔎',
-  'fun': 'JUEGOS 🎮',
-  'serbot': 'SUB BOTS 🤖',
-  'rpg': 'RPG 🌠',
-  'rg': 'REGISTRO 📁',
-  'xp': 'EXP 🏷',
-  'sticker': 'STICKERS 🏞',
-  'anime': 'ANIMES 🍧',
-  'database': 'DATABASE ✨️',
-  'fix': 'FIXMSGESPERA 💭',
-  'grupo': 'GRUPOS 👥',
-  'nable': 'ON / OFF 📴', 
-  'descargas': 'DESCARGAS 📥',
-  'tools': 'HERRAMIENTAS 🔧',
-  'info': 'INFORMACIÓN 🐢',
-  'nsfw': 'NSFW 🔞', 
-  'owner': 'CREADOR 👑', 
-  'audio': 'AUDIOS 🔉', 
-  'ai': 'AI 🌹',
-  'transformador': 'CONVERTIDORES 🚩',
+  'main': 'Info',
+  'buscador': 'Busquedas',
+  'fun': 'Juegos',
+  'serbot': 'Sub bots',
+  'rpg': 'Rpg',
+  'rg': 'Registro',
+  'xp': 'Exp',
+  'sticker': 'Stickers',
+  'anime': 'Animes',
+  'database': 'Database',
+  'fix': 'Fixmsgespera',
+  'grupo': 'Grupos',
+  'nable': 'On - off', 
+  'descargas': 'Descargas',
+  'tools': 'Herramientas',
+  'info': 'Información',
+  'nsfw': 'Nsfw', 
+  'owner': 'Propietario', 
+  'audio': 'Audios', 
+  'ai': 'Ai',
+  'transformador': 'Convertidores',
 }
 
 const defaultMenu = {
   before: `© mᥱᥒᥙ ᥆𝖿іᥴіᥲᥣ ძᥱ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☁️
 
-┏━━━━━━━━━━━━━━━━━━━⫸
-┃╭──────────────────╸
-┃│ ✧ *INFORMACIÓN USER* ✧
-┃│
-┃│「🌱」 𝐂𝐥𝐢𝐞𝐧𝐭𝐞: \`\`\`%name\`\`\`
-┃│「💫」 𝐄𝐱𝐩: \`\`\`%exp\`\`\`
-┃│「🍪」 𝐂𝐨𝐨𝐤𝐢𝐞𝐬: \`\`\`%cookies\`\`\`
-┃│「🌴」 𝐍𝐢𝐯𝐞𝐥: \`\`\`%level\`\`\`
-┃│「☁️」 𝐑𝐚𝐧𝐠𝐨: \`\`\`%role\`\`\`
-┃╰──────────────────╸
-┗━━━━━━━━━━━━━━━━━━━⫸
+*•/• Info usuario •/•*
 
-┏━━━━━━━━━━━━━━━━━━━⫸
-┃╭──────────────────╸
-┃│ ✧ *INFORMACIÓN* ✧
-┃│  
-┃│「👑」 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫: ⏤͟͟͞͞Dev-Diego
-┃│「🪴」 𝐌𝐨𝐝𝐨: \`\`\`Publico\`\`\`
-┃│「📚」 𝐋𝐢𝐛𝐫𝐞𝐫𝐢𝐚: \`\`\`Baileys\`\`\`
-┃│「🕒」 𝐀𝐜𝐭𝐢𝐯𝐢𝐝𝐚𝐝: \`\`\`%muptime\`\`\`
-┃│「👤」 𝐔𝐬𝐮𝐚𝐫𝐢𝐨𝐬: \`\`\`%totalreg\`\`\`
-┃╰──────────────────╸
-┗━━━━━━━━━━━━━━━━━━━⫸
+🌸 Cliente: \`\`\`%name\`\`\`
+✨️ Exp: \`\`\`%exp\`\`\`
+🍪 Galletas: \`\`\`%cookies\`\`\`
+🛡 Nivel: \`\`\`%level\`\`\`
+💫 Rango: \`\`\`%role\`\`\`
+
+*•/• Info del bot •/•*
+
+👑 Creador: ⏤͟͟͞͞Dev-Diego
+🪴 Modo: \`\`\`Publico\`\`\`
+📚 Libreria: \`\`\`Baileys\`\`\`
+🕖 Actividad: \`\`\`%muptime\`\`\`
+👤 Usuarios: \`\`\`%totalreg\`\`\`
 
 \t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
-    header: '┏━━━━━━━━━━━━━━━━━━━⫸\n┃ *✧ %category ✧*\n┃╭──────────────────╸',
-  body: '┃│ %cmd',
-  footer: '┃╰──────────────────╸\n┗━━━━━━━━━━━━━━━━━━━⫸\n',
+    header: '*•/• %category •/•*',
+  body: '✎ %cmd',
+  footer: '',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
