@@ -1,4 +1,4 @@
-> **Aviso**: Yo Dego ya me iré retirando de el tema de los bots y en algún momento este bot quedará en obsoleto y sin manteniendo, gracias por este recorrido de los bots y gracias por sus preferencia.
+> **Aviso**: Yo Diego ya me iré retirando de el tema de los bots y en algún momento este bot quedará en obsoleto y sin manteniendo, gracias por este recorrido de los bots y gracias por sus preferencia.
 
 ---
 
