@@ -65,6 +65,7 @@ global.grupo = 'https://chat.whatsapp.com/KRbCRM6Gg65DccduR6QJLp' //YaemoriBot
 global.grupo2 = 'https://chat.whatsapp.com/EVc2XJuZwjnKKdWUsRYmms' //YaemoriBot2
 global.grupo3 = 'https://chat.whatsapp.com/Fx0yC76BYzRAmiGxZWb9Ho' //team oficial
 global.grupo4 = 'https://chat.whatsapp.com/Ksd32KH9zFoDmO1PJt44M7' //GataBot & YaemoriBot
+global.grupo5 = 'https://chat.whatsapp.com/Ek8vhsv1jg59SSzd6fHjta' //Curiosity & YaemoriBot
 global.channel = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'
 global.channel2 = 'https://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z'
 global.md = 'https://github.com/Dev-Diego/YaemoriBot-MD' 
