@@ -32,7 +32,7 @@ let grupos = `*Hola!, te invito a unirte a los grupos oficiales de del Bot para 
 
 > ${dev}`
 
-await conn.sendFile(m.chat, imagen2, "yaemori.jpg", grupos, m, null, rcanal)
+await conn.sendMessage(m.chat, {text: grupos, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'YaemoriBot 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: packname, body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: redes, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 
 await m.react(emojis)
 
