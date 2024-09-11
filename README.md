@@ -1,7 +1,3 @@
-> **Aviso**: Yo Diego ya me iré retirando de el tema de los bots y en algún momento este bot quedará en obsoleto y sin manteniendo, gracias por este recorrido de los bots y gracias por sus preferencia.
-
----
-
 <h1 align="center">Yaemori Bot - MD 🌱</h1>
 
 ![Yaemori](https://telegra.ph/file/d29e7f61a1dc85564ea5c.jpg)
