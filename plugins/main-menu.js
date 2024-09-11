@@ -4,53 +4,60 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'Info',
-  'buscador': 'Busquedas',
-  'fun': 'Juegos',
-  'serbot': 'Sub bots',
-  'rpg': 'Rpg',
-  'rg': 'Registro',
-  'xp': 'Exp',
-  'sticker': 'Stickers',
-  'anime': 'Animes',
-  'database': 'Database',
-  'fix': 'Fixmsgespera',
-  'grupo': 'Grupos',
-  'nable': 'On - off', 
-  'descargas': 'Descargas',
-  'tools': 'Herramientas',
-  'info': 'Información',
-  'nsfw': 'Nsfw', 
-  'owner': 'Propietario', 
-  'audio': 'Audios', 
-  'ai': 'Ai',
-  'transformador': 'Convertidores',
+  'main': '𝐈𝐍𝐅𝐎',
+  'buscador': 𝐁𝐔𝐒𝐐𝐔𝐄𝐃𝐀𝐒',
+  'fun': '𝐉𝐔𝐄𝐆𝐎𝐒',
+  'serbot': '𝐒𝐔𝐁 𝐁𝐎𝐓𝐒',
+  'rpg': '𝐑𝐏𝐆',
+  'rg': '𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎',
+  'xp': '𝐄𝐗𝐏',
+  'sticker': '𝐒𝐓𝐈𝐂𝐊𝐄𝐑𝐒',
+  'anime': '𝐀𝐍𝐈𝐌𝐄𝐒',
+  'database': '𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄',
+  'fix': '𝐅𝐈𝐗𝐌𝐒𝐆𝐄𝐒𝐏𝐄𝐑𝐀',
+  'grupo': '𝐆𝐑𝐔𝐏𝐎𝐒',
+  'nable': '𝐎𝐍 - 𝐎𝐅𝐅', 
+  'descargas': '𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒',
+  'tools': '𝐇𝐄𝐑𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀𝐒',
+  'info': '𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂𝐈𝐎́𝐍',
+  'nsfw': '𝐍𝐒𝐅𝐖', 
+  'owner': '𝐃𝐄𝐒𝐀𝐑𝐑𝐎𝐋𝐋𝐀𝐃𝐎𝐑', 
+  'audio': '𝐀𝐔𝐃𝐈𝐎𝐒', 
+  'ai': '𝐀𝐈',
+  'transformador': '𝐂𝐎𝐍𝐕𝐄𝐑𝐓𝐈𝐃𝐎𝐑𝐄𝐒',
 }
 
 const defaultMenu = {
   before: `© mᥱᥒᥙ ᥆𝖿іᥴіᥲᥣ ძᥱ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☁️
 
-*•/• Info usuario •/•*
+╭・・・・☆・・・・・・☆ ・・・・
+┆ ⋮ . ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .
+┆ ⋮ ⋅.⊹ *𝐈𝐍𝐅𝐎 𝐃𝐄𝐋 𝐔𝐒𝐔𝐀𝐑𝐈𝐎* ⋅.⊹ 
+┆ ⋮ . ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .
+┆ ⋮ 🌸 Cliente: \`\`\`%name\`\`\`
+┆ ⋮ ✨️ Exp: \`\`\`%exp\`\`\`
+┆ ⋮ 🍪 Galletas: \`\`\`%cookies\`\`\`
+┆ ⋮ 🛡 Nivel: \`\`\`%level\`\`\`
+┆ ⋮ 💫 Rango: \`\`\`%role\`\`\`
+╰・・・・☆・・・・・・☆ ・・・・
 
-🌸 Cliente: \`\`\`%name\`\`\`
-✨️ Exp: \`\`\`%exp\`\`\`
-🍪 Galletas: \`\`\`%cookies\`\`\`
-🛡 Nivel: \`\`\`%level\`\`\`
-💫 Rango: \`\`\`%role\`\`\`
+╭・・・・☆・・・・・・☆ ・・・・
+┆ ⋮ . ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .
+┆ ⋮ ⋅.⊹ *𝐈𝐍𝐅𝐎 𝐃𝐄 𝐋𝐀 𝐁𝐎𝐓* ⋅.⊹
+┆ ⋮ . ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .
+┆ ⋮ 👑 Creador: ⏤͟͟͞͞Dev-Diego
+┆ ⋮ 🪴 Modo: \`\`\`Publico\`\`\`
+┆ ⋮ 📚 Libreria: \`\`\`Baileys\`\`\`
+┆ ⋮ 🕖 Actividad: \`\`\`%muptime\`\`\`
+┆ ⋮ 👤 Usuarios: \`\`\`%totalreg\`\`\`
+╰・・・・☆・・・・・・☆ ・・・・
 
-*•/• Info del bot •/•*
-
-👑 Creador: ⏤͟͟͞͞Dev-Diego
-🪴 Modo: \`\`\`Publico\`\`\`
-📚 Libreria: \`\`\`Baileys\`\`\`
-🕖 Actividad: \`\`\`%muptime\`\`\`
-👤 Usuarios: \`\`\`%totalreg\`\`\`
 
 \t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
-    header: '*•/• %category •/•*\n',
-  body: '✰ %cmd',
-  footer: '',
+    header: '*. ⋅ᘛ⁐̤ᕐ⩺┈•༶ ☁️ :･ﾟ✧:･ﾟ✧･ﾟ✧*\n*. ⋅⊰ꕤ ┆* ⭔ %category\n*. ⋅⊰ꕤ ┆* ・・・・・・・・・・・\n',
+  body: '*. ⋅⊰ꕤ ┆* %cmd',
+  footer: '*. ⋅ ˚̣- : ✧ : – ⭒ ⊹ ⭒ – : ✧ : -˚̣⋅ .*',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
