@@ -1,31 +1,16 @@
-const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
-let enviando
-const handler = async (m, {conn, text, isMods, isOwner, isPrems}) => {
-if (enviando) return
-enviando = true 
-try {
-const link = text 
-if (!link || !link.match(linkRegex)) return conn.reply(m.chat, '🍟 Ingresa el enlace del Grupo.', m, rcanal)
-const [_, code] = link.match(linkRegex) || [];
-if ( isPrems || isMods || isOwner || m.fromMe) {
-const res = await conn.groupAcceptInvite(code);
-await conn.reply(m.chat, '*🚩 La Bot Se Unio Correctamente.*', m, rcanal)
-enviando = false 
-} else {
-conn.sendMessage(m.chat, {text: '*🚩 El link de su grupo fue enviado a mi creador.*\n\n*🌺 Su grupo estará en evaluación y el propietario/a del Bot decidirá si agrega o no al Bot.*\n\n*🌺 Algunas de las razones por la cual su solicitud puede ser rechazada son:*\n*1.🌸 El Bot está saturado.*\n*2.🌸 El Bot fue eliminado del grupo recientemente.*\n*3.🌸 El link del grupo ha sido restablecido.*\n*4.🌸 El Bot no se agrega a grupos por decisión del propietario/a.*\n\n*🌺 El proceso de evaluación puede tomar algo de tiempo, incluso dias, tenga paciencia.*'}, {quoted: fkontak})
-const data = global.owner.filter(([id]) => id)[0]
-const dataArray = Array.isArray(data) ? data : [data]
-for (const entry of dataArray) await conn.sendMessage(entry + '@s.whatsapp.net', {text: '*🚩 Nueva solicitud para obtener un bot en un grupo*\n\n*🌱 Solicitante:* ' + '@' + m.sender.split('@')[0] + '\n*📎 Link del grupo:* ' + link, mentions: [m.sender], contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [m.sender], "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": packname, "containsAutoReply": true, "mediaType": 1, "thumbnail": icons, "mediaUrl": redes, "sourceUrl": redes}}}, {quoted: fkontak})
-enviando = false 
+let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})( [0-9]{1,3})?/i
+
+let handler = async (m, { conn, text, isOwner, usedPrefix, command }) => {
+
+if (!text) return m.reply(`🍟 Ingresa el enlace del Grupo.`)
+let [_, code] = text.match(linkRegex) || []
+if (!code) return m.reply('🐢 Enlace invalido.')
+let res = await conn.groupAcceptInvite(code)
+m.reply(`🚩 Me uní correctamente al Grupo`)
 }
-} catch {
-enviando = false 
-await m.react(error)
-await coon.reply(m.chat, '🚩 *Ocurrió Un Error*', m, fake)
-}
-}
-handler.help = ['join']
-handler.tags = ['owner', 'grupo']
-handler.command = ['join', 'unete']
-handler.register = true
+handler.help = ['join <link>']
+handler.tags = ['owner']
+handler.command = ['join', 'entrar'] 
+handler.rowner = true
+
 export default handler
