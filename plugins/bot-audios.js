@@ -7,8 +7,6 @@ if (chat.isBanned) return
 global.db.data.users[m.sender].money += 50
 global.db.data.users[m.sender].exp += 50  
 
-if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Abre este enlace')) && !m.isBaileys && !chat.isBanned && !m.fromMe) {
-
 if (/^A Bueno master|Bueno master|Bueno Máster|🫂$/i.test(m.text) && chat.audios) {  
 if (!db.data.chats[m.chat].audios && m.isGroup) throw 0    
 let vn = 'https://qu.ax/xynz.mp3'
