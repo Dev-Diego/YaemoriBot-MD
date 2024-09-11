@@ -1,10 +1,10 @@
-const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i;
-let enviando;
+const linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
+let enviando
 const handler = async (m, {conn, text, isMods, isOwner, isPrems}) => {
-if (enviando) return;
+if (enviando) return
 enviando = true 
 try {
-const link = text //(m.quoted ? m.quoted.text ? m.quoted.text : text : text) || text;
+const link = text 
 if (!link || !link.match(linkRegex)) return conn.reply(m.chat, '🍟 Ingresa el enlace del Grupo.', m, rcanal)
 const [_, code] = link.match(linkRegex) || [];
 if ( isPrems || isMods || isOwner || m.fromMe) {
