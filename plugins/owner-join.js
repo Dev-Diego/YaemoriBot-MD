@@ -16,7 +16,7 @@ const msg = '*🧿 El link de su grupo fue enviado a mi creador.*\n\n*🍓 Su gr
 conn.reply(m.chat, msg, m, rcanal)
 const data = global.owner.filter(([id]) => id)[0]
 const dataArray = Array.isArray(data) ? data : [data]
-for (const entry of dataArray) await conn.sendMessage(entry + '@s.whatsapp.net', {text: '*🦋 NUEVA SOLICITUD DE UN BOT PARA UN GRUPO 🍓*\n\n*Solicitante:* ' + '@' + m.sender.split('@')[0] + '\n*Link del grupo:* ' + link, mentions: [m.sender], contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [m.sender], "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": global.titulowm2, "containsAutoReply": true, "mediaType": 1, "thumbnail": imagen6, "mediaUrl": `${link}`, "sourceUrl": `${link}`}}}, {quoted: fkontak})
+for (const entry of dataArray) await conn.sendMessage(entry + '@s.whatsapp.net', {text: '*🦋 NUEVA SOLICITUD DE UN BOT PARA UN GRUPO 🍓*\n\n*Solicitante:* ' + '@' + m.sender.split('@')[0] + '\n*Link del grupo:* ' + link, mentions: [m.sender], contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [m.sender], "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": packanme, "body": dev, "containsAutoReply": true, "mediaType": 1, "thumbnail": icons, "mediaUrl": redes, "sourceUrl": redes}}}, {quoted: fkontak})
 enviando = false 
 }
 } catch {
