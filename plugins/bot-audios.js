@@ -29,6 +29,11 @@ let vn = 'https://qu.ax/pavq.mp3'
 this.sendPresenceUpdate('recording', m.chat)   
 this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: fkontak })}
 
+if (m.text.match(/(cafirexos|Cafirexos|superiority|superiorityhost|superiorityHost|SuperiorityHost|superiorityhost|Superiority|akirahost|akira|AkiraHost|Akirahost|Akira|azurahost|AzuraHost|azura|Azurahost)/gi)) {    
+let vn = 'https://qu.ax/CQgP.mp3'
+this.sendPresenceUpdate('recording', m.chat)   
+this.sendMessage(m.chat, { audio: { url: vn }, fileName: 'error.mp3', mimetype: 'audio/mp4', ptt: true }, { quoted: fkontak })}
+
 if (chat.audios && m.text.match(/(Buen día grupo|Buen dia grupo)/gi)) {    
 let vn = 'https://qu.ax/GoKq.mp3'
 this.sendPresenceUpdate('recording', m.chat)   
