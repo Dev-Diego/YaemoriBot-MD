@@ -173,9 +173,14 @@ Si tiene éxito, le dará un mensaje como: `SUCCESS: specified value was saved`.
 |------|-------------|-------|
 | WhatsApp | Canal | [¡Click aquí!](https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A) |
 | WhatsApp | Canal Sunlight | [¡Click aquí!](https://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z) |
+| WhatsApp | Canal Corin | [¡Click aquí!](https://whatsapp.com/channel/0029VakUvreFHWpyWUr4Jr0g) |
+| WhatsApp | Canal Infinity | [¡Click aquí!](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A) |
 | WhatsApp | Grupo | [¡Click aquí!](https://chat.whatsapp.com/KRbCRM6Gg65DccduR6QJLp) |
 | WhatsApp | Gc Sunlight | [¡Click aquí!](https://chat.whatsapp.com/Fx0yC76BYzRAmiGxZWb9Ho) |
 | WhatsApp | Asistente | [¡Click aquí!](wa.me/573218138672) |
+| Chrome | Dashboard Corin | [¡Click aquí!](https://dash.corinplus.com) |
+| Chrome | Panel Corin | [¡Click aquí!](https://ctrl.corinplus.com) |
+| Chrome | Status Corin | [¡Click aquí!](https://status.corinplus.com/) |
 
 ---
 
