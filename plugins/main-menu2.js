@@ -156,7 +156,7 @@ const document = doc[Math.floor(Math.random() * doc.length)];
 ∘ _Vamos!!_
 ∘ _Se pudrio_
 ∘ _Gol!_
-∘ _Cafirecos_
+∘ _Cafirexos_
 ∘ _Superiority_
 ∘ _Azura_
 ∘ _Akira_`.trim();     if (m.isGroup) { 
