@@ -45,8 +45,8 @@ let sticker = 'https://qu.ax/rfHP.webp'
 this.sendPresenceUpdate('recording', m.chat)
 let or = ['audio', 'sticker'];
 let media = or[Math.floor(Math.random() * 2)]
-if (media === 'audio') await this.sendFile(m.chat, vn, 'error.mp3', null, m, true, {type: 'audioMessage', ptt: true });
-if (media === 'sticker') await conn.sendFile(m.chat, sticker, 'error.webp', '', m);
+if (media === 'audio') await this.sendFile(m.chat, vn, 'error.mp3', null, fkontak, true, {type: 'audioMessage', ptt: true });
+if (media === 'sticker') await conn.sendFile(m.chat, sticker, 'error.webp', '', fkontak);
 }
 
 if (chat.audios && m.text.match(/(Cambiate a Movistar|cambiate a Movistar|cambiate a movistar|Cambiate a movistar|movistar)/gi)) {    
