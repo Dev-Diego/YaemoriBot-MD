@@ -9,6 +9,13 @@ import moment from 'moment-timezone'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
+//BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
+//Sólo aplica para opción 2 (ser bot con código de texto de 8 digitos)
+global.botnumber = '' //Ejemplo: +573218138672
+global.confirmCode = ''
+
+//*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
+
 global.owner = [
    ['573012482597', 'Dev Diego 👑', true],
    ['573218138672', 'Owner 🍭', true],
