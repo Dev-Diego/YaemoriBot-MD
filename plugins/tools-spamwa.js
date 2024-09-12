@@ -14,7 +14,7 @@ if (fixedJumlah > 999) return conn.reply(m.chat, '*⚠️ Minimo 50 Caracteres*'
 
 await conn.reply(m.chat, '*🚩 Se envió con éxito el spam.*', m, rcanal);
 for (let i = fixedJumlah; i > 1; i--) {
-if (i !== 0) conn.reply(fixedNumber, pesan.trim(), null, fake);
+if (i !== 0) conn.reply(fixedNumber, pesan.trim(), null);
 }
 };
 handler.help = ['spamwa <number>|<mesage>|<no of messages>'];
