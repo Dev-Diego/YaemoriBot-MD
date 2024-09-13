@@ -30,12 +30,13 @@ return resultado
 }
 
 const message = users.map((v, index) => `${index + 1} @${v.user.jid.replace(/[^0-9]/g, '')}\n wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n*Nombre:* ${v.user.name || '-'}\n*Actividad:* ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}`).join('\n\n')
-const replyMessage = message.length === 0 ? '🚩 *No hay sub bots disponibles por el momento.*\n- Verifique más tarde.' : message
+const replyMessage = message.length === 0 ? '🍟 *No hay sub bots disponibles por el momento.*\n- Verifique más tarde.' : message
 const totalUsers = users.length
 const responseMessage = `${replyMessage.trim()}`.trim()
 
-await m.reply(`🚀 *Aquí tiene la lista de los subbots activós en estos momentos*\n\nJadiBots conectados: ${totalUsers || '0'}`)
-await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseMention(responseMessage)}, {quoted: m})
+await conn.reply(m.chat, `🌸 *Aquí tiene la lista de los subbots activós en estos momentos*\n\nJadiBots conectados: ${totalUsers || '0'}`, fkontak, rcanal)
+
+await conn.reply(m.chat, responseMessage, fkontak, rcanal)
 
 }
 handler.help = ['bots']
