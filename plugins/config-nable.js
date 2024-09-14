@@ -268,6 +268,7 @@ ${usedPrefix + command} antispam
 ${usedPrefix + command} antiprivado
 ${usedPrefix + command} subbots
 ${usedPrefix + command} status
+${usedPrefix + command} restrict
 
 *🚩 Funciones de grupos*
 
