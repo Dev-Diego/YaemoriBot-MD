@@ -10,7 +10,7 @@ try {
 const resSimi = await simitalk(text);
 conn.sendMessage(m.chat, { text: resSimi.resultado.simsimi }, { quoted: m });
 } catch {
-throw '🚩 *Ocurrió un error*';
+await conn.reply(m.chat, '🚩 *Ocurrió un error*', m, fake);
 }};
 
 handler.help = ['simi', 'bot'];
