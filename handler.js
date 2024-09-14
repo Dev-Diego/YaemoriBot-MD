@@ -140,6 +140,8 @@ if (!('restrict' in settings)) settings.restrict = false
 if (!('jadibotmd' in settings)) settings.jadibotmd = true
 if (!('autobio' in settings)) settings.autobio = false
 if (!('antiPrivate' in settings)) settings.antiPrivate = false
+if (!('antiArab' in settings)) settings.antiArab = false
+if (!('antiArab2' in settings)) settings.antiArab2 = false
 if (!('autoread' in settings)) settings.autoread = false
 if (!('autoread2' in settings)) settings.autoread2 = false
 if (!('antiSpam' in settings)) settings.antiSpam = false
@@ -149,6 +151,8 @@ restrict: false,
 jadibotmd: true,
 autobio: false,
 antiPrivate: false,
+antiArab: false,
+antiArab2: false,
 autoread: false,
 autoread2: false,
 antiSpam: true,
