@@ -94,7 +94,9 @@ chat.welcome = true
 if (!('audios' in chat))
 chat.audios = false
 if (!('detect' in chat))
-chat.detect = true 
+chat.detect = true
+if (!('antiArab' in chat))
+chat.antiArab = true 
 if (!('antiBot' in chat))
 chat.antiBot = false
 if (!('modoadmin' in chat))                     
@@ -120,6 +122,7 @@ global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: true,
 delete: false,
+antiArab: false,
 audios: false,
 detect: true,
 antiBot: false,
@@ -140,8 +143,6 @@ if (!('restrict' in settings)) settings.restrict = false
 if (!('jadibotmd' in settings)) settings.jadibotmd = true
 if (!('autobio' in settings)) settings.autobio = false
 if (!('antiPrivate' in settings)) settings.antiPrivate = false
-if (!('antiArab' in settings)) settings.antiArab = false
-if (!('antiArab2' in settings)) settings.antiArab2 = false
 if (!('autoread' in settings)) settings.autoread = false
 if (!('autoread2' in settings)) settings.autoread2 = false
 if (!('antiSpam' in settings)) settings.antiSpam = false
@@ -151,8 +152,6 @@ restrict: false,
 jadibotmd: true,
 autobio: false,
 antiPrivate: false,
-antiArab: false,
-antiArab2: false,
 autoread: false,
 autoread2: false,
 antiSpam: true,
