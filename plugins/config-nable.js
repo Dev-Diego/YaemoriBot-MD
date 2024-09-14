@@ -269,6 +269,7 @@ ${usedPrefix + command} antiprivado
 ${usedPrefix + command} subbots
 ${usedPrefix + command} status
 ${usedPrefix + command} restrict
+${usedPrefix + command} autoread
 
 *🚩 Funciones de grupos*
 
@@ -280,6 +281,7 @@ ${usedPrefix + command} audios
 ${usedPrefix + command} autoread
 ${usedPrefix + command} antiver
 ${usedPrefix + command} detect 
+${usedPrefix + command} delete
 ${usedPrefix + command} nsfw 
 ${usedPrefix + command} modoadmin 
 ${usedPrefix + command} antiarabes 
