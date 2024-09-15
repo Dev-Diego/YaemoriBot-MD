@@ -30,4 +30,4 @@ handler.tags = ['main']
 handler.command = ['script', 'sc']
 handler.register = true
 
-export default handler;
+export default handler
