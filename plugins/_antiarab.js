@@ -1,4 +1,4 @@
-const handler = (m) => m;
+/*const handler = (m) => m;
 handler.before = async function(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner} ) {
   /* if (m.message) {
     console.log(m.message)
@@ -26,4 +26,4 @@ handler.before = async function(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner
     }
   }
 };
-export default handler;
+export default handler;*/
