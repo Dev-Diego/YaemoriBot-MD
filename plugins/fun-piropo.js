@@ -23,7 +23,7 @@ let handler = async (m, { conn, command }) => {
       autoCorrect: true,
     });
     let fraseromantica = `*❥  ${frase.text}*`;
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       fraseromantica,
       await (
@@ -44,7 +44,7 @@ let handler = async (m, { conn, command }) => {
     let { message } = json.result;
     const tld = "cn";
     let frase = await translate(`${message}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       frase.text,
       await (
@@ -61,7 +61,7 @@ let handler = async (m, { conn, command }) => {
     let json = await res.json();
     let { fact } = json;
     let frase = await translate(`${fact}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       frase.text,
       await (
@@ -78,7 +78,7 @@ let handler = async (m, { conn, command }) => {
     let json = await res.json();
     let { quotes } = json.hasil;
     let frase = await translate(`${quotes}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       frase.text,
       await (
@@ -95,7 +95,7 @@ let handler = async (m, { conn, command }) => {
     let json = await res.json();
     let { result } = json.hasil;
     let frase = await translate(`${result}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       frase.text,
       await (
@@ -112,7 +112,7 @@ let handler = async (m, { conn, command }) => {
     let json = await res.json();
     let { result } = json.hasil;
     let frase = await translate(`${result}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       frase.text,
       await (
@@ -129,7 +129,7 @@ let handler = async (m, { conn, command }) => {
     let json = await res.json();
     let { joke } = json;
     let frase = await translate(`${joke}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       frase.text,
       await (
@@ -147,7 +147,7 @@ let handler = async (m, { conn, command }) => {
     let { ops1, ops2 } = json;
     let frase = await translate(`${ops1}`, { to: "es", autoCorrect: true });
     let frase2 = await translate(`${ops2}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       `*Opción 1:* ${frase.text}\n\n*O*\n\n*Opción 2:* ${frase2.text}`,
       await (
@@ -165,7 +165,7 @@ let handler = async (m, { conn, command }) => {
     let { riddle, answer } = json;
     let frase = await translate(`${riddle}`, { to: "es", autoCorrect: true });
     let frase2 = await translate(`${answer}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       `*${frase.text}*\n\n${frase2.text}`,
       await (
@@ -193,7 +193,7 @@ let handler = async (m, { conn, command }) => {
         const response = await axios.request(options);
     let frase = await translate(`${response.data[0].text}`, { to: "es", autoCorrect: true });
     let frase2 = await translate(`${response.data[0].category}`, { to: "es", autoCorrect: true });
-    conn.sendNyanCat(
+    conn.sendBot(
       m.chat,
       `🪴 Frase:  ${frase.text}\n*🌺 Autor:* ${response.data[0].author}\n*☕ Categoría:* ${frase2.text}`,
       await (
