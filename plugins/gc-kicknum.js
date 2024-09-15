@@ -1,6 +1,6 @@
 const handler = async (m, {conn, args, groupMetadata, participants, usedPrefix, command, isBotAdmin, isSuperAdmin}) => {
-  if (!args[0]) return conn.reply(m.chat, `🚩 *Ingrese Algun Prefijo De Un Pais\nEjemplo: ${usedPrefix + command} 58*`, m, rcanal);
-  if (isNaN(args[0])) return conn.reply(m.chat, `🚩 *Ingrese Algun Prefijo De Un Pais\nEjemplo: ${usedPrefix + command} 58*`, m, rcanal);
+  if (!args[0]) return conn.reply(m.chat, `🚩 Ingrese Algun Prefijo De Un Pais\nEjemplo: ${usedPrefix + command} 58`, m, rcanal);
+  if (isNaN(args[0])) return conn.reply(m.chat, `🚩 Ingrese Algun Prefijo De Un Pais\nEjemplo: ${usedPrefix + command} 58`, m, rcanal);
   const lol = args[0].replace(/[+]/g, '');
   const ps = participants.map((u) => u.id).filter((v) => v !== conn.user.jid && v.startsWith(lol || lol));
   const bot = global.db.data.settings[conn.user.jid] || {};
