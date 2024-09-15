@@ -7,8 +7,8 @@ handler.before = async function(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner
   const chat = global.db.data.chats[m.chat];
   const bot = global.db.data.settings[conn.user.jid] || {};
   if (isBotAdmin && chat.antiArab && !isAdmin && !isOwner && !isROwner && bot.restrict) {
-    if (m.sender.startsWith('57' || '57')) {
-      m.reply(`『✦』Los numeros: *57*, se van eliminados de este grupo.`);
+    if (m.sender.startsWith('212' || '212')) {
+      m.reply(`『✦』Los numeros: *212*, se van eliminados de este grupo.`);
       const responseb = await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove');
       if (responseb[0].status === '404') return;
     }
