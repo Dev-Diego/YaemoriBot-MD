@@ -25,14 +25,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'antiprivado':
     case 'antipriv':
      isAll = true
-      if (!m.isGroup) {
         if (!isOwner) {
-          global.dfail('group', m, conn)
+          global.dfail('rowner', m, conn)
           throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
       }
       bot.antiPrivate = isEnable
       break
@@ -40,14 +35,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   case 'restrict':
     case 'restringir':
      isAll = true
-      if (!m.isGroup) {
         if (!isOwner) {
-          global.dfail('group', m, conn)
+          global.dfail('rowner', m, conn)
           throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
       }
       bot.restrict = isEnable
       break
@@ -63,7 +53,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.antiBot = isEnable
       break
 
- case 'antiarabes':
+ case 'antifake':
+    case 'antifakes':
+    case 'antiarabes':
     case 'antiarab':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -71,7 +63,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
           throw false
         }
       }
-      chat.antiArab = isEnable
+      chat.onlyLatinos = isEnable
       break
 
  case 'modoadmin':
@@ -89,14 +81,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'autoleer':
     case 'leermensajes':
      isAll = true
-      if (!m.isGroup) {
-        if (!isOwner) {
-          global.dfail('group', m, conn)
-          throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
+     if (!isOwner) {
+     global.dfail('rowner', m, conn)
+      throw false
       }
       bot.autoread = isEnable
       break
@@ -150,14 +137,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'antispam':
     case 'antispamosos':
      isAll = true
-      if (!m.isGroup) {
-        if (!isOwner) {
-          global.dfail('group', m, conn)
-          throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
+      if (!isOwner) {
+      global.dfail('rowner', m, conn)
+      throw false
       }
       bot.antiSpam = isEnable
       break
@@ -193,14 +175,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'serbot':
     case 'subbots':
      isAll = true
-      if (!m.isGroup) {
         if (!isOwner) {
-          global.dfail('group', m, conn)
+          global.dfail('rowner', m, conn)
           throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
       }
       bot.jadibotmd = isEnable
       break
