@@ -63,6 +63,17 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.antiBot = isEnable
       break
 
+ case 'antitraba':
+    case 'antitrabas':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiTraba = isEnable
+      break
+
  case 'antiarabes':
     case 'antiarab':
       if (m.isGroup) {
@@ -283,6 +294,7 @@ ${usedPrefix + command} antiver
 ${usedPrefix + command} detect 
 ${usedPrefix + command} delete
 ${usedPrefix + command} nsfw 
+${usedPrefix + command} antitraba
 ${usedPrefix + command} modoadmin 
 ${usedPrefix + command} antiarabes 
 ${usedPrefix + command} antilink`, m, rcanal)
