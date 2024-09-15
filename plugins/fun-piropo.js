@@ -13,7 +13,7 @@ sourceUrl: channel }}})*/
 
 let hasil = Math.floor(Math.random() * 5000)
 
-conn.reply(m.chat, `*《✧》${pickRandom(global.piropo)}*`, m, rcanal)
+conn.reply(m.chat, `《✧》${pickRandom(global.piropo)}`, m, rcanal)
 }
 
 handler.tags = ['fun']
