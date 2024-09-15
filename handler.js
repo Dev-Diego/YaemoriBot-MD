@@ -95,16 +95,14 @@ if (!('audios' in chat))
 chat.audios = false
 if (!('detect' in chat))
 chat.detect = true
-if (!('antiArab' in chat))
-chat.antiArab = true 
+if (!('onlyLatinos' in chat))
+chat.onlyLatinos = true 
 if (!('antiBot' in chat))
 chat.antiBot = false
 if (!('modoadmin' in chat))                     
 chat.modoadmin = false   
 if (!('antiLink' in chat))
 chat.antiLink = false
-if (!('onlyLatinos' in chat))
-chat.onlyLatinos = false
 if (!('modohorny' in chat))
 chat.modohorny = false
 if (!('reaction' in chat))
@@ -122,13 +120,12 @@ global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: true,
 delete: false,
-antiArab: false,
+onlyLatinos: false,
 audios: false,
 detect: true,
 antiBot: false,
 modoadmin: false,
 antiLink: false,
-onlyLatinos: false,
 simi: false,
 antiver: false,
 modohorny: false, 
