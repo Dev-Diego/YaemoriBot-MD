@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args }) => {
 try {
-let res = await fetch('https://api.github.com/repos/Dev-Diego/YaemoriBot-MD')
+let res = await fetch('https://dash-yaemori.vercel.app')
 
 if (!res.ok) throw new Error('Error al obtener datos del repositorio')
 let json = await res.json()
@@ -16,7 +16,7 @@ txt += `✩  *Actualizado* : ${moment(json.updated_at).format('DD/MM/YY - HH:mm:
 txt += `✩  *Url* : ${json.html_url}\n`
 txt += `✩  *Forks* : ${json.forks_count}\n`
 txt += `✩  *Stars* : ${json.stargazers_count}\n\n`
-txt += `🚩 *${dev}*`
+txt += `*${dev}*`
 
 await conn.sendMessage(m.chat, {text: txt, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: 'YaemoriBot 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: packname, body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: yt, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 
