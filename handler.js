@@ -95,6 +95,8 @@ if (!('audios' in chat))
 chat.audios = false
 if (!('detect' in chat))
 chat.detect = true
+if (!('antiTraba' in chat))
+chat.antiTraba = true
 if (!('antiArab' in chat))
 chat.antiArab = true 
 if (!('antiBot' in chat))
@@ -122,6 +124,7 @@ global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: true,
 delete: false,
+antiTraba: false,
 antiArab: false,
 audios: false,
 detect: true,
