@@ -3,7 +3,7 @@ handler.before = async function(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner
   /* if (m.message) {
     console.log(m.message)
   }*/
-  if (!m.isGroup) return !1;
+ /* if (!m.isGroup) return !1;
   const chat = global.db.data.chats[m.chat];
   const bot = global.db.data.settings[conn.user.jid] || {};
   if (isBotAdmin && chat.antiArab && !isAdmin && !isOwner && !isROwner && bot.restrict) {
