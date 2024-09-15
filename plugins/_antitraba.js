@@ -1,6 +1,5 @@
-//
-// By @NeKosmic || https://github.com/NeKosmic/
-//
+/* By @NeKosmic || https://github.com/NeKosmic/
+*/
 
 import * as fs from 'fs';
 
@@ -15,7 +14,7 @@ export async function before(m, {conn, isAdmin, isBotAdmin, usedPrefix}) {
   const bang = m.key.id;
   const name = await conn.getName(m.sender);
   const fakemek = {'key': {'participant': '0@s.whatsapp.net', 'remoteJid': '0@s.whatsapp.net'}, 'message': {'groupInviteMessage': {'groupJid': '51995386439-1616969743@g.us', 'inviteCode': 'm', 'groupName': 'P', 'caption': '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☄︎', 'jpegThumbnail': null}}};
-  if (chat.antiTraba && m.text.length > 5000) { // Cantidad maxima de caracteres aceptados en un mensaje//
+  if (chat.antiTraba && m.text.length > 5000) { 
     if (isAdmin) return conn.sendMessage(m.chat, {text: `『✦』El administrador @${m.sender.split('@')[0]} acaba de enviar un texto que contiene muchos caracteres`, mentions: [m.sender]}, {quoted: fakemek});
     conn.sendMessage(m.chat, `*『✦』Se detecto un mensaje que contiene muchos caracteres*\n`, `${isBotAdmin ? '' : '『✦』No soy administrador, no puedo hacer nada'}`, m);
     if (isBotAdmin && bot.restrict) {
