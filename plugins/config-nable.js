@@ -159,15 +159,10 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     case 'status':
     case 'bio':
      isAll = true
-      if (!m.isGroup) {
         if (!isOwner) {
-          global.dfail('group', m, conn)
+          global.dfail('rowner', m, conn)
           throw false
         }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
       bot.autobio = isEnable
       break
 
