@@ -24,7 +24,7 @@ let handler = async (m, { conn }) => {
     }
 
     if (!data.usuarios[mentionedJid]) {
-        conn.reply(m.chat, `El usuario ${tagUser(mentionedJid)} no tiene personajes 😹🫵.`, m, {mentions: [m.sender]})
+        conn.reply(m.chat, `El usuario ${tagUser} no tiene personajes 😹🫵.`, m, {mentions: [m.sender]})
         return
         }
 
@@ -33,7 +33,7 @@ let handler = async (m, { conn }) => {
     data.usuarios[mentionedJid].totalRwcoins = 0;
     guardarDatos(data)
 
-    conn.reply(m.chat, `🚩 El usuario ${tagUser(mentionedJid)} ha sido reseteado. Todos sus personajes y monedas han sido eliminados.`, m, {mentions: [m.sender]})};
+    conn.reply(m.chat, `🚩 El usuario ${tagUser} ha sido reseteado. Todos sus personajes y monedas han sido eliminados.`, m, {mentions: [m.sender]})};
 
 handler.help = ['resetpersonajes']
 handler.tags = ['owner']
