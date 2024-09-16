@@ -13,9 +13,14 @@ sourceUrl: channel }}})*/
 
 let hasil = Math.floor(Math.random() * 5000)
 
-conn.reply(m.chat, `《✧》${pickRandom(global.piropo)}`, m, rcanal)
-}
+conn.reply(m.chat, `『✧』 ${pickRandom(global.consejo)}`, 
+m, 
+{ contextInfo:{ externalAdReply: {title: '•🍀 FRASE / CONSEJO 🍀•', 
+body: dev, 
+sourceUrl: channel, 
+thumbnail: icons }}})
 
+}
 handler.tags = ['fun']
 handler.command = ['piropo']
 handler.help = ['piropo']
