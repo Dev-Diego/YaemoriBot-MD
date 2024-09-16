@@ -12,7 +12,7 @@ let yaemori = `🚩 *Respeta las reglas de Yaemori*\n
 
 ⚠️ 𝗔𝘃𝗶𝘀𝗼: *Puedes apoyarnos dejando una estrellita 🌟 al repositorio oficial de Yaemori.*
 
-${global.script}`.trim()
+${global.md}`.trim()
 await conn.reply(m.chat, yaemori, m, fake)
 
 }
