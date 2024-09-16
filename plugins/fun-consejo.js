@@ -15,7 +15,6 @@ m,
 body: dev, 
 sourceUrl: redes, 
 thumbnail: icons }}})
-}
 
 }
 handler.help = ['consejo']
