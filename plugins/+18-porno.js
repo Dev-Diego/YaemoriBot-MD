@@ -4,7 +4,7 @@ if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '🚩 *¡Estos comandos
 conn.reply(m.chat, `🚩 *Enviando ${command}...*`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
 const res = (await axios.get(`https://raw.githubusercontent.com/SheZiR/YaemoriBot-MD/master/src/JSON/${command}.json`)).data;
