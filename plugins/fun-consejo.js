@@ -9,11 +9,11 @@ body: wm,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})*/
 
-conn.reply(m.chat, `《✧》» ${pickRandom(global.consejo)}`, 
+conn.reply(m.chat, `『✧』 ${pickRandom(global.consejo)}`, 
 m, 
 { contextInfo:{ externalAdReply: {title: '•🍀 FRASE / CONSEJO 🍀•', 
 body: dev, 
-sourceUrl: redes, 
+sourceUrl: channel, 
 thumbnail: icons }}})
 
 }
