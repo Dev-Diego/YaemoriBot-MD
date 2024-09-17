@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+/*import fetch from 'node-fetch'
 const handler = async (m, {conn, text, usedPrefix, command}) => {
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un repositorio de github*\n\nEjemplo, ${usedPrefix + command} Ai-Yaemori`, m, rcanal)
 try {
@@ -41,9 +41,9 @@ export default handler
 
 function formatDate(n, locale = 'es') {
 const d = new Date(n)
-return d.toLocaleDateString(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'})}
+return d.toLocaleDateString(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'})}*/
 
-/*import MessageType from '@whiskeysockets/baileys'
+import MessageType from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 import fs from 'fs'
 
@@ -97,4 +97,4 @@ weekday: 'long',
 day: 'numeric',
 month: 'long',
 year: 'numeric'
-}) }*/
+}) }
