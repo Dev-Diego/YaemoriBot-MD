@@ -1,4 +1,4 @@
-/*import fetch from 'node-fetch'
+import fetch from 'node-fetch'
 const handler = async (m, {conn, text, usedPrefix, command}) => {
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un repositorio de github*\n\nEjemplo, ${usedPrefix + command} Ai-Yaemori`, m, rcanal)
 try {
@@ -41,41 +41,4 @@ export default handler
 
 function formatDate(n, locale = 'es') {
 const d = new Date(n)
-return d.toLocaleDateString(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'})}*/
-
-import fetch from 'node-fetch';
-const handler = async (m, {conn, text, usedPrefix, command}) => {
-if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un repositorio de github*\n\nEjemplo, ${usedPrefix + command} Ai-Yaemori`, m, rcanal);
-const res = await fetch(global.API('https://api.github.com', '/search/repositories', {
-q: text,
-}));
-const json = await res.json();
-if (res.status !== 200) throw json;
-//const imagen = await conn.getFile(json.items[0].owner.avatar_url).data
-const str = json.items.map((repo, index) => {
-return `
-*${1 + index}. ${repo.full_name}${repo.fork ? ' (fork)' : ''}*
-🔗 *Url:* ${repo.html_url}
-📅 *Creado el:* ${formatDate(repo.created_at)}
-🔄 *Actualizado el:* ${formatDate(repo.updated_at)}
-📥 *Clone:* $ git clone ${repo.clone_url}
-👁 ${repo.watchers} ◉ 🍴 ${repo.forks} ◉ ⭐ ${repo.stargazers_count} ◉ ❓ 
-${repo.description ? `📝 *Descripción:*\n${repo.description}` : ''}
-`.trim()}).join('\n\n◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦◦\n\n');
-
-conn.sendMessage(m.chat, {text: str.trim()}, {quoted: estilo})
-//conn.sendMessage(m.chat, {text: str.trim(), contextInfo: {forwardingScore: 9999999, isForwarded: true, mentionedJid: [m.sender], "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "renderLargerThumbnail": true, "title": packname, "containsAutoReply": true, "mediaType": 1, "thumbnail": icons, "mediaUrl": redes, "sourceUrl": redes}}}, {quoted: estilo});  
-};
-
-handler.help = ['githubsearch'];
-handler.tags = ['buscador'];
-handler.command = ['githubsearch'];
-
-handler.register = true;
-
-export default handler;
-
-function formatDate(n, locale = 'es') {
-  const d = new Date(n);
-  return d.toLocaleDateString(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'});
-}
+return d.toLocaleDateString(locale, {weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'})}
