@@ -1,6 +1,5 @@
 //import {googleImage} from '@bochilteam/scraper';
 import axios from 'axios';
-const {proto, generateWAMessageFromContent, prepareWAMessageMedia, generateWAMessageContent, getDevice} = (await import("@whiskeysockets/baileys")).default;
 
 const handler = async (m, {conn, text, usedPrefix, command}) => {
 if (!text) return conn.reply(m.chat, `*🚩 Uso Correcto: ${usedPrefix + command} Ai Yaemori*`, m, rcanal);
