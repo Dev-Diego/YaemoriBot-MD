@@ -1,6 +1,6 @@
 import axios from 'axios';
 const handler = async (m, {command, conn, usedPrefix}) => {
-if (!db.data.chats[m.chat].modohorny && m.isGroup) throw '🚩 *¡Estos comandos están desactivados!*';
+if (!db.data.chats[m.chat].modohorny && m.isGroup) return conn.reply(m.chat, '🚩 *¡Estos comandos están desactivados!*', m, fake);
 conn.reply(m.chat, `🚩 *Enviando ${command}...*`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
