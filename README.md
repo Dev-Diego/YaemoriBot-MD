@@ -10,30 +10,9 @@
 ### **`❕️ Información importante`**
 
 <details>
- <summary><b> 🌴 Info Aquí</b></summary>
-
-* **Este proyecto no ofrece soporte oficial para su uso en Termux.** Termux es una aplicación de terminal para Android y, aunque puede ser utilizada para ejecutar diversos programas, **este proyecto no está diseñado ni probado específicamente para funcionar en Termux**. Por lo tanto, **no garantizamos compatibilidad ni soporte técnico en este entorno**.
-
-</details>
-
-<details>
  <summary><b> 🌴 Info Bot</b></summary>
 
 * Este proyecto **no está afiliado de ninguna manera** con `WhatsApp`, `Inc. WhatsApp` es una marca registrada de `WhatsApp LLC`, y este bot es un **desarrollo independiente** que **no tiene ninguna relación oficial con la compañía**.
-
-</details>
-
-<details>
- <summary><b> 🌴 Info V 2.0.6</b></summary>
-
-* 📢 USER DE TERMUX
-🌱 Para los usuarios que intentan instalar el bot vía la aplicación **`termux`**, tenemos esta noticia.
-
-* 🌹 El staff de **`YaemoriBot`** da aviso a los usuarios de **`Termux`** que ya no es posible instalar el Bot debido a las actualizaciones y los últimos commits realizados por el equipo del bot
-
-* 🌴 como tal más, esto se ah removido del repositorio oficial como tal, aquel usuario que intente instalar, deberá tener en cuenta que ya no se brindará soporte ni ya es instalable.
-
-> 🌱 **`Gracias por visitar el repositorio YaemoriBot`**
 
 </details>
 
@@ -118,8 +97,11 @@ npm start
 
 </details>
 
-<details>
- <summary><b> 🌸 Comandos de encender el bot via termux</b></summary>
+---
+
+#### **`🟢 Activar en caso de detenerse en termux`**
+
+ <summary><b> 🌱 Comandos</b></summary>
 
 ```bash
 cd YaemoriBot-MD
@@ -131,8 +113,12 @@ npm start
 
 </details>
 
+---
+
+#### **`🍬 Obtener oteo codigo qr en termux`**
+
 <details>
- <summary><b> 🌸 Comandos de pedir nuevo qr e codigo 8 digitos</b></summary>
+ <summary><b> 🌻 Comandos</b></summary>
 
 ```bash
 cd YaemoriBot-MD
@@ -144,6 +130,19 @@ rm -rf MiniSession
 
 ```bash
 npm start
+```
+
+</details>
+
+---
+
+#### **`🤖 Para activar 24/7 (termux)`**
+
+<details>
+ <summary><b> 🧿 Comandos</b></summary>
+
+```bash
+npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 ```
 
 </details>
