@@ -22,7 +22,7 @@ sourceUrl: channel }}})
 let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
 let { objects } = await res.json()
 
-if (!objects.length) return conn.reply(m.chat, `『✦』 No se encpntró resultado de: ${text}`, m, fake)
+if (!objects.length) return conn.reply(m.chat, `『✦』 No se encontró resultado de: ${text}`, m, fake)
 
 let txt = objects.map(({ package: pkg }) => {
 return 
@@ -32,7 +32,14 @@ return
  ✧ Descripcion: ${pkg.description}\n\n\`\`\`----------\`\`\``
 }).join`\n`
 
-await conn.reply(m.chat, txt, m, rcanal)
+  const fake2 = {
+    title: packname,
+    body: dev,
+    sourceUrl: redes,
+    thumbnail: icons
+  };
+
+await conn.reply(m.chat, txt, m, fake2)
 await m.react(done)
 } catch {
 await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
