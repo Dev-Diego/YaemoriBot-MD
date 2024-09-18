@@ -32,7 +32,7 @@ return `《✧》 𝖲craper - Yaemori 《✧》
 ✦ 𝐄𝐧𝐥𝐚𝐜𝐞: ${pkg.links.npm}
 ✦ 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨𝐧: ${pkg.description}
 \n\n----------`
-}).join`\n`
+}).join`\n\n`
 
 await conn.reply(m.chat, txt, m, fake)
 await m.react(done)
