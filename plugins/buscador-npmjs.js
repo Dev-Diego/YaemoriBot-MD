@@ -8,7 +8,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { text, usedPrefix, command }) => {
 
 if (m.body.startsWith('buscador-npmjs')) {
-const packageName = msg.body.split(' ')[1];
+const packageName = m.body.split(' ')[1];
 if (!packageName) {
 m.reply('Por favor, proporciona el nombre del paquete que deseas buscar.')
 return
