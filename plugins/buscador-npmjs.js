@@ -25,7 +25,8 @@ let { objects } = await res.json()
 if (!objects.length) return conn.reply(m.chat, `『✦』 No se encontró resultado de: ${text}`, m, fake)
 
 let txt = objects.map(({ package: pkg }) => {
-return `《✧》 𝖲𝖢𝖱𝖠𝖯𝖤𝖱 - YAEMORI 《✧》
+return 
+`《✧》 𝖲craper - Yaemori 《✧》
 ✦ 𝐍𝐨𝐦𝐛𝐫𝐞: ${pkg.name}
 ✦ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: V${pkg.version}\n
 ✦ 𝐄𝐧𝐥𝐚𝐜𝐞: ${pkg.links.npm}\n
