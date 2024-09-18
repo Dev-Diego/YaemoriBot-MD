@@ -21,7 +21,7 @@ response += `Description: ${packageInfo.description}\n`;
 response += `Author: ${packageInfo.author.name}\n`;
 response += `License: ${packageInfo.license}\n`;
 response += `Repository: ${packageInfo.repository.url}\n`;
-msg.reply(response);
+m.reply(response);
 } catch (error) {
 m.reply(`Error al buscar el paquete: ${error.message}`);
 }
