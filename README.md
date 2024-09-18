@@ -77,6 +77,49 @@
 
 ---
 
+#### **`🚀 Instalación por termux`**
+
+<details>
+ <summary><b> 🌸 Comandos</b></summary>
+
+```bash
+cd && termux-setup-storage
+```
+
+```bash
+apt-get update -y && apt-get upgrade -y
+```
+
+```bash
+pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
+```
+
+```bash
+git clone https://github.com/Dev-Diego/YaemoriBot-MD && cd YaemoriBot-MD 
+```
+
+```bash
+yarn install
+```
+
+```bash
+npm install
+```
+
+```bash
+npm update
+```
+
+```bash
+npm start
+```
+
+- #### Después de eso te aparecerά opciónes como deseas vincular con **Qr** o **codigo de 8 digitos**
+
+</details>
+
+---
+
 #### **`💣 Instalación por cloudshell`**
 
 <details>
