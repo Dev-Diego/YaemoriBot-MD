@@ -34,40 +34,7 @@ return `《✧》 𝖲craper - Yaemori 《✧》
 \n\n----------`
 }).join`\n\n`
 
-const messages = [[ // CARRUSEL 1
-'Imagen 1', 
-pkg.name,
-icons,
-[[]],
-[[]],
-[[]],
-[[]]
-], [ // CARRUSEL 2
-'Imagen 2',
-pkg.name,
-icons,
-[[]],
-[[]],
-[[]],
-[[]]
-], [ // CARRUSEL 3
-'Imagen 3',
-pkg.name,
-icons,
-[[]],
-[[]],
-[[]],
-[[]]
-], [ // CARRUSEL 4
-'Imagen 4',
-pkg.name,
-icons,
-[[]],
-[[]],
-[[]],
-[[]]
-]]
-await conn.sendCarousel(m.chat, '🚩 Buscador - Imagenes', `🔍 Resultado de: ${text}`, text, messages, m)     
+await conn.reply(m.chat, txt, m, fake)
 await m.react(done)
 } catch {
 await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
