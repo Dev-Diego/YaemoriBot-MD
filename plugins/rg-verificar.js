@@ -1,4 +1,4 @@
-import db from '../lib/database.js'
+/*import db from '../lib/database.js'
 import { createHash } from 'crypto'
 import fs from 'fs'
 import fetch from 'node-fetch'
@@ -44,4 +44,34 @@ handler.help = ['reg']
 handler.tags = ['rg']
 handler.command = ['verify', 'verificar', 'reg', 'register', 'registrar'] 
 
-export default handler
+export default handler*/
+
+
+const { createHash } = require('crypto')
+const fetch = require('node-fetch')
+const fs = require('fs')
+const db = require('../lib/database.js')
+const client = new Client()
+
+client.on('message', (message) => {
+if (message.body === '#reg') {
+
+const usuario = verificarUsuario(message.from)
+
+if (usuario) {
+
+message.reply('¡Hola ' + usuario.nombre + '! Estás verificado.')
+
+} else {
+
+message.reply('Lo siento, no estás registrado. Por favor, regístrate antes de continuar.')}}})
+
+function verificarUsuario(numero) {
+
+const usuarios = [
+{ id: '123456789', nombre: 'Juan' },
+{ id: '987654321', nombre: 'María' },
+]
+
+const usuario = usuarios.find((u) => u.id === numero)
+return usuario }
