@@ -63,7 +63,7 @@
 
 #### **🌺 Instalación manual por termux**
 
-> comandos de instalación manual por termux. usar los siguientes comandos en la terminal termux uno por uno.
+> Copia los códigos uno por uno, no los pegues todos juntos a la vez.
 
 ```bash
 > termux-setup-storage
@@ -97,24 +97,38 @@
 
 #### **🟢 Activar en caso de detenerse en termux**
 
-> comandos para conectar nuevamente la bot si se desactiva en el termux.
+Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdida de conexión a Internet, reinicio del dispositivo), sigue estos pasos:
 
-```bash
-> cd YaemoriBot-MD
-> npm start
-```
+1. Abre Termux y navega al directorio del bot:
+    ```bash
+    cd YaemoriBot-MD
+    ```
+
+2. Inicia el bot nuevamente:
+    ```bash
+    npm start
+    ```
 
 ---
 
 #### **🍬 Obtener otro codigo qr en termux**
 
-> comandos para eliminar la antigua session y pedir un nuevo qr o codigo 8 digitos.
+Si después de instalar el bot en Termux y inociar la session el bot el numero se va a soporte, o se cierra la conexión o demorastes al conectar sigue los siguientes pasos:
 
-```bash
-> cd YaemoriBot-MD
-> rm -rf MiniSession
-> npm start
-```
+1. Abre Termux y navega al directorio del bot:
+    ```bash
+    cd YaemoriBot-MD
+    ```
+
+2. Elimina la carpeta MiniSession:
+    ```bash
+    rm -rf MiniSession
+    ```
+
+3. Inicia el bot nuevamente:
+    ```bash
+    npm start
+    ```
 
 ---
 
