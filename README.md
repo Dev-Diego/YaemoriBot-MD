@@ -62,61 +62,58 @@
  <summary><b> 🌸 Comandos</b></summary>
 
 #### **`🌺 Instalación manual por termux`**
+
 ```bash
-cd && termux-setup-storage
+> termux-setup-storage
 ```
 
 ```bash
-apt-get update -y && apt-get upgrade -y
+> apt-get update -y && apt-get upgrade -y
 ```
 
 ```bash
-pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
+> pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
 ```
 
 ```bash
-git clone https://github.com/Dev-Diego/YaemoriBot-MD && cd YaemoriBot-MD 
+> git clone https://github.com/Dev-Diego/YaemoriBot-MD && cd YaemoriBot-MD 
 ```
 
 ```bash
-yarn install
+> yarn install
 ```
 
 ```bash
-npm install
+> npm install
 ```
 
 ```bash
-npm update
-```
-
-```bash
-npm start
+> npm start
 ```
 
 
-###### **`🟢 Activar en caso de detenerse en termux`**
+##### **`🟢 Activar en caso de detenerse en termux`**
 
 ```bash
-cd YaemoriBot-MD
+> cd YaemoriBot-MD
 ```
 
 ```bash
-npm start
+> npm start
 ```
 
-###### **`🍬 Obtener otro codigo qr en termux`**
+##### **`🍬 Obtener otro codigo qr en termux`**
 
 ```bash
-cd YaemoriBot-MD
-```
-
-```bash
-rm -rf MiniSession
+> cd YaemoriBot-MD
 ```
 
 ```bash
-npm start
+> rm -rf MiniSession
+```
+
+```bash
+> npm start
 ```
 
 
