@@ -1,9 +1,6 @@
 /*
 《✧》Derechos reservados por autor《✧》
-- GabrielVz
-
-《✧》Codigo fuente adaptado《✧》
-- DevDiego
+- GabrielVz (@glytglobal)
 */
 
 import fetch from 'node-fetch'
