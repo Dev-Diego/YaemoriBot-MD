@@ -64,6 +64,7 @@
 #### **🌺 Instalación manual por termux**
 
 > comandos de instalación manual por termux.
+> los comandos es 1 por 1.
 
 ```bash
 > termux-setup-storage
@@ -95,7 +96,7 @@
 
 ---
 
-##### **🟢 Activar en caso de detenerse en termux**
+### **🟢 Activar en caso de detenerse en termux**
 
 > comandos para conectar nuevamente la bot si se desactiva en el termux.
 
@@ -106,7 +107,7 @@
 
 ---
 
-##### **🍬 Obtener otro codigo qr en termux**
+### **🍬 Obtener otro codigo qr en termux**
 
 > comandos para eliminar la antigua session y pedir un nuevo qr o codigo 8 digitos.
 
@@ -118,7 +119,7 @@
 
 ---
 
-#### **🤖 Para activar 24/7 (termux)**
+### **🤖 Para activar 24/7 (termux)**
 
 > comando para obtener la bot 24/7 en termux
 
