@@ -95,13 +95,8 @@ npm start
 
 - #### Después de eso te aparecerά opciónes como deseas vincular con **Qr** o **codigo de 8 digitos**
 
-</details>
-
----
 
 #### **`🟢 Activar en caso de detenerse en termux`**
-
- <summary><b> 🌱 Comandos</b></summary>
 
 ```bash
 cd YaemoriBot-MD
@@ -111,14 +106,7 @@ cd YaemoriBot-MD
 npm start
 ```
 
-</details>
-
----
-
 #### **`🍬 Obtener oteo codigo qr en termux`**
-
-<details>
- <summary><b> 🌻 Comandos</b></summary>
 
 ```bash
 cd YaemoriBot-MD
@@ -134,12 +122,8 @@ npm start
 
 </details>
 
----
 
 #### **`🤖 Para activar 24/7 (termux)`**
-
-<details>
- <summary><b> 🧿 Comandos</b></summary>
 
 ```bash
 npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
