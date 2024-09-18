@@ -1,22 +1,28 @@
 /*
 《✧》Derechos reservados por autor《✧》
-- おDiego.xyz (@Dev-Diego)
+- GabrielVz (@glytglobal)
 */
 
 import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
 
-if (m.body.startsWith('buscador-npmjs')) {
-const packageName = msg.body.split(' ')[1];
-if (!packageName) {
-m.reply('Por favor, proporciona el nombre del paquete que deseas buscar.')
-return
-}
+if (!text) return conn.reply(m.chat, `🚩 Escribe el nonbre del scraper.\nEjemplo: ${usedPrefix + command} yt-search`, m, rcanal)
 
 try {
 
-const packageInfo = await npmjs.get(packageName)
+await m.react(rwait)
+conn.reply(m.chat, '🚩 Buscando el scraper....', m, {
+contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+title: packname,
+body: dev,
+previewType: 0, thumbnail: icons, 
+sourceUrl: channel }}})
+
+let res = await fetch(`http://registry.npmjs.com/-/v1/search?text=${text}`)
+let { objects } = await res.json()
+
+if (!objects.length) return conn.reply(m.chat, `『✦』 No se encontró resultado de: ${text}`, m, fake)
 
 let txt = objects.map(({ package: pkg }) => {
 return `《✧》 𝖲craper - Yaemori 《✧》
@@ -27,13 +33,13 @@ return `《✧》 𝖲craper - Yaemori 《✧》
 ✦ 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨𝐧: ${pkg.description}
 \n\n----------`
 }).join`\n\n`
-m.reply(txt)
-await.react(done)
 
-} catch (e) {
-console.log(e)
+await conn.reply(m.chat, txt, m, fake)
+await m.react(done)
+} catch {
+await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
 await m.react(error)
-m.reply(`Error al buscar el paquete: ${text}`)}}
+}}
 
 handler.help = ['npmjs']
 handler.tags = ['buscador']
