@@ -1,5 +1,13 @@
 /*
-By GabrielVz (@glytglobal)
+《✧》Derechos reservados por autor《✧》
+- GabrielVz
+- GL YT MX
+- https://github.com/glytglobal.
+
+《✧》Codigo fuente adaptado《✧》
+- DevDiego
+- おDiego.xyz
+- https://github.com/Dev-Diego
 */
 
 import fetch from 'node-fetch'
@@ -41,5 +49,6 @@ await m.react(error)
 handler.help = ['npmjs']
 handler.tags = ['buscador']
 handler.command = ['npmjs']
-
+handler.register = true
+handler.cookies = 1
 export default handler
