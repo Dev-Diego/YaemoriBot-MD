@@ -61,7 +61,9 @@
 <details>
  <summary><b> 🌸 Comandos</b></summary>
 
-#### **`🌺 Instalación manual por termux`**
+#### **🌺 Instalación manual por termux**
+
+> comandos de instalación manual por termux.
 
 ```bash
 > termux-setup-storage
@@ -93,35 +95,32 @@
 
 ---
 
-##### **`🟢 Activar en caso de detenerse en termux`**
+##### **🟢 Activar en caso de detenerse en termux**
+
+> comandos para conectar nuevamente la bot si se desactiva en el termux.
 
 ```bash
 > cd YaemoriBot-MD
-```
-
-```bash
 > npm start
 ```
 
 ---
 
-##### **`🍬 Obtener otro codigo qr en termux`**
+##### **🍬 Obtener otro codigo qr en termux**
+
+> comandos para eliminar la antigua session y pedir un nuevo qr o codigo 8 digitos.
 
 ```bash
 > cd YaemoriBot-MD
-```
-
-```bash
 > rm -rf MiniSession
-```
-
-```bash
 > npm start
 ```
 
 ---
 
-#### **`🤖 Para activar 24/7 (termux)`**
+#### **🤖 Para activar 24/7 (termux)**
+
+> comando para obtener la bot 24/7 en termux
 
 ```bash
 npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
