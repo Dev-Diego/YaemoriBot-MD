@@ -1,13 +1,9 @@
 /*
 《✧》Derechos reservados por autor《✧》
 - GabrielVz
-- GL YT MX
-- https://github.com/glytglobal.
 
 《✧》Codigo fuente adaptado《✧》
 - DevDiego
-- おDiego.xyz
-- https://github.com/Dev-Diego
 */
 
 import fetch from 'node-fetch'
