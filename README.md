@@ -91,6 +91,7 @@
 > npm start
 ```
 
+---
 
 ##### **`🟢 Activar en caso de detenerse en termux`**
 
@@ -101,6 +102,8 @@
 ```bash
 > npm start
 ```
+
+---
 
 ##### **`🍬 Obtener otro codigo qr en termux`**
 
@@ -116,6 +119,7 @@
 > npm start
 ```
 
+---
 
 #### **`🤖 Para activar 24/7 (termux)`**
 
