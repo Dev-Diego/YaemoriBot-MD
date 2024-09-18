@@ -35,6 +35,7 @@ global.prems = []
 global.isBaileysFail = false
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.7'
+global.vs = '2.0.7'
 global.languaje = 'Español'
 global.nameqr = 'Yaemori Bot - MD'
 global.sessions = 'MiniSession'
@@ -48,7 +49,6 @@ global.wm = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☄︎'
 global.author = 'ᥴrᥱᥲ𝗍ᥱძ ᑲᥡ ძᥱ᥎-ძіᥱg᥆ ᰔᩚ'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ sᥙᥒᥣіgһ𝗍 𝗍ᥱᥲm ⚡︎'
 global.textbot = 'ᥲі ᥡᥲᥱm᥆rі : ᥆𝖿ᥴძіᥱg᥆ 🚩'
-global.vs = '2.0.6'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
