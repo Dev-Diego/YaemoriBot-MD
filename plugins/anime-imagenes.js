@@ -3,7 +3,7 @@ const handler = async (m, {command, conn, usedPrefix}) => {
 const res = (await axios.get(`https://raw.githubusercontent.com/SheZiR/YaemoriBot-MD/master/src/JSON/anime-${command}.json`)).data;
 await m.react(rwait)
 const messages = [['Imagen 1', dev, await res[Math.floor(res.length * Math.random())],
-[[]], [[]], [[]], [[]]], ['Imagen 2', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 2', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 4', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]]]
+[[]], [[]], [[]], [[]]], ['Imagen 2', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 3', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 4', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]]]
 await conn.sendCarousel(m.chat, '🚩 Resultado de ' + command, '🔎 Anime - ' + command, null, messages, m);
 await m.react(done)
 };
