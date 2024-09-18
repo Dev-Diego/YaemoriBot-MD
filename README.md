@@ -118,6 +118,36 @@ npm start
 
 </details>
 
+<details>
+ <summary><b> 🌸 Comandos de encender el bot via termux</b></summary>
+
+```bash
+cd YaemoriBot-MD
+```
+
+```bash
+npm start
+```
+
+</details>
+
+<details>
+ <summary><b> 🌸 Comandos de pedir nuevo qr e codigo 8 digitos</b></summary>
+
+```bash
+cd YaemoriBot-MD
+```
+
+```bash
+rm -rf MiniSession
+```
+
+```bash
+npm start
+```
+
+</details>
+
 ---
 
 #### **`💣 Instalación por cloudshell`**
