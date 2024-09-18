@@ -32,14 +32,7 @@ return
  ✧ Descripcion: ${pkg.description}\n\n\`\`\`----------\`\`\``
 }).join`\n`
 
-  const fake2 = {
-    title: packname,
-    body: dev,
-    sourceUrl: redes,
-    thumbnail: icons
-  };
-
-await conn.reply(m.chat, txt, m, fake2)
+await m.reply(txt)
 await m.react(done)
 } catch {
 await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
