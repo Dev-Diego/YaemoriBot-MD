@@ -10,7 +10,7 @@ sourceUrl: channel }}})
 const res = (await axios.get(`https://raw.githubusercontent.com/SheZiR/YaemoriBot-MD/master/src/JSON/${command}.json`)).data;
 const haha = await res[Math.floor(res.length * Math.random())];
 const messages = [['Imagen 1', dev, await res[Math.floor(res.length * Math.random())],
-[[]], [[]], [[]], [[]]], ['Imagen 2', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 2', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 4', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]]]
+[[]], [[]], [[]], [[]]], ['Imagen 3', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 2', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]], ['Imagen 4', dev, await res[Math.floor(res.length * Math.random())], [[]], [[]], [[]], [[]]]]
 await conn.sendCarousel(m.chat, `🚩 Resultado de ${command}`, '🔎 Nsfw - Imagen', null, messages, m);
 };
 handler.help = ['nsfwloli', 'nsfwfoot', 'nsfwass', 'nsfwbdsm', 'nsfwcum', 'nsfwero', 'nsfwfemdom', 'nsfwfoot', 'nsfwglass', 'nsfworgy', 'yuri', 'yuri2', 'yaoi', 'yaoi2', 'panties', 'tetas', 'booty', 'ecchi', 'furro', 'hentai', 'trapito', 'imagenlesbians', 'pene', 'porno', 'randomxxx', 'pechos'];
