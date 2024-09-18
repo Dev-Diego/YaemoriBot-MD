@@ -104,13 +104,6 @@ global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJ
 global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', serverMessageId: -1 }
 }}, { quoted: m }
 
-global.fake2 = {
-title: packname,
-body: dev,
-sourceUrl: redes,
-thumbnail: icons
-}
-
 
 global.icono = [ 
 'https://qu.ax/EhQB.jpg',
