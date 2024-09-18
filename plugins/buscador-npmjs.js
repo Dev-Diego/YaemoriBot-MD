@@ -30,8 +30,8 @@ return `《✧》 𝖲𝖢𝖱𝖠𝖯𝖤𝖱 - YAEMORI 《✧》
 ✦ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: V${pkg.version}\n
 ✦ 𝐄𝐧𝐥𝐚𝐜𝐞: ${pkg.links.npm}\n
 ✦ 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨𝐧: ${pkg.description}`
-\n\n----------
-}).join\n`
+\n\n----------`
+}).join`\n`
 
 await conn.reply(m.chat, txt, m, rcanal)
 await m.react(done)
