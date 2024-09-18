@@ -113,7 +113,7 @@ Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdid
 
 #### **🍬 Obtener otro codigo qr en termux**
 
-Si después de instalar el bot en Termux y inociar la session el bot el numero se va a soporte, o se cierra la conexión o demorastes al conectar sigue los siguientes pasos:
+Si después de instalar el bot en Termux y iniciar la session del bot (el numero se va a soporte, se cierra la conexión o demorastes al conectar), sigue estos pasos:
 
 1. Abre Termux y navega al directorio del bot:
     ```bash
