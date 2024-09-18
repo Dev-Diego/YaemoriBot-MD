@@ -26,14 +26,15 @@ if (!objects.length) return conn.reply(m.chat, `『✦』 No se encontró result
 
 let txt = objects.map(({ package: pkg }) => {
 return `《✧》 𝖲craper - Yaemori 《✧》
+
 ✦ 𝐍𝐨𝐦𝐛𝐫𝐞: ${pkg.name}
-✦ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: V${pkg.version}\n
-✦ 𝐄𝐧𝐥𝐚𝐜𝐞: ${pkg.links.npm}\n
+✦ 𝐕𝐞𝐫𝐬𝐢𝐨𝐧: V${pkg.version}
+✦ 𝐄𝐧𝐥𝐚𝐜𝐞: ${pkg.links.npm}
 ✦ 𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐜𝐢𝐨𝐧: ${pkg.description}
 \n\n----------`
 }).join`\n\n`
 
-await conn.reply(m.chat, txt, m, rcanal)
+await conn.reply(m.chat, txt, m, fake)
 await m.react(done)
 } catch {
 await conn.reply(m.chat, '🌱 Ocurrió un error', m, fake)
