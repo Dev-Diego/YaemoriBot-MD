@@ -61,6 +61,7 @@
 <details>
  <summary><b> 🌸 Comandos</b></summary>
 
+#### **`🌺 Instalación manual por termux`**
 ```bash
 cd && termux-setup-storage
 ```
@@ -93,10 +94,8 @@ npm update
 npm start
 ```
 
-- #### Después de eso te aparecerά opciónes como deseas vincular con **Qr** o **codigo de 8 digitos**
 
-
-#### **`🟢 Activar en caso de detenerse en termux`**
+###### **`🟢 Activar en caso de detenerse en termux`**
 
 ```bash
 cd YaemoriBot-MD
@@ -106,7 +105,7 @@ cd YaemoriBot-MD
 npm start
 ```
 
-#### **`🍬 Obtener oteo codigo qr en termux`**
+###### **`🍬 Obtener otro codigo qr en termux`**
 
 ```bash
 cd YaemoriBot-MD
@@ -119,8 +118,6 @@ rm -rf MiniSession
 ```bash
 npm start
 ```
-
-</details>
 
 
 #### **`🤖 Para activar 24/7 (termux)`**
