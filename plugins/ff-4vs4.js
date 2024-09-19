@@ -1,10 +1,6 @@
 const handler = async (m, { conn, usedPrefix, args }) => {
 
-    let who;
-    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
-    else who = m.chat;
-    let name = conn.getName(m.sender);
-    let name2 = conn.getName(who);
+    const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
@@ -69,8 +65,8 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 
 《✧》 *ESCUADRA*
 
-👑 ┇ ${name}
-🥷🏻 ┇ ${name2}
+👑 ┇ ${taguser}
+🥷🏻 ┇ 
 🥷🏻 ┇ 
 🥷🏻 ┇ 
 
