@@ -6,7 +6,8 @@ psmap=psmap.map(v => v.id)
 let user = a => '@' + a.split('@')[0]
 let user0 = psmap.getRandom()
 
-while (b === a)
+if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios que vaba donar la sala.`, m, fake)
+
 m.reply(`*${user(user0)},* Le tocó donar sala el dia de hoy. 😿`, null, {
 mentions: [a, b]
 })}
