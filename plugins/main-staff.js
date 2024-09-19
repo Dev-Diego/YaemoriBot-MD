@@ -13,10 +13,16 @@ let staff = `🌹 *EQUIPO DE AYUDANTES*
 
 🪴  *Colaboradores:*
 
-• ArizzVal
+• GataDios
 🌱 *Rol:* Developer
-🌴 *Número:* Wa.me/5215610314499
-🚩 *GitHub:* https://github.com/ArizzVal
+🌴 *Número:* Wa.me/593968263524
+🚩 *GitHub:* https://github.com/GataNina-Li
+
+
+• David Chian 
+🌱 *Rol:* Developer
+🌴 *Número:* Wa.me/5351524614
+🚩 *GitHub:* https://github.com/David-Chian
 
 • elrebelde21
 🌱 *Rol:* Developer
@@ -28,20 +34,10 @@ let staff = `🌹 *EQUIPO DE AYUDANTES*
 🌴 *Número:* Wa.me/5214434703586
 🚩 *GitHub:* https://github.com/AzamiJs
 
-• Eder
+• GabrielVz
 🌱 *Rol:* Developer
-🌴 *Número:* Wa.me/573027866596
-🚩 *GitHub:* https://github.com/WOTCHITO
-
-• David Chian 
-🌱 *Rol:* Developer
-🌴 *Número:* Wa.me/5351524614
-🚩 *GitHub:* https://github.com/David-Chian
-
-• SheZiR
-🌱 *Rol:* Developer
-🌴 *Número:* Wa.me/573106909511
-🚩 *GitHub:* https://github.com/SheZiR`
+🌴 *Número:* Wa.me/5493794297363
+🚩 *GitHub:* https://github.com/glytglobal`
 await conn.sendFile(m.chat, icons, 'yaemori.jpg', staff.trim(), fkontak, true, {
 contextInfo: {
 'forwardingScore': 200,

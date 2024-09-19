@@ -7,6 +7,7 @@ let tags = {
   'main': 'Info',
   'buscador': 'Busquedas',
   'fun': 'Juegos',
+  'ff': 'Game - free fire',
   'serbot': 'Sub bots',
   'rpg': 'Rpg',
   'rg': 'Registro',
