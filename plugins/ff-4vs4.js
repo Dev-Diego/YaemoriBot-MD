@@ -2,6 +2,11 @@ const handler = async (m, { conn, usedPrefix, groupMetadata, args }) => {
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
     const ps = groupMetadata.participants.map((v) => v.id);
+const aaa = (a) => '@' + a.split('@')[0];
+  const ps = groupMetadata.participants.map((v) => v.id);
+  const 1 = ps.getRandom();
+
+
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
@@ -67,7 +72,7 @@ const handler = async (m, { conn, usedPrefix, groupMetadata, args }) => {
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${ps.getRandom()}
+🥷🏻 ┇ ${aaa(1)}
 🥷🏻 ┇ ${ps.getRandom()}
 🥷🏻 ┇ ${ps.getRandom()}
 
