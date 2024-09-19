@@ -20,11 +20,10 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
     const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
- await m.react(emojis)
+ await m.react('🚩')
 const document = doc[Math.floor(Math.random() * doc.length)];
- const str = `《✧》 *MAPAS - FREE FIRE* 《✧》
+ const free = `《✧》 *MAPAS - FREE FIRE* 《✧》
 
-• ${usedPrefix}donarsala
 • ${usedPrefix}bermuda
 • ${usedPrefix}purgatorio
 • ${usedPrefix}kalahari
@@ -40,27 +39,24 @@ Significados:
 » *CR (Color de ropa)*
 
 ✎ Ejemplo: .
-> » ${usedPrefix}4vs4 22:30 CO
+> » ${usedPrefix}1vs1 22:30 CO
 
+• ${usedPrefix}1vs1 HH:MM CP
 • ${usedPrefix}4vs4 HH:MM CP
-• ${usedPrefix}12vs12 HH:MM CR`.trim();     if (m.isGroup) { 
- // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
-      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: m});
-    } else {
-      // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
-      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
-    }
+• ${usedPrefix}12vs12 HH:MM CR
+• ${usedPrefix}donarsala`.trim();     
+  
+await conn.sendMessage(m.chat, {text: free, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '¡New Channel! 🚩', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: '🎮 Game - Free Fire', body: '🎮 Juego Free', thumbnailUrl: 'https://qu.ax/FGye.jpg', sourceUrl: 'https://github.com/Jostin207', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: m});
+    
   } catch {
-  await m.react(error)
+  await m.react('✖️')
   await conn.reply(m.chat, '*🚩 Ocurrió un error inesperado.*', m, fake);
   }
 };
 handler.tags = ['ff', 'main']
 handler.help = ['menuff']
-handler.command = ['menuff', 'menufreefire'];
-handler.register = true
+handler.command = ['menu', 'help', 'menuff', 'menufreefire'];
+//handler.register = true
 handler.group = true
 handler.fail = null;
 export default handler;
