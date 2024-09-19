@@ -1,11 +1,13 @@
-let toM = a => '@' + a.split('@')[0]
 function handler(m, { groupMetadata }) {
-let ps = groupMetadata.participants.map(v => v.id)
-let a = ps.getRandom()
-let b
-do b = ps.getRandom()
+let psmap = groupMetadata.participants.filter(v => v !== conn.user.jid)
+psmap=psmap.filter(v => v.admin !=='superadmin')
+psmap=psmap.filter(v => v.admin !=='admin')
+psmap=psmap.map(v => v.id)
+let user = a => '@' + a.split('@')[0]
+let user0 = psmap.getRandom()
+
 while (b === a)
-m.reply(`*${toM(a)},* Le tocó donar sala el dia de hoy. 😿`, null, {
+m.reply(`*${user(user0)},* Le tocó donar sala el dia de hoy. 😿`, null, {
 mentions: [a, b]
 })}
 handler.help = ['donarsala']
