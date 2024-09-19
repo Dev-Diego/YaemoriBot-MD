@@ -1,5 +1,11 @@
 const handler = async (m, { conn, usedPrefix, args }) => {
 
+    let who;
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
+    else who = m.chat;
+    let name = conn.getName(m.sender);
+    let name2 = conn.getName(who);
+
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
          await  conn.reply(m.chat, `🚩 Debes proporcionar la hora (HH:MM) y el pais (CO, CL, AG, MX)\n\nEjemplo:\n» ${usedPrefix}4vs4 10:10 CO`, m, rcanal);
@@ -63,17 +69,19 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 
 《✧》 *ESCUADRA*
 
-👑 ┇ ${toM(a)}
-🥷🏻 ┇ ${toM(b)}
-🥷🏻 ┇ ${toM(c)}
-🥷🏻 ┇ ${toM(d)}
+👑 ┇ ${name}
+🥷🏻 ┇ ${name2}
+🥷🏻 ┇ 
+🥷🏻 ┇ 
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ ${toM(e)}
-🥷🏻 ┇ ${toM(f)}
+🥷🏻 ┇ 
+🥷🏻 ┇ 
 `.trim();
 
+m.reply(message, null, {
+mentions: [m.sender]});
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
