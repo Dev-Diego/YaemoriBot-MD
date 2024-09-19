@@ -1,4 +1,4 @@
-const handler = async (m, { conn, usedPrefix, args }) => {
+const handler = async (m, { conn, groupMetadata, usedPrefix, args }) => {
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
          await  conn.reply(m.chat, `🚩 Debes proporcionar la hora (HH:MM) y el pais (CO, CL, AG, MX)\n\nEjemplo:\n» ${usedPrefix}4vs4 10:10 CO`, m, rcanal);
