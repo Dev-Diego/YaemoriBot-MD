@@ -67,7 +67,7 @@ const handler = async (m, { conn, usedPrefix, args, groupMetadata }) => {
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ 
+🥷🏻 ┇ ${ps.getRandom()}
 🥷🏻 ┇ 
 🥷🏻 ┇ 
 
