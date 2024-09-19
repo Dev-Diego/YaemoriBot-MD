@@ -1,4 +1,17 @@
-const handler = async (m, { conn, usedPrefix, args }) => {
+const handler = async (m, { conn, usedPrefix, args, groupMedata }) => {
+
+let user = a => '@' + a.split('@')[0] //'@' + a.split('@')[0]
+let ps = groupMetadata.participants.map(v => v.id)
+let a = ps.getRandom()
+let b = ps.getRandom() 
+let c = ps.getRandom()
+let d = ps.getRandom()
+let e = ps.getRandom()
+let f = ps.getRandom()
+let g = ps.getRandom()
+let h = ps.getRandom()
+let i = ps.getRandom()
+let j = ps.getRandom() 
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
  
@@ -66,14 +79,14 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ 
-🥷🏻 ┇ 
-🥷🏻 ┇ 
+🥷🏻 ┇ ${user(a)}
+🥷🏻 ┇ ${user(b)}
+🥷🏻 ┇ ${user(c)}
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ 
-🥷🏻 ┇ 
+🥷🏻 ┇ ${user(d)}
+🥷🏻 ┇ ${user(f)}
 `.trim();
 
 m.reply(message, null, {
