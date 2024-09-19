@@ -79,14 +79,14 @@ const top = `
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${user(a)}
-🥷🏻 ┇ ${user(b)}
-🥷🏻 ┇ ${user(c)}
+🥷🏻 ┇ ${user(ps.getRandom())}
+🥷🏻 ┇ ${user(ps.getRandom())}
+🥷🏻 ┇ ${user(ps.getRandom())}
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ ${user(d)}
-🥷🏻 ┇ ${user(f)}`
+🥷🏻 ┇ ${user(ps.getRandom())}
+🥷🏻 ┇ ${user(ps.getRandom())}`
 
 m.reply(top, null, {
 mentions: [a, b, c, d, f]})}
