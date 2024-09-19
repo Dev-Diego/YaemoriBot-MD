@@ -68,7 +68,7 @@ let j = ps.getRandom()
 
     const horaActual = formatTime(new Date()); // Obtener la hora actual sin modificación
 
-const top = `
+const ff = `
 *4 Vs 4*  
 
 🇲🇽 Mx : ${formatTime(horasEnPais[0])}
@@ -88,8 +88,8 @@ const top = `
 🥷🏻 ┇ ${user(ps.getRandom())}
 🥷🏻 ┇ ${user(ps.getRandom())}`
 
-m.reply(top, null, {
-mentions: [a, b, c, d, f]})}
+m.reply(ff, null, {
+mentions: [m.sender]});
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
