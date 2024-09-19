@@ -72,7 +72,7 @@ const aaa = (a) => '@' + a.split('@')[0];
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${aaa(1)}
+🥷🏻 ┇ ${taguser(1)}
 🥷🏻 ┇ ${ps.getRandom()}
 🥷🏻 ┇ ${ps.getRandom()}
 
