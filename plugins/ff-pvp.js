@@ -5,7 +5,7 @@ let user0 = psmap.getRandom()
 let user1 = psmap.getRandom()
 
 m.reply(`😿 Pvp ${taguser} vs ${teguser2}`, null, {
-mentions: [user0, user1]
+mentions: [taguser]
 })}
 handler.help = ['pvp']
 handler.tags = ['ff']
