@@ -77,8 +77,8 @@ const handler = async (m, { conn, usedPrefix, args, groupMetadata }) => {
 🥷🏻 ┇ 
 `.trim();
 
-//m.reply(message, null, {
-mentions: [m.sender]});
+/*m.reply(message, null, {
+mentions: [m.sender]});*/
 conn.sendMessage(m.chat, {text: message, mentions: participants.map((v) => v.id)} );
 };
 handler.help = ['4vs4'];
