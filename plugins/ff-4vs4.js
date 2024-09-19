@@ -1,12 +1,6 @@
-const handler = async (m, { conn, usedPrefix, groupMetadata, args }) => {
+const handler = async (m, { conn, usedPrefix, args }) => {
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
-    const ps = groupMetadata.participants.map((v) => v.id);
-const aaa = (a) => '@' + a.split('@')[0];
-  const ps = groupMetadata.participants.map((v) => v.id);
-  const 1 = ps.getRandom();
-
-
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
@@ -72,14 +66,14 @@ const aaa = (a) => '@' + a.split('@')[0];
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${taguser(1)}
-🥷🏻 ┇ ${ps.getRandom()}
-🥷🏻 ┇ ${ps.getRandom()}
+🥷🏻 ┇ 
+🥷🏻 ┇ 
+🥷🏻 ┇ 
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ ${ps.getRandom()}
-🥷🏻 ┇ ${ps.getRandom()}
+🥷🏻 ┇ 
+🥷🏻 ┇ 
 `.trim();
 
 m.reply(message, null, {
