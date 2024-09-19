@@ -46,7 +46,7 @@ Significados:
 • ${usedPrefix}12vs12 HH:MM CR
 • ${usedPrefix}donarsala`.trim();     
   
-await conn.sendMessage(m.chat, {text: free, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '¡New Channel! 🚩', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: '🎮 Game - Free Fire', body: '🎮 Juego Free', thumbnailUrl: 'https://qu.ax/FGye.jpg', sourceUrl: 'https://github.com/Jostin207', mediaType: 1, renderLargerThumbnail: true }}}, {quoted: m});
+await conn.sendMessage(m.chat, {text: free, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '¡New Channel! 🚩', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: '🎮 Game - Free Fire', body: '🎮 Juego Free', thumbnailUrl: 'https://qu.ax/FGye.jpg', sourceUrl: redeshost, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: m});
     
   } catch {
   await m.react('✖️')
