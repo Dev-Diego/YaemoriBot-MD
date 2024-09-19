@@ -85,8 +85,9 @@ if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios pa
 🥷🏻 ┇ 
 `.trim();
 
-m.reply(message, null, {
-mentions: [m.sender]});
+/*m.reply(message, null, {
+mentions: [m.sender]});*/
+m.reply(message, null, {mentions: [user]})   
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
