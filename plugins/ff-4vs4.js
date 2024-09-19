@@ -2,25 +2,7 @@ let R = Math.random;
 let Fl = Math.floor;
 let toM = (a) => "@" + a.split("@")[0];
 
-function handler(m, { conn, groupMetadata, usedPrefix, args }) {
-
-  let ps = groupMetadata.participants.map((v) => v.id);
-  let a = ps[Fl(R() * ps.length)];
-  let b;
-  do b = ps[Fl(R() * ps.length)];
-  while (b === a);
-  let c;
-  do c = ps[Fl(R() * ps.length)];
-  while (b === a);
-  let d;
-  do d = ps[Fl(R() * ps.length)];
-  while (b === a);
-  let e;
-  do e = ps[Fl(R() * ps.length)];
-  while (b === a);
-  let f;
-  do f = ps[Fl(R() * ps.length)];
-  while (b === a);
+const handler = async (m, { conn, groupMetadata, usedPrefix, args }) => {
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
@@ -75,7 +57,7 @@ function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 
     const horaActual = formatTime(new Date()); // Obtener la hora actual sin modificación
 
-    m.reply`
+    const message = `
 *4 Vs 4*  
 
 🇲🇽 Mx : ${formatTime(horasEnPais[0])}
@@ -94,13 +76,8 @@ function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 《✧》 *SUPLENTE*
 🥷🏻 ┇ ${toM(e)}
 🥷🏻 ┇ ${toM(f)}
-`
+`.trim();
 
-        null,
-    {
-      mentions: [a, b, c, d, e, f],
-    }
-  );
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
