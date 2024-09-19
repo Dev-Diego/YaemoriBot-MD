@@ -5,7 +5,12 @@ psmap=psmap.filter(v => v.admin !=='superadmin')
 psmap=psmap.filter(v => v.admin !=='admin')
 psmap=psmap.map(v => v.id)
 let user = a => '@' + a.split('@')[0]
+let user0 = psmap.getRandom()
 let user1 = psmap.getRandom()
+let user2 = psmap.getRandom()
+let user3 = psmap.getRandom()
+let user4 = psmap.getRandom()
+let user5 = psmap.getRandom()
 
 if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios para crear la escuadra`, m, fake)
 
@@ -74,20 +79,20 @@ if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios pa
 
 《✧》 *ESCUADRA*
 
-👑 ┇ ${taguser}
+👑 ┇ ${user(user0)}
 🥷🏻 ┇ ${user(user1)}
-🥷🏻 ┇ 
-🥷🏻 ┇ 
+🥷🏻 ┇ ${user(user2)}
+🥷🏻 ┇ ${user(user3)}
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ 
-🥷🏻 ┇ 
+🥷🏻 ┇ ${user(user4)}
+🥷🏻 ┇ ${user(user5)}
 `.trim();
 
 /*m.reply(message, null, {
 mentions: [m.sender]});*/
-m.reply(message, null, {mentions: [user]})   
+m.reply(message, null, {mentions: [user0, user1, user2, user3, user4, user5]})   
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
