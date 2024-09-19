@@ -1,4 +1,36 @@
-const handler = async (m, { conn, usedPrefix, args }) => {
+let R = Math.random;
+let Fl = Math.floor;
+let toM = (a) => "@" + a.split("@")[0];
+function handler(m, {usedPrefix, groupMetadata}) {
+  let ps = groupMetadata.participants.map((v) => v.id);
+  let a = ps[Fl(R() * ps.length)];
+  let b;
+  do b = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let c;
+  do c = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let d;
+  do d = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let e;
+  do e = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let f;
+  do f = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let g;
+  do g = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let h;
+  do h = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let i;
+  do i = ps[Fl(R() * ps.length)];
+  while (b === a);
+  let j;
+  do j = ps[Fl(R() * ps.length)];
+  while (b === a);
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
@@ -53,7 +85,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 
     const horaActual = formatTime(new Date()); // Obtener la hora actual sin modificación
 
-    const message = `
+    m.reply(`
 *4 Vs 4*  
 
 🇲🇽 Mx : ${formatTime(horasEnPais[0])}
@@ -72,9 +104,13 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 《✧》 *SUPLENTE*
 🥷🏻 ┇ ${toM(e)}
 🥷🏻 ┇ ${toM(f)}
-`.trim();
-
-};
+`
+    null,
+    {
+      mentions: [a, b, c, d, e, f, g, h, i, j],
+    }
+  );
+}
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
 handler.command = ['4vs4', 'vs4'];
