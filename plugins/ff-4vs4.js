@@ -88,8 +88,7 @@ const ff = `
 🥷🏻 ┇ ${user(d)}
 🥷🏻 ┇ ${user(e)}`
 
-m.reply(``, null, {
-mentions: [a, b, c, d, e]})}
+m.reply(ff, null, { mentions: conn.parseMention(ff) })}
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
