@@ -2,10 +2,9 @@ let R = Math.random;
 let Fl = Math.floor;
 let toM = (a) => "@" + a.split("@")[0];
 
-const handler = async (m, { conn, groupMetadata, usedPrefix, args }) => {
+function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 
   let ps = groupMetadata.participants.map((v) => v.id);
-  let a;
   let a = ps[Fl(R() * ps.length)];
   let b;
   do b = ps[Fl(R() * ps.length)];
