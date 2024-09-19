@@ -1,11 +1,11 @@
 let R = Math.random;
 let Fl = Math.floor;
-global.toM = (a) => "@" + a.split("@")[0];
+let toM = (a) => "@" + a.split("@")[0];
 function handler(m, {groupMetadata}) {
   let ps = groupMetadata.participants.map((v) => v.id);
-  global.a = ps[Fl(R() * ps.length)];
+  let a = ps[Fl(R() * ps.length)];
   let b;
-  global.b = ps[Fl(R() * ps.length)];
+  do b = ps[Fl(R() * ps.length)];
   while (b === a);
   let c;
   do c = ps[Fl(R() * ps.length)];
