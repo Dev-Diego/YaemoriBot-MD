@@ -1,20 +1,7 @@
-const handler = async (m, { conn, usedPrefix, args, groupMedata, participants }) => {
-
-let user = m.sender => '@' + m.sender.split('@')[0] //'@' + a.split('@')[0]
-let ps = groupMetadata.participants.map(v => v.id)
-let a = ps.getRandom()
-let b = ps.getRandom() 
-let c = ps.getRandom()
-let d = ps.getRandom()
-let e = ps.getRandom()
-let f = ps.getRandom()
-let g = ps.getRandom()
-let h = ps.getRandom()
-let i = ps.getRandom()
-let j = ps.getRandom() 
+const handler = async (m, { conn, usedPrefix, args }) => {
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
- 
+
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
          await  conn.reply(m.chat, `🚩 Debes proporcionar la hora (HH:MM) y el pais (CO, CL, AG, MX)\n\nEjemplo:\n» ${usedPrefix}4vs4 10:10 CO`, m, rcanal);
@@ -68,7 +55,7 @@ let j = ps.getRandom()
 
     const horaActual = formatTime(new Date()); // Obtener la hora actual sin modificación
 
-const ff = `
+    const message = `
 *4 Vs 4*  
 
 🇲🇽 Mx : ${formatTime(horasEnPais[0])}
@@ -79,16 +66,18 @@ const ff = `
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${user(a)}
-🥷🏻 ┇ ${user(b)}
-🥷🏻 ┇ ${user(c)}
+🥷🏻 ┇ 
+🥷🏻 ┇ 
+🥷🏻 ┇ 
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ ${user(d)}
-🥷🏻 ┇ ${user(e)}`
+🥷🏻 ┇ 
+🥷🏻 ┇ 
+`.trim();
 
-m.reply(ff, null, { mentions: conn.parseMention(ff) })}
+m.reply(message, null, {
+mentions: [m.sender]});
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
