@@ -5,7 +5,7 @@ psmap=psmap.filter(v => v.admin !=='superadmin')
 psmap=psmap.filter(v => v.admin !=='admin')
 psmap=psmap.map(v => v.id)
 let user = a => '@' + a.split('@')[0]
-let 1 = psmap.getRandom()
+let user1 = psmap.getRandom()
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
@@ -73,7 +73,7 @@ let 1 = psmap.getRandom()
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${user(1)}
+🥷🏻 ┇ ${user(user1)}
 🥷🏻 ┇ 
 🥷🏻 ┇ 
 
