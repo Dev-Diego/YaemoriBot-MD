@@ -79,14 +79,14 @@ const ff = `
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${user(ps.getRandom())}
-🥷🏻 ┇ ${user(ps.getRandom())}
-🥷🏻 ┇ ${user(ps.getRandom())}
+🥷🏻 ┇ ${user}
+🥷🏻 ┇ ${user}
+🥷🏻 ┇ ${user}
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ ${user(ps.getRandom())}
-🥷🏻 ┇ ${user(ps.getRandom())}`
+🥷🏻 ┇ ${user}
+🥷🏻 ┇ ${user}`
 
 m.reply(ff, null, {
 mentions: [m.sender]});
