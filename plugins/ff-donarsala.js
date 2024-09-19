@@ -9,7 +9,7 @@ let user0 = psmap.getRandom()
 if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios que va donar la sala.`, m, fake)
 
 m.reply(`*${user(user0)},* Le tocó donar sala el dia de hoy. 😿`, null, {
-mentions: [a, b]
+mentions: [user0, user]
 })}
 handler.help = ['donarsala']
 handler.tags = ['ff']
