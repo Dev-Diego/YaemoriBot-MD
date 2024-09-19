@@ -50,39 +50,39 @@ if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios pa
     }
 
     const message = `
-╭──────⚔──────╮
-.   20 𝐕𝐄𝐑𝐒𝐔𝐒 20
-╰──────⚔──────╯
+    12 Vs 12
+    
+    *HORARIO*
+    🇲🇽 Mx : ${horaUsuario}
+    🇨🇴 Co : ${horaAdelantada}
+    Color de ropa: ${colorRopa}
 
-╭──────────────╮
-│➥ *HORARIO*
-│➥ 🇲🇽 Mx : ${horaUsuario}
-│➥ 🇨🇴 Co : ${horaAdelantada}
-│➥ Color de ropa: ${colorRopa}
-│➥ *JUGADORES PRESENTES*
-│
-│ *Escuadra 1*
-│👑 ➤ ${user(user0)}
-│🥷🏻 ➤ ${user(user2)}
-│🥷🏻 ➤ ${user(user3)}
-│🥷🏻 ➤ ${user(user4)}
-│      
-│ *Escuadra 2*
-│👑 ➤ ${user(user5)}
-│🥷🏻 ➤ ${user(user6)}
-│🥷🏻 ➤ ${user(user7)}
-│🥷🏻 ➤ ${user(user8)}
-│
-│ *Escuadra 3*
-│👑 ➤ ${user(user9)}
-│🥷🏻 ➤ ${user(user10)} 
-│🥷🏻 ➤ ${user(user11)}
-│🥷🏻 ➤ ${user(user12)}
-│
-│ *Suplente*
-│⚜️ ➤ ${user(user13)}
-│⚜️ ➤ ${user(user14)}
-╰────────────  
+    ¬ *JUGADORES PRESENTES*
+    
+          *Escuadra 1*
+    
+    👑 ┇ ${user(user0)}
+    🥷🏻 ┇ ${user(user2)}
+    🥷🏻 ┇ ${user(user3)}
+    🥷🏻 ┇ ${user(user4)}
+          
+         *Escuadra 2*
+    
+    👑 ┇ ${user(user5)}
+    🥷🏻 ┇ ${user(user6)}
+    🥷🏻 ┇ ${user(user7)}
+    🥷🏻 ┇ ${user(user8)}
+    
+         *Escuadra 3*
+    
+    👑 ┇ ${user(user9)}
+    🥷🏻 ┇ ${user(user10)} 
+    🥷🏻 ┇ ${user(user11)}
+    🥷🏻 ┇ ${user(user12)}
+    
+    ㅤ *Suplente*
+    🥷🏻 ┇ ${user(user13)}
+    🥷🏻 ┇ ${user(user14)}
     `.trim();
 
 m.reply(message, null, {mentions: [user0, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14]})   
