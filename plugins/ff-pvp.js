@@ -9,7 +9,7 @@ let user1 = psmap.getRandom()
 
 if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios para un pvp`, m, fake)
 
-m.reply(`😿 Hoy se dará pvp los usiarios: *${user(user0)},* Y *${user(1)}*`, null, {
+m.reply(`😿 Pvp ${user(0)} vs ${user(1)}`, null, {
 mentions: [user0, user1]
 })}
 handler.help = ['pvp']
