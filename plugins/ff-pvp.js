@@ -1,4 +1,4 @@
-function handler(m, { groupMetadata }) {
+function handler(m, { groupMetadata, participants }) {
 let psmap = groupMetadata.participants.filter(v => v !== conn.user.jid)
 psmap=psmap.filter(v => v.admin !=='superadmin')
 psmap=psmap.filter(v => v.admin !=='admin')
