@@ -1,4 +1,11 @@
-const handler = async (m, { conn, usedPrefix, args }) => {
+const toM = (a) => '@' + a.split('@')[0];
+function handler(m, { conn, usedPrefix, args, groupMetadata }) {
+
+  const ps = groupMetadata.participants.map((v) => v.id);
+  const a = ps.getRandom();
+  let b;
+  do b = ps.getRandom();
+  while (b === a);
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
@@ -66,8 +73,8 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ 
-🥷🏻 ┇ 
+🥷🏻 ┇ ${toM(a)}
+🥷🏻 ┇ ${toM(b)}
 🥷🏻 ┇ 
 
 
