@@ -75,7 +75,7 @@ function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 
     const horaActual = formatTime(new Date()); // Obtener la hora actual sin modificación
 
-    const message = `
+    m.reply`
 *4 Vs 4*  
 
 🇲🇽 Mx : ${formatTime(horasEnPais[0])}
@@ -94,11 +94,13 @@ function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 《✧》 *SUPLENTE*
 🥷🏻 ┇ ${toM(e)}
 🥷🏻 ┇ ${toM(f)}
-`.trim();
+`
 
-    m.reply(message, null, {
-mentions: [a, b, c, d, e, f]
-})
+        null,
+    {
+      mentions: [a, b, c, d, e, f, g, h, i, j],
+    }
+  );
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
