@@ -66,7 +66,7 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${toM(a)}
+🥷🏻 ┇ 
 🥷🏻 ┇ 
 🥷🏻 ┇ 
 
