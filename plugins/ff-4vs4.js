@@ -1,6 +1,7 @@
-const handler = async (m, { conn, usedPrefix, args }) => {
+const handler = async (m, { conn, usedPrefix, args, groupMetadata }) => {
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
+    let ps = groupMetadata.participants.map(v => v.id)
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
@@ -76,8 +77,9 @@ const handler = async (m, { conn, usedPrefix, args }) => {
 🥷🏻 ┇ 
 `.trim();
 
-m.reply(message, null, {
+//m.reply(message, null, {
 mentions: [m.sender]});
+conn.sendMessage(m.chat, {text: message, mentions: participants.map((v) => v.id)} );
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
