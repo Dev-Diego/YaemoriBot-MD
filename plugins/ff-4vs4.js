@@ -7,6 +7,8 @@ psmap=psmap.map(v => v.id)
 let user = a => '@' + a.split('@')[0]
 let user1 = psmap.getRandom()
 
+if (psmap == '') return conn.reply(m.chat, `😿 No se ha encontrado usuarios para escuadra`, m, fake)
+
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
     // Verificar si se proporcionaron los argumentos necesarios
