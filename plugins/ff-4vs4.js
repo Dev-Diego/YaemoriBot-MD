@@ -1,8 +1,4 @@
-let R = Math.random;
-let Fl = Math.floor;
-let toM = (a) => "@" + a.split("@")[0];
-
-const handler = async (m, { conn, groupMetadata, usedPrefix, args }) => {
+const handler = async (m, { conn, usedPrefix, args }) => {
 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
