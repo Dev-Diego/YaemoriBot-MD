@@ -1,4 +1,4 @@
-const handler = async (m, { conn, usedPrefix, args, groupMedata }) => {
+const handler = async (m, { conn, usedPrefix, args, groupMedata, participants }) => {
 
 let user = a => '@' + a.split('@')[0] //'@' + a.split('@')[0]
 let ps = groupMetadata.participants.map(v => v.id)
@@ -79,17 +79,17 @@ const ff = `
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${user}
-🥷🏻 ┇ ${user}
-🥷🏻 ┇ ${user}
+🥷🏻 ┇ ${user(a)}
+🥷🏻 ┇ ${user(b)}
+🥷🏻 ┇ ${user(c)}
 
 
 《✧》 *SUPLENTE*
-🥷🏻 ┇ ${user}
-🥷🏻 ┇ ${user}`
+🥷🏻 ┇ ${user(d)}
+🥷🏻 ┇ ${user(e)}`
 
-m.reply(ff, null, {
-mentions: [m.sender]});
+m.reply(``, null, {
+mentions: [a, b, c, d, e]})}
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
