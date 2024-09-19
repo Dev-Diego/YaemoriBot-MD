@@ -98,7 +98,7 @@ function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 
     m.reply(message, null, {
 mentions: [a, b, c, d, e, f]
-})};
+})
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
