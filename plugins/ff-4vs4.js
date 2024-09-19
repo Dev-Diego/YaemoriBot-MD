@@ -98,7 +98,7 @@ function handler(m, { conn, groupMetadata, usedPrefix, args }) {
 
         null,
     {
-      mentions: [a, b, c, d, e, f, g, h, i, j],
+      mentions: [a, b, c, d, e, f],
     }
   );
 };
