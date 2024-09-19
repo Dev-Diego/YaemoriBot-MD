@@ -89,8 +89,7 @@ let j = ps.getRandom()
 🥷🏻 ┇ ${user(f)}
 `.trim();
 
-m.reply(message, null, {
-mentions: [m.sender]});
+m.reply(message, null, { mentions: conn.parseMention(top) })
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
