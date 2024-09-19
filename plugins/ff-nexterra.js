@@ -26,4 +26,5 @@ handler.help = ['nexterra']
 handler.tags = ['ff']
 handler.command = ['nexterra'] 
 handler.register = true
+handler.group = true
 export default handler

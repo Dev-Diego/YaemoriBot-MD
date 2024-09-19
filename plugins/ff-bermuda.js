@@ -26,4 +26,5 @@ handler.help = ['bermuda']
 handler.tags = ['ff']
 handler.command = ['bermuda'] 
 handler.register = true
+handler.group = true
 export default handler

@@ -91,4 +91,5 @@ handler.help = ['12vs12'];
 handler.tags = ['ff'];
 handler.command = ['12vs12', 'vs12'];
 handler.register = true;
+handler.group = true
 export default handler;

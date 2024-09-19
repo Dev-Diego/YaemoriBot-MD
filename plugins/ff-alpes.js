@@ -26,4 +26,5 @@ handler.help = ['alpes']
 handler.tags = ['ff']
 handler.command = ['alpes'] 
 handler.register = true
+handler.group = true
 export default handler

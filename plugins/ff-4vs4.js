@@ -98,4 +98,5 @@ handler.help = ['4vs4'];
 handler.tags = ['ff'];
 handler.command = ['4vs4', 'vs4'];
 handler.register = true;
+handler.group = true
 export default handler;

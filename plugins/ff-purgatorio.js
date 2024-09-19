@@ -26,4 +26,5 @@ handler.help = ['purgatorio']
 handler.tags = ['ff']
 handler.command = ['purga', 'purgatorio', 'purg'] 
 handler.register = true
+handler.group = true
 export default handler
