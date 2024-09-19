@@ -1,8 +1,7 @@
-const handler = async (m, { conn, usedPrefix, args, groupMetadata }) => {
+const handler = async (m, { conn, usedPrefix, args }) => {
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
-    let ps = groupMetadata.participants.map(v => v.id)
-
+ 
     // Verificar si se proporcionaron los argumentos necesarios
     if (args.length < 2) {
          await  conn.reply(m.chat, `🚩 Debes proporcionar la hora (HH:MM) y el pais (CO, CL, AG, MX)\n\nEjemplo:\n» ${usedPrefix}4vs4 10:10 CO`, m, rcanal);
@@ -67,7 +66,7 @@ const handler = async (m, { conn, usedPrefix, args, groupMetadata }) => {
 《✧》 *ESCUADRA*
 
 👑 ┇ ${taguser}
-🥷🏻 ┇ ${ps.getRandom()}
+🥷🏻 ┇ 
 🥷🏻 ┇ 
 🥷🏻 ┇ 
 
@@ -77,9 +76,8 @@ const handler = async (m, { conn, usedPrefix, args, groupMetadata }) => {
 🥷🏻 ┇ 
 `.trim();
 
-/*m.reply(message, null, {
-mentions: [m.sender]});*/
-conn.sendMessage(m.chat, {text: message, mentions: participants.map((v) => v.id)} );
+m.reply(message, null, {
+mentions: [m.sender]});
 };
 handler.help = ['4vs4'];
 handler.tags = ['ff'];
