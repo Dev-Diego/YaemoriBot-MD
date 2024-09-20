@@ -1,5 +1,7 @@
+/*
 《✧》DERECHOS RESERVADOS POR EL AUTOR《✧》
 - GabrielVz (@glytglobal)
+*/
 
 import fetch from 'node-fetch'
 
