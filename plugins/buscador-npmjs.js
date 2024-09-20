@@ -1,3 +1,6 @@
+《✧》DERECHOS RESERVADOS POR EL AUTOR《✧》
+- GabrielVz (@glytglobal)
+
 import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
