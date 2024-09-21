@@ -31,9 +31,9 @@ const verificarBot = () => {
     };
 
 let handler = async (m, { conn, isBaileys }) => {
-    if (!m.quoted) return m.reply('《✧》Responda a la waifu que quieres reclamar.');
+/*    if (!m.quoted) return m.reply('《✧》Responda a la waifu que quieres reclamar.');
 
-if (!m.quoted.text.includes("┏━━━━━━━━━⪩")) return m.reply('《✧》La waifu tiene que ser enviada por YaemoriBot')
+if (!m.quoted.text.includes("┏━━━━━━━━━⪩")) return m.reply('《✧》La waifu tiene que ser enviada por YaemoriBot') */
 
 
     if (!verificarBot()) {
@@ -59,7 +59,9 @@ if (now - lastUsed < cooldown) {
     let remainingSeconds = Math.floor((remainingTime % 60000) / 1000);
     await m.reply(`《✧》Debes esperar *${remainingMinutes} minutos ${remainingSeconds} segundos* para usar *#c* de nuevo.`);
     return;
-}
+    if (!m.quoted) return m.reply('《✧》Responda a la waifu que quieres reclamar.');
+    if (!m.quoted.text.includes("┏━━━━━━━━━⪩")) return m.reply('《✧》La waifu tiene que ser enviada por YaemoriBot')
+    }
 if (!reservedCharacter) {
     conn.reply(m.chat, `《✧》Lo siento, el personaje no está disponible por el momento.`, m, rcanal, { mentions: [userId] });
     return;
