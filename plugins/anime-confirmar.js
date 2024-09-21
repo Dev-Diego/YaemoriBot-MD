@@ -33,7 +33,7 @@ const verificarBot = () => {
 let handler = async (m, { conn, isBaileys }) => {
     if (!m.quoted) return m.reply('《✧》Responda a la waifu que quieres reclamar.');
 
-if (!m.quoted.text.includes("*Waifu*")) return m.reply('《✧》La waifu tiene que ser enviada por YaemoriBot')
+if (!m.quoted.text.includes("┏━━━━━━━━━⪩")) return m.reply('《✧》La waifu tiene que ser enviada por YaemoriBot')
 
 
     if (!verificarBot()) {
