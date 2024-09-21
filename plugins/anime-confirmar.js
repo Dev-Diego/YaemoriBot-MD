@@ -30,7 +30,7 @@ const verificarBot = () => {
         }
     };
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, isBaileys }) => {
     if (!m.quoted) return;
 
 if (!m.quoted.isBaileys) return conn.reply(m.chat, '《✧》Responda a la waifu que quieres reclamar', m, rcanal)
