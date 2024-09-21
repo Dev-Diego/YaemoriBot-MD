@@ -33,7 +33,9 @@ return;
 if (m.mentionedJid.includes(this.user.jid) || (m.quoted && m.quoted.sender === this.user.jid)) {
 if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') ||  m.text.includes('menu') ||
 m.text.includes('2') || 
-m.text.includes('1') || m.text.includes('estado') || m.text.includes('bots') ||  m.text.includes('serbot') || m.text.includes('jadibot') || m.text.includes('Video') || m.text.includes('Audio') || m.text.includes('audio') || m.text.includes('Bot') || m.text.includes('bot') || m.text.includes('Exp') || m.text.includes('diamante') || m.text.includes('lolicoins') || m.text.includes('Diamante') || m.text.includes('Lolicoins')) return !0
+m.text.includes('1') || m.text.includes('estado') || m.text.includes('bots') ||  m.text.includes('serbot') || m.text.includes('jadibot') || m.text.includes('Video') || m.text.includes('Audio') || m.text.includes('audio') || m.text.includes('Bot') || m.text.includes('bot') || m.text.includes('rw') || m.text.includes('c') ||
+m.text.includes('robarp') ||
+m.text.includes('darrw') || m.text.includes('reclamar') || m.text.includes('rollwaifu')) return !0
 await this.sendPresenceUpdate('composing', m.chat);
 
 async function luminsesi(q, username, logic) {
