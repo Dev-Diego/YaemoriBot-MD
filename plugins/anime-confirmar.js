@@ -26,7 +26,7 @@ const verificarBot = () => {
     };
 
 let handler = async (m, { conn }) => {
-    if (!m.quoted) return m.reply('《✧》Debes citar un personaje valido para reclamar.');
+   if (!m.quoted.isBaileys) return conn.reply(m.chat, '《✧》Debes citar un personaje valido para reclamar.', m, rcanal)
 
     if (!verificarBot()) {
         await conn.sendMessage(m.chat, '✧ Este comando solo es disponible en YaemoriBot-MD\n◇ https://github.com/Dev-Diego/YaemoriBot-MD', m, rcanal);
