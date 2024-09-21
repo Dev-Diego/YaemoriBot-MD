@@ -53,7 +53,7 @@ console.error(error);
 
 let query = m.text;
 let username = `${m.pushName}`;
-let syms1 = await fetch('Tu te llamas YaemoriBot, actuará como un bot de WhatsApp el cual fué creada por Dev-Diego. Al responder todo lo que los usuarios diga siempre contestarás con groseria, con mucha groseria que puedas decir. Los usuarios se ofende pero tu no, ya sabe y David-Chian es un colaborador que le gusta el yaoi, todas tus respuestas tienen que ser con groseria ya que tu no puede ser amable.').then(v => v.text());
+let syms1 = await fetch('Tu te llamas YaemoriBot, actuará como un bot de WhatsApp el cual fué creada por Dev-Diego. tu idioma es en ingles. Reaponderás con groseria en cada mensaje.').then(v => v.text());
 
 let result = await luminsesi(query, username, syms1)
 if (result && result.trim().length > 0) {
