@@ -7,8 +7,8 @@ import {tiktokdl} from '@bochilteam/scraper';
 //const CFROSAPI = global.APIs.CFROSAPI;
 const handler = async (m, {conn, text, args, usedPrefix, command}) => {
 //m.react('🕒') 
-  if (!text) return m.reply(`《✧》 *Te falto el enlace de algun video de tiktok*`);
-  if (!/(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text)) if (!text) return m.reply(`《✧》 *Te falto el enlace de algun video de tiktok*`);
+  if (!text) return m.reply(`✧ *Te falto el enlace de algun video de tiktok*`);
+  if (!/(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text)) if (!text) return m.reply(`✧ *Te falto el enlace de algun video de tiktok*`);
   const texto = `_💌 @${m.sender.split`@`[0]}  ᩭ✎Enviando Video, espere un momento...._`;
   // let buttons = [{ buttonText: { displayText: '♫ 𝙰𝚄𝙳𝙸𝙾 ♫' }, buttonId: `${usedPrefix}tomp3` }]
   try {
