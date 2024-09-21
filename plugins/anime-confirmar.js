@@ -1,6 +1,136 @@
-/*
-《✧》DERECHOS RESERVADOS POR EL AUTOR 《✧》
-- DavidChian (@David-Chian)
-*/
+import fs from 'fs';
 
-function _0x27c2(_0xb6358e,_0x1569eb){const _0x5df499=_0x5df4();return _0x27c2=function(_0x27c29b,_0x4548a7){_0x27c29b=_0x27c29b-0x7c;let _0x48c2ae=_0x5df499[_0x27c29b];return _0x48c2ae;},_0x27c2(_0xb6358e,_0x1569eb);}const _0x2082fc=_0x27c2;function _0x5df4(){const _0x4708aa=['git+https://github.com/Dev-Diego/YaemoriBot-MD.git','url',',\x20has\x20robado\x20a\x20','2428RdZmZK','825786kQEJFR','✧\x20Este\x20comando\x20solo\x20es\x20disponible\x20en\x20YaemoriBot-MD\x0a◇\x20https://github.com/Dev-Diego/YaemoriBot-MD','push','chat','YaemoriBot-MD','some','\x20minutos\x20','55BrToRQ','text','command','getName','match','split','196UMTUbW','repository','《✧》Debes\x20esperar\x20*','./package.json','userId','521196Nfxocb','reply','utf-8','160czGlyt','name','*\x20ha\x20sido\x20reclamado\x20por\x20*@','help','floor','getTime','1236810jmetXf','502KQzXHT','data.json','\x20de\x20@','20ueULSf','《✧》Lo\x20siento,\x20el\x20personaje\x20no\x20está\x20disponible\x20por\x20el\x20momento.','totalRwcoins','anime','find','《✧》No\x20has\x20podido\x20robar\x20el\x20personaje\x20','personajesReservados','random','3818832NXJoEs','characterCount','《✧》Ya\x20tienes\x20el\x20personaje\x20','usuarios','filter','sender','tags','existsSync','parse','value','readFileSync','253288jZhExs','register','characters','✰\x20*','\x20segundos*\x20para\x20usar\x20*#c*\x20de\x20nuevo.','quoted','writeFileSync','9258060sWmnwm'];_0x5df4=function(){return _0x4708aa;};return _0x5df4();}(function(_0x2f26f4,_0x2fac8c){const _0x2f5603=_0x27c2,_0x2a8f73=_0x2f26f4();while(!![]){try{const _0x41e26b=parseInt(_0x2f5603(0xa4))/0x1*(-parseInt(_0x2f5603(0x87))/0x2)+parseInt(_0x2f5603(0x9a))/0x3+-parseInt(_0x2f5603(0xaf))/0x4+-parseInt(_0x2f5603(0xa7))/0x5*(-parseInt(_0x2f5603(0xa3))/0x6)+-parseInt(_0x2f5603(0x95))/0x7*(parseInt(_0x2f5603(0x7c))/0x8)+parseInt(_0x2f5603(0x88))/0x9*(-parseInt(_0x2f5603(0x9d))/0xa)+parseInt(_0x2f5603(0x8f))/0xb*(parseInt(_0x2f5603(0x83))/0xc);if(_0x41e26b===_0x2fac8c)break;else _0x2a8f73['push'](_0x2a8f73['shift']());}catch(_0x3e6040){_0x2a8f73['push'](_0x2a8f73['shift']());}}}(_0x5df4,0xe4c81));import _0x5e24bb from'fs';let cooldowns={};const obtenerDatos=()=>{const _0x2c3c6c=_0x27c2;return _0x5e24bb[_0x2c3c6c(0xb6)](_0x2c3c6c(0xa5))?JSON[_0x2c3c6c(0xb7)](_0x5e24bb[_0x2c3c6c(0xb9)](_0x2c3c6c(0xa5),_0x2c3c6c(0x9c))):{'usuarios':{},'personajesReservados':[]};},guardarDatos=_0x2f25de=>{const _0x45f63e=_0x27c2;_0x5e24bb[_0x45f63e(0x82)](_0x45f63e(0xa5),JSON['stringify'](_0x2f25de,null,0x2));},verificarBot=()=>{const _0x2071a0=_0x27c2;try{const _0x428edf=JSON[_0x2071a0(0xb7)](_0x5e24bb['readFileSync'](_0x2071a0(0x98),_0x2071a0(0x9c)));if(_0x428edf[_0x2071a0(0x9e)]!==_0x2071a0(0x8c))return![];if(_0x428edf[_0x2071a0(0x96)][_0x2071a0(0x85)]!==_0x2071a0(0x84))return![];return!![];}catch(_0x242b79){return console['error']('✧\x20Error\x20al\x20leer\x20package.json:',_0x242b79),![];}};let handler=async(_0xca2821,{conn:_0x1f59e9})=>{const _0x5a59f5=_0x27c2;if(!_0xca2821[_0x5a59f5(0x81)])return;if(!verificarBot()){await _0x1f59e9['sendMessage'](_0xca2821['chat'],_0x5a59f5(0x89),_0xca2821,rcanal);return;}let _0x4aaee8=_0xca2821[_0x5a59f5(0xb4)],_0x2fc363=await _0x1f59e9[_0x5a59f5(0x92)](_0x4aaee8),_0x5577b5=_0xca2821[_0x5a59f5(0x81)][_0x5a59f5(0x90)][_0x5a59f5(0x93)](/<id:(.*)>/)?.[0x1],_0x4b17f5=obtenerDatos();if(!_0x5577b5)return;let _0x35cd2f=_0x4b17f5[_0x5a59f5(0xad)][_0x5a59f5(0xab)](_0x354ef1=>_0x354ef1['id']===_0x5577b5),_0x4c0801=new Date()[_0x5a59f5(0xa2)](),_0x77e0a6=0xa*0x3c*0x3e8,_0xd6b953=cooldowns[_0x4aaee8]||0x0;if(_0x4c0801-_0xd6b953<_0x77e0a6){let _0x2f504c=_0x77e0a6-(_0x4c0801-_0xd6b953),_0x32316e=Math[_0x5a59f5(0xa1)](_0x2f504c/0xea60),_0x5a2143=Math[_0x5a59f5(0xa1)](_0x2f504c%0xea60/0x3e8);await _0xca2821['reply'](_0x5a59f5(0x97)+_0x32316e+_0x5a59f5(0x8e)+_0x5a2143+_0x5a59f5(0x80));return;}if(!_0x35cd2f){_0x1f59e9['reply'](_0xca2821[_0x5a59f5(0x8b)],_0x5a59f5(0xa8),_0xca2821,rcanal,{'mentions':[_0x4aaee8]});return;}let _0x2e556b=_0x4b17f5['usuarios'][_0x35cd2f[_0x5a59f5(0x99)]]?.['characters']?.[_0x5a59f5(0x8d)](_0x38e812=>_0x38e812['url']===_0x35cd2f[_0x5a59f5(0x85)]);if(_0x2e556b){_0x1f59e9[_0x5a59f5(0x9b)](_0xca2821[_0x5a59f5(0x8b)],'《✧》El\x20personaje\x20'+_0x35cd2f[_0x5a59f5(0x9e)]+'\x20ya\x20es\x20de\x20otro\x20usuario\x20y\x20no\x20puedes\x20robarlo.\x0aPrueba\x20suerte\x20con\x20el\x20comando\x20#robarp',_0xca2821,rcanal,{'mentions':[_0x4aaee8]}),cooldowns[_0x4aaee8]=_0x4c0801;return;}if(_0x35cd2f[_0x5a59f5(0x99)]!==_0x4aaee8){setTimeout(async()=>{const _0x5576b1=_0x5a59f5;let _0xdaa00b=Math[_0x5576b1(0xae)]()<0.5;if(_0xdaa00b){!_0x4b17f5[_0x5576b1(0xb2)][_0x4aaee8]&&(_0x4b17f5[_0x5576b1(0xb2)][_0x4aaee8]={'characters':[],'characterCount':0x0,'totalRwcoins':0x0});_0x4b17f5[_0x5576b1(0xb2)][_0x4aaee8]['characters'][_0x5576b1(0x8a)]({'name':_0x35cd2f[_0x5576b1(0x9e)],'url':_0x35cd2f['url'],'value':_0x35cd2f[_0x5576b1(0xb8)]});_0x4b17f5[_0x5576b1(0xb2)][_0x35cd2f['userId']]&&(_0x4b17f5['usuarios'][_0x35cd2f[_0x5576b1(0x99)]][_0x5576b1(0x7e)]=_0x4b17f5[_0x5576b1(0xb2)][_0x35cd2f[_0x5576b1(0x99)]][_0x5576b1(0x7e)]['filter'](_0x2477a1=>_0x2477a1[_0x5576b1(0x85)]!==_0x35cd2f[_0x5576b1(0x85)]));_0x4b17f5[_0x5576b1(0xad)]=_0x4b17f5[_0x5576b1(0xad)][_0x5576b1(0xb3)](_0x3ad455=>_0x3ad455['id']!==_0x5577b5),guardarDatos(_0x4b17f5);let _0x2c5bc2=_0x35cd2f[_0x5576b1(0x99)],_0x561282=await _0x1f59e9[_0x5576b1(0x92)](_0x2c5bc2);await _0x1f59e9[_0x5576b1(0x9b)](_0xca2821[_0x5576b1(0x8b)],'《✧》\x20Felicidades\x20@'+_0x4aaee8[_0x5576b1(0x94)]('@')[0x0]+_0x5576b1(0x86)+_0x35cd2f[_0x5576b1(0x9e)]+_0x5576b1(0xa6)+_0x2c5bc2[_0x5576b1(0x94)]('@')[0x0]+'!',_0xca2821,{'mentions':[_0x4aaee8,_0x2c5bc2]});}else{let _0x1a5f22=_0x35cd2f[_0x5576b1(0x99)],_0x28f3e3=await _0x1f59e9['getName'](_0x1a5f22);await _0x1f59e9[_0x5576b1(0x9b)](_0xca2821[_0x5576b1(0x8b)],_0x5576b1(0xac)+_0x35cd2f['name']+_0x5576b1(0xa6)+_0x1a5f22[_0x5576b1(0x94)]('@')[0x0]+'!',_0xca2821,{'mentions':[_0x4aaee8,_0x1a5f22]});}cooldowns[_0x4aaee8]=_0x4c0801;});return;}!_0x4b17f5[_0x5a59f5(0xb2)][_0x4aaee8]&&(_0x4b17f5['usuarios'][_0x4aaee8]={'characters':[],'characterCount':0x0,'totalRwcoins':0x0});let _0x2798c2=_0x4b17f5[_0x5a59f5(0xb2)][_0x4aaee8],_0x265165=_0x2798c2['characters']?.[_0x5a59f5(0x8d)](_0x59bdc6=>_0x59bdc6['url']===_0x35cd2f['url']);if(_0x265165){_0x1f59e9[_0x5a59f5(0x9b)](_0xca2821[_0x5a59f5(0x8b)],_0x5a59f5(0xb1)+_0x35cd2f['name']+'!',_0xca2821,rcanal,{'mentions':[_0x4aaee8]});return;}_0x2798c2[_0x5a59f5(0x7e)]['push']({'name':_0x35cd2f[_0x5a59f5(0x9e)],'url':_0x35cd2f['url'],'value':_0x35cd2f[_0x5a59f5(0xb8)]}),_0x2798c2[_0x5a59f5(0xb0)]++,_0x2798c2[_0x5a59f5(0xa9)]+=_0x35cd2f[_0x5a59f5(0xb8)],_0x4b17f5['usuarios'][_0x4aaee8]=_0x2798c2,_0x4b17f5[_0x5a59f5(0xad)]=_0x4b17f5[_0x5a59f5(0xad)][_0x5a59f5(0xb3)](_0x5bfe4b=>_0x5bfe4b['id']!==_0x5577b5),guardarDatos(_0x4b17f5),_0x1f59e9[_0x5a59f5(0x9b)](_0xca2821[_0x5a59f5(0x8b)],_0x5a59f5(0x7f)+_0x35cd2f['name']+_0x5a59f5(0x9f)+_0x4aaee8[_0x5a59f5(0x94)]('@')[0x0]+'!*',_0xca2821,{'mentions':[_0x4aaee8]}),cooldowns[_0x4aaee8]=_0x4c0801;};handler[_0x2082fc(0xa0)]=['c'],handler[_0x2082fc(0xb5)]=[_0x2082fc(0xaa)],handler[_0x2082fc(0x91)]=['c','confirmar'],handler[_0x2082fc(0x7d)]=!![];export default handler;
+let cooldowns = {};
+
+const obtenerDatos = () => {
+    if (fs.existsSync('data.json')) {
+        return JSON.parse(fs.readFileSync('data.json', 'utf-8'));
+    } else {
+        return { usuarios: {}, personajesReservados: [] };
+    }
+};
+
+const guardarDatos = (data) => {
+    fs.writeFileSync('data.json', JSON.stringify(data, null, 2));
+};
+const verificarBot = () => {
+        try {
+            const packageData = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
+            if (packageData.name !== 'YaemoriBot-MD') return false;
+            if (packageData.repository.url !== 'git+https://github.com/Dev-Diego/YaemoriBot-MD.git') return false;
+            return true;
+        } catch (error) {
+            console.error('✧ Error al leer package.json:', error);
+            return false;
+        }
+    };
+
+let handler = async (m, { conn }) => {
+    if (!m.quoted) return m.reply('《✧》Debes citar un personaje valido para reclamar.');
+
+    if (!verificarBot()) {
+        await conn.sendMessage(m.chat, '✧ Este comando solo es disponible en YaemoriBot-MD\n◇ https://github.com/Dev-Diego/YaemoriBot-MD', m, rcanal);
+        return;
+    }
+    let userId = m.sender;
+    let userName = await conn.getName(userId);
+    let characterId = m.quoted.text.match(/<id:(.*)>/)?.[1];
+    let data = obtenerDatos();
+
+    if (!characterId) return;
+
+    let reservedCharacter = data.personajesReservados.find(p => p.id === characterId);
+
+    let now = new Date().getTime();
+let cooldown = 10 * 60 * 1000; // 10 min
+let lastUsed = cooldowns[userId] || 0;
+
+if (now - lastUsed < cooldown) {
+    let remainingTime = cooldown - (now - lastUsed);
+    let remainingMinutes = Math.floor(remainingTime / 60000);
+    let remainingSeconds = Math.floor((remainingTime % 60000) / 1000);
+    await m.reply(`《✧》Debes esperar *${remainingMinutes} minutos ${remainingSeconds} segundos* para usar *#c* de nuevo.`);
+    return;
+}
+if (!reservedCharacter) {
+    conn.reply(m.chat, `《✧》Lo siento, el personaje no está disponible por el momento.`, m, rcanal, { mentions: [userId] });
+    return;
+}
+let characterInOtherUserInventory = data.usuarios[reservedCharacter.userId]?.characters?.some(char => char.url === reservedCharacter.url);
+
+if (characterInOtherUserInventory) {
+    conn.reply(m.chat, `《✧》El personaje ${reservedCharacter.name} ya es de otro usuario y no puedes robarlo.\nPrueba suerte con el comando #robarp`, m, rcanal, { mentions: [userId] });
+    cooldowns[userId] = now;
+    return;
+}
+
+if (reservedCharacter.userId !== userId) {
+
+    setTimeout(async () => {
+        let success = Math.random() < 0.5;
+
+        if (success) {
+            if (!data.usuarios[userId]) {
+                data.usuarios[userId] = { characters: [], characterCount: 0, totalRwcoins: 0 };
+            }
+
+            data.usuarios[userId].characters.push({
+                name: reservedCharacter.name,
+                url: reservedCharacter.url,
+                value: reservedCharacter.value
+            });
+            if (data.usuarios[reservedCharacter.userId]) {
+                data.usuarios[reservedCharacter.userId].characters = data.usuarios[reservedCharacter.userId].characters.filter(char => char.url !== reservedCharacter.url);
+            }
+            data.personajesReservados = data.personajesReservados.filter(p => p.id !== characterId);
+            guardarDatos(data);
+
+            let otherUserId = reservedCharacter.userId;
+            let otherUserName = await conn.getName(otherUserId);
+            await conn.reply(m.chat, `《✧》 Felicidades @${userId.split('@')[0]}, has robado a ${reservedCharacter.name} de @${otherUserId.split('@')[0]}!`, m, { mentions: [userId, otherUserId] });
+        } else {
+            let otherUserId = reservedCharacter.userId;
+            let otherUserName = await conn.getName(otherUserId);
+
+            await conn.reply(m.chat, `《✧》No has podido robar el personaje ${reservedCharacter.name} de @${otherUserId.split('@')[0]}!`, m, { mentions: [userId, otherUserId] });
+        }
+
+        cooldowns[userId] = now;
+    });
+
+    return;
+}
+
+if (!data.usuarios[userId]) {
+    data.usuarios[userId] = { characters: [], characterCount: 0, totalRwcoins: 0 };
+}
+
+let userData = data.usuarios[userId];
+let hasCharacter = userData.characters?.some(char => char.url === reservedCharacter.url);
+
+if (hasCharacter) {
+    conn.reply(m.chat, `《✧》Ya tienes el personaje ${reservedCharacter.name}!`, m, rcanal, { mentions: [userId] });
+    return;
+}
+userData.characters.push({
+    name: reservedCharacter.name,
+    url: reservedCharacter.url,
+    value: reservedCharacter.value
+});
+userData.characterCount++;
+userData.totalRwcoins += reservedCharacter.value;
+data.usuarios[userId] = userData;
+data.personajesReservados = data.personajesReservados.filter(p => p.id !== characterId);
+guardarDatos(data);
+
+conn.reply(m.chat, `✰ *${reservedCharacter.name}* ha sido reclamado por *@${userId.split('@')[0]}!*`, m, { mentions: [userId] });
+
+cooldowns[userId] = now;
+        }
+
+handler.help = ['c'];
+handler.tags = ['anime'];
+handler.command = ['c', 'confirmar'];
+handler.register = true;
+
+export default handler;
