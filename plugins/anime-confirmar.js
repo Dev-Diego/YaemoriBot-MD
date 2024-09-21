@@ -31,17 +31,6 @@ const verificarBot = () => {
     };
 
 let handler = async (m, { conn, isBaileys }) => {
-
-  let now = new Date().getTime();
-let cooldown = 10 * 60 * 1000; // 10 min
-let lastUsed = cooldowns[userId] || 0;
-
-if (now - lastUsed < cooldown) {
-    let remainingTime = cooldown - (now - lastUsed);
-    let remainingMinutes = Math.floor(remainingTime / 60000);
-    let remainingSeconds = Math.floor((remainingTime % 60000) / 1000);
-    await m.reply(`《✧》Debes esperar *${remainingMinutes} minutos ${remainingSeconds} segundos* para usar *#c* de nuevo.`);
-
 if (!m.quoted) return m.reply('《✧》Responda a la waifu que quieres reclamar.');
 
 if (!m.quoted.text.includes("┏━━━━━━━━━⪩")) return m.reply('《✧》La waifu tiene que ser enviada por YaemoriBot') 
@@ -60,6 +49,15 @@ if (!m.quoted.text.includes("┏━━━━━━━━━⪩")) return m.reply
 
     let reservedCharacter = data.personajesReservados.find(p => p.id === characterId);
 
+    let now = new Date().getTime();
+let cooldown = 10 * 60 * 1000; // 10 min
+let lastUsed = cooldowns[userId] || 0;
+
+if (now - lastUsed < cooldown) {
+    let remainingTime = cooldown - (now - lastUsed);
+    let remainingMinutes = Math.floor(remainingTime / 60000);
+    let remainingSeconds = Math.floor((remainingTime % 60000) / 1000);
+    await m.reply(`《✧》Debes esperar *${remainingMinutes} minutos ${remainingSeconds} segundos* para usar *#c* de nuevo.`);
     return;
 if (!reservedCharacter) {
     conn.reply(m.chat, `《✧》Lo siento, el personaje no está disponible por el momento.`, m, rcanal, { mentions: [userId] });
