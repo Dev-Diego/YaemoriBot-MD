@@ -4,27 +4,28 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'Info',
-  'buscador': 'Busquedas',
-  'fun': 'Juegos',
+  'main': 'Info × Yaemori',
+  'buscador': 'Busquedas × Yaemori',
+  'fun': 'Juegos × Yaemori',
+  'gacha': 'Gacha × Yaemori'
   'serbot': 'Sub bots',
-  'rpg': 'Rpg',
-  'rg': 'Registro',
-  'xp': 'Exp',
-  'sticker': 'Stickers',
-  'anime': 'Animes',
-  'database': 'Database',
-  'fix': 'Fixmsgespera',
-  'grupo': 'Grupos',
-  'nable': 'On - off', 
-  'descargas': 'Descargas',
-  'tools': 'Herramientas',
-  'info': 'Información',
-  'nsfw': 'Nsfw', 
-  'owner': 'Propietario', 
-  'audio': 'Audios', 
-  'ai': 'Ai',
-  'transformador': 'Convertidores',
+  'rpg': 'Rpg × Yaemori',
+  'rg': 'Registro × Yaemori',
+  'xp': 'Exp × Yaemori',
+  'sticker': 'Stickers × Yaemori',
+  'anime': 'Animes × Yaemori',
+  'database': 'Database × Yaemori',
+  'fix': 'Fixmsgespera × Yaemori',
+  'grupo': 'Grupos × Yaemori',
+  'nable': 'On - off × Yaemori', 
+  'descargas': 'Descargas × Yaemori',
+  'tools': 'Herramientas × Yaemori',
+  'info': 'Información × Yaemori',
+  'nsfw': 'Nsfw × Yaemori', 
+  'owner': 'Propietario × Yaemori', 
+  'audio': 'Audios × Yaemori', 
+  'ai': 'Ai × Yaemori',
+  'transformador': 'Convertidores × Yaemori',
 }
 
 const defaultMenu = {
@@ -48,7 +49,7 @@ const defaultMenu = {
 
 \t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
-    header: '*•/• %category •/•*\n',
+    header: '*⏤͟͟͞͞%category​᭄*\n',
   body: '✰ %cmd',
   footer: '',
   after: `> ${dev}`,
