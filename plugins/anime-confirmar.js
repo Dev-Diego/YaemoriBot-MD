@@ -31,10 +31,10 @@ const verificarBot = () => {
     };
 
 let handler = async (m, { conn, isBaileys }) => {
-    if (!m.quoted) return;
+    if (!m.quoted) return conn.reply(m.chat, '《✧》Responda a la waifu que quieres reclamar.', m, rcanal);
 
-if (!m.quoted.isBaileys) return conn.reply(m.chat, '《✧》Responda a la waifu que quieres reclamar', m, rcanal);
-return;
+if (!m.quoted.text.includes("*Waifu*")) return conn.reply(m.chat, '《✧》La waifu tiene que ser enviada por YaemoriBot', m, rcanal)
+
 
     if (!verificarBot()) {
         await conn.sendMessage(m.chat, '✧ Este comando solo es disponible en YaemoriBot-MD\n◇ https://github.com/Dev-Diego/YaemoriBot-MD', m, rcanal);
