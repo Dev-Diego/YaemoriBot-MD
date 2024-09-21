@@ -99,6 +99,8 @@ if (!('onlyLatinos' in chat))
 chat.onlyLatinos = true 
 if (!('antiBot' in chat))
 chat.antiBot = false
+if (!('antiBot2' in chat))
+chat.antiBot2 = false
 if (!('modoadmin' in chat))                     
 chat.modoadmin = false   
 if (!('antiLink' in chat))
@@ -124,6 +126,7 @@ onlyLatinos: false,
 audios: false,
 detect: true,
 antiBot: false,
+antiBot2: false,
 modoadmin: false,
 antiLink: false,
 simi: false,
