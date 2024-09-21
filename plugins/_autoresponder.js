@@ -1,6 +1,5 @@
 import axios from 'axios';
 import fetch from 'node-fetch';
-import translate from '@vitalets/google-translate-api';
 import { sticker } from '../lib/sticker.js';
 
 let handler = m => m;
