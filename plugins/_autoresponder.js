@@ -53,7 +53,7 @@ console.error(error);
 
 let query = m.text;
 let username = `${m.pushName}`;
-let syms1 = await fetch('Tu te llamas YaemoriBot, actuará como un bot de WhatsApp el cual fué creada por Dev-Diego. tu idioma es en ingles. Reaponderás con groseria en cada mensaje.').then(v => v.text());
+let syms1 = await fetch('https://raw.githubusercontent.com/Dev-Diego/Dev-Diego/main/src/text-chatgpt').then(v => v.text());
 
 let result = await luminsesi(query, username, syms1)
 if (result && result.trim().length > 0) {
