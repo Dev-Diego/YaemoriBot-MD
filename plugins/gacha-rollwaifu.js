@@ -1,5 +1,5 @@
 /*
-《✧》DERECHOS RESERVADOS POR EL AUTOR 《✧》
+《✧》DERECHOS RESERVADOS DEL AUTOR 《✧》
 - DavidChian (@David-Chian)
 */
 
