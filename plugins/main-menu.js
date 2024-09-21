@@ -8,7 +8,7 @@ let tags = {
   'buscador': 'Busquedas × Yaemori',
   'fun': 'Juegos × Yaemori',
   'gacha': 'Gacha × Yaemori',
-  'serbot': 'Sub bots',
+  'serbot': 'Sub bots × Yaemori',
   'rpg': 'Rpg × Yaemori',
   'rg': 'Registro × Yaemori',
   'xp': 'Exp × Yaemori',
