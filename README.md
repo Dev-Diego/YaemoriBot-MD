@@ -66,41 +66,41 @@
 > Copia los códigos uno por uno, no los pegues todos juntos a la vez.
 
 ```bash
-> termux-setup-storage
+termux-setup-storage
 ```
 
 ```bash
-> apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/Dev-Diego/YaemoriBot-MD/master/mini.sh | bash
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/Dev-Diego/YaemoriBot-MD/master/mini.sh | bash
 ```
 
 #### **🌺 Instalación manual por termux**
 
 ```bash
-> termux-setup-storage
+termux-setup-storage
 ```
 
 ```bash
-> apt-get update -y && apt-get upgrade -y
+apt-get update -y && apt-get upgrade -y
 ```
 
 ```bash
-> pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
+pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
 ```
 
 ```bash
-> git clone https://github.com/Dev-Diego/YaemoriBot-MD && cd YaemoriBot-MD 
+git clone https://github.com/Dev-Diego/YaemoriBot-MD && cd YaemoriBot-MD 
 ```
 
 ```bash
-> yarn install
+yarn install
 ```
 
 ```bash
-> npm install
+npm install
 ```
 
 ```bash
-> npm start
+npm start
 ```
 
 ---
