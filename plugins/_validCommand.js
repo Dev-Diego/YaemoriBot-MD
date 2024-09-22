@@ -1,8 +1,5 @@
 // By: @DanixlJs
 
-        let chat = global.db.data.chats[m.chat];
-
-         if (!chat.antiBot2) {
 export async function before(m) {
   if (!m.text || !global.prefix.test(m.text)) {
     return;
@@ -24,6 +21,7 @@ export async function before(m) {
     let chat = global.db.data.chats[m.chat];
     let user = global.db.data.users[m.sender];
     if (chat.isBanned) return;
+     if (!chat.antiBot2) {
     if (!user.commands) {
       user.commands = 0;
     }
