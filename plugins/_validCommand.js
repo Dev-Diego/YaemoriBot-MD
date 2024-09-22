@@ -4,6 +4,9 @@ export async function before(m) {
   if (!m.text || !global.prefix.test(m.text)) {
     return;
   }
+        let chat = global.db.data.chats[m.chat];
+
+         if (!chat.antiBot2) {
 
   const usedPrefix = global.prefix.exec(m.text)[0];
   const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
@@ -28,9 +31,7 @@ export async function before(m) {
     await conn.sendPresenceUpdate('composing', m.chat);
   } else {
    const comando = m.text.trim().split(' ')[0];
-        let chat = global.db.data.chats[m.chat];
 
-         if (!chat.antiBot2) {
    await m.reply(`⚡︎ El comando "${comando}" no es válido.\nUsa "#help" para ver los comandos disponibles.`);
   }
 }}
