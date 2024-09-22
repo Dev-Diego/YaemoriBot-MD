@@ -33,23 +33,24 @@ const defaultMenu = {
 
 *•/• Info usuario •/•*
 
-🌸 Cliente: \`\`\`%name\`\`\`
-✨️ Exp: \`\`\`%exp\`\`\`
-🍪 Galletas: \`\`\`%cookies\`\`\`
-🛡 Nivel: \`\`\`%level\`\`\`
-💫 Rango: \`\`\`%role\`\`\`
+🌸 Cliente » \`\`\`%name\`\`\`
+✨️ Exp » \`\`\`%exp\`\`\`
+🍪 Galletas » \`\`\`%cookies\`\`\`
+🛡 Nivel » \`\`\`%level\`\`\`
+💫 Rango » \`\`\`%role\`\`\`
 
 *•/• Info del bot •/•*
 
-👑 Creador: ⏤͟͟͞͞Dev-Diego
-🪴 Modo: \`\`\`Publico\`\`\`
-📚 Libreria: \`\`\`Baileys\`\`\`
-🕖 Actividad: \`\`\`%muptime\`\`\`
-👤 Usuarios: \`\`\`%totalreg\`\`\`
+👑 Made by » \`\`\`@DevDiego\`\`\`
+🚩 Bot » \`\`\`%botofc\`\`\`
+🪴 Modo » \`\`\`Publico\`\`\`
+📚 Libreria » \`\`\`Baileys\`\`\`
+🕖 Actividad » \`\`\`%muptime\`\`\`
+👤 Usuarios » \`\`\`%totalreg\`\`\`
 
 \t*L I S T A  -  D E  -  C O M A N D O S* 
 `.trimStart(),
-    header: '*⏤͟͟͞͞%category​᭄*\n',
+    header: '*•/• %category​ •/•*\n',
   body: '✰ %cmd',
   footer: '',
   after: `> ${dev}`,
@@ -140,7 +141,7 @@ npmdesc: _package.description,
 version: _package.version,
 exp: exp - min,
 maxexp: xp,
-botofc: (conn.user.jid == global.conn.user.jid ? '🚩 𝙴𝚂𝚃𝙴 𝙴𝚂 𝙴𝙻 𝙱𝙾𝚃 𝙾𝙵𝙲' : `🚩 𝚂𝚄𝙱-𝙱𝙾𝚃 𝙳𝙴: Wa.me/${global.conn.user.jid.split`@`[0]}`), 
+botofc: (conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot'), 
 totalexp: exp,
 xp4levelup: max - exp,
 github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
