@@ -21,7 +21,6 @@ export async function before(m) {
     let chat = global.db.data.chats[m.chat];
     let user = global.db.data.users[m.sender];
     if (chat.isBanned) return;
-     if (!chat.antiBot2) {
     if (!user.commands) {
       user.commands = 0;
     }
@@ -29,7 +28,6 @@ export async function before(m) {
     await conn.sendPresenceUpdate('composing', m.chat);
   } else {
    const comando = m.text.trim().split(' ')[0];
-
    await m.reply(`⚡︎ El comando "${comando}" no es válido.\nUsa "#help" para ver los comandos disponibles.`);
   }
-}}
+}
