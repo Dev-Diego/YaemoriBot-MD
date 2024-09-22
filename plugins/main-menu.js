@@ -150,6 +150,15 @@ readmore: readMore
 }
 text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
 
+let category = "video"
+const db = './media/database/db.json'
+const db_ = JSON.parse(fs.readFileSync(db))
+const random = Math.floor(Math.random() * db_.links[category].length)
+const rlink = db_.links[category][random]
+global.vid = rlink
+const response = await fetch(vid)
+const gif = await response.buffer()
+
 const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 
 const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/AdwJ.jpg')
@@ -158,7 +167,10 @@ await conn.reply(m.chat, '*Próximamente se remitirá el menú.*', fkontak, { co
 
 await m.react('🚀') 
 
-await conn.sendMessage(m.chat, {text: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: '© ᥡᥲᥱm᥆rі ᑲ᥆𝗍 - mძ ⚡︎', body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: redeshost, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
+await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ', body: dev, thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
+}, }, gifPlayback: true, gifAttribution: 0 }, { quoted: fkontak })
+
+//await conn.sendMessage(m.chat, {text: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: '© ᥡᥲᥱm᥆rі ᑲ᥆𝗍 - mძ ⚡︎', body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: redeshost, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
 
   } catch (e) {
     await m.react(error)
