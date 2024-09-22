@@ -61,9 +61,19 @@
 <details>
  <summary><b> 🌸 Comandos</b></summary>
 
-#### **🌺 Instalación manual por termux**
+#### **✨️ Instalación automatica por termux**
 
 > Copia los códigos uno por uno, no los pegues todos juntos a la vez.
+
+```bash
+> termux-setup-storage
+```
+
+```bash
+> apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/Dev-Diego/YaemoriBot-MD/master/mini.sh | bash
+```
+
+#### **🌺 Instalación manual por termux**
 
 ```bash
 > termux-setup-storage
