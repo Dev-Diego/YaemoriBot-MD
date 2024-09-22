@@ -1,12 +1,12 @@
 // By: @DanixlJs
 
+        let chat = global.db.data.chats[m.chat];
+
+         if (!chat.antiBot2) {
 export async function before(m) {
   if (!m.text || !global.prefix.test(m.text)) {
     return;
   }
-        let chat = global.db.data.chats[m.chat];
-
-         if (!chat.antiBot2) {
 
   const usedPrefix = global.prefix.exec(m.text)[0];
   const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
