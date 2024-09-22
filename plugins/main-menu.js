@@ -43,8 +43,7 @@ const defaultMenu = {
 
 👑 Made by » \`\`\`@DevDiego\`\`\`
 🚩 Bot » \`\`\`%botofc\`\`\`
-🪴 Modo » \`\`\`Publico\`\`\`
-📚 Libreria » \`\`\`Baileys\`\`\`
+📆 Fecha » \`\`\`%fecha\`\`\`
 🕖 Actividad » \`\`\`%muptime\`\`\`
 👤 Usuarios » \`\`\`%totalreg\`\`\`
 
@@ -142,6 +141,7 @@ version: _package.version,
 exp: exp - min,
 maxexp: xp,
 botofc: (conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot'), 
+fecha: moment.tz('America/Bogota').format('DD/MM/YY'), 
 totalexp: exp,
 xp4levelup: max - exp,
 github: _package.homepage ? _package.homepage.url || _package.homepage : '[unknown github url]',
