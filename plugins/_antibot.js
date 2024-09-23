@@ -18,9 +18,7 @@ await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
             }
         }
     }
-}*/.
-
-import { love, amor } from 'amorcito-love'
+}*/
 
 let handler = async (m, { text, amorfix }) => {
 
