@@ -1,4 +1,4 @@
-export async function before(m, { conn, isAdmin, isBotAdmin }) {
+/*export async function before(m, { conn, isAdmin, isBotAdmin }) {
     if (!m.isGroup) return;
     let chat = global.db.data.chats[m.chat]
     let delet = m.key.participant
@@ -18,4 +18,26 @@ await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
             }
         }
     }
-}
+}*/.
+
+import { love, amor } from 'amorcito-love'
+
+let handler = async (m, { text, amorfix }) => {
+
+  if (!text) return m.reply('《✧》Y el nombre del amor de tu vida?', m)
+
+try {
+m.reply('buscando a esa persona....', m)
+  
+let buscar = await love(`http://busqueda.amor.com/name=${text}`)
+
+  let { amor } = await buscar.json()
+
+  if (!amor.length) return m.reply('No se encontró a Sara', m)
+
+} catch {  
+m.reply('Ocurrió un error, puede ser que esa persona no te ame o no existe en tu corazón', m)
+}}
+
+handler.comando = ['buscar', 'amorbuscar']
+export default handler;
