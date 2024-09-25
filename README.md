@@ -266,6 +266,6 @@ href="https://github.com/Dev-Diego"><img src="https://github.com/Dev-Diego.png" 
 
 ### **`🌹 CREDITOS`**
 <a
-href="https://github.com/GataNina-Li"><img src="https://github.com/GataNina-Li.png" width="130" height="130" alt="GataDios"/></a>
+href="https://github.com/BrunoSobrino"><img src="https://github.com/BrunoSobrino.png" width="130" height="130" alt="GataDios"/></a>
 
 [© Powered By Sunlight Team ⚡︎](https://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z)
