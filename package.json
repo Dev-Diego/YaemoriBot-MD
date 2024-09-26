@@ -81,7 +81,7 @@
 "url-regex-safe": "^3.0.0",
 "uuid":"^10.0.0",
 "emoji-api": "^2.0.1",
-"translate-google-api": "^1.0.4",
+"translate-google-api": "^2.3.0",
 "google-it": "^1.6.4",
 "yt-search": "^2.10.3",
 "@vitalets/google-translate-api": "^9.2.0",
