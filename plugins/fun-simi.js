@@ -16,7 +16,7 @@ return conn.reply(m.chat, '❀ Ocurrió un error', m, fake);
 handler.help = ['simi', 'bot'];
 handler.tags = ['fun'];
 handler.register = true;
-handler.command = ['simi', 'bot', 'alexa', 'yaemori', 'mini', 'ai']
+handler.command = ['simi', 'bot', 'alexa', 'yaemori', 'mini', 'ai'];
 export default handler;
 
 async function simitalk(ask, apikeyyy = "iJ6FxuA9vxlvz5cKQCt3", language = "es") {
