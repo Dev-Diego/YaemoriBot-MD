@@ -10,14 +10,13 @@ try {
 const resSimi = await simitalk(text);
 conn.sendMessage(m.chat, { text: resSimi.resultado.simsimi }, { quoted: m });
 } catch {
-throw '🚩 *Ocurrió un error*';
+return conn.reply(m.chat, '❀ Ocurrió un error', m, fake);
 }};
 
 handler.help = ['simi', 'bot'];
 handler.tags = ['fun'];
-handler.group = true;
 handler.register = true
-handler.command = ['simi','bot','alexa','Megu','Megumin','ai']
+handler.command = ['simi', 'bot', 'alexa', 'yaemori', 'mini', 'ai']
 export default handler;
 
 async function simitalk(ask, apikeyyy = "iJ6FxuA9vxlvz5cKQCt3", language = "es") {
