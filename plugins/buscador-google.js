@@ -8,7 +8,7 @@ if (!text) return conn.reply(m.chat, '🍟 Ingresa lo que deseas buscar en Googl
 conn.reply(m.chat, `🚩 Buscando Su Información...`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
 const url = 'https://google.com/search?q=' + encodeURIComponent(text)
