@@ -4,7 +4,7 @@ const handler = async (m, {conn, command, usedPrefix}) => {
 conn.reply(m.chat, `🚩 Enviando el *${command}*`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
    switch (command) {
