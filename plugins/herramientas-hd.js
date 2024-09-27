@@ -9,7 +9,7 @@ const handler = async (m, {conn, usedPrefix, command}) => {
   conn.reply(m.chat, '🚩 Mejorando la calidad de la imagen....', m, {
   contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
   title: packname,
-  body: wm,
+  body: dev,
   previewType: 0, thumbnail: icons,
   sourceUrl: channel }}})
   let img = await q.download?.();
