@@ -38,14 +38,15 @@ global.baileys = 'V 6.7.8'
 global.vs = '2.0.7'
 global.languaje = 'Español'
 global.nameqr = 'Yaemori Bot - MD'
+global.namebot = 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ'
 global.sessions = 'MiniSession'
 global.jadi = 'MiniJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ'
-global.botname = 'Ai Yaemori - MD 🚩'
-global.wm = 'YaemoriBot-MD 🍭'
+global.packname = '⪛✰ 𝐀𝐢 𝐘𝐚𝐞𝐦𝐨𝐫𝐢 - 𝐌𝐃 ✰⪜'
+global.botname = '© ᥡᥲᥱm᥆rі ᑲ᥆𝗍 - mძ'
+global.wm = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☄︎'
 global.author = 'ᥴrᥱᥲ𝗍ᥱძ ᑲᥡ ძᥱ᥎-ძіᥱg᥆ ᰔᩚ'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ sᥙᥒᥣіgһ𝗍 𝗍ᥱᥲm ❀'
 global.textbot = 'ᥲі ᥡᥲᥱm᥆rі : ᥆𝖿ᥴძіᥱg᥆ 🚩'
