@@ -170,7 +170,7 @@ const document = doc[Math.floor(Math.random() * doc.length)];
       conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
     }
   } catch {
-    conn.reply(m.chat, '*Este menu tiene un error interno, por lo cual no fue posible enviarlo.*', m);
+    conn.reply(m.chat, '「✿」 *Ocurrió un error al enviar el menú de audios.*', m, fake, );
   }
 };
 handler.tags = ['main']
