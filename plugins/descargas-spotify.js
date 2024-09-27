@@ -70,7 +70,7 @@ try {
 conn.reply(m.chat, '🚩 *Enviando su música de Spotify*', m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
 await m.react(rwait)
@@ -89,7 +89,7 @@ _${res.name}_
 » ${shortURL}
 
 ✨️ *Enviando Canción....*
-${global.wm}`
+${global.packname}`
 
 let resImg = await fetch(res.imagen)
 let thumbb = await resImg.buffer()
