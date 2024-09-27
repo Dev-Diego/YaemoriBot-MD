@@ -7,7 +7,7 @@ if (!text) return conn.reply(m.chat, `🍟 *Escriba el título de algún vídeo 
 conn.reply(m.chat, wait, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
-body: wm,
+body: dev,
 previewType: 0, thumbnail: icons,
 sourceUrl: channel }}})
 
