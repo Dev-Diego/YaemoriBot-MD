@@ -23,6 +23,6 @@ case 'en':
 return m.reply('Language set to English 🇺🇲')
 }
 }
-handler.command = ['idioma', 'lenguaje']
+handler.command = ['idioma', 'lenguage', 'lenguaje']
 handler.rowner = true
 export default handler
