@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     let who;
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
     else who = m.chat;
-    if (!who) throw `Etiqueta o menciona a alguien`;
+    if (!who) return conn.reply(m.chat, `🚩 *Etiqueta al usuario.*`, m, fake);
 
     let user = global.db.data.users[who];
     let name = conn.getName(who);
@@ -36,9 +36,9 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.sendFile(m.chat, stickerData, null, { asSticker: true }, m);
 };
 
-handler.help = ['violar @tag'];
+handler.help = ['violar'];
 handler.tags = ['fun'];
-handler.command = /^(violar|fuck)$/i;
+handler.command = ['violar', 'fuck'];
 handler.group = true;
 
 export default handler;
