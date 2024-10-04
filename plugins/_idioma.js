@@ -5,8 +5,8 @@ if (!text) {
 let listSections = []    
 listSections.push({
 title: '',
-rows: [{ header: "", title: "Español 🇪🇦", id: `.idioma es`, description: `` },
-{ header: "", title: "English 🇺🇸", id: `.idioma en`, description: `` }
+rows: [{ header: "", title: "Español 🇪🇦", id: `#idioma es`, description: `` },
+{ header: "", title: "English 🇺🇸", id: `#idioma en`, description: `` }
 ]})
 return conn.sendList(m.chat, _idioma, null, `🌐 Idiomas`, listSections, { mentions: [m.sender]}, {quoted: m})
 //return conn.sendButton(m.chat, _idioma, '🍟 Seleccione su idioma', null, [['Español 🇲🇽', `.idioma es`], ['Inglés 🇺🇸', `.idioma en`], ['Indonesio 🇮🇩', `.idioma id`]], null, null, m)
