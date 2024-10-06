@@ -5,7 +5,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
   const user = global.db.data.users[who];
   if (!who) return conn.reply(m chat, `🏓 Ingresa un @tag el que quiera quitarle el premium`, m);
   if (!user) return conn.reply(m.chat, `*☘️ Ese humano no está en mi base de datos*`, m);
-  if (user.premiumTime = 0) return conn.reply(m.chat, '*🥷 El humano no es usuario premium 👑*', m);
+  if (user.premiumTime = 0) return conn.reply(m.chat, `*🥷 El humano no es usuario premium 👑*`, m);
   const txt = text.replace('@' + who.split`@`[0], '').trim();
 
   user.premiumTime = 0;
