@@ -122,8 +122,8 @@ global.rcanal = {
                                         mediaUrl: null,
                                         description: null,
                                         previewType: "PHOTO",
-                                        thumbnailUrl: icono,
-                    thumbnail: icono,
+                                        thumbnailUrl: imagen1,
+                    thumbnail: imagen1,
                            sourceUrl: channel,
                            mediaType: 1,
                    renderLargerThumbnail: true
