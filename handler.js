@@ -20,7 +20,6 @@ return
     this.pushMessage(chatUpdate.messages).catch(console.error)
 let m = chatUpdate.messages[chatUpdate.messages.length - 1]
 if (!m)
-if (!m) {
 return;
 if (global.db.data == null)
 await global.loadDatabase()       
