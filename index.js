@@ -13,10 +13,10 @@ const require = createRequire(__dirname);
 const { name, description, author, version } = require(join(__dirname, './package.json'));
 const { say } = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
-say('Yaemori\nBot', {
-font: 'block',
+say("YaemoriBot - MD", {
+font: 'tiny',
 align: 'center',
-colors: ['white']
+colors: ['#ff8000'],
 });
 say(`Melissa • DevDiego`, {
 font: 'chrome',
@@ -26,7 +26,7 @@ colors: ['red']
 say(`Developed By • Dev Diego`, {
 font: 'console',
 align: 'center',
-colors: ['yellow']
+colors: ['green']
 });
 var isRunning = false;
 function start(file) {
