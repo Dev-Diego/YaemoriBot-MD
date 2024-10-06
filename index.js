@@ -14,14 +14,9 @@ const { name, description, author, version } = require(join(__dirname, './packag
 const { say } = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
 say('YaemoriBot - MD', {
-font: 'tiny',
-align: 'center',
-colors: ['#ff8000'],
-});
-say(`Melissa • DevDiego`, {
 font: 'chrome',
 align: 'center',
-colors: ['red']
+colors: ['red'],
 });
 say(`Developed By • Dev Diego`, {
 font: 'console',
