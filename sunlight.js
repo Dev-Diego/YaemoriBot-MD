@@ -45,7 +45,7 @@ global.prefix = new RegExp('^[' + (opts['prefix'] || 'â€Žz/#$%.\\-').replace
 
 // global.opts['db'] = process.env['db']
 
-global.db = new Low(new JSONFile(`storage/databases/database.json`))
+global.db = new Low(new JSONFile(`src/database/db.json`))
 
 global.DATABASE = global.db 
 global.loadDatabase = async function loadDatabase() {
