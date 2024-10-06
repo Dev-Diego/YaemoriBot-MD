@@ -22,6 +22,12 @@
 "author": {
 "name": "Dev-Diego"
 },
+"collaborators": {
+"col1": "David-Chian",
+"col2": "SheZir",
+"col3": "CheirZ",
+"col4": "glyglobal"
+},
 "repository": {
 "type": "git",
 "url": "git+https://github.com/Dev-Diego/YaemoriBot-MD.git"
