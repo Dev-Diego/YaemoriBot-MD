@@ -7,7 +7,7 @@ import cfonts from 'cfonts';
 import { createInterface } from 'readline';
 import yargs from 'yargs';
 import chalk from 'chalk';
-console.log('\n✰ Iniciando Yaemori ✰');
+console.log('\n🚀 Start: Iniciando La Bot.');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(__dirname);
 const { name, description, author, version } = require(join(__dirname, './package.json'));
@@ -18,7 +18,7 @@ font: 'block',
 align: 'center',
 colors: ['white']
 });
-say(`Multi Device`, {
+say(`Melissa • DevDiego`, {
 font: 'chrome',
 align: 'center',
 colors: ['red']
@@ -57,7 +57,7 @@ break;
 });
 p.on('exit', (_, code) => {
 isRunning = false;
-console.error('🚩 Error:\n', code);
+console.error('✦ Error:\n', code);
 process.exit();
 if (code === 0) return;
 watchFile(args[0], () => {
