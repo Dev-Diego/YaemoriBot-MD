@@ -23,8 +23,8 @@ if (!m)
 if (!m) {
 return;
 }
-if (global.db.data == null) await global.loadDatabase()             
-if (global.chatgpt.data === null) await global.loadChatgptDB()        
+if (global.db.data == null)
+await global.loadDatabase()     
 try {
 m = smsg(this, m) || m
 if (!m)
