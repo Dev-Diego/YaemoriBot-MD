@@ -111,7 +111,25 @@ global.icono = [
 'https://qu.ax/KGNB.jpg'
 ].getRandom()
 
-global.rcanal = { contextInfo: { forwardingScore: 9999, isForwarded: false, 
-externalAdReply: { showAdAttribution: true, title: packname, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, thumbnail: icono, sourceUrl: channel, mediaType: 1, renderLargerThumbnail: true }}}
+global.rcanal = {
+            contextInfo: { 
+             forwardingScore: 9999, 
+                 isForwarded: false, 
+                    externalAdReply: {
+                                    showAdAttribution: true,
+                                        title: packname,
+                                        body: dev,
+                                        mediaUrl: null,
+                                        description: null,
+                                        previewType: "PHOTO",
+                                        thumbnailUrl: icono,
+                    thumbnail: icono,
+                           sourceUrl: channel,
+                           mediaType: 1,
+                   renderLargerThumbnail: true
+                                }
+                        }
+                }
+}
 
 export default handler
