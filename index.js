@@ -66,7 +66,7 @@ break
 p.on('exit', (_, code) => {
 isRunning = false
 console.log('🚩 Error: ', code)
-start('main.js')
+start('sunlight.js')
 
 if (code === 0) return
 watchFile(args[0], () => {
