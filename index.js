@@ -16,7 +16,7 @@ const rl = createInterface(process.stdin, process.stdout);
 say('YaemoriBot - MD', {
 font: 'chrome',
 align: 'center',
-colors: ['red'],
+gradient: ['red', 'magenta']
 });
 say(`Developed By • Dev Diego`, {
 font: 'console',
