@@ -46,7 +46,7 @@ user.premium = false
 if (!user.premium) 
 user.premiumTime = 0
 if (!('registered' in user))
-user.registered = false
+user.registered = true
 if (!user.registered) {
 if (!('name' in user))
 user.name = m.name
@@ -72,7 +72,7 @@ user.bank = 0
 exp: 0,
 cookies: 10,
 muto: false,
-registered: false,
+registered: true,
 name: m.name,
 age: -1,
 regTime: -1,
