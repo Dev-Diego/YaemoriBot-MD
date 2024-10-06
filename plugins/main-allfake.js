@@ -112,6 +112,6 @@ global.icono = [
 ].getRandom()
 
 global.rcanal = { contextInfo: { forwardingScore: 9999, isForwarded: false, 
-externalAdReply: { showAdAttribution: true, title: packname, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, thumbnail: img, sourceUrl: channel, mediaType: 1, renderLargerThumbnail: true }}}}
+externalAdReply: { showAdAttribution: true, title: packname, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, thumbnail: icono, sourceUrl: channel, mediaType: 1, renderLargerThumbnail: true }}}}
 
 export default handler
