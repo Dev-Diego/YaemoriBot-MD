@@ -12,7 +12,7 @@ m.reply(`🍭 Me uní correctamente al Grupo`)
 return m.reply('✘ Ocurrió un error.')}}
 
 handler.help = ['join <link>']
-handler.tags = ['mods']
+handler.tags = ['owner']
 handler.command = ['join', 'entrar'] 
 handler.rowner = true
 
