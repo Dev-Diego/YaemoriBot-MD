@@ -21,7 +21,7 @@ gradient: ['red', 'magenta']
 say(`Developed By • Dev Diego`, {
 font: 'console',
 align: 'center',
-colors: ['green']
+colors: ['blue']
 });
 var isRunning = false;
 function start(file) {
