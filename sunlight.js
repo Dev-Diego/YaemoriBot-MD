@@ -75,15 +75,9 @@ sticker: {},
 settings: {},
 ...(global.db.data || {}),
 }
-global.db.chain = chain(global.db.data);
+global.db.chain = chain(global.db.data)
 }
-loadDatabase();
 
-if (global.conns instanceof Array) {
-console.log('🚩 Conexiones ya inicializadas...');
-} else {
-global.conns = [];
-}
 const {state, saveState, saveCreds} = await useMultiFileAuthState(global.sessions)
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
