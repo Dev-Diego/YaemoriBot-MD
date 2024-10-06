@@ -20,9 +20,11 @@ return
     this.pushMessage(chatUpdate.messages).catch(console.error)
 let m = chatUpdate.messages[chatUpdate.messages.length - 1]
 if (!m)
-return
-/*if (global.db.data == null)
-await global.loadDatabase()*/
+if (!m) {
+return;
+}
+if (global.db.data == null) await global.loadDatabase()             
+if (global.chatgpt.data === null) await global.loadChatgptDB()        
 try {
 m = smsg(this, m) || m
 if (!m)
