@@ -91,6 +91,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
 
  case 'autoread':
+    case 'autoleer':
+    case 'autover':
       isAll = true
        if (!isROwner) {
          global.dfail('rowner', m, conn)
