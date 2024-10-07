@@ -82,7 +82,7 @@ const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?
 if (connection === 'close') {
 console.log(reason)
 if (reason == 405) {
-await fs.unlinkSync('./jadibts/' + id + '/creds.json')
+await fs.unlinkSync('./${jadi}/' + id + '/creds.json')
 
 return await conn.reply(m.chat, '🚩 *Conexión cerrada*', m)
 }
@@ -113,7 +113,7 @@ global.conns.push(conn)
 await parentw.sendMessage(m.chat, {text : args[0] ? `✅ *Conectado*` : `🎌 *Conectado*\n\nUtilice su ID para volver a conectarse`}, { quoted: m })
 await parentw.sendMessage(m.chat, {text : `🎌 *Esta conectado, espere un momento*`}, { quoted: m })
 await sleep(5000)
-if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./jadibts/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
+if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./${jadi}/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
 }}
 setInterval(async () => {
