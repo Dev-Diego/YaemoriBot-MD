@@ -9,7 +9,7 @@ handler.help = ['unbanchat'];
 handler.tags = ['mods'];
 handler.command = ['unbanchat','desbanearchat','desbanchat']
 handler.admin = true 
-handler.botAdmin
+handler.botAdmin = true
 handler.group = true
 
 export default handler
