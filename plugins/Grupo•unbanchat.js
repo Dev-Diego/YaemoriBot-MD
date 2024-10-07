@@ -6,7 +6,7 @@ chat.isBanned = false
 await conn.reply(m.chat, '🚩 *¡Ai Yaemori ya fué desbaneada en este chat!*', m, fake)
 }
 handler.help = ['unbanchat'];
-handler.tags = ['mods'];
+handler.tags = ['grupo'];
 handler.command = ['unbanchat','desbanearchat','desbanchat']
 handler.admin = true 
 handler.botAdmin = true
