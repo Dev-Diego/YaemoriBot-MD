@@ -90,15 +90,13 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.modoadmin = isEnable
       break
 
-  case 'autoread':
-    case 'autoleer':
-    case 'leermensajes':
-     isAll = true
-     if (!isOwner) {
-     global.dfail('rowner', m, conn)
-      throw false
+ case 'autoread':
+      isAll = true
+       if (!isROwner) {
+         global.dfail('rowner', m, conn)
+         throw false
       }
-      bot.autoread = isEnable
+      global.opts['autoread'] = isEnable
       break
 
   case 'antiver':
