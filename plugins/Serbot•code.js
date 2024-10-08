@@ -98,9 +98,7 @@ if (code === DisconnectReason.badSession) {
 return await conn.reply(m.chat, '🚩 *La conexión se ha cerrado, deberá de conectarse manualmente*', m)
 if (code === DisconnectReason.timedOut) 
 return console.log('🚩 Tiempo de conexión agotado, reconectando....')
-} else {
-console.log('🚩 Razon de desconexión desconocida: ${reason || ""} >> ${connection || ""}')
-}}
+}
 if (global.db.data == null) loadDatabase()
 if (connection == 'open') {
 conn.isInit = true;
