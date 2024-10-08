@@ -86,7 +86,7 @@ delete global.conns[i];
 global.conns.splice(i, 1);
 if (code !== 428)
 return conn.reply(m.chat, '🎌 *La conexión se ha cerrado de manera inesperada, intentaremos reconectar...*', m)
-if (code !=== DisconnectReason.connectionLost) 
+if (code !== DisconnectReason.connectionLost) 
 return console.log('🎌 Conexión perdida con el servidor, reconectando')
 if (code !== DisconnectReason.connectionClosed) { parent.sendMessage(m.chat, { text: "🚩 Conexión perdida con el servidor." }, { quoted: m });
 }}
