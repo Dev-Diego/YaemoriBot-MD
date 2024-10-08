@@ -84,7 +84,7 @@ let i = global.conns.indexOf(conn);
 if (i < 0) return console.log(await creloadHandler(true).catch(console.error));
 delete global.conns[i];
 global.conns.splice(i, 1);
-if (code !== DisconnectReason.connectionLost) { parent.sendMessage(m.chat, { text: "🚩 Conexión perdida con el servidor." }, { quoted: m });
+if (code !== DisconnectReason.connectionClosed) { parent.sendMessage(m.chat, { text: "🚩 Conexión perdida con el servidor." }, { quoted: m });
 }}
 if (global.db.data == null) loadDatabase();
 if (connection == 'open') {
