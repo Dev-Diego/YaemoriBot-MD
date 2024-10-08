@@ -107,11 +107,10 @@ return console.log('🚩 Tiempo de conexión agotado, reconectando....')
 console.log('🚩 Razon de desconexión desconocida: ${reason || ""} >> ${connection || ""}')
 }}
 if (global.db.data == null) loadDatabase()
-if (connection == `open`) {
-conn.isInit = true
-global.conns.push(conn)
-await parentw.sendMessage(m.chat, {text : args[0] ? `✅ *Conectado*` : `🎌 *Conectado*\n\nUtilice su ID para volver a conectarse`}, { quoted: m })
-await parentw.sendMessage(m.chat, {text : `🎌 *Esta conectado, espere un momento*`}, { quoted: m })
+if (connection == 'open') {
+conn.isInit = true;
+global.conns.push(conn);
+await parent.reply(m.chat, args[0] ? '🐢 Conectado con éxito al WhatsApp.' : '🚩 Vinculaste un Sub-Bot con éxito.', m, rcanal);
 await sleep(5000)
 if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./${jadi}/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
 
