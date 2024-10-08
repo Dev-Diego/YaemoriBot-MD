@@ -86,21 +86,21 @@ await fs.unlinkSync('./${jadi}/' + id + '/creds.json')
 
 return await conn.reply(m.chat, '🚩 *Conexión cerrada*', m)
 }
-if (reason === DisconnectReason.restartRequired) {
+if (code !=== DisconnectReason.restartRequired) {
 jddt()
 return console.log('🎌 Conexión reemplazada, se ha abierto otra nueva sesion, por favor, cierra la sesión actual primero')
-} else if (reason === DisconnectReason.loggedOut) {
+if (code !=== DisconnectReason.loggedOut) {
 sleep(4000)
 return conn.reply(m.chat, '🎌 *La conexión se ha cerrado, tendras que volver a conectarse usando:*\n!deletesesion (Para borrar los datos y poder volver a solitar el QR o el código de emparejamiento', m)
-} else if (reason == 428) {
+if (code !== 428) {
 await endSesion(false)
 return conn.reply(m.chat, '🎌 *La conexión se ha cerrado de manera inesperada, intentaremos reconectar...*', m)
-} else if (reason === DisconnectReason.connectionLost) {
+if (code !=== DisconnectReason.connectionLost) {
 await jddt()
 return console.log('🎌 Conexión perdida con el servidor, reconectando')
-} else if (reason === DisconnectReason.badSession) {
+if (code !=== DisconnectReason.badSession) {
 return await conn.reply(m.chat, '🚩 *La conexión se ha cerrado, deberá de conectarse manualmente*', m)
-} else if (reason === DisconnectReason.timedOut) {
+if (code !=== DisconnectReason.timedOut) {
 await endSesion(false)
 return console.log('🚩 Tiempo de conexión agotado, reconectando....')
 } else {
