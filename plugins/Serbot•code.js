@@ -79,34 +79,25 @@ async function connectionUpdate(update) {
 const { connection, lastDisconnect, isNewLogin, qr } = update;
 if (isNewLogin) conn.isInit = true;
 const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
-if (connection === 'close') {
-console.log(reason)
-if (reason == 405) {
-await fs.unlinkSync('./${jadi}/' + id + '/creds.json')
-
-return await conn.reply(m.chat, '🚩 *Conexión cerrada*', m)
-}
-if (code === DisconnectReason.restartRequired)
-return console.log('🎌 Conexión reemplazada, se ha abierto otra nueva sesion, por favor, cierra la sesión actual primero')
-if (code === DisconnectReason.loggedOut) 
-return conn.reply(m.chat, '🎌 *La conexión se ha cerrado, tendras que volver a conectarse usando:*\n!deletesesion (Para borrar los datos y poder volver a solitar el QR o el código de emparejamiento', m)
-if (code == 428)
+if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
+let i = global.conns.indexOf(conn);
+if (i < 0) return console.log(await creloadHandler(true).catch(console.error));
+delete global.conns[i];
+global.conns.splice(i, 1);
+if (code !== 428)
 return conn.reply(m.chat, '🎌 *La conexión se ha cerrado de manera inesperada, intentaremos reconectar...*', m)
-if (code === DisconnectReason.connectionLost) 
+if (code !=== DisconnectReason.connectionLost) 
 return console.log('🎌 Conexión perdida con el servidor, reconectando')
-if (code === DisconnectReason.badSession) {
-return await conn.reply(m.chat, '🚩 *La conexión se ha cerrado, deberá de conectarse manualmente*', m)
-if (code === DisconnectReason.timedOut) 
-return console.log('🚩 Tiempo de conexión agotado, reconectando....')
-}
-if (global.db.data == null) loadDatabase()
+if (code !== DisconnectReason.connectionClosed) { parent.sendMessage(m.chat, { text: "🚩 Conexión perdida con el servidor." }, { quoted: m });
+}}
+if (global.db.data == null) loadDatabase();
 if (connection == 'open') {
 conn.isInit = true;
 global.conns.push(conn);
 await parent.reply(m.chat, args[0] ? '🐢 Conectado con éxito al WhatsApp.' : '🚩 Vinculaste un Sub-Bot con éxito.', m, rcanal);
-await sleep(5000)
-if (!args[0]) parentw.sendMessage(m.chat, {text : usedPrefix + command + ' ' + Buffer.from(fs.readFileSync('./${jadi}/' + id + '/creds.json'), 'utf-8').toString('base64')}, { quoted: m })    
-
+await sleep(5000);
+if (args[0]) return;
+await parentw.reply(conn.user.jid, `🚩 *Para volver a vincular un sub Bot use su token`, m, rcanal)
 }}
 setInterval(async () => {
 if (!conn.user) {
