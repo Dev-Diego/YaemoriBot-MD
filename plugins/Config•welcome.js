@@ -10,17 +10,17 @@ export async function before(m, {conn, participants, groupMetadata}) {
 
   let chat = global.db.data.chats[m.chat]
 
-  if (chat.welcome && m.messageStubType == 27) {
+  if (chat.sWelcome || chat.welcome && m.messageStubType == 27) {
     let wel = `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝗶𝗱𝗼 ☁ 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗕𝗶𝗲𝗻𝘃𝗲𝗻𝗶𝗱𝗼/𝗮\n   │🌺  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
 await conn.sendMini(m.chat, packname, dev, wel, img, img, channel, fkontak)
   }
 
-  if (chat.welcome && m.messageStubType == 28) {
+  if (chat.sBye || chat.welcome && m.messageStubType == 28) {
    let bye = `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗔𝗗𝗜𝗢𝗦 🌸 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗦𝗲 𝗳𝘂𝗲\n   │🌺 𝗡𝘂𝗻𝗰𝗮 𝘁𝗲 𝗾𝘂𝗶𝘀𝗶𝗺𝗼𝘀 𝗮𝗾𝘂𝗶\n   └───────────────┈ ⳹`
 await conn.sendMini(m.chat, packname, dev, bye, img2, img2, channel, fkontak)
   }
 
-  if (chat.welcome && m.messageStubType == 32) {
+  if (chat.sBye || chat.welcome && m.messageStubType == 32) {
     let kick = `┌─★ 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝-𝙼𝙳 🌱 \n│「 𝗔𝗗𝗜𝗢𝗦 🌸 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │🌺  𝗦𝗲 𝗳𝘂𝗲\n   │🌺 𝗡𝘂𝗻𝗰𝗮 𝘁𝗲 𝗾𝘂𝗶𝘀𝗶𝗺𝗼𝘀 𝗮𝗾𝘂𝗶\n   └───────────────┈ ⳹`
 await conn.sendMini(m.chat, packname, dev, kick, img2, img2, channel, fkontak)
 }}
