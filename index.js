@@ -11,7 +11,7 @@ import chalk from 'chalk';
 console.log('\n✰ Iniciando Yaemori ✰');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(__dirname);
-const { name, description, author, version } = require(join(__dirname, './package.json'));
+const { name, description, collaborators, author, version } = require(join(__dirname, './package.json'));
 const { say } = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
 const subtitleStyle = chalk.white.bold
