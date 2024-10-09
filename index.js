@@ -42,11 +42,6 @@ function start(file) {
 if (isRunning) return;
 isRunning = true;
 let args = [join(__dirname, file), ...process.argv.slice(2)];
-say([process.argv[0], ...args].join(' '), {
-font: 'console',
-align: 'center',
-colors: ['green']
-});
 setupMaster({
 exec: args[0],
 args: args.slice(1),
