@@ -1,10 +1,5 @@
-/* 
-ʙʏ ᴊᴛxꜱ 🐢
-
-[ HasumiBot FreeCodes ] :
-https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
-
-*/
+// ʙʏ ᴊᴛxꜱ 🐢
+// https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
 
 import axios from 'axios';
 const { proto, generateWAMessageFromContent, generateWAMessageContent } = (await import('@whiskeysockets/baileys')).default;
