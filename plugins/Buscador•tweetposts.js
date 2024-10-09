@@ -1,5 +1,12 @@
-// ʙʏ ᴊᴛxꜱ 🐢
-// https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
+/*
+
+- Agradecimiento al canal de "WSApp • Hasumi FreeCodes"
+ * https://whatsapp.com/channel/0029Vanjyqb2f3ERifCpGT0W
+
+- Manejador del canal de "WSApp • Hasumi FreeCodes"
+ * Jtxs
+
+*/
 
 import axios from 'axios';
 const { proto, generateWAMessageFromContent, generateWAMessageContent } = (await import('@whiskeysockets/baileys')).default;
