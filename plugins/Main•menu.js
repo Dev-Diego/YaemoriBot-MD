@@ -171,9 +171,8 @@ const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/
 
 //await conn.reply(m.chat, '*Próximamente se remitirá el menú.*', fkontak, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: packname, body: dev, sourceUrl: redeshost, thumbnail: await (await fetch(pp)).buffer() }}})
 
-switch (true) {     
-case isCommand1:
-try{
+case 'menucompleto':
+case 'allmenu':
 
 await m.react('⭐️') 
 
@@ -188,8 +187,8 @@ await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), cont
 
 break
 
-case isCommand2:
-try{
+  case 'help':
+    case 'menu':
 
     m.react("⭐️");
     let menu = ``;
@@ -248,11 +247,6 @@ txt+= "✬✭✰✬"
 
 break
 
-case cmd == "abrazar":
-
-break
-}    
-break
 }}
 
 handler.command = ["allmenu", "menucompleto", "menu", "help", "menú"];
