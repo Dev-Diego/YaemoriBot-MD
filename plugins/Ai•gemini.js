@@ -2,6 +2,8 @@ import fetch from 'node-fetch'
 var handler = async (m, { text,  usedPrefix, command }) => {
 if (!text) return conn.reply(m.chat, `『🪐』𝙄𝙣𝙜𝙧𝙚𝙨𝙚 𝙪𝙣 𝙩𝙚𝙭𝙩𝙤 𝙥𝙖𝙧𝙖 𝙪𝙨𝙖𝙧 𝙚𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤.\n\n• 𝙋𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙡𝙤:\n${usedPrefix + command} Hola`, m, rcanal)
 try {
+await m.react(rwait)
+conn.sendPresenceUpdate('composing', m.chat)
 var apii = await fetch(`https://aemt.me/gemini?text=${text}`)
 var res = await apii.json()
 await m.reply(res.result)
