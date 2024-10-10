@@ -30,10 +30,6 @@ let tags = {
   'transformador': 'MENÚ - CONVERTIDORES',
 }
 
-switch (true) {     
-case isCommand1:
-try{
-
 const defaultMenu = {
   before: `© mᥱᥒᥙ ᥆𝖿іᥴіᥲᥣ ძᥱ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☁️
 
