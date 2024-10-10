@@ -10,6 +10,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let _uptime = process.uptime() * 1000;
     let uptime = clockString(_uptime);
     let username = conn.getName(m.sender);
+    let name = conn.getName(m.sender)
     let locale = 'es';
     let d = new Date(new Date + 3600000);
     let time = d.toLocaleTimeString(locale, {
@@ -46,7 +47,7 @@ txt+= "✬✭✰✬"
                 header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝙏𝙊 𝙑𝙀𝙍𝙄𝙁𝙄𝘾𝘼𝙍 ╎✅",
                 title: "",
                 description: `🗂 Verificacion Automáticamente`,
-                id: `.reg ${nombre}.17`,
+                id: `.reg ${name}.18`,
             },
             {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎ 🍿ꪳ͢",
@@ -61,13 +62,13 @@ txt+= "✬✭✰✬"
                 id: `#hornymenu`,
             },
             {
-                header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙋𝙀𝙀𝘿 ╎ 🍿ꪳ͢",
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙋𝙀𝙀𝘿 ╎ 🌸",
                 title: "",
                 description: `🚀 Muestra su velocidad y mas.`,
                 id: `#speed`,
             },
             {
-                header: "👑⃝⃤҈𝙂𝙍𝙐𝙋𝙊𝙎 ☁️",
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙂𝙍𝙐𝙋𝙊𝙎 ☁️",
                 title: "",
                 description: `📲 Muestra los grupos principales de la bot.`,
                 id: `#grupos`,
