@@ -25,6 +25,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   global.db.data.users[m.sender].exp += 245
   global.db.data.users[m.sender].joincount += 5
   let sn = createHash('md5').update(m.sender).digest('hex')
+let menu = ``
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
@@ -38,7 +39,34 @@ regbot += `• 12 Tokens 💰\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+let listSections = []
+listSections.push({
+title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: ``,
+rows: [
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝘾𝙍𝙀𝘼𝘿𝙊𝙍 ╎👑",
+title: "",
+description: `✨️ Muestra el creador de la bot.`,
+id: `#creador`,
+},
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝙂𝙍𝙐𝙋𝙊𝙎 ╎📢",
+title: "",
+description: `🌸 Muestra los grupos principales de la bot.`,
+id: `#grupos`,
+},
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎ 🍿ꪳ͢",
+title: "",
+description: `🐢 Muestra el menú completo.`,
+id: `#allmenu`,
+},
+],
+})
+let vid = "https://qu.ax/yddg.jpg"
+let img = "https://qu.ax/mqmGX.jpg"
+let img2 = "https://qu.ax/EhQB.jpg"
+await conn.sendListB(m.chat, menu, regbot, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞Oᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, m)
 }
 handler.help = ['reg']
 handler.tags = ['rg']
