@@ -52,3 +52,9 @@ thumbnailUrl: 'https://qu.ax/wXciz.jpg',
 sourceUrl: redeshost}}},
 { quoted: fkontak})
 } 
+
+handler.help = ['skyplus']
+handler.tags = ['main']
+handler.command = ['skyplus', 'skyultra', 'skyultraplus', 'ultraplus', 'hosting', 'host']
+
+export default handler
