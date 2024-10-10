@@ -19,14 +19,14 @@ contextInfo:{
 forwardedNewsletterMessageInfo: { 
 newsletterJid: '120363301598733462@newsletter', 
 serverMessageId: '', 
-newsletterName: 'Sky-Ultra-Plus ☁️' }, 
+newsletterName: '☁️ Sky Ultra Plus - Channel' }, 
 forwardingScore: 9999999,
 isForwarded: true, 
 "externalAdReply": {
 "showAdAttribution": true,
 "containsAutoReply": true,
-title: `🤖 𝐒𝐊𝐘𝐏𝐋𝐔𝐒-𝐇𝐎𝐒𝐓 🤖`,
-body: `¡El plus que necesitas!_`,
+title: `☁️ 𝗦𝗸𝘆 𝗨𝗹𝘁𝗿𝗮️ 𝗣𝗹𝘂𝘀 ☁️`,
+body: `¡Sky Ultra Plus, tu mejor opción! ⭐️`,
 "previewType": "PHOTO",
 thumbnailUrl: 'https://qu.ax/wXciz.jpg', 
 sourceUrl: redeshost}}},
