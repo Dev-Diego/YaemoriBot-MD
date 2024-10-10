@@ -68,6 +68,12 @@ txt+= "✬✭✰✬"
                 id: `#sc`,
             },
             {
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙆𝙔 𝙐𝙇𝙏𝙍𝘼 𝙋𝙇𝙐𝙎 ╎ 💸",
+                title: "",
+                description: `⚡️ Super hosting, Sky Ultra Plus.`,
+                id: `#skyplus`,
+            },
+            {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙋𝙀𝙀𝘿 ╎ 🌸",
                 title: "",
                 description: `🚀 Muestra su velocidad y mas.`,
