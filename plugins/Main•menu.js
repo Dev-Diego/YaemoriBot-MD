@@ -339,7 +339,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let img10 = "https://iili.io/ds8UrPf.md.png";
     let img11 = "https://iili.io/ds82dmX.md.png";
 
-    await conn.sendListB(m.chat, menu, txt, ` 𓏲୭᳟🤍̸̷̸̷᮫᮫໋໋݂݂ׄׄ.𝐌𝐄𝐍𝐔𝐒 𝐋𝐈𝐒𝐓𓏲᭔᷼⁩`, [vid, img, img2, img3, img4, img5, img6, img8, img9, img10, img11].getRandom(), listSections, estilo);
+    await conn.sendButon(m.chat, menu, txt, ` 𓏲୭᳟🤍̸̷̸̷᮫᮫໋໋݂݂ׄׄ.𝐌𝐄𝐍𝐔𝐒 𝐋𝐈𝐒𝐓𓏲᭔᷼⁩`, [vid, img, img2, img3, img4, img5, img6, img8, img9, img10, img11].getRandom(), listSections, estilo);
 };
 
 handler.command = ["menu", "help", "menú"];
