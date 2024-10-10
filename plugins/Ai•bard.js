@@ -4,7 +4,6 @@ var handler = async (m, { text,  usedPrefix, command }) => {
 if (!text) return conn.reply(m.chat, `🍟 *Ingresé una petición*\n\nEjemplo, ${usedPrefix + command} Conoces a Ai-Yaemori?`, m, rcanal)
 try {
 await m.react('🕒')
-conn.sendPresenceUpdate('composing', m.chat)
 var apii = await fetch(`https://aemt.me/bard?text=${text}`)
 var res = await apii.json()
 await conn.reply(m.chat, res.result, m, rcanal)
