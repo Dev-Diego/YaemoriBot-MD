@@ -63,10 +63,9 @@ id: `#allmenu`,
 },
 ],
 })
-let vid = "https://qu.ax/yddg.jpg"
-let img = "https://qu.ax/mqmGX.jpg"
-let img2 = "https://qu.ax/EhQB.jpg"
-await conn.sendListB(m.chat, menu, regbot, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞Oᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, m)
+let vid = "https://qu.ax/OlTj.jpg"
+let img = "https://qu.ax/OlTj.jpg"
+await conn.sendListB(m.chat, menu, regbot, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞Oᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img].getRandom(), listSections, m)
 }
 handler.help = ['reg']
 handler.tags = ['rg']
