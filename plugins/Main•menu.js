@@ -327,9 +327,19 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         ],
     });
 
-let img = 'https://freeimage.host/i/29IpIHv'
+    let vid = "https://iili.io/ds8UrPf.md.png";
+    let img = "https://iili.io/ds82dmX.md.png";
+    let img2 = "https://iili.io/ds8r8EG.md.png";
+    let img3 = "https://iili.io/ds8UrPf.md.png";
+    let img4 = "https://iili.io/ds82dmX.md.png";
+    let img5 = "https://iili.io/ds8r8EG.md.png";
+    let img6 = "https://iili.io/ds8UrPf.md.png";
+    let img8 = "https://iili.io/ds82dmX.md.png";
+    let img9 = "https://iili.io/ds8r8EG.md.png";
+    let img10 = "https://iili.io/ds8UrPf.md.png";
+    let img11 = "https://iili.io/ds82dmX.md.png";
 
-    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, [img].getRandom(), listSections, estilo);
+    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, [vid, img, img2, img3, img4, img5, img6, img8, img9, img10, img11].getRandom(), listSections, estilo);
 };
 
 handler.command = ["menu", "help", "menú"];
