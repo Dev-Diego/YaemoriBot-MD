@@ -5,9 +5,6 @@ import { xpRange } from '../lib/levelling.js'
 import ws from 'ws';
 let uniqueUsers = new Map();
 
-const isCommand1 = /^(allmenu))$/i.test(command)
-const isCommand2 = /^(menu)$/i.test(command)
-
 let tags = {
   'main': 'MENÚ - INFO',
   'buscador': 'MENÚ - BUSQUEDAS',
@@ -66,6 +63,8 @@ const defaultMenu = {
 }   
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
+const isCommand1 = /^(allmenu))$/i.test(command)
+const isCommand2 = /^(menu)$/i.test(command)
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let { exp, cookies, level, role } = global.db.data.users[m.sender]
@@ -176,19 +175,20 @@ const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/
 
 //await conn.reply(m.chat, '*Próximamente se remitirá el menú.*', fkontak, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: packname, body: dev, sourceUrl: redeshost, thumbnail: await (await fetch(pp)).buffer() }}})
 
+switch (true) {     
+case isCommand1:
+try{
+
 await m.react('⭐️') 
 
 await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ', body: dev, thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: fkontak })
 
-//await conn.sendMessage(m.chat, {text: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ', body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: redeshost, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
-
   } catch (e) {
     await m.react(error)
     conn.reply(m.chat, '「✘」 *Ocurrió un error al enviar el menú*', m, fake, )
     throw e
-  }
-}
+  }}
 
 break
 
