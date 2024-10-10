@@ -16,6 +16,7 @@ await m.react(rwait)
 let yt_play = await search(args.join(" "))
 let img = await (await fetch(`${yt_play[0].image}`)).buffer()
 
+let menu ÷ ``
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🚩 *Titulo:*\n${yt_play[0].title}\n\n`
     txt += `📅 *Publicado:*\n${yt_play[0].ago}\n\n`
@@ -24,20 +25,27 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `✨️ *Nota:* Para descargar responde a este mensaje con *1* o *2*.\n\n`
     txt += `*1:* Video\n*2:* Audio`
 
-await conn.sendMessage(m.chat, {
-text: txt,
-contextInfo: { 
-forwardingScore: 9999, 
-isForwarded: true, 
-externalAdReply: {
-title: `${yt_play[0].title}`,
-body: dev,
-thumbnailUrl: img,
-thumbnail: img,
-sourceUrl: `${yt_play[0].url}`,
-mediaType: 1,
-renderLargerThumbnail: true
-}}}, { quoted: fkontak})
+let listSections = []
+
+listSections.push({
+title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: null,
+rows: [
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 📽",
+title: "",
+description: `📽 Video.`,
+id: `1`,
+},
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊 🎵",
+title: "",
+description: `🎵 Audio.`,
+id: `2`,
+},
+],
+})
+
+await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, img, listSections, fkontak)
 await m.react(done)
 } catch {
 await m.react(error)
