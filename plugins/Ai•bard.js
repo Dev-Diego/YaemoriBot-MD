@@ -1,21 +1,27 @@
 import fetch from 'node-fetch'
+import uploader from '../lib/uploadImage.js'
 
-var handler = async (m, { text,  usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat, `🍟 *Ingresé una petición*\n\nEjemplo, ${usedPrefix + command} Conoces a Ai-Yaemori?`, m, rcanal)
-try {
-await m.react('🕒')
-var apii = await fetch(`https://aemt.me/bard?text=${text}`)
-var res = await apii.json()
-await conn.reply(m.chat, res.result, m, rcanal)
-await m.react('✅️')
-} catch (error) {
-await m.react('✖️')
-console.error(error)
-return conn.reply(m.chat, '🚩 *Ocurrió un fallo*', m, rcanal)
-}}
+var handler = async (m, { conn, text, command, usedPrefix }) => {
 
-handler.command = ['bard']
-handler.help = ['bard']
+let q = m.quoted ? m.quoted : m
+let mime = (q.msg || q).mimetype || q.mediaType || ''
+if (/image/g.test(mime) && !/webp/g.test(mime)) {
+let buffer = await q.download()
+
+await m.reply(wait)
+
+let media = await (uploader)(buffer)
+let json = await (await fetch(`https://aemt.me/bardimg?url=${media}&text=${text}`)).json()
+
+conn.sendMessage(m.chat, { text: json.result }, { quoted: m })
+
+} else throw `RESPONDE A UNA IMAGEN CON UN TEXTO\n\nEJEMPLO\n${usedPrefix + command} dame información sobre la imagen enviada`
+
+}
+handler.help = ['geminiimg']
 handler.tags = ['ai']
-handler.premium = false
+handler.command = ['geminiimg']
+
+handler.cookies = 1
+
 export default handler
