@@ -16,7 +16,7 @@ await m.react(rwait)
 let yt_play = await search(args.join(" "))
 let img = await (await fetch(`${yt_play[0].image}`)).buffer()
 
-let menu ÷ ``
+let menu = ``
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🚩 *Titulo:*\n${yt_play[0].title}\n\n`
     txt += `📅 *Publicado:*\n${yt_play[0].ago}\n\n`
@@ -45,7 +45,8 @@ id: `2`,
 ],
 })
 
-await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, img, listSections, fkontak)
+let vid = img
+await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, vid, listSections, fkontak)
 await m.react(done)
 } catch {
 await m.react(error)
