@@ -2,8 +2,6 @@ import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
-import ws from 'ws';
-let uniqueUsers = new Map();
 
 let tags = {
   'main': 'MENÚ - INFO',
@@ -55,12 +53,8 @@ const defaultMenu = {
   body: '✰ %cmd',
   footer: '',
   after: `> ${dev}`,
-
-}   
-
+}
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
-const isCommand1 = /^(allmenu))$/i.test(command)
-const isCommand2 = /^(menu)$/i.test(command)
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let { exp, cookies, level, role } = global.db.data.users[m.sender]
@@ -171,87 +165,25 @@ const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/
 
 //await conn.reply(m.chat, '*Próximamente se remitirá el menú.*', fkontak, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: packname, body: dev, sourceUrl: redeshost, thumbnail: await (await fetch(pp)).buffer() }}})
 
-case 'menucompleto':
-case 'allmenu':
-
 await m.react('⭐️') 
 
 await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ', body: dev, thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: fkontak })
 
+//await conn.sendMessage(m.chat, {text: text, contextInfo: { forwardingScore: 999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', newsletterJid: "120363263466636910@newsletter", }, externalAdReply: { title: 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ', body: dev, thumbnailUrl: 'https://qu.ax/OlTj.jpg', sourceUrl: redeshost, mediaType: 1, renderLargerThumbnail: true }}}, {quoted: fkontak})
+
   } catch (e) {
     await m.react(error)
     conn.reply(m.chat, '「✘」 *Ocurrió un error al enviar el menú*', m, fake, )
     throw e
-  }}
+  }
+}
+handler.help = ['allmenu']
+handler.tags = ['main']
+handler.command = ['allmenu', 'menuall' 'menucompleto'] 
+handler.register = true
 
-break
-
-  case 'help':
-    case 'menu':
-
-    m.react("⭐️");
-    let menu = ``;
-
-    let txt =  `િ ฺ࣭࣪͘ \`ʜᴏʟᴀ\` p𝖾𝗋᷼𝗌᷼♤𝗇᷼𝗂𝗍α    𝗅𝗂𝗇𝖽α   (⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)⁠✧⁠*⁠。
- b𝗂𝖾𝗇𝖾𝗇𝗂𝖽𝗈   𝖺   ყαҽɱσɾι Ⴆσƚ꒱㇀  🌸‛᩠⋆  ⪦┽  :
- •ㅤ༚      𝆹ㅤㅤ•ㅤ༚         𝆹ㅤㅤㅤ•ᨘ
-`
-txt+= '.͜°˖ `ᴄʀᴇᴀᴅᴏʀ ::`' + ` DevDiego\n`;
-txt+= '.͜°˖ `ʙᴏᴛ ::`' + ` YaemoriBot-MD\n`;
-txt+= '.͜°˖ `ꜰᴇᴄʜᴀ ::`' + ` ${moment.tz('America/Bogota').format('DD/MM/YY')}\n`;
-txt+= '.͜°˖ `ᴘʀᴇꜰɪᴊᴏ ::`' + ` [ ${usedPrefix} ]\n`;
-txt+= '.͜°˖ `ᴜꜱᴜᴀʀɪᴏꜱ ::`' + ` ${rtotal}\n`;
-txt+= '.͜°˖ `ᴄᴏɴᴛᴀᴄᴛᴏ ::` #owner\n\n';
-txt+= '.͜°˖ `ᴀᴄᴛɪᴠᴏ ::`' + ` ${uptime}\n`;
-txt+= "✬✭✰✬"
-
-    let listSections = [];
-
-        listSections.push({
-        title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: `Popular YaemoriBot`,
-        rows: [
-            {
-                header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝙏𝙊 𝙑𝙀𝙍𝙄𝙁𝙄𝘾𝘼𝙍 ╎✅",
-                title: "",
-                description: `Verificacion Automáticamente`,
-                id: `.reg ${nombre}.17`,
-            },
-            {
-                header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎ 🍿ꪳ͢",
-                title: "",
-                description: `𝘮𝘶𝘦𝘴𝘵𝘳𝘢 𝘦𝘭 𝘮𝘦𝘯𝘶 𝘤𝘰𝘮𝘱𝘭𝘦𝘵𝘰`,
-                id: `#allmenu`,
-            },
-            {
-                header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐𝙎 𝙉𝙎𝙁𝙒 ╎🔞",
-                title: "",
-                description: `𝘔𝘶𝘦𝘴𝘵𝘳𝘢 𝘦𝘭 𝘮𝘦𝘯𝘶 𝘤𝘢𝘭𝘪𝘦𝘯𝘵𝘦`,
-                id: `#hornymenu`,
-            },
-            {
-                header: "👑⃝⃤҈𝙂𝙍𝙐𝙋𝙊𝙎 ☁️",
-                title: "",
-                description: `𝘔𝘶𝘦𝘴𝘵𝘳𝘢 𝘭𝘰𝘴 𝘨𝘳𝘶𝘱𝘰𝘴 𝘥𝘦𝘭 𝘣𝘰𝘵`,
-                id: `#grupos`,
-            },
-        ],
-    });
-
-    let vid = "https://qu.ax/yddg.jpg";
-    let img = "https://qu.ax/mqmGX.jpg";
-    let img2 = "https://qu.ax/EhQB.jpg";
-
-    await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, estilo);
-};
-
-break
-
-}}
-
-handler.command = ["allmenu", "menucompleto", "menu", "help", "menú"];
-
-export default handler;
+export default handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
