@@ -57,7 +57,11 @@ const defaultMenu = {
   body: '✰ %cmd',
   footer: '',
   after: `> ${dev}`,
+
 }
+
+// ------------------------------------------------------------------------------------------------------------------------------------------------   
+
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
@@ -183,6 +187,7 @@ await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), cont
   }
 }
 
+// ------------------------------------------------------------------------------------------------------------------------------------------------   
 
 if (command == 'menu' || command == 'comandos' || command == 'help') {
 
