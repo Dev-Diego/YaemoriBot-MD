@@ -63,7 +63,7 @@ txt+= "✬✭✰✬"
             {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝗦𝗣𝗘𝗘𝗗 ╎ 🍿ꪳ͢",
                 title: "",
-                description: `🚀 Muestra su velocidas.`,
+                description: `🚀 Muestra su velocidad y mas.`,
                 id: `#speed`,
             },
             {
