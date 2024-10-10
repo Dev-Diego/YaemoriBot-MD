@@ -45,19 +45,19 @@ title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: ``,
 rows: [
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝘾𝙍𝙀𝘼𝘿𝙊𝙍 ╎👑",
-title: null,
+title: ``,
 description: `✨️ Muestra el creador de la bot.`,
 id: `#creador`,
 },
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝙂𝙍𝙐𝙋𝙊𝙎 ╎📢",
-title: null,
+title: ``,
 description: `🌸 Muestra los grupos principales de la bot.`,
 id: `#grupos`,
 },
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎ 🍿ꪳ͢",
-title: null,
+title: ``,
 description: `🐢 Muestra el menú completo.`,
 id: `#allmenu`,
 },
