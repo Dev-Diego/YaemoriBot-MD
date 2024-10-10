@@ -60,6 +60,7 @@ txt+= "✬✭✰✬"
                 description: `🔥 Muestra el menú +18.`,
                 id: `#hornymenu`,
             },
+            {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝗦𝗣𝗘𝗘𝗗 ╎ 🍿ꪳ͢",
                 title: "",
                 description: `🚀 Muestra su velocidas.`,
