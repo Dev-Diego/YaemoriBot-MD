@@ -327,7 +327,9 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         ],
     });
 
-    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, [imagen1, imagen2, imagen3, catalogo].getRandom(), listSections, estilo);
+let img = 'https://freeimage.host/i/29IpIHv'
+
+    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, [img].getRandom(), listSections, estilo);
 };
 
 handler.command = ["menu", "help", "menú"];
