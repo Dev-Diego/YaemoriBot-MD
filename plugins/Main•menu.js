@@ -5,6 +5,9 @@ import { xpRange } from '../lib/levelling.js'
 import ws from 'ws';
 let uniqueUsers = new Map();
 
+const isCommand1 = /^(allmenu))$/i.test(command)
+const isCommand2 = /^(menu)$/i.test(command)
+
 let tags = {
   'main': 'MENÚ - INFO',
   'buscador': 'MENÚ - BUSQUEDAS',
@@ -30,7 +33,9 @@ let tags = {
   'transformador': 'MENÚ - CONVERTIDORES',
 }
 
-if (command == 'allmenu' || command == 'menucompleto' {
+switch (true) {     
+case isCommand1:
+try{
 
 const defaultMenu = {
   before: `© mᥱᥒᥙ ᥆𝖿іᥴіᥲᥣ ძᥱ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☁️
@@ -58,9 +63,7 @@ const defaultMenu = {
   footer: '',
   after: `> ${dev}`,
 
-}
-
-// ------------------------------------------------------------------------------------------------------------------------------------------------   
+}   
 
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
@@ -187,9 +190,10 @@ await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), cont
   }
 }
 
-// ------------------------------------------------------------------------------------------------------------------------------------------------   
+break
 
-if (command == 'menu' || command == 'comandos' || command == 'help') {
+case isCommand2:
+try{
 
     m.react("⭐️");
     let menu = ``;
@@ -245,6 +249,15 @@ txt+= "✬✭✰✬"
 
     await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, estilo);
 };
+
+break
+
+case cmd == "abrazar":
+
+break
+}    
+break
+}}
 
 handler.command = ["allmenu", "menucompleto", "menu", "help", "menú"];
 
