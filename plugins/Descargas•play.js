@@ -45,7 +45,7 @@ id: `2`,
 ],
 })
 
-let vid = img
+let vid = await (await fetch(`${yt_play[0].image}`)).buffer()
 let img1 = await (await fetch(`${yt_play[0].image}`)).buffer()
 let img2 = await (await fetch(`${yt_play[0].image}`)).buffer()
 await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img1, img2].getRandom(), listSections, fkontak)
