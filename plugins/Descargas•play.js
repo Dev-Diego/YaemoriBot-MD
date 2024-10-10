@@ -46,7 +46,9 @@ id: `2`,
 })
 
 let vid = img
-await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img].getRandom(), listSections, fkontak)
+let img1 = vid
+let img2 = img1
+await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img1, img2].getRandom(), listSections, fkontak)
 await m.react(done)
 } catch {
 await m.react(error)
