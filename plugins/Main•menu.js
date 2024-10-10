@@ -273,53 +273,47 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let totalreg = Object.keys(global.db.data.users).length;
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length;
 
-    m.react('⭐️');
+    m.react("⭐️");
     let menu = ``;
 
-    let txt = ""
-    txt += '`ᴄʀᴇᴀᴅᴏʀ ::`' + ` DevDiego\n`;
-    txt += '`ʙᴏᴛ ::`' + ` YaemoriBot-MD\n`;
-    txt += '`ꜰᴇᴄʜᴀ ::`' + ` ${moment.tz('America/Bogota').format('DD/MM/YY')}\n`;
-    txt += '`ᴠᴇʀꜱɪᴏɴ ::`' + ` ${vs}\n`;
-//    txt += `${sbot}\n`;
-    txt += '`ᴘʀᴇꜰɪᴊᴏ ::`' + ` [  ${usedPrefix}  ]\n`;
-    txt += '`ᴜꜱᴜᴀʀɪᴏꜱ ::`' + ` ${rtotal}\n`;
-    txt += '`ᴠᴇʀɪꜰɪᴄᴀᴅᴏꜱ ::`' + ` ${rtotalreg}\n`;
-    txt += '`ᴀᴄᴛɪᴠᴏ ::`' + ` ${uptime}\n`;
-    txt += '`ᴄᴏɴᴛᴀᴄᴛᴏ ::` #owner\n\n';
-    txt += "> ʙʏ : ᴅᴇᴠᴅɪᴇɢᴏ - sᴜɴʟɪɢʜᴛ ᴛᴇᴀᴍ";
+    let txt =  `િ ฺ࣭࣪͘ \`ʜᴏʟᴀ\` p𝖾𝗋᷼𝗌᷼♤𝗇᷼𝗂𝗍α    𝗅𝗂𝗇𝖽α   (⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)⁠✧⁠*⁠。
+ b𝗂𝖾𝗇𝖾𝗇𝗂𝖽𝗈   𝖺   ყαҽɱσɾι Ⴆσƚ꒱㇀  🌸‛᩠⋆  ⪦┽  :
+ •ㅤ༚      𝆹ㅤㅤ•ㅤ༚         𝆹ㅤㅤㅤ•ᨘ
+`
+txt+= '.͜°˖ `ᴄʀᴇᴀᴅᴏʀ ::`' + ` DevDiego\n`;
+txt+= '.͜°˖ `ʙᴏᴛ ::`' + ` YaemoriBot-MD\n`;
+txt+= '.͜°˖ `ꜰᴇᴄʜᴀ ::`' + ` ${moment.tz('America/Bogota').format('DD/MM/YY')}\n`;
+txt+= '.͜°˖ `ᴘʀᴇꜰɪᴊᴏ ::`' + ` [ ${usedPrefix} ]\n`;
+txt+= '.͜°˖ `ᴜꜱᴜᴀʀɪᴏꜱ ::`' + ` ${rtotal}\n`;
+txt+= '.͜°˖ `ᴄᴏɴᴛᴀᴄᴛᴏ ::` #owner\n\n';
+txt+= '.͜°˖ `ᴀᴄᴛɪᴠᴏ ::`' + ` ${uptime}\n`;
+txt+= "✬✭✰✬"
 
     let listSections = [];
 
         listSections.push({
-        title: `🔖 SELECCIÓNA LO QUE NECESITES`, highlight_label: `Popular Yaemori`,
+        title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: `Popular YaemoriBot`,
         rows: [
             {
-                header: "𝗔𝗨𝗧𝗢 𝗩𝗘𝗥𝗜𝗙𝗜𝗖𝗔𝗥 ✅",
+                header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝙏𝙊 𝙑𝙀𝙍𝙄𝙁𝙄𝘾𝘼𝙍 ╎✅",
                 title: "",
                 description: `Verificacion Automáticamente`,
-                id: `#reg ${nombre}.18`,
+                id: `.reg ${nombre}.17`,
             },
             {
-                header: "𝗠𝗘𝗡𝗨 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗢 🤍",
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐 𝘾𝙊𝙈𝙋𝙇𝙀𝙏𝙊 ╎ 🍿ꪳ͢",
                 title: "",
                 description: `𝘮𝘶𝘦𝘴𝘵𝘳𝘢 𝘦𝘭 𝘮𝘦𝘯𝘶 𝘤𝘰𝘮𝘱𝘭𝘦𝘵𝘰`,
                 id: `#allmenu`,
             },
             {
-                header: "𝗠𝗘𝗡𝗨 𝗔𝗨𝗗𝗜𝗢𝗦 🔊",
-                title: "",
-                description: `𝘔𝘶𝘦𝘴𝘵𝘳𝘢 𝘦𝘭 𝘮𝘦𝘯𝘶 𝘥𝘦 𝘢𝘶𝘥𝘪𝘰𝘴`,
-                id: `#menu2`,
-            },
-            {
-                header: "𝗠𝗘𝗡𝗨 𝗡𝗦𝗙𝗪 🔞",
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙈𝙀𝙉𝙐𝙎 𝙉𝙎𝙁𝙒 ╎🔞",
                 title: "",
                 description: `𝘔𝘶𝘦𝘴𝘵𝘳𝘢 𝘦𝘭 𝘮𝘦𝘯𝘶 𝘤𝘢𝘭𝘪𝘦𝘯𝘵𝘦`,
                 id: `#hornymenu`,
             },
             {
-                header: "𝗚𝗥𝗨𝗣𝗢𝗦 ☁️",
+                header: "👑⃝⃤҈𝙂𝙍𝙐𝙋𝙊𝙎 ☁️",
                 title: "",
                 description: `𝘔𝘶𝘦𝘴𝘵𝘳𝘢 𝘭𝘰𝘴 𝘨𝘳𝘶𝘱𝘰𝘴 𝘥𝘦𝘭 𝘣𝘰𝘵`,
                 id: `#grupos`,
@@ -327,19 +321,19 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         ],
     });
 
-    let vid = "https://iili.io/ds8UrPf.md.png";
-    let img = "https://iili.io/ds82dmX.md.png";
-    let img2 = "https://iili.io/ds8r8EG.md.png";
-    let img3 = "https://iili.io/ds8UrPf.md.png";
-    let img4 = "https://iili.io/ds82dmX.md.png";
-    let img5 = "https://iili.io/ds8r8EG.md.png";
-    let img6 = "https://iili.io/ds8UrPf.md.png";
-    let img8 = "https://iili.io/ds82dmX.md.png";
-    let img9 = "https://iili.io/ds8r8EG.md.png";
-    let img10 = "https://iili.io/ds8UrPf.md.png";
-    let img11 = "https://iili.io/ds82dmX.md.png";
+    let vid = "https://qu.ax/yddg.jpg";
+    let img = "https://qu.ax/mqmGX.jpg";
+    let img2 = "https://qu.ax/EhQB.jpg";
+   /* let img3 = "";
+    let img4 = "";
+    let img5 = "";
+    let img6 = "";
+    let img8 = "";
+    let img9 = "";
+    let img10 = "";
+    let img11 = ""; */
 
-    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, [vid, img, img2, img3, img4, img5, img6, img8, img9, img10, img11].getRandom(), listSections, estilo);
+    await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, estilo);
 };
 
 handler.command = ["menu", "help", "menú"];
