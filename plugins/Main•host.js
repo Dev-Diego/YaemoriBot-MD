@@ -4,7 +4,7 @@ let txt = `*¿Tu Nokia es muy lento y necesitas que tu bot esté activo 24/7?* �
 
 ¡Tenemos la solución perfecta para ti! 🎉 Mantén tu bot funcionando sin interrupciones con nuestros servidores, Ofrecemos servidores gratuitos y de pago a precios súper accesibles, al alcance de todos. 💸 
 
-🖥️ *Totalmente compatible con GataBot:* Disfruta al máximo de su potencial en nuestros servidores de alto rendimiento, asegurando una experiencia fluida y de alta calidad. El staff de GataBot y CorinPlus Host se encarga de que disfrutes de todas sus funciones al máximo. 😺✨
+🖥️ *Totalmente compatible con YaemoriBot:* Disfruta al máximo de su potencial en nuestros servidores de alto rendimiento, asegurando una experiencia fluida y de alta calidad. El staff de YaemoriBot y SkyUltraPlus Host se encarga de que disfrutes de todas sus funciones al máximo. 😺✨
 
 🟢 \`\`\`Información del Host\`\`\`
 
