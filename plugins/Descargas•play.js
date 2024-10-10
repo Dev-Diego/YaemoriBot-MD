@@ -28,7 +28,7 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
 let listSections = []
 
 listSections.push({
-title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: null,
+title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: ``,
 rows: [
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 📽",
@@ -46,7 +46,7 @@ id: `2`,
 })
 
 let vid = img
-await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, vid, listSections, fkontak)
+await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞ᴏᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img].getRandom(), listSections, fkontak)
 await m.react(done)
 } catch {
 await m.react(error)
