@@ -62,6 +62,12 @@ txt+= "✬✭✰✬"
                 id: `#hornymenu`,
             },
             {
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙂𝙄𝙏𝙃𝙐𝘽 ╎ ⭐️",
+                title: "",
+                description: `🍟 Muestra el github de la bot.`,
+                id: `#sc`,
+            },
+            {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙋𝙀𝙀𝘿 ╎ 🌸",
                 title: "",
                 description: `🚀 Muestra su velocidad y mas.`,
