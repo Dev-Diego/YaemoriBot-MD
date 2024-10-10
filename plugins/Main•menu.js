@@ -327,7 +327,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         ],
     });
 
-    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, icons, listSections, estilo);
+    await conn.sendListB(m.chat, menu, txt, `✡ mᥱᥒᥙ ᥣіs𝗍 ✡`, [imagen1, imagen2, imagen3, catalogo].getRandom(), listSections, estilo);
 };
 
 handler.command = ["menu", "help", "menú"];
