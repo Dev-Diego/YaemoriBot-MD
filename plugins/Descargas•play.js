@@ -124,7 +124,7 @@ await m.react('✅')
 await m.react('✖️')
 }}}
 
-if (feature == "mp4" || feature == "ytv" || feature == "video" || feature == "video") {
+if (feature == "play2") {
 if (!inputs) return conn.reply(m.chat, `🚩 Ingresa el título de un video o canción de YouTube.\n\n*Ejemplo:*\n*${usedPrefix + command}* Alan Walker - Sing Me To Sleep`, m, rcanal)
 await m.react('🕓')
 let res = await yts(text)
@@ -146,7 +146,7 @@ let limit = 100
 
 if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`El archivo pesa mas de ${limit} MB, se canceló la Descarga.`, m, rcanal).then(_ => m.react('✖️'))
 
-await conn.sendFile(m.chat, dl_url, 'yt.jpg', `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━━━●────── ${vid.timestamp}`, m, null, rcanal)
+await conn.sendFile(m.chat, dl_url, 'yt.jpg', `Tu video de Youtube 🚀\n${packname}`, m, null, rcanal)
 await m.react('✅')
 } catch {
 try {
@@ -156,7 +156,7 @@ let limit = 100
 
 if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`El archivo pesa mas de ${limit} MB, se canceló la Descarga.`, m, rcanal).then(_ => m.react('✖️'))
 
-await conn.sendFile(m.chat, dl_url, 'yt.jpg', `${vid.title}\n⇆ㅤㅤ◁ㅤㅤ❚❚ㅤㅤ▷ㅤㅤ↻\n00:15 ━━━━●────── ${vid.timestamp}`, m, null, rcanal)
+await conn.sendFile(m.chat, dl_url, 'yt.jpg', `Tu video de Youtube 🚀\n${packname}`, m, null, rcanal)
 await m.react('✅')
 } catch {
 await m.react('✖️')
