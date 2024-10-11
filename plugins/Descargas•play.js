@@ -81,10 +81,17 @@ import ytdl from 'ytdl-core';
 import axios from 'axios';
 import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
 const handler = async (m, {conn, command, args, text, usedPrefix}) => {
-if (!text) throw `_𝐄𝐬𝐜𝐫𝐢𝐛𝐞 𝐮𝐧𝐚 𝐩𝐞𝐭𝐢𝐜𝐢𝐨́𝐧 𝐥𝐮𝐞𝐠𝐨 𝐝𝐞𝐥 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐞𝐣𝐞𝐦𝐩𝐥𝐨:_ \n*${usedPrefix + command} Billie Eilish - Bellyache*`
+if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, )
+conn.reply(m.chat, global.wait, m, {
+contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+title: packname,
+body: dev,
+previewType: 0, thumbnail: icons,
+sourceUrl: channel }}})
 try { 
+await m.react(rwait)
 const yt_play = await search(args.join(' '))
-const texto1 = `
+
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🚩 *Titulo:*\n${yt_play[0].title}\n\n`
     txt += `📅 *Publicado:*\n${yt_play[0].ago}\n\n`
@@ -94,7 +101,9 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `*1:* Video\n*2:* Audio`
 
 await conn.sendButton(m.chat, packname, txt, yt_play[0].thumbnail, [['Menu 🐢', `${usedPrefix}menu`],['Audio 🎵',`${usedPrefix}play5 ${yt_play[0].url}`],['Video 📽',`${usedPrefix}play6 ${yt_play[0].url}`]], null, null, estilo)
+await m.react(done)
 } catch (e) {
+await m.react(error)
 await conn.reply(m.chat, `✖️ Ocurrió un error.`, fkontak, m, rcanal)
 console.log(`❗❗ᴇʀʀᴏʀ ${usedPrefix + command} ❗❗`)
 console.log(e)
