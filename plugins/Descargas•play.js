@@ -37,7 +37,7 @@ await conn.sendMessage(m.chat, { audio: { url: dl_url }, fileName: title + '.mp3
 await m.react(done)
 } catch {
 await m.react(error)
-await conn.reply(m.chatz '✘ *Ocurrío un error*', m, fake)
+await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
 if (feature == "mp4" || feature == "ytv" || feature == "video" || feature == "video") {
@@ -67,7 +67,7 @@ await conn.sendFile(m.chat, dl_url, 'yt.jpg', `🚀 Aquí está tu video de yout
 await m.react(done)
 } catch {
 await m.react(error)
-await conn.reply(m.chatz '✘ *Ocurrío un error*', m, fake)
+await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
 if (feature == "mp3doc" || feature == "ytadoc" || feature == "audiodoc") {
@@ -96,7 +96,7 @@ if (size.split('MB')[0] >= limit) return conn.reply(m.chat,`El archivo pesa mas 
 await conn.sendMessage(m.chat, { document: { url: dl_url }, caption: '', mimetype: 'audio/mpeg', fileName: `${vid.title}.mp3`}, { quoted: m })
 } catch {
 await m.react(error)
-await conn.reply(m.chatz '✘ *Ocurrío un error*', m, fake)
+await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
 if (feature == "mp4doc" || feature == "ytvdoc" || feature == "videodoc" || feature == "videodoc") {
@@ -127,7 +127,7 @@ await conn.sendMessage(m.chat, { document: { url: dl_url }, caption: '', mimetyp
 await m.react(done)
 } catch {
 await m.react(error)
-await conn.reply(m.chatz '✘ *Ocurrío un error*', m, fake)
+await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}}}
 handler.command = ['play1', 'play12']
 handler.register = true 
