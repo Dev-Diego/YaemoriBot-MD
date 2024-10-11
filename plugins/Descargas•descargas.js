@@ -5,7 +5,6 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { conn, args, usedPrefix, text, command }) => {
 
-if (lister.includes(feature)) {
 if (command === 'mp3') {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
