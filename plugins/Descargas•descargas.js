@@ -9,7 +9,7 @@ let lister = ["mp3", "yta", "audio", "ytv", "video", "vídeo", "mp4", "mp3doc", 
 let [feature, inputs, inputs_, inputs__, inputs___] = text.split(" ")
 if (!lister.includes(feature)) return conn.reply(m.chat, `🚩 Ingresa el formato en que deseas descargar más el titulo de un video o musica de YouTube.\n\nEjemplo : ${usedPrefix + command} *mp3* Adan y Eva - Paulo Londra\n\nFormatos disponibles :\n${usedPrefix + command} *mp3*\n${usedPrefix + command} *mp3doc*\n${usedPrefix + command} *mp4*\n${usedPrefix + command} *mp4doc*`, m, rcanal)
 if (lister.includes(feature)) {
-if (feature == "mp3" || feature == "yta" || feature == "audio") {
+if (command === 'mp3') {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
 let res = await yts(text)
@@ -40,7 +40,7 @@ await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
-if (feature == "mp4" || feature == "ytv" || feature == "video" || feature == "video") {
+if (command === 'mp4') {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
 let res = await yts(text)
@@ -70,7 +70,7 @@ await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
-if (feature == "mp3doc" || feature == "ytadoc" || feature == "audiodoc") {
+if (command === 'mp3doc' || command === 'audiodoc') {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
 let res = await yts(text)
@@ -99,7 +99,7 @@ await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
-if (feature == "mp4doc" || feature == "ytvdoc" || feature == "videodoc" || feature == "videodoc") {
+if (command === 'mp4doc' || command === 'videodoc') {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 
 await m.react(rwait)
@@ -129,7 +129,9 @@ await m.react(done)
 await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}}}
-handler.command = ['play1', 'play12']
+handler.help = ['mp3', 'mp4', 'mp3doc', 'audiodoc', 'mp4doc', 'videodoc']
+hamdler.tags = ['descargas']
+handler.command = ['mp3', 'mp4', 'mp3doc', 'audiodoc', 'mp4doc', 'videodoc']
 handler.register = true 
 export default handler
 
