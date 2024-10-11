@@ -37,6 +37,18 @@ title: "",
 description: `📽 Video.`,
 id: `#play1 mp4 ${yt_play[0].url}`,
 },
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊𝘿𝙊𝘾 ╎ 🎵",
+title: "",
+description: `🎵 AudioDoc.`,
+id: `#play1 mp3doc ${yt_play[0].url}`,
+},
+{
+header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊𝘿𝙊𝘾 ╎ 📽",
+title: "",
+description: `📽 VideoDoc.`,
+id: `#play1 mp4doc ${yt_play[0].url}`,
+},
 ],
 })
 let menu = ''
