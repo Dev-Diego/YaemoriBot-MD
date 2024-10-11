@@ -9,7 +9,7 @@ let lister = ["mp3", "yta", "audio", "ytv", "video", "vídeo", "mp4", "mp3doc", 
 let [feature, inputs, inputs_, inputs__, inputs___] = text.split(" ")
 if (!lister.includes(feature)) return conn.reply(m.chat, `🚩 Ingresa el formato en que deseas descargar más el titulo de un video o musica de YouTube.\n\nEjemplo : ${usedPrefix + command} *mp3* Adan y Eva - Paulo Londra\n\nFormatos disponibles :\n${usedPrefix + command} *mp3*\n${usedPrefix + command} *mp3doc*\n${usedPrefix + command} *mp4*\n${usedPrefix + command} *mp4doc*`, m, rcanal)
 if (lister.includes(feature)) {
-if (command == "mp3" || command == "yta" || command == "audio") {
+if (feature == "mp3" || feature == "yta" || feature == "audio") {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
 let res = await yts(text)
@@ -40,7 +40,7 @@ await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
-if (command == "mp4" || command == "ytv" || command == "video" || command == "video") {
+if (feature == "mp4" || feature == "ytv" || feature == "video" || feature == "video") {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
 let res = await yts(text)
@@ -70,7 +70,7 @@ await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
-if (command == "mp3doc" || command == "ytadoc" || command == "audiodoc") {
+if (feature == "mp3doc" || feature == "ytadoc" || feature == "audiodoc") {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 await m.react(rwait)
 let res = await yts(text)
@@ -99,7 +99,7 @@ await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
 }}}
 
-if (command == "mp4doc" || command == "ytvdoc" || command == "videodoc" || command == "videodoc") {
+if (feature == "mp4doc" || feature == "ytvdoc" || feature == "videodoc" || feature == "videodoc") {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
 
 await m.react(rwait)
