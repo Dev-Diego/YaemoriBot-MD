@@ -100,12 +100,11 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `✨️ *Nota:* Para descargar responde a este mensaje con *1* o *2*.\n\n`
     txt += `*1:* Video\n*2:* Audio`
 
-await conn.sendButton(m.chat, packname, txt, yt_play[0].thumbnail, [['Menu 🐢', `${usedPrefix}menu`],['Audio 🎵',`${usedPrefix}play5 ${yt_play[0].url}`],['Video 📽',`${usedPrefix}play6 ${yt_play[0].url}`]], null, null, estilo)
+await conn.sendButton(m.chat, packname, txt, yt_play[0].thumbnail, [['Menu 🐢', `${usedPrefix}menu`],['Audio 🎵',`2`],['Video 📽',`1`]], null, null, estilo)
 await m.react(done)
 } catch (e) {
 await m.react(error)
-await conn.reply(m.chat, `✖️ Ocurrió un error.`, fkontak, m, rcanal)
-console.log(`❗❗ᴇʀʀᴏʀ ${usedPrefix + command} ❗❗`)
+await conn.reply(m.chat, `✘ *Ocurrío un error*`, fkontak, m, rcanal)
 console.log(e)
 handler.limit = 0
 }}
