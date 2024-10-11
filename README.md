@@ -1,6 +1,6 @@
 <h1 align="center">Yaemori Bot - MD 🌱</h1>
 
-![Yaemori](https://telegra.ph/file/d29e7f61a1dc85564ea5c.jpg)
+![Yaemori](https://qu.ax/CmyNh.jpg)
 
  <p align="center">🚩 WhatsApp Bot Node-Js.</p>
 </p>
