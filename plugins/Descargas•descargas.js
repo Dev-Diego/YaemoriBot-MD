@@ -124,7 +124,7 @@ await m.react(done)
 } catch {
 await m.react(error)
 await conn.reply(m.chat, '✘ *Ocurrío un error*', m, fake)
-}}}}}
+}}}}
 handler.help = ['mp3', 'mp4', 'mp3doc', 'mp4doc']
 handler.command = ['mp3', 'mp4', 'mp3doc', 'mp4doc']
 handler.register = true 
