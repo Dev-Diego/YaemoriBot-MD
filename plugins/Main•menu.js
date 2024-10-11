@@ -22,7 +22,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let totalreg = Object.keys(global.db.data.users).length;
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length;
 
-    m.react("⭐️");
+    m.react("🐢");
     let menu = ``;
 
     let txt =  `િ ฺ࣭࣪͘ \`ʜᴏʟᴀ\` p𝖾𝗋᷼𝗌᷼♤𝗇᷼𝗂𝗍α    𝗅𝗂𝗇𝖽α   (⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)⁠✧⁠*⁠。
@@ -46,7 +46,7 @@ txt+= "✬✭✰✬"
             {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝙏𝙊 𝙑𝙀𝙍𝙄𝙁𝙄𝘾𝘼𝙍 ╎✅",
                 title: "",
-                description: `🗂 Verificacion Automáticamente`,
+                description: `🗃 Verificacion Automáticamente`,
                 id: `#reg ${name}.18`,
             },
             {
