@@ -99,8 +99,9 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `📎 *Url:*\n${'https://youtu.be/' + yt_play[0].videoId}\n\n`
     txt += `✨️ *Nota:* Para descargar responde a este mensaje con *1* o *2*.\n\n`
     txt += `*1:* Video\n*2:* Audio`
+let menu = ''
 
-await conn.sendButton(m.chat, packname, txt, yt_play[0].thumbnail, [['Menu 🐢', `${usedPrefix}menu`],['Audio 🎵',`2`],['Video 📽',`1`]], null, null, estilo)
+await conn.sendButton(m.chat, menu, txt, yt_play[0].thumbnail, [['Menu 🐢', `${usedPrefix}menu`],['Audio 🎵',`2`],['Video 📽',`1`]], null, null, estilo)
 await m.react(done)
 } catch (e) {
 await m.react(error)
