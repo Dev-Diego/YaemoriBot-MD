@@ -19,7 +19,7 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🚩 *Titulo:*\n${yt_play[0].title}\n\n`
     txt += `📅 *Publicado:*\n${yt_play[0].ago}\n\n`
     txt += `🕜 *Duración:*\n${secondString(yt_play[0].duration.seconds)}\n\n`
-    txt += `📎 *Url:*\n${yt_play[0].url}\n\n`
+    txt += `📎 *Url:*\n${yt_play[0].url}`
 
 let listSections = []
 listSections.push({
