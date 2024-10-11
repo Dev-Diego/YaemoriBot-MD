@@ -89,10 +89,11 @@ txt+= "✬✭✰✬"
     });
 
     let vid = "https://qu.ax/yddg.jpg";
-    let img = "https://qu.ax/mqmGX.jpg";
-    let img2 = "https://qu.ax/EhQB.jpg";
+    let img = "https://qu.ax/uuYfC.jpg";
+    let img2 = "https://qu.ax/mqmGX.jpg";
+    let img3 = "https://qu.ax/EhQB.jpg";
 
-    await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, estilo);
+    await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2, img3].getRandom(), listSections, estilo);
 };
 
 handler.tags = ['main'];
