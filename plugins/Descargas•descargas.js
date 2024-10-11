@@ -4,10 +4,7 @@ import yts from 'yt-search'
 import fetch from 'node-fetch' 
 
 let handler = async (m, { conn, args, usedPrefix, text, command }) => {
-let lister = ["mp3", "yta", "audio", "ytv", "video", "vídeo", "mp4", "mp3doc", "ytadoc", "audiodoc", "mp4doc", "ytvdoc", "videodoc", "vídeodoc"]
 
-let [feature, inputs, inputs_, inputs__, inputs___] = text.split(" ")
-if (!lister.includes(feature)) return conn.reply(m.chat, `🚩 Ingresa el formato en que deseas descargar más el titulo de un video o musica de YouTube.\n\nEjemplo : ${usedPrefix + command} *mp3* Adan y Eva - Paulo Londra\n\nFormatos disponibles :\n${usedPrefix + command} *mp3*\n${usedPrefix + command} *mp3doc*\n${usedPrefix + command} *mp4*\n${usedPrefix + command} *mp4doc*`, m, rcanal)
 if (lister.includes(feature)) {
 if (command === 'mp3') {
 if (!inputs) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`, m, rcanal)
