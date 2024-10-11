@@ -51,7 +51,6 @@ import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
 import fs from "fs";
 import yts from 'yt-search';
 import ytdl from 'ytdl-core';
-import {sticker} from "../lib/sticker.js";
 
 let limit1 = 100;
 let limit2 = 400;
@@ -60,7 +59,7 @@ let limit_a2 = 400;
 
 const handler = async (m, { conn, command, args, text, usedPrefix }) => {
 
-  if (!text) throw `*💥 Hace falta el título o enlace del video de YouTube.*\n\n*𔔢 𝗘𝗷𝗲𝗺𝗽𝗹𝗼: _${usedPrefix + command} Megumin*`;
+  if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, );
 
   const yt_play = await search(args.join(' '));
   let additionalText = '';
@@ -88,13 +87,10 @@ let url = apislap.url;
         const size = fileSizeInMB.toFixed(2);
 
         if (size >= limit_a2) {
-          await conn.sendMessage(m.chat, { text: `*💥 Descargue su audio en:* _${audio}_` }, { quoted: m });
-          await conn.sendMessage(m.chat, { delete: stickerMessage.key });
           return;
         }
         if (size >= limit_a1 && size <= limit_a2) {
           await conn.sendMessage(m.chat, { document: buff_aud, mimetype: 'audio/mpeg', fileName: ttl + `.mp3` }, { quoted: m });
-          await conn.sendMessage(m.chat, { delete: stickerMessage.key });
           return;
         } else {
           if (['playdoc', 'ytmp3doc'].includes(command)) return await conn.sendMessage(m.chat, { document: buff_aud, mimetype: 'audio/mpeg', fileName: ttl + `.mp3` }, { quoted: m });
@@ -111,8 +107,6 @@ let url = apislap.url;
           const fileSizeInMB = fileSizeInKB / 1024;
           const size = fileSizeInMB.toFixed(2);
          if (size >= limit_a2) {
-           await conn.sendMessage(m.chat, { text: `*💥 Descargue su audio en:* _${mediaa}_` }, { quoted: m });
-           await conn.sendMessage(m.chat, { delete: stickerMessage.key });
            return;
          }
          if (size >= limit_a1 && size <= limit_a2) {
@@ -125,7 +119,7 @@ let url = apislap.url;
            return;
          }
       } catch(e) {  
-      return conn.reply(m.chat, `*[ ℹ️ ] Ocurrió un error. Por favor, inténtalo de nuevo más tarde.*\nDetalles: ${e}`, m, rcanal);
+      return conn.reply(m.chat, `✖️ Ocurrió un error.`, m, rcanal);
       await conn.sendMessage(m.chat, { delete: stickerMessage.key });
       }
    }
@@ -147,8 +141,6 @@ let url = apislap.url;
         const size2 = fileSizeInMB2.toFixed(2);
 
         if (size2 >= limit2) {
-          await conn.sendMessage(m.chat, { text: `💥 *Descargue su vídeo en:* _${video}_` }, { quoted: m });
-          await conn.sendMessage(m.chat, { delete: stickerMessage.key });
           return;
         }
         if (size2 >= limit1 && size2 <= limit2) {
@@ -170,8 +162,6 @@ let url = apislap.url;
           const fileSizeInMB = fileSizeInKB / 1024;
           const size = fileSizeInMB.toFixed(2);
          if (size2 >= limit2) {
-           await conn.sendMessage(m.chat, { text: `💥 *Descargue su vídeo en:* _${mediaa}_` }, { quoted: m });
-           await conn.sendMessage(m.chat, { delete: stickerMessage.key });
            return;
          }
          if (size2 >= limit1 && size2 <= limit2) {
@@ -184,14 +174,14 @@ let url = apislap.url;
            return;
          }
       } catch(e) {  
- return conn.reply(m.chat, `*[ ℹ️ ] Ocurrió un error. Por favor, inténtalo de nuevo más tarde.*\nDetalles: ${e}`, m, rcanal);
+ return conn.reply(m.chat, `✖️ Ocurrió un error.`, m, rcanal);
  await conn.sendMessage(m.chat, { delete: stickerMessage.key });
       }
    }
   }
 };
 
-handler.command = /^(play5|play6|ytmp3doc|ytmp4doc|playdoc|playdoc2)$/i;
+handler.command = ['play5', 'play6', 'ytmp3doc', 'ytmp4doc', 'playdoc', 'playdoc2'];
 export default handler;
 
 async function search(query, options = {}) {
