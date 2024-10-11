@@ -15,37 +15,7 @@ await m.react('🕓')
 let res = await yts(text)
 let vid = res.videos[0]
 let q = '128kbps'
-let txt = `*乂  Y O U T U B E  -  P L A Y*\n\n`
-        txt += `        ✩   *Título* : ${vid.title}\n`
-        txt += `        ✩   *Duración* : ${vid.timestamp}\n`
-        txt += `        ✩   *Visitas* : ${vid.views}\n`
-        txt += `        ✩   *Autor* : ${vid.author.name}\n`
-        txt += `        ✩   *Publicado* : ${eYear(vid.ago)}\n`
-        txt += `        ✩   *Url* : ${'https://youtu.be/' + vid.videoId}\n\n`
-        txt += `*- ↻ El audio se esta enviando espera un momento, soy lenta. . .*`
 
-//await conn.sendFile(m.chat, vid.thumbnail, 'thumbnail.jpg', txt, m, null, rcanal)
-
-let listSections = []
-listSections.push({
-title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: `Popular YaemoriBot`,
-rows: [
-{
-header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊 ╎ 🎵",
-title: "",
-description: `🎵 Audio.`,
-id: `#play mp3 ${vid}`,
-},
-{
-header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 ╎ 📽",
-title: "",
-description: `📽 Video.`,
-id: `#play mp4 ${vid}`,
-},
-],
-})
-let menu = ''
-await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞Oᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, vid.thumbnail, listSections, m)
 try {
 let yt = await fg.yta(vid.url, q)
 let { title, dl_url, size } = yt
