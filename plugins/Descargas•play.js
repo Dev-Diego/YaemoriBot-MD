@@ -181,9 +181,9 @@ await m.react('✅')
 } catch {
 await m.react('✖️')
 }}}}}
-handler.help = ['play2'].map(v => v + " *<formato> <búsqueda>*")
+handler.help = ['play12'].map(v => v + " *<formato> <búsqueda>*")
 handler.tags = ['downloader']
-handler.command = ['play', 'play2']
+handler.command = ['play1', 'play12']
 handler.register = true 
 //handler.limit = 1
 export default handler
