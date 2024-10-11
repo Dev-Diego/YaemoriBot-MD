@@ -89,12 +89,13 @@ id: `#play1 mp4 ${yt_play[0].url}`,
 })
 let menu = ''
 await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞Oᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, yt_play[0].thumbnail, listSections, m)
-} catch (e) {
-await conn.reply(m.chat, `*[ ! ] ʜᴜʙᴏ ᴜɴ ᴇʀʀᴏʀ ᴇɴ ᴇʟ ᴄᴏᴍᴀɴᴅᴏ ᴘᴏʀ ғᴀᴠᴏʀ ɪɴᴛᴇɴᴛᴀ ᴍᴀs ᴛᴀʀᴅᴇ..*`, fkontak, m, rcanal)
-console.log(`❗❗ᴇʀʀᴏʀ ${usedPrefix + command} ❗❗`)
-console.log(e)
-handler.limit = 0
+await m.react(done)
+} catch {
+await m.react(error)
+await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)
 }}
+handler.help = ['play', 'play2'];
+handler.tags = ['descargas'];
 handler.command = ['play', 'play2']
 handler.register = true;
 export default handler;
