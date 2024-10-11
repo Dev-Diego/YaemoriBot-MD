@@ -83,19 +83,19 @@ const txt = `
 
 let listSections = []
 listSections.push({
-title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: `Popular YaemoriBot`,
+title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: ``,
 rows: [
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊 ╎ 🎵",
 title: "",
 description: `🎵 Audio.`,
-id: `#play mp3 ${yt_play[0].url}`,
+id: `#play1 mp3 ${yt_play[0].url}`,
 },
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 ╎ 📽",
 title: "",
 description: `📽 Video.`,
-id: `#play mp4 ${yt_play[0].url}`,
+id: `#play1 mp4 ${yt_play[0].url}`,
 },
 ],
 })
