@@ -13,7 +13,7 @@ let handler = async (m, { conn }) => {
         await conn.sendMessage(m.chat, {text: `🚀 Pong.....`, edit: key});
         await delay(1000 * 1);
         await conn.sendMessage(m.chat, {text: `♻️ Cargando...`, edit: key});
-         await conn.sendMessage(m.chat, {text: `*Pong* 🏓 ${latensi.toFixed(4)} ms`, edit: key});
+         await conn.sendMessage(m.chat, {text: `*Pong* 🏓 ${latensi.toFixed(4)} ms`, edit: key})};
 }
 handler.help = ['ping']
 handler.tags = ['info']
