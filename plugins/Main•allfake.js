@@ -36,7 +36,7 @@ let pushname = m.pushName || 'Sin nombre'
 global.creador = 'Wa.me/5493876432076'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
-global.namechannel = '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱'
+global.namechannel = '© All Rightd Reserved • YaemoriBot'
 
 //Reacciones De Comandos.!
 global.rwait = '🕒'
