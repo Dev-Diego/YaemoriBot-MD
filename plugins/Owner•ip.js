@@ -50,7 +50,7 @@ const formatIPInfo = (info) => {
 `;
 };
 
-conn.reply(m.chat, ipsearch, m, rcanal, )
+m.reply(formatIPInfo(res)); 
 })
 }
 
