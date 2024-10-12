@@ -5,6 +5,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let uniqueUsers = new Map();
 
     let users = [...uniqueUsers.values()];
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let totalUsers = users.length;
     let totalusr = Object.keys(global.db.data.users).length;
     let rtotal = Object.entries(global.db.data.users).length || '0'
