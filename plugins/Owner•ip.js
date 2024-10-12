@@ -1,11 +1,12 @@
 import fetch from 'node-fetch';
 
-let handler = async (m, { conn, text }) => {
+const handler = async (m, { conn, text }) => {
 if (!text) return m.reply(`「 ✰ 」INGRESA LA DIRECCION IP A BUSCAR\n\n*• EJEMPLO:*\n> ${prefix + command} 112.90.150.204`);
 try {
 let res = await fetch(`https://ipwho.is/${text}`).then(result => result.json());
 
-let ips = `
+const formatIPInfo = (info) => {
+ return `
 > ✰ *IP INFORMACION*
 • IP: ${info.ip || 'N/A'}
 • EXITO: ${info.success || 'N/A'}
@@ -41,18 +42,16 @@ let ips = `
  - UTC: ${info.timezone?.utc || 'N/A'}
  - TIEMPO: ${info.timezone?.current_time || 'N/A'}
 `;
+};
  
-if (!res.success) throw new Error(`⚠️ La ip ${text} no es válida`);
+if (!res.success) throw new Error(`「 ✰ 」LA IP ${text} NO ES VALIDA`);
+await Rifky.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 await delay(2000);
-m.reply(ips(res)); 
-} catch { 
-await m.react(error)
-m.reply(`✖️ No se encontró resultado de la ip:\n> ${text}`)
+m.reply(formatIPInfo(res)); 
+} catch (e) { 
+m.reply(`「 ✰ 」NO SE ENCONTRO RESULTADO PARA LA IP:\n> ${text}`);
 }}
+handler.command = ['trackip <ip']
 
-handler.help = ['ip <alamat ip>']
-handler.tags = ['owner']
-handler.command = ['ip']
-handler.rowner = true
-export default handler
+import default handler;
