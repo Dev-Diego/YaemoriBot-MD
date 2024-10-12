@@ -50,5 +50,4 @@ handler.help = ['ip <alamat ip>']
 handler.tags = ['owner']
 handler.command = ['ip']
 handler.rowner = true
-//export default client
-client.initialize();
+export default client
