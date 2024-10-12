@@ -6,25 +6,29 @@ let bot = '🧑🏻‍💻 Buscando....'
 conn.reply(m.chat, bot, m, rcanal, )
   if (!text) return conn.reply(m.chat, '🚩 *Te Faltó La <Ip>*', m, rcanal, )
 
-              const response = await axios.get(`http://ip-api.com/json/${text}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,hosting,query`);
-            const data = response.data;
+  axios.get(`http://ip-api.com/json/${text}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,hosting,query`).then ((res) => {
+    const data = res.data
 
       if (String(data.status) !== "success") {
         throw new Error(data.message || "Falló")
       }
     let ipsearch = `
-                *Información para la IP:* ${ip}
-                - 🌍 País: ${data.country}
-                - 🏙️ Región: ${data.regionName}
-                - 🌆 Ciudad: ${data.city}
-                - 🕹️ Proveedor de Internet: ${data.isp}
-                - 🌐 Organización: ${data.org}
-                - 📡 ASN: ${data.as}
-                - 📍 Latitud: ${data.lat}
-                - 📍 Longitud: ${data.lon}
-                - ⏲️ Zona Horaria: ${data.timezone}
-                - 📅 Código Postal: ${data.zip}
-                - 💻 Dirección IP: ${data.query}
+☁️ *I N F O - I P* ☁️
+
+IP : ${data.query}
+País : ${data.country}
+Código de País : ${data.countryCode}
+Provincia : ${data.regionName}
+Código de Provincia : ${data.region}
+Ciudad : ${data.city}
+Distrito : ${data.district}
+Código Postal : ${res.data.zip}
+Zona Horaria : ${data.timezone}
+ISP : ${data.isp}
+Organización : ${data.org}
+AS : ${data.as}
+Mobile : ${data.mobile ? "Si" : "No"}
+Hosting : ${data.hosting ? "Si" : "No"}
 `.trim()
 
 conn.reply(m.chat, ipsearch, m, rcanal, )
