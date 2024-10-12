@@ -80,6 +80,24 @@ txt+= "✬✭✰✬"
                 id: `#speed`,
             },
             {
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙀𝙍𝘽𝙊𝙏 𝘾𝙊𝘿𝙀  ╎ ⚡️",
+                title: "",
+                description: `🍟 Ser subbot mediante un codigo de 8 digitos.`,
+                id: `#code`,
+            },
+            {
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙀𝙍𝘽𝙊𝙏 𝙌𝙍 ╎ 📂",
+                title: "",
+                description: `☁️ Ser subbot mediante un codigo QR.`,
+                id: `#serbot`,
+            },
+            {
+                header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙐𝘽𝘽𝙊𝙏𝙎 ╎ 🚩",
+                title: "",
+                description: `🟢 Muestra su subbots onlines.`,
+                id: `#bots`,
+            },
+            {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝙂𝙍𝙐𝙋𝙊𝙎 ☁️",
                 title: "",
                 description: `📲 Muestra los grupos principales de la bot.`,
@@ -89,11 +107,10 @@ txt+= "✬✭✰✬"
     });
 
     let vid = "https://qu.ax/yddg.jpg";
-    let img = "https://qu.ax/uuYfC.jpg";
-    let img2 = "https://qu.ax/mqmGX.jpg";
-    let img3 = "https://qu.ax/EhQB.jpg";
+    let img = "https://qu.ax/fprhC.jpg";
+    let img2 = "https://qu.ax/uuYfC.jpg";
 
-    await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2, img3].getRandom(), listSections, estilo);
+    await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, estilo);
 };
 
 handler.tags = ['main'];
