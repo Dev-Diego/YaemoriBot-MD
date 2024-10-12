@@ -1,66 +1,42 @@
-
-import axios from 'axios';
+import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
-  const bot = ' Buscando....';
-  conn.reply(m.chat, bot, m, rcanal);
+//await m.reply('🧑🏻‍💻 Buscando...')
+let bot = '🧑🏻‍💻 Buscando....'
+conn.reply(m.chat, bot, m, rcanal, )
+  if (!text) return conn.reply(m.chat, '🚩 *Te Faltó La <Ip>*', m, rcanal, )
 
-  if (!text) return conn.reply(m.chat, ' Te Faltó La IP ', m, rcanal);
+  axios.get(`http://ip-api.com/json/${text}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,hosting,query`).then ((res) => {
+    const data = res.data
 
-  try {
-    const response = await axios.get(`https://ipwho.is/${text}`);
-    const { data } = response;
+      if (String(data.status) !== "success") {
+        throw new Error(data.message || "Falló")
+      }
+    let ipsearch = `
+☁️ *I N F O - I P* ☁️
 
-    if (data.status !== 'success') {
-      throw new Error(data.message || 'Falló');
-    }
+IP : ${data.query}
+País : ${data.country}
+Código de País : ${data.countryCode}
+Provincia : ${data.regionName}
+Código de Provincia : ${data.region}
+Ciudad : ${data.city}
+Distrito : ${data.district}
+Código Postal : ${res.data.zip}
+Zona Horaria : ${data.timezone}
+ISP : ${data.isp}
+Organización : ${data.org}
+AS : ${data.as}
+Mobile : ${data.mobile ? "Si" : "No"}
+Hosting : ${data.hosting ? "Si" : "No"}
+`.trim()
 
-    const ipInfo = `
-      > IP INFORMACION
-      • IP: ${data.ip}
-      • EXITO: ${data.success}
-      • TIPO: ${data.type}
-      • CONTINENTE: ${data.continent}
-      • CODIGO DEL CONTINENTE: ${data.continent_code}
-      • PAIS: ${data.country}
-      • CODIGO DEL PAIS: ${data.country_code}
-      • REGION: ${data.region}
-      • CODIGO DE REGION: ${data.region_code}
-      • CIUDAD: ${data.city}
-      • LATITUD: ${data.latitude}
-      • LONGITUD: ${data.longitude}
-      • ES EU: ${data.is_eu ? 'Yes' : 'No'}
-      • POSTAL: ${data.postal}
-      • CODIGO DE TELEFONO: ${data.calling_code}
-      • CAPITAL: ${data.capital}
-      • BORDES: ${data.borders}
-      • BANDERA: 
-        - IMAGEN: ${data.flag?.img}
-        - EMOJI: ${data.flag?.emoji}
-        - EMOJI UNICODE: ${data.flag?.emoji_unicode}
-      • CONEXION: 
-        - ASN: ${data.connection?.asn}
-        - ORGANIZACION: ${data.connection?.org}
-        - ISP: ${data.connection?.isp}
-        - DOMINIO: ${data.connection?.domain}
-      • HORARIO: 
-        - ID: ${data.timezone?.id}
-        - ABREVIACION: ${data.timezone?.abbr}
-        - ES DST: ${data.timezone?.is_dst ? 'Yes' : 'No'}
-        - SET APAGADO: ${data.timezone?.offset}
-        - UTC: ${data.timezone?.utc}
-        - TIEMPO: ${data.timezone?.current_time}
-    `;
+conn.reply(m.chat, ipsearch, m, rcanal, )
+})
+}
 
-    m.reply(m.chat, ipInfo, rcanal, m);
-  } catch (error) {
-    conn.reply(m.chat, 'Error: ' + error.message, m, rcanal);
-  }
-};
-
-handler.help = ['ip <alamat ip>'];
-handler.tags = ['owner'];
-handler.command = ['ip'];
-handler.rowner = true;
-
-export default handler;
+handler.help = ['ip <alamat ip>']
+handler.tags = ['owner']
+handler.command = ['ip']
+handler.rowner = true
+export default handler
