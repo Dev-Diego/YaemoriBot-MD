@@ -14,7 +14,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (/webp|image|video/g.test(mime)) {
       if (/video/g.test(mime)) if ((q.msg || q).seconds > 11) return m.reply('Máximo 10 segundos')
       let img = await q.download?.()
-      if (!img) throw `✳️ Responde a una imagen o video con*${usedPrefix + command}*`
+      if (!img) return conn.reply(m.chat  `✳️ Responde a una imagen o video con*${usedPrefix + command}*`, m, rpl)
       let out
       try {
         stiker = await sticker(img, false, f, g)
