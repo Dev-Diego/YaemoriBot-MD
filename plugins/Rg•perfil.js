@@ -21,7 +21,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let img = await (await fetch(`${pp}`)).buffer()
 let txt = `*⭒─ׄ─ׅ─ׄ─⭒ Profile User ⭒─ׄ─ׅ─ׄ─⭒*\n`
 txt += `╭─────────\n`
-txt += `┊⭐️ [ *Nombre: :: *${name}*
+txt += `┊⭐️ [ *Nombre: :: *${name}*`
 txt += `┊🪴 [ *Edad* :: *${registered ? `${age} años` : '×'}*\n`
 txt += `┊🍟 [ *Numero* :: *${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}*\n`
 txt += `┊✨ [ *Nacionalidad* :: *${userNationality}*\n`
