@@ -1,18 +1,12 @@
-import axios from 'axios'
+import fetch from 'node-fetch';
 
-let handler = async (m, { conn, text }) => {
-//await m.reply('🧑🏻‍💻 Buscando...')
-let bot = '🧑🏻‍💻 Buscando....'
-conn.reply(m.chat, bot, m, rcanal, )
-  if (!text) return conn.reply(m.chat, '🚩 *Te Faltó La <Ip>*', m, rcanal, )
-
+const handler = { (conn y usedPrefix)
+}
+try {
+if (!text) return m.reply(`「 ✰ 」INGRESA LA DIRECCION IP A BUSCAR\n\n*• EJEMPLO:*\n> ${prefix + command} 112.90.150.204`);
+try {
 let res = await fetch(`https://ipwho.is/${text}`).then(result => result.json());
-  axios.get(`http://ip-api.com/json/${text}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,hosting,query`).then ((res) => {
-    const data = res.data
 
-      if (String(data.status) !== "success") {
-        throw new Error(data.message || "Falló")
-      }
 const formatIPInfo = (info) => {
  return `
 > ✰ *IP INFORMACION*
@@ -51,9 +45,14 @@ const formatIPInfo = (info) => {
  - TIEMPO: ${info.timezone?.current_time || 'N/A'}
 `;
 };
-
-conn.reply(m.chat, formatIPInfo, m, rcanal, )
-})
+ 
+if (!res.success) throw new Error(`「 ✰ 」LA IP ${text} NO ES VALIDA`);
+await Rifky.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+await delay(2000);
+m.reply(formatIPInfo(res)); 
+} catch (e) { 
+m.reply(`「 ✰ 」NO SE ENCONTRO RESULTADO PARA LA IP:\n> ${text}`);
 }
 
 handler.help = ['ip <alamat ip>']
