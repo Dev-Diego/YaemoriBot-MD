@@ -3,7 +3,7 @@ import axios from 'axios';
 module.exports = {
     name: 'ipPlugin',
     description: 'Busca y muestra información sobre una dirección IP',
- let handler = async (msg, client) => {
+ let handler = async (msg, {( client }) => {
         if (msg.body.startsWith('!ip ')) {
             const ip = msg.body.split(' ')[1];
 
