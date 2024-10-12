@@ -1,44 +1,70 @@
+import { canLevelUp, xpRange } from '../lib/levelling.js'
+import { createHash } from 'crypto'
 import PhoneNumber from 'awesome-phonenumber'
 import fetch from 'node-fetch'
-var handler = async (m, { conn }) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who, 'image').catch(_ => imagen1)
-let { premium, level, cookies, exp, lastclaim, registered, regTime, age, role } = global.db.data.users[m.sender]
-let username = conn.getName(who)
-let noprem = `
-┏━━━━━━━━━⪩
-┃❀ *PERFIL DE USUARIO*
-┃☁️ *Nombre:* ${username}
-┃❄ *Tag:* @${who.replace(/@.+/, '')}
-┃🌟 *Registrado:* ${registered ? '✔': '✘'}
-┗━━━━━━━━━⪩
+import fs from 'fs'
 
-┏━━━━━━━━━⪩
-┃👑 *RECURSOS*
-┃🍪 *Galletas:* ${cookies}
-┃💥 *Nivel:* ${level}
-┃💫 *Experiencia:* ${exp}
-┃✨️ *Rango:* ${role}
-┃💖 *Premium:* ${premium ? '✔': '✘'}
-┗━━━━━━━━━⪩
-`.trim()
-let prem = `╭──⪩ 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 ⪨
-│⧼👤⧽ *ᴜsᴜᴀʀɪᴏ:* 「${username}」
-│⧼💌⧽ *ʀᴇɢɪsᴛʀᴀᴅᴏ:* ${registered ? '✔': '✘'}
-│⧼🔱⧽ *ʀᴏʟ:* Vip 👑
-╰───⪨
+let handler = async (m, { conn, usedPrefix, command}) => {
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+  let bio = await conn.fetchStatus(who).catch(_ => 'undefined')
+  let biot = bio.status?.toString() || 'Sin Info'
+  let user = global.db.data.users[who]
+  let pp = await conn.profilePictureUrl(who, 'image').catch(_ => icono)
+  let { exp, cookies, name, registered, regTime, age, level } = global.db.data.users[who]
+  let { min, xp, max } = xpRange(user.level, global.multiplier)
+  let username = conn.getName(who)
+  let prem = global.prems.includes(who.split`@`[0])
+  let sn = createHash('md5').update(who).digest('hex')
+  let api = await axios.get(`https://deliriusapi-official.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+  let userNationalityData = api.data.result
+  let userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido'
+  let img = await (await fetch(`${pp}`)).buffer()
+let txt = ``*⭒─ׄ─ׅ─ׄ─⭒ Profile User ⭒─ׄ─ׅ─ׄ─⭒*\n`
+txt += `╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒ \n` ⭒*
+txt += `┊ ‹‹ *Profile De* :: *${name}*\n`
+txt += `┊•*⁀➷ °⭒⭒⭒ *【 ✯ Starlights Team1 ✰ 】*\n`
+txt += `╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩\n`
+txt += `┊🪴 [ *Edad* :: *${registered ? `${age} años` : '×'}*\n`
+txt += `┊🍟 [ *Numero* :: *${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}*\n`
+txt += `┊✨ [ *Nacionalidad* :: *${userNationality}*\n`
+txt += `┊☁️ [ *Link* :: *wa.me/${who.split`@`[0]}*\n`
+txt += `┊🍟 [ *Galletas* :: *${cookies}*\n`
+txt += `┊🍁 [ *Nivel* :: *${level}*\n`
+txt += `┊🌸 [ *XP* :: Total ${exp} (${user.exp - min}/${xp})\n`
+txt += `┊🍄 [ *Registrado* :: *${registered ? 'Si': 'No'}*\n`
+txt += `┊💐 [ *Premium* :: *${prem ? 'Si' : 'No'}*\n`
+txt += `╰─────────`
 
-╭────⪩ 𝐑𝐄𝐂𝐔𝐑𝐒𝐎𝐒 ⪨
-│⧼🌟⧽ *ɢᴀʟʟᴇᴛᴀs:* ${cookies}
-│⧼🔰⧽ *ɴɪᴠᴇʟ:* ${level}
-│⧼💫⧽ *ᴇxᴘᴇʀɪᴇɴᴄɪᴀ:* ${exp}
-│⧼⚜️⧽ *ʀᴀɴɢᴏ:* ${role}
-╰───⪨ *𝓤𝓼𝓾𝓪𝓻𝓲𝓸 𝓓𝓮𝓼𝓽𝓪𝓬𝓪𝓭𝓸* ⪩`.trim()
-conn.sendFile(m.chat, pp, 'perfil.jpg', `${premium ? prem.trim() : noprem.trim()}`, m, rcanal, { mentions: [who] })
+  let mentionedJid = [who]
+await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m)
 }
-handler.help = ['profile']
-handler.register = true
-//handler.group = true
+handler.help = ['perfil']
 handler.tags = ['rg']
-handler.command = ['profile', 'perfil']
+handler.command = ['perfil', 'profile']
+handler.register = false
+
 export default handler
+
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
+
+function formatDate(n, locale = 'es-US') {
+  let d = new Date(n)
+  return d.toLocaleDateString(locale, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+}
+
+function formatHour(n, locale = 'en-US') {
+  let d = new Date(n)
+  return d.toLocaleString(locale, {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true
+  })
+}
