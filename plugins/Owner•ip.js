@@ -14,7 +14,7 @@ client.on('ready', () => {
     console.log('Client is ready!');
 });
 
-client.on('message', async msg => {
+handler.on('message', async msg => {
     if (msg.body.startsWith('!ip ')) {
         const ip = msg.body.split(' ')[1];
 
@@ -50,4 +50,4 @@ handler.help = ['ip <alamat ip>']
 handler.tags = ['owner']
 handler.command = ['ip']
 handler.rowner = true
-export default client
+export default handler
