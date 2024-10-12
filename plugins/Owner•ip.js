@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 
-const handler = { (conn y usedPrefix)
-}
+let handler = async (m, { conn, text }) => {
 try {
 if (!text) return m.reply(`「 ✰ 」INGRESA LA DIRECCION IP A BUSCAR\n\n*• EJEMPLO:*\n> ${prefix + command} 112.90.150.204`);
 try {
