@@ -105,9 +105,6 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 
 global.rpl = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: "120363263466636910@newsletter", serverMessageId: 100, newsletterName: namechannel, }, externalAdReply: { mediaUrl: redes, mediaType: 'VIDEO', description: namebot, title: packname, body: namebot, thumbnailUrl: icono, sourceUrl: redes }}}
 
-global.rply = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: "120363263466636910@newsletter", serverMessageId: 100, newsletterName: namechannel, }, externalAdReply: { showAdAttribution: true, mediaUrl: yt, mediaType: 'VIDEO', description: 'Suscribete: ' + yt, title: 'Yaemori - YouTube', body: 'aprende a crear tus propios bots', thumbnailUrl: icono, sourceUrl: yt}}}
-
-
 global.icono = [ 
 'https://qu.ax/uuYfC.jpg',
 'https://qu.ax/fprhC.jpg',
