@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let userNationalityData = api.data.result
   let userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido'
   let img = await (await fetch(`${pp}`)).buffer()
-let txt = ``*⭒─ׄ─ׅ─ׄ─⭒ Profile User ⭒─ׄ─ׅ─ׄ─⭒*\n`
+let txt = `*⭒─ׄ─ׅ─ׄ─⭒ Profile User ⭒─ׄ─ׅ─ׄ─⭒*\n`
 txt += `╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒  ⭒*\n`
 txt += `┊ ‹‹ *Profile De* :: *${name}*\n`
 txt += `┊•*⁀➷ °⭒⭒⭒ *【 ✯ Starlights Team1 ✰ 】*\n`
