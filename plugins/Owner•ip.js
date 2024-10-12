@@ -3,7 +3,7 @@ import axios from 'axios';
 module.exports = {
     name: 'ipPlugin',
     description: 'Busca y muestra información sobre una dirección IP',
-    execute: async (msg, client) => {
+ let handler = async (msg, client) => {
         if (msg.body.startsWith('!ip ')) {
             const ip = msg.body.split(' ')[1];
 
@@ -40,4 +40,4 @@ handler.help = ['ip <alamat ip>']
 handler.tags = ['owner']
 handler.command = ['ip']
 handler.rowner = true
-export default execute
+export default handler
