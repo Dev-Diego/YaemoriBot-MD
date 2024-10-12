@@ -11,6 +11,9 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let uptime = clockString(_uptime);
     let username = conn.getName(m.sender);
     let name = conn.getName(m.sender)
+    let api = await axios.get(`https://deliriusapi-official.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+   let userNationalityData = api.data.result
+   let userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido'
     let locale = 'es';
     let d = new Date(new Date + 3600000);
     let time = d.toLocaleTimeString(locale, {
@@ -32,6 +35,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 txt+= '.͜°˖ `ᴄʀᴇᴀᴅᴏʀ ::`' + ` DevDiego\n`;
 txt+= '.͜°˖ `ʙᴏᴛ ::`' + ` YaemoriBot-MD\n`;
 txt+= '.͜°˖ `ꜰᴇᴄʜᴀ ::`' + ` ${moment.tz('America/Bogota').format('DD/MM/YY')}\n`;
+txt+= '.͜°˖ `ᴘᴀɪs ::`' + ` ${userNationality}\n`;
 txt+= '.͜°˖ `ᴘʀᴇꜰɪᴊᴏ ::`' + ` 「 ${usedPrefix} 」\n`;
 txt+= '.͜°˖ `ᴜꜱᴜᴀʀɪᴏꜱ ::`' + ` ${rtotal}\n`;
 txt+= '.͜°˖ `ᴄᴏɴᴛᴀᴄᴛᴏ ::` #owner\n\n';
