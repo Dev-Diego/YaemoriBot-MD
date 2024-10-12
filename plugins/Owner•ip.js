@@ -1,57 +1,60 @@
-import fetch from 'node-fetch';
+import axios from 'axios'
 
-const handler = async (m, { conn, text }) => {
-if (!text) return m.reply(`「 ✰ 」INGRESA LA DIRECCION IP A BUSCAR\n\n*• EJEMPLO:*\n> ${prefix + command} 112.90.150.204`);
-try {
-let res = await fetch(`https://ipwho.is/${text}`).then(result => result.json());
+let handler = async (m, { conn, text }) => {
+//await m.reply('🧑🏻‍💻 Buscando...')
+let bot = '🧑🏻‍💻 Buscando....'
+conn.reply(m.chat, bot, m, rcanal, )
+  if (!text) return conn.reply(m.chat, '🚩 *Te Faltó La <Ip>*', m, rcanal, )
 
-const formatIPInfo = (info) => {
- return `
+  axios.get(`http://ip-api.com/json/${text}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,hosting,query`).then ((res) => {
+    const data = res.data
+
+      if (String(data.status) !== "success") {
+        throw new Error(data.message || "Falló")
+      }
+    let ipsearch = `
 > ✰ *IP INFORMACION*
-• IP: ${info.ip || 'N/A'}
-• EXITO: ${info.success || 'N/A'}
-• TIPO: ${info.type || 'N/A'}
-• CONTINENTE: ${info.continent || 'N/A'}
-• CODIGO DEL CONTIENE: ${info.continent_code || 'N/A'}
-• PAIS: ${info.country || 'N/A'}
-• CODIGO DEL PAIS: ${info.country_code || 'N/A'}
-• REGION: ${info.region || 'N/A'}
-• CODIGO DE REGION: ${info.region_code || 'N/A'}
-• CIUDAD: ${info.city || 'N/A'}
-• LATITUD: ${info.latitude || 'N/A'}
-• LONGITUD: ${info.longitude || 'N/A'}
-• ES EU: ${info.is_eu ? 'Yes' : 'No'}
-• POSTAL: ${info.postal || 'N/A'}
+• IP: ${data.ip || 'N/A'}
+• EXITO: ${data.success || 'N/A'}
+• TIPO: ${data.type || 'N/A'}
+• CONTINENTE: ${data.continent || 'N/A'}
+• CODIGO DEL CONTIENE: ${data.continent_code || 'N/A'}
+• PAIS: ${data.country || 'N/A'}
+• CODIGO DEL PAIS: ${data.country_code || 'N/A'}
+• REGION: ${data.region || 'N/A'}
+• CODIGO DE REGION: ${data.region_code || 'N/A'}
+• CIUDAD: ${data.city || 'N/A'}
+• LATITUD: ${data.latitude || 'N/A'}
+• LONGITUD: ${data.longitude || 'N/A'}
+• ES EU: ${data.is_eu ? 'Yes' : 'No'}
+• POSTAL: ${data.postal || 'N/A'}
 • CODIGO DE TELEFONO: ${info.calling_code || 'N/A'}
-• CAPITAL: ${info.capital || 'N/A'}
-• BORDES: ${info.borders || 'N/A'}
+• CAPITAL: ${data.capital || 'N/A'}
+• BORDES: ${data.borders || 'N/A'}
 • BANDERA:
- - IMAGEN: ${info.flag?.img || 'N/A'}
- - EMOJI: ${info.flag?.emoji || 'N/A'}
- - EMOJI UNICODE: ${info.flag?.emoji_unicode || 'N/A'}
+ - IMAGEN: ${data.flag?.img || 'N/A'}
+ - EMOJI: ${data.flag?.emoji || 'N/A'}
+ - EMOJI UNICODE: ${data.flag?.emoji_unicode || 'N/A'}
 • CONEXION:
- - ASN: ${info.connection?.asn || 'N/A'}
- - ORGANIZACION: ${info.connection?.org || 'N/A'}
- - ISP: ${info.connection?.isp || 'N/A'}
- - DOMINIO: ${info.connection?.domain || 'N/A'}
+ - ASN: ${data.connection?.asn || 'N/A'}
+ - ORGANIZACION: ${data.connection?.org || 'N/A'}
+ - ISP: ${data.connection?.isp || 'N/A'}
+ - DOMINIO: ${data.connection?.domain || 'N/A'}
 • HORARIO:
- - ID: ${info.timezone?.id || 'N/A'}
- - ABREVIACION: ${info.timezone?.abbr || 'N/A'}
- - ES DST: ${info.timezone?.is_dst ? 'Yes' : 'No'}
- - SET APAGADO: ${info.timezone?.offset || 'N/A'}
- - UTC: ${info.timezone?.utc || 'N/A'}
- - TIEMPO: ${info.timezone?.current_time || 'N/A'}
-`;
-};
- 
-if (!res.success) throw new Error(`「 ✰ 」LA IP ${text} NO ES VALIDA`);
-await Rifky.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-await delay(2000);
-m.reply(formatIPInfo(res)); 
-} catch (e) { 
-m.reply(`「 ✰ 」NO SE ENCONTRO RESULTADO PARA LA IP:\n> ${text}`);
-}}
-handler.command = ['trackip <ip']
+ - ID: ${data.timezone?.id || 'N/A'}
+ - ABREVIACION: ${data.timezone?.abbr || 'N/A'}
+ - ES DST: ${data.timezone?.is_dst ? 'Yes' : 'No'}
+ - SET APAGADO: ${data.timezone?.offset || 'N/A'}
+ - UTC: ${data.timezone?.utc || 'N/A'}
+ - TIEMPO: ${data.timezone?.current_time || 'N/A'}
+`.trim()
 
-import default handler;
+conn.reply(m.chat, ipsearch, m, rcanal, )
+})
+}
+
+handler.help = ['ip <alamat ip>']
+handler.tags = ['owner']
+handler.command = ['ip']
+handler.rowner = true
+export default handler
