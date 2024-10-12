@@ -1,3 +1,9 @@
+/*
+✰ Codigo por: GabrielVz (@glytglobal)
+✰ Version Original: Case
+✰ Proviniente: Rin Tohsaka - Bot (Proyecto)
+*/
+
 import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
