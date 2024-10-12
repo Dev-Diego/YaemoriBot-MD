@@ -10,7 +10,7 @@ let handler = async (m, { conn, text }) => {
             const data = response.data;
 
             if (data.status === 'fail') {
-                m.reply(`No se encontró información para la IP: ${ip}`);
+                m.reply(`No se encontró información para la IP: ${ip}`); }
 
                const info = `
                 *Información para la IP:* ${ip}
