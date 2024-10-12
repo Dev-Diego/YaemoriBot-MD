@@ -1,25 +1,18 @@
-
 import axios from 'axios'
 
-module.exports = {
-    command: ['ip'],
-    description: 'Busca y muestra información sobre una dirección IP',
-    execute: async (msg, client) => {
-        const ip = msg.body.split(' ')[1];
+let handler = async (m, { conn, text }) => {
+//await m.reply('🧑🏻‍💻 Buscando...')
+let bot = '🧑🏻‍💻 Buscando....'
+conn.reply(m.chat, bot, m, rcanal, )
+  if (!text) return conn.reply(m.chat, '🚩 *Te Faltó La <Ip>*', m, rcanal, )
 
-        if (!ip) {
-            msg.reply('Por favor, proporciona una dirección IP.');
-            return;
-        }
-
-        try {
-            const response = await axios.get(`http://ip-api.com/json/${ip}`);
+              const response = await axios.get(`http://ip-api.com/json/${ip}`);
             const data = response.data;
 
-            if (data.status === 'fail') {
-                msg.reply(`No se encontró información para la IP: ${ip}`);
-            } else {
-                const info = `
+      if (String(data.status) !== "success") {
+        throw new Error(data.message || "Falló")
+      }
+    let ipsearch = `
                 *Información para la IP:* ${ip}
                 - 🌍 País: ${data.country}
                 - 🏙️ Región: ${data.regionName}
@@ -32,11 +25,14 @@ module.exports = {
                 - ⏲️ Zona Horaria: ${data.timezone}
                 - 📅 Código Postal: ${data.zip}
                 - 💻 Dirección IP: ${data.query}
-                `;
-                msg.reply(info);
-            }
-        } catch (error) {
-            msg.reply('Hubo un error al buscar la IP. Inténtalo de nuevo más tarde.');
-        }
-    }
-};
+`.trim()
+
+conn.reply(m.chat, ipsearch, m, rcanal, )
+})
+}
+
+handler.help = ['ip <alamat ip>']
+handler.tags = ['owner']
+handler.command = ['ip']
+handler.rowner = true
+export default handler
