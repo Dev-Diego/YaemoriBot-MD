@@ -45,7 +45,7 @@ const formatIPInfo = (info) => {
 };
  
 if (!res.success) throw new Error(`⚠️ La ip ${text} no es válida`);
-await Rifky.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
+await conn.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 await delay(2000);
 m.reply(formatIPInfo(res)); 
