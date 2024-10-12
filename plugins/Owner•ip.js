@@ -64,4 +64,3 @@ handler.command = ['ip'];
 handler.rowner = true;
 
 export default handler;
-```
