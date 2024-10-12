@@ -20,10 +20,8 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido'
   let img = await (await fetch(`${pp}`)).buffer()
 let txt = `*⭒─ׄ─ׅ─ׄ─⭒ Profile User ⭒─ׄ─ׅ─ׄ─⭒*\n`
-txt += `╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒  ⭒*\n`
-txt += `┊ ‹‹ *Profile De* :: *${name}*\n`
-txt += `┊•*⁀➷ °⭒⭒⭒ *【 ✯ Starlights Team1 ✰ 】*\n`
-txt += `╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩\n`
+txt += `╭─────────\n`
+txt += `┊⭐️ [ *Nombre: :: *${name}*
 txt += `┊🪴 [ *Edad* :: *${registered ? `${age} años` : '×'}*\n`
 txt += `┊🍟 [ *Numero* :: *${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}*\n`
 txt += `┊✨ [ *Nacionalidad* :: *${userNationality}*\n`
