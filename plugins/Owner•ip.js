@@ -5,8 +5,7 @@ if (!text) return m.reply(`「 ✰ 」INGRESA LA DIRECCION IP A BUSCAR\n\n*• E
 try {
 let res = await fetch(`https://ipwho.is/${text}`).then(result => result.json());
 
-const formatIPInfo = (info) => {
- return `
+let ips = `
 > ✰ *IP INFORMACION*
 • IP: ${info.ip || 'N/A'}
 • EXITO: ${info.success || 'N/A'}
@@ -42,13 +41,11 @@ const formatIPInfo = (info) => {
  - UTC: ${info.timezone?.utc || 'N/A'}
  - TIEMPO: ${info.timezone?.current_time || 'N/A'}
 `;
-};
  
 if (!res.success) throw new Error(`⚠️ La ip ${text} no es válida`);
-await conn.sendMessage(m.chat, { location: { degreesLatitude: res.latitude, degreesLongitude: res.longitude } }, { ephemeralExpiration: 604800 });
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 await delay(2000);
-m.reply(formatIPInfo(res)); 
+m.reply(ips(res)); 
 } catch { 
 await m.react(error)
 m.reply(`✖️ No se encontró resultado de la ip:\n> ${text}`)
