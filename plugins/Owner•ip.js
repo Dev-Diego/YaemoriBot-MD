@@ -3,7 +3,7 @@ import axios from 'axios'
 
 let handler = async (m, { conn, text }) => {
     if (m.body.startsWith('!ip ')) {
-        const ip = msg.body.split(' ')[1];
+        const ip = m.body.split(' ')[1];
 
         try {
             const response = await axios.get(`http://ip-api.com/json/${ip}`);
@@ -11,8 +11,8 @@ let handler = async (m, { conn, text }) => {
 
             if (data.status === 'fail') {
                 m.reply(`No se encontró información para la IP: ${ip}`);
-            } else {
-                const info = `
+
+               const info = `
                 *Información para la IP:* ${ip}
                 - 🌍 País: ${data.country}
                 - 🏙️ Región: ${data.regionName}
@@ -27,7 +27,7 @@ let handler = async (m, { conn, text }) => {
                 - 💻 Dirección IP: ${data.query}
                 `;
                 m.reply(info);
-            }
+            
         } catch (error) {
             m.reply('Hubo un error al buscar la IP. Inténtalo de nuevo más tarde.');
         }}
