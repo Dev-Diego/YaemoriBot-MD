@@ -1,31 +1,18 @@
+import axios from 'axios'
 
-const { Client, LocalAuth } = require('whatsapp-web.js');
-const axios = require('axios');
+let handler = async (m, { conn, text }) => {
+//await m.reply('🧑🏻‍💻 Buscando...')
+let bot = '🧑🏻‍💻 Buscando....'
+conn.reply(m.chat, bot, m, rcanal, )
+  if (!text) return conn.reply(m.chat, '🚩 *Te Faltó La <Ip>*', m, rcanal, )
 
-const client = new Client({
-    authStrategy: new LocalAuth()
-});
+  axios.get(`http://ip-api.com/json/${text}?fields=status,message,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,isp,org,as,mobile,hosting,query`).then ((res) => {
+    const data = res.data
 
-client.on('qr', (qr) => {
-    console.log('QR RECEIVED', qr);
-});
-
-client.on('ready', () => {
-    console.log('Client is ready!');
-});
-
-handler.on('message', async msg => {
-    if (msg.body.startsWith('!ip ')) {
-        const ip = msg.body.split(' ')[1];
-
-        try {
-            const response = await axios.get(`http://ip-api.com/json/${ip}`);
-            const data = response.data;
-
-            if (data.status === 'fail') {
-                msg.reply(`No se encontró información para la IP: ${ip}`);
-            } else {
-                const info = `
+      if (String(data.status) !== "success") {
+        throw new Error(data.message || "Falló")
+      }
+                 const info = `
                 *Información para la IP:* ${ip}
                 - 🌍 País: ${data.country}
                 - 🏙️ Región: ${data.regionName}
@@ -39,12 +26,10 @@ handler.on('message', async msg => {
                 - 📅 Código Postal: ${data.zip}
                 - 💻 Dirección IP: ${data.query}
                 `;
-                msg.reply(info);
-            }
-        } catch (error) {
-            msg.reply('Hubo un error al buscar la IP. Inténtalo de nuevo más tarde.');
-        }
-    }
+
+conn.reply(m.chat, info, m, rcanal, )
+})
+}
 
 handler.help = ['ip <alamat ip>']
 handler.tags = ['owner']
