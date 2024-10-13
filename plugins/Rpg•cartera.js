@@ -4,7 +4,7 @@ user.bank -= count * 1
 if (who == conn.user.jid) return error 
 if (!(who in global.db.data.users)) return conn.reply(m.chat, '🍭 El usuario no se encuentra en mi base de Datos.', m, fake)
 let user = global.db.data.users[m.sender]
-let txt = `*🌵 Balance de ${user}*
+let txt = `*🌵 Balance de ${nombre}*
 
 	➠ *Galletas* : ${user.cookies}
 	➠ *Banco* : ${user.bank}
