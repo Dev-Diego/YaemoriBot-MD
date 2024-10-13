@@ -1,3 +1,5 @@
+import { Client } from 'whatsapp-web.js'
+
 let handler = async (m, { conn, text, usedPrefix, command}) => {
 
 if (!text) return conn.reply(m.chat, `🌵 Te faltó el enlace del canal.`,  m, rcanal, )
