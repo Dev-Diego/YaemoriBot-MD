@@ -8,7 +8,7 @@ try {
 await m.react(rwait)
 await m.reply('🚀 Sacando la id del canal.....')
 
-client.getChats().then(chats => {
+handler.getChats().then(chats => {
 chats.forEach(chat => {
 await m.reply(`Id: ${chat.id._serialized}`)
 await m.react(done)}}
