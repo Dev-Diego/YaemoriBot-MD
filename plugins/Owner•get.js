@@ -16,7 +16,7 @@ const handler = async (m, {text}) => {
   } catch (e) {
     txt = txt + '';
   } finally {
-    m.reply(txt.slice(0));
+    m.reply(format(JSON.parse(txt + '')));
   }
 };
 handler.help = ['fetch', 'get'];
