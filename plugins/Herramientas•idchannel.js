@@ -1,4 +1,4 @@
-let handler = async (m, { conn, text, usedPrefix, groupMetadata, command}) => {
+let handler = async (m, { conn, text, usedPrefix, command}) => {
 
 if (!text) return conn.reply(m.chat, `🌵 Te faltó el enlace del canal.`,  m, rcanal, )
 
@@ -7,8 +7,8 @@ await m.react(rwait)
 await m.reply('🚀 Sacando la id del canal.....')
 
 const chat = await m.getChat();
-const channelId = chat.id._serialized;
-await m.reply('Id: ' + groupMetadata.id)
+const id = chat.id._serialized;
+await m.reply('Id: ' + id)
 await m.react(done)
 
 } catch {
