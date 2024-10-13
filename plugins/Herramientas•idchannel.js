@@ -8,9 +8,7 @@ try {
 await m.react(rwait)
 await m.reply('🚀 Sacando la id del canal.....')
 
-const chat = await m.getChat();
-const id = chat.id._serialized;
-await m.reply('Id: ' + id)
+await m.reply(`Id: ${chat.id._serialized}`)
 await m.react(done)
 
 } catch (e) {
