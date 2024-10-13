@@ -13,8 +13,9 @@ const id = chat.id._serialized;
 await m.reply('Id: ' + id)
 await m.react(done)
 
-} catch {
+} catch (e) {
 await m.react(error)
+console.log(e)
 await conn.reply(m.chat, '🌵 Ocurrió un error al sacar la id del canal', m, rcanal)
 }}
 
