@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import {format} from 'util';
 const handler = async (m, {text}) => {
-  if (!/^https?:\/\//.test(text)) throw 'Awali *URL* dengan http:// atau https://';
+  if (!/^https?:\/\//.test(text)) return m.reply('Awali *URL* dengan http:// atau https://');
   const _url = new URL(text);
   const url = global.API(_url.origin, _url.pathname, Object.fromEntries(_url.searchParams.entries()), 'APIKEY');
   const res = await fetch(url);
