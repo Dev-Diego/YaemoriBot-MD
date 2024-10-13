@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import {format} from 'util';
 const handler = async (m, {text}) => {
-  if (!/^https?:\/\//.test(text)) return m.reply('🌵 Te faltó el *url* de la pagina.');
+    if (!/^https?:\/\//.test(text)) return m.reply('🌵 Te faltó el *url* de la pagina.');
   const _url = new URL(text);
   const url = global.API(_url.origin, _url.pathname, Object.fromEntries(_url.searchParams.entries()), 'APIKEY');
   const res = await fetch(url);
@@ -16,7 +16,7 @@ const handler = async (m, {text}) => {
   } catch (e) {
     txt = txt + '';
   } finally {
-    m.reply(format(JSON.parse(txt + '')));
+    m.reply(txt.slice(0, 65536) + '');
   }
 };
 handler.help = ['fetch', 'get'];
