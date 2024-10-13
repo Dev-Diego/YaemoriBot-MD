@@ -1,6 +1,5 @@
 let handler = async (m, {conn, usedPrefix}) => {
 let who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.sender
-user.bank -= count * 1
 if (who == conn.user.jid) return error 
 if (!(who in global.db.data.users)) return conn.reply(m.chat, '🍭 El usuario no se encuentra en mi base de Datos.', m, fake)
 const name = conn.getName(who);
