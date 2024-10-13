@@ -5,13 +5,13 @@ user.bank -= count * 1
 if (who == conn.user.jid) return error 
 if (!(who in global.db.data.users)) return conn.reply(m.chat, '🍭 El usuario no se encuentra en mi base de Datos.', m, fake)
 let user = global.db.data.users[who]
-await conn.reply(m.chat, `*🌵 Balance de aa*
+await conn.reply(m.chat, `*🌵 Balance de ${user}*
 
 	➠ *Galletas* : ${user.cookies}
 	➠ *Banco* : ${user.bank}
 	➠ *Experiencia* : ${global.db.data.users[who].exp}
 
-> Para proteger tus *Galletas*, depósitalas en el banco usando *#depositar*, m, rcanal)}
+> Para proteger tus *Galletas*, depósitalas en el banco usando *#depositar*`, m, rcanal)}
 
 handler.help = ['cookies']
 handler.tags = ['rpg']
