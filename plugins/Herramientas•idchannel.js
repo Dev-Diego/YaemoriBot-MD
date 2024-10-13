@@ -1,27 +1,14 @@
-import path { Client, LocalAuth } 'whatsapp-web.js'
-const client = new Client({
-    authStrategy: new LocalAuth()
-});
+let handler = async (m, { conn, usedPrefix, command}) => {
 
-client.on('qr', (qr) => {
-    console.log('QR RECEIVED', qr);
-});
+const chat = await m.getChat();
+const channelId = chat.id._serialized;
 
-client.on('ready', () => {
-    console.log('Client is ready!');
-});
+await m.reply('Id: ' + channelId)
 
-client.on('message', async msg => {
-    if (msg.body === '!channelid') {
-        const chat = await msg.getChat();
-        const channelId = chat.id._serialized;
-
-        msg.reply(`La ID de este canal es: ${channelId}`);
-    }
-});
-
+}
 handler.help = ['idchannel']
 handler.tags = ['tools']
 handler.command = ['id', 'idchannel']
 handler.register = true 
-client.initialize();
+export default handler
+
