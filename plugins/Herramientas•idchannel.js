@@ -1,5 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command}) => {
 
+if (!text) return conn.reply(m.chat, `🌵 Te faltó el enlace del canal.`,  m, rcanal, )
+
 const chat = await m.getChat();
 const channelId = chat.id._serialized;
 
