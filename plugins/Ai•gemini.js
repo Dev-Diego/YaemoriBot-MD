@@ -4,7 +4,7 @@ if (!text) return conn.reply(m.chat, `『🪐』𝙄𝙣𝙜𝙧𝙚𝙨𝙚 �
 try {
 await m.react(rwait)
 conn.sendPresenceUpdate('composing', m.chat)
-var apii = await fetch(`https://aemt.me/gemini?text=${text}`)
+var apii = await fetch(`https://apis-starlights-team.koyeb.app/starlight/gemini?text=${text}`)
 var res = await apii.json()
 await m.reply(res.result)
 } catch {
