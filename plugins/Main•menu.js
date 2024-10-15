@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let uptime = clockString(_uptime);
     let username = conn.getName(m.sender);
     let name = conn.getName(m.sender)
-    let api = await axios.get(`https://deliriussapi-oficial.xyz/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+    let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
      let userNationalityData = api.data.result
      let userNationality = userNationalityData ? `${userNationalityData.name}` : 'Desconocido'
     let locale = 'es';
@@ -120,7 +120,7 @@ txt+= "✬✭✰✬"
     await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, esti);
  
  } catch (e) {
-    conn.reply(m.chat, `「✿」 *Ocurrió un error al enviar el menú, use #allmenu para ver el menú completo.*\n${e}`, m, fake);
+    conn.reply(m.chat, `「✿」 *Ocurrió un error al enviar el menú, use #allmenu para ver el menú completo.*\n\n${e}`, m, fake);
   }
 };
 
