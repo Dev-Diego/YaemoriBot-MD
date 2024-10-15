@@ -14,7 +14,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let uptime = clockString(_uptime);
     let username = conn.getName(m.sender);
     let name = conn.getName(m.sender)
-    let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+    let api = await axios.get(`https://deliriussapi-oficial.xyz/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
      let userNationalityData = api.data.result
      let userNationality = userNationalityData ? `${userNationalityData.name}` : 'Desconocido'
     let locale = 'es';
