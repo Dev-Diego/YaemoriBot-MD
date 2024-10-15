@@ -4,6 +4,7 @@ import PhoneNumber from 'awesome-phonenumber';
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let uniqueUsers = new Map();
 
+  try {
     let users = [...uniqueUsers.values()];
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let totalUsers = users.length;
@@ -117,6 +118,10 @@ txt+= "✬✭✰✬"
     let img2 = "https://qu.ax/uuYfC.jpg";
 
     await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, esti);
+ 
+ } catch (e) {
+    conn.reply(m.chat, '「✿」 *Ocurrió un error al enviar el menú, use #allmenu para ver el menú completo.*\n${e}', m, fake);
+  }
 };
 
 handler.tags = ['main'];
