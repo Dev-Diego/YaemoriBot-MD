@@ -31,7 +31,7 @@ const handler = async (m, {args, usedPrefix, command}) => {
     body: wm,
     previewType: 0, thumbnail: icons,
     sourceUrl: redes }}}) */
-      const lol = await fetch(`https://api.lolhuman.xyz/api/translate/auto/${lang}?apikey=${lolkeysapi}&text=${text}`);
+      const lol = await fetch(`https://deliriussapi-oficial.vercel.app/tools/translate?text=${text}`);
       const loll = await lol.json();
       const result2 = loll.result.translated;
       await conn.reply(m.chat, '*Traducción:* ' + result2, m, fake);
