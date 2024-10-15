@@ -12,30 +12,26 @@ const handler = async (m, {args, usedPrefix, command}) => {
   }
   if (!text && m.quoted && m.quoted.text) text = m.quoted.text;
   try {
-    await m.react(rwait)
-   /* conn.reply(m.chat, wait, m, {
+    conn.reply(m.chat, wait, m, {
     contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
     title: packname,
     body: wm,
     previewType: 0, thumbnail: icons,
-    sourceUrl: redes }}}) */
+    sourceUrl: redes }}})
     const result = await translate(`${text}`, {to: lang, autoCorrect: true});
-   await conn.reply(m.chat, '*Traducción:* ' + result.text, m, fake);
-   await m.react(done)
+    await m.reply('*Traducción:* ' + result.text);
   } catch {
     try {
-    await m.react(rwait)
-   /* conn.reply(m.chat, wait, m, {
+    conn.reply(m.chat, wait, m, {
     contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
     title: packname,
     body: wm,
     previewType: 0, thumbnail: icons,
-    sourceUrl: redes }}}) */
-      const lol = await fetch(`https://deliriussapi-oficial.vercel.app/tools/translate?text=${text}`);
+    sourceUrl: redes }}})
+      const lol = await fetch(`https://api.lolhuman.xyz/api/translate/auto/${lang}?apikey=${lolkeysapi}&text=${text}`);
       const loll = await lol.json();
       const result2 = loll.result.translated;
-      await conn.reply(m.chat, '*Traducción:* ' + result2, m, fake);
-      await m.react(done)
+      await m.reply('*Traducción:* ' + result2);
     } catch (e) {
       await m.react(error)
       await conn.reply(m.chat, `✨️ *Ocurrió Un Error*\n\n${e}`, m, fake);
