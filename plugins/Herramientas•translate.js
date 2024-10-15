@@ -36,9 +36,9 @@ const handler = async (m, {args, usedPrefix, command}) => {
       const result2 = loll.result.translated;
       await conn.reply(m.chat, '*Traducción:* ' + result2, m, fake);
       await m.react(done)
-    } catch {
+    } catch (e) {
       await m.react(error)
-      await conn.reply(m.chat, '✨️ *Ocurrió Un Error*', m, fake);
+      await conn.reply(m.chat, `✨️ *Ocurrió Un Error*\n\n${e}`, m, fake);
     }
   }
 };
