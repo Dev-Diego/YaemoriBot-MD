@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     let name = conn.getName(m.sender)
     let userNationalityData = api.data.result
     let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
-   let userNationality = userNationalityData ? `${userNationalityData.name}` : 'Desconocido'
+     let userNationality = userNationalityData ? `${userNationalityData.name}`
     let locale = 'es';
     let d = new Date(new Date + 3600000);
     let time = d.toLocaleTimeString(locale, {
