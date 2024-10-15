@@ -10,7 +10,7 @@ export async function before(m) {
 
   const validCommand = (command, plugins) => {
     for (let plugin of Object.values(plugins)) {
-      if (plugin.command && (Array.isArray(plugin.command) ? plugin.command : [plugin.command]).includes(command)) {
+     if (plugin.command && (Array.isArray(plugin.command) ? plugin.command : [plugin.command]).includes(command)) {
         return true;
       }
     }
