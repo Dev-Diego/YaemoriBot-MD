@@ -120,7 +120,7 @@ txt+= "✬✭✰✬"
     await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞M͢ᴇɴᴜs۫۫۫۫۫۫۫۫ ᭄፝🍟𑜟꙲𒁑⁩`, [vid, img, img2].getRandom(), listSections, esti);
  
  } catch (e) {
-    conn.reply(m.chat, '「✿」 *Ocurrió un error al enviar el menú, use #allmenu para ver el menú completo.*\n${e}', m, fake);
+    conn.reply(m.chat, `「✿」 *Ocurrió un error al enviar el menú, use #allmenu para ver el menú completo.*\n${e}`, m, fake);
   }
 };
 
