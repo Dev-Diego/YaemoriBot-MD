@@ -112,7 +112,7 @@ let handler = async (_0x56cd40, {
         'logger': _0x4f591a({
           'level': "silent"
         }),
-        'browser': _0x173a26 ? ['Ubuntu', 'Chrome', "20.0.04"] : ['Kotori-Bot', "Safari", "2.0.0"],
+        'browser': _0x173a26 ? ['Ubuntu', 'Chrome', "20.0.04"] : ['YaemoriBot', "Safari", "2.0.0"],
         'markOnlineOnConnect': true,
         'generateHighQualityLinkPreview': true,
         'getMessage': async _0x3684b1 => {
@@ -307,7 +307,7 @@ let handler = async (_0x56cd40, {
       let _0x107954 = global.handler;
       let _0x5d094d = async function (_0x254aae) {
         try {
-          const _0x5e2d01 = await import("../handler.js?update=" + Date.now())["catch"](console.error);
+          const _0x5e2d01 = await import("./handler.js?update=" + Date.now())["catch"](console.error);
           if (Object.keys(_0x5e2d01 || {}).length) {
             _0x107954 = _0x5e2d01;
           }
