@@ -38,24 +38,10 @@ let __dirname = dirname(fileURLToPath(import.meta.url));
 let {
   say
 } = _0x36c473;
-const { name, description, collaborators, author, version } = require(join(__dirname, './package.json'))
-let rl2 = createInterface(process.stdin, process.stdout);
-const subtitleStyle = chalk.white.bold;
-const responseStyle = chalk.dim.bold;
-let activeCollaborators = '';
-for (const key in collaborators) {
-if (collaborators.hasOwnProperty(key)) {
-activeCollaborators += collaborators[key] + ', ';
-}};
 say('yaemori\nbot md', {
 align: 'center',           
 gradient: ['red', 'blue'] 
 });
-const message = `${subtitleStyle('Desarrollado por »')} ${responseStyle(author.name)}
-${subtitleStyle('Código basado por »')} ${responseStyle('BrunoSobrino')}
-${subtitleStyle('Colaboradores activos »')} ${responseStyle(activeCollaborators)}
-${subtitleStyle('Versión »')} ${responseStyle(version)}`
-console.log(boxen(message, { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'blue', float: 'center', }));
 var isRunning = false;
 async function start(_0x2c33cf) {
   if (isRunning) {
