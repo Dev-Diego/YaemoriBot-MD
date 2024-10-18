@@ -15,8 +15,8 @@ const {
   spawn,
   exec
 } = await import('child_process');
-import { makeWASocket } from '../lib/simple.js';
-import _0x59af36 from '../lib/store.js';
+import { makeWASocket } from './lib/simple.js';
+import _0x59af36 from './lib/store.js';
 import _0x318b69 from 'node-cache';
 if (!(global.conns instanceof Array)) {
   global.conns = [];
