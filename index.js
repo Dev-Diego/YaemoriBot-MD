@@ -19,9 +19,9 @@ import 'pino';
 import _0x2f246c from 'pino';
 import { Boom } from '@hapi/boom';
 import _0x26376a from 'pino';
-import { makeWASocket, protoType, serialize } from '../lib/simple.js';
+import { makeWASocket, protoType, serialize } from './lib/simple.js';
 import { Low, JSONFile } from 'lowdb';
-import _0x2d3790 from '../lib/store.js';
+import _0x2d3790 from './lib/store.js';
 const {
   DisconnectReason,
   useMultiFileAuthState,
@@ -37,7 +37,15 @@ let __dirname = dirname(fileURLToPath(import.meta.url));
 let {
   say
 } = _0x36c473;
+const { name, description, collaborators, author, version } = require(join(__dirname, './package.json'))
 let rl2 = createInterface(process.stdin, process.stdout);
+const subtitleStyle = chalk.white.bold;
+const responseStyle = chalk.dim.bold;
+let activeCollaborators = '';
+for (const key in collaborators) {
+if (collaborators.hasOwnProperty(key)) {
+activeCollaborators += collaborators[key] + ', ';
+}};
 say('yaemori\nbot md', {
 align: 'center',           
 gradient: ['red', 'blue'] 
