@@ -1,23 +1,23 @@
-require('./settings.js')
-const { default: makeWASocket,  generateWAMessage,  downloadContentFromMessage,  emitGroupParticipantsUpdate,  emitGroupUpdate,  makeInMemoryStore,  prepareWAMessageMedia, MediaType,  WAMessageStatus, AuthenticationState, GroupMetadata, initInMemoryKeyStore, MiscMessageGenerationOptions,  useMultiFileAuthState, BufferJSON,  WAMessageProto,  MessageOptions,         WAFlag,  WANode,         WAMetric,         ChatModification,  MessageTypeProto,  WALocationMessage, ReconnectMode,  WAContextInfo,  proto,         WAGroupMetadata,  ProxyAgent,         waChatKey,  MimetypeMap,  MediaPathMap,  WAContactMessage,  WAContactsArrayMessage,  WAGroupInviteMessage,  WATextMessage,  WAMessageContent,  WAMessage,  BaileysError,  WA_MESSAGE_STATUS_TYPE,  MediaConnInfo,   generateWAMessageContent, URL_REGEX,  Contact, WAUrlInfo,  WA_DEFAULT_EPHEMERAL,  WAMediaUpload,  mentionedJid,  processTime,         Browser,  MessageType,  Presence,  WA_MESSAGE_STUB_TYPES,  Mimetype,  relayWAMessage,         Browsers,  GroupSettingChange,  delay,  DisconnectReason,  WASocket,  getStream,  WAProto,  isBaileys,  AnyMessageContent,  generateWAMessageFromContent, fetchLatestBaileysVersion,  processMessage,  processingMutex,  jidDecode,  areJidsSameUser } = require('@whiskeysockets/baileys')
+import './settings.js'
+import { default: makeWASocket,  generateWAMessage,  downloadContentFromMessage,  emitGroupParticipantsUpdate,  emitGroupUpdate,  makeInMemoryStore,  prepareWAMessageMedia, MediaType,  WAMessageStatus, AuthenticationState, GroupMetadata, initInMemoryKeyStore, MiscMessageGenerationOptions,  useMultiFileAuthState, BufferJSON,  WAMessageProto,  MessageOptions,         WAFlag,  WANode,         WAMetric,         ChatModification,  MessageTypeProto,  WALocationMessage, ReconnectMode,  WAContextInfo,  proto,         WAGroupMetadata,  ProxyAgent,         waChatKey,  MimetypeMap,  MediaPathMap,  WAContactMessage,  WAContactsArrayMessage,  WAGroupInviteMessage,  WATextMessage,  WAMessageContent,  WAMessage,  BaileysError,  WA_MESSAGE_STATUS_TYPE,  MediaConnInfo,   generateWAMessageContent, URL_REGEX,  Contact, WAUrlInfo,  WA_DEFAULT_EPHEMERAL,  WAMediaUpload,  mentionedJid,  processTime,         Browser,  MessageType,  Presence,  WA_MESSAGE_STUB_TYPES,  Mimetype,  relayWAMessage,         Browsers,  GroupSettingChange,  delay,  DisconnectReason,  WASocket,  getStream,  WAProto,  isBaileys,  AnyMessageContent,  generateWAMessageFromContent, fetchLatestBaileysVersion,  processMessage,  processingMutex,  jidDecode,  areJidsSameUser } from '@whiskeysockets/baileys
 let pino = require('pino')
-const fs = require('fs')
-const axios = require('axios')
-const { exec, spawn, execSync } = require('child_process')
-const speed = require('performance-now')
-const chalk = require('chalk')
-const cfonts = require('cfonts')
-const os = require('os')
-const yargs = require('yargs/yargs')
-const _ = require('lodash')
-const moment = require('moment')
-const gradient = require('gradient-string')
-const readline = require('readline')
-const { tmpdir } = require('os')
-const { join } = require('path')
-const PhoneNumber = require('awesome-phonenumber')
-const { readdirSync, statSync, unlinkSync } = require('fs')
-const { say } = cfonts
+import fs from 'fs'
+import axios from 'axios'
+import { exec, spawn, execSync } from 'child_process'
+import speed from 'performance-now'
+import chalk from 'chalk'
+import cfonts from 'cfonts'
+import os from 'os'
+cimport yargs from 'yargs/yargs'
+import _ from 'lodash'
+import moment from 'moment'
+import gradient from 'gradient-string'
+import readline from 'readline'
+import { tmpdir } from 'os'
+import { join } from 'path'
+import PhoneNumber from 'awesome-phonenumber'
+import { readdirSync, statSync, unlinkSync } from 'fs'
+import { say } from cfonts
 const color = (text, color) => {
 return !color ? chalk.green(text) : color.startsWith('#') ? chalk.hex(color)(text) : chalk.keyword(color)(text)
 }
