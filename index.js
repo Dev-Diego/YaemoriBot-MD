@@ -17,7 +17,7 @@ import { tmpdir } from 'os'
 import { join } from 'path'
 import PhoneNumber from 'awesome-phonenumber'
 import { readdirSync, statSync, unlinkSync } from 'fs'
-import { say } from cfonts
+import { say } from 'cfonts'
 const color = (text, color) => {
 return !color ? chalk.green(text) : color.startsWith('#') ? chalk.hex(color)(text) : chalk.keyword(color)(text)
 }
