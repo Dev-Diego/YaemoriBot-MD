@@ -94,6 +94,19 @@ const opcionTexto = chalk.bold.cyan
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
 
+let allowedIPs = ["20.201.28.151", "140.82.121.3"] // Lista de IPs permitidas
+
+getPublicIP().then(publicIP => { 
+if (allowedIPs.includes(publicIP)) { 
+getFilesToRun().then(filesToRun => { 
+start(filesToRun);
+})
+} else {
+console.log("YaemoriBot solo puede ser utilizada en Sky Plus, para poder utilizar a YaemoriBot ve a nuestro hosting".red)
+console.log("Sky Plus: https://dash.skyultraplus.com".cyan)
+process.exit(1); 
+}})
+
 let opcion
 if (methodCodeQR) {
 opcion = '1'
