@@ -16,7 +16,6 @@ const readline = require('readline')
 const { tmpdir } = require('os')
 const { join } = require('path')
 const PhoneNumber = require('awesome-phonenumber')
-const { smsg, sleep } = require('./lib/func')
 const { readdirSync, statSync, unlinkSync } = require('fs')
 const { say } = cfonts
 const color = (text, color) => {
