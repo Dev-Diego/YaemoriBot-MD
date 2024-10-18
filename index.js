@@ -38,11 +38,15 @@ let {
   say
 } = _0x36c473;
 let rl2 = createInterface(process.stdin, process.stdout);
-say("Yaemori Bot- MD", {
-  'font': "console",
-  'align': "center",
-  'gradient': ["red", "magenta"]
+say('yaemori\nbot md', {
+align: 'center',           
+gradient: ['red', 'blue'] 
 });
+const message = `${subtitleStyle('Desarrollado por »')} ${responseStyle(author.name)}
+${subtitleStyle('Código basado por »')} ${responseStyle('BrunoSobrino')}
+${subtitleStyle('Colaboradores activos »')} ${responseStyle(activeCollaborators)}
+${subtitleStyle('Versión »')} ${responseStyle(version)}`
+console.log(boxen(message, { padding: 1, margin: 1, borderStyle: 'double', borderColor: 'blue', float: 'center', }));
 var isRunning = false;
 async function start(_0x2c33cf) {
   if (isRunning) {
