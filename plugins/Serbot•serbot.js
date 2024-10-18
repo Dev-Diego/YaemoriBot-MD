@@ -1,3 +1,22 @@
+/*
+⚠ PROHIBIDO EDITAR ⚠ -- ⚠ PROHIBIDO EDITAR ⚠ -- ⚠ PROHIBIDO EDITAR ⚠
+
+El codigo de este archivo esta totalmente hecho por:
+- Aiden_NotLogic (https://github.com/ferhacks)
+
+El codigo de este archivo fue creado para:
+- YaemoriBot-MD (https://github.com/Dev-Diego/YaemoriBot-MD)
+
+Adaptacion y edición echa por:
+- Dev-Diego (https://github.com/Dev-Diego)
+
+El codigo de este archivo fue parchado por:
+- ReyEndymion (https://github.com/ReyEndymion)
+- BrunoSobrino (https://github.com/BrunoSobrino)
+
+⚠ PROHIBIDO EDITAR ⚠ -- ⚠ PROHIBIDO EDITAR ⚠ -- ⚠ PROHIBIDO EDITAR ⚠
+*/
+
 const {
   DisconnectReason,
   useMultiFileAuthState,
