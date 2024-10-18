@@ -15,6 +15,7 @@ import _0x3740ae from 'chalk';
 import _0x894efc from 'syntax-error';
 import { tmpdir } from 'os';
 import { format } from 'util';
+import boxen from 'boxen';
 import 'pino';
 import _0x2f246c from 'pino';
 import { Boom } from '@hapi/boom';
