@@ -62,7 +62,7 @@ env: 'node'
 })
 
 let opcion
-if (!fs.existsSync(`./${session}/creds.json`) && !methodCodeQR) {
+if (!fs.existsSync(`./${sessions}/creds.json`) && !methodCodeQR) {
 while (true) {
 opcion = await question(marco('*************************\n') + nameb('YaemoriBot-MD\n') + marco('*************************\n') + colores('Seleccione una opción:\n') + opcionQR('1. Con código QR\n') + opcionTexto('2. Con código de emparejamiento\n'))
 if (opcion === '1' || opcion === '2') {
