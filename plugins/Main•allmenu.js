@@ -182,7 +182,7 @@ await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), cont
 
   } catch (e) {
     await m.react(error)
-    conn.reply(m.chat, '「✘」 *Ocurrió un error al enviar el menú*', m, fake, )
+    conn.reply(m.chat, `「✘」 *Ocurrió un error al enviar el menú*\n\n${e}`, m, fake, )
     throw e
   }
 }
