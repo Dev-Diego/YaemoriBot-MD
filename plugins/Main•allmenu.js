@@ -95,6 +95,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }) * 1000
     }
     let muptime = clockString(_muptime)
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
      let userNationalityData = api.data.result
     let uptime = clockString(_uptime)
