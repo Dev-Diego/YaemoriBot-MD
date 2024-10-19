@@ -1,5 +1,3 @@
-//Codigo by:: @DevDiego
-
 import { join, dirname } from 'path';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
@@ -35,12 +33,10 @@ say(description, {
   gradient: ['blue', 'magenta']
 });
 
-const message = `
-${subtitleStyle('Desarrollado por »')} ${responseStyle(author.name)}
+const message = `${subtitleStyle('Desarrollado por »')} ${responseStyle(author.name)}
 ${subtitleStyle('Código basado por »')} ${responseStyle('BrunoSobrino')}
 ${subtitleStyle('Colaboradores activos »')} ${responseStyle(activeCollaborators)}
-${subtitleStyle('Versión »')} ${responseStyle(version)}
-`;
+${subtitleStyle('Versión »')} ${responseStyle(version)}`
 
 console.log(boxen(message, {
   padding: 1,
