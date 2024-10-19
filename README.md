@@ -1,4 +1,4 @@
-<h1 align="center">Yaemori Bot - MD 🌱</h1>
+<h1 align="center">Yaemori Bot - MD 🌵</h1>
 
 ![Yaemori](https://qu.ax/CmyNh.jpg)
 
