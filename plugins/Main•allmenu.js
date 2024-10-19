@@ -4,54 +4,59 @@ import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 
 let tags = {
-  'main': 'MENÚ - INFO',
-  'buscador': 'MENÚ - BUSQUEDAS',
-  'fun': 'MENÚ - JUEGOS',
-  'gacha': 'MENÚ - GACHA',
-  'serbot': 'MENÚ - SUB BOTS',
-  'rpg': 'MENÚ - RPG',
-  'rg': 'MENÚ - REGISTRO',
-  'xp': 'MENÚ - EXP',
-  'sticker': 'MENÚ - STICKERS',
-  'anime': 'MENÚ - ANIMES',
-  'database': 'MENÚ - DATABASE',
-  'fix': 'MENÚ - FIXMSGESPERA',
-  'grupo': 'MENÚ - GRUPOS',
-  'nable': 'MENÚ - ON/OFF', 
-  'descargas': 'MENÚ - DESCARGAS',
-  'tools': 'MENÚ - HERRAMIENTAS',
-  'info': 'MENÚ - INFORMACIÓN',
-  'nsfw': 'MENÚ - NSFW', 
-  'owner': 'MENÚ - OWNER', 
-  'audio': 'MENÚ - AUDIOS', 
-  'ai': 'MENÚ - AI',
-  'transformador': 'MENÚ - CONVERTIDORES',
+  'main': '𝐌 𝐄 𝐍 𝐔 - 𝐈 𝐍 𝐅 𝐎',
+  'buscador': '𝐌 𝐄 𝐍 𝐔 - 𝐁 𝐔 𝐒 𝐐 𝐔 𝐄 𝐃 𝐀 𝐒',
+  'fun': '𝐌 𝐄 𝐍 𝐔 - 𝐉 𝐔 𝐄 𝐆 𝐎 𝐒',
+  'gacha': '𝐌 𝐄 𝐍 𝐔 - 𝐆 𝐀 𝐂 𝐇 𝐀',
+  'serbot': '𝐌 𝐄 𝐍 𝐔 - 𝐉 𝐀 𝐃 𝐈 𝐁 𝐎 𝐓 𝐒',
+  'rpg': '𝐌 𝐄 𝐍 𝐔 - 𝐑 𝐏 𝐆',
+  'rg': '𝐌 𝐄 𝐍 𝐔 - 𝐑 𝐄 𝐆 𝐈 𝐒 𝐓 𝐑 𝐎',
+  'xp': '𝐌 𝐄 𝐍 𝐔 - 𝐄 𝐗 𝐏',
+  'sticker': '𝐌 𝐄 𝐍 𝐔 - 𝐒 𝐓 𝐈 𝐂 𝐊 𝐄 𝐑 𝐒',
+  'anime': '𝐌 𝐄 𝐍 𝐔 - 𝐀 𝐍 𝐈 𝐌 𝐄 𝐒',
+  'database': '𝐌 𝐄 𝐍 𝐔 - 𝐃 𝐀 𝐓 𝐀 𝐁 𝐀 𝐒 𝐄',
+  'fix': '𝐌 𝐄 𝐍 𝐔 - 𝐅 𝐔 𝐗 𝐌 𝐒 𝐆 𝐄 𝐒 𝐏 𝐄 𝐑 𝐀',
+  'grupo': '𝐌 𝐄 𝐍 𝐔 - 𝐆 𝐑 𝐔 𝐏 𝐎 𝐒',
+  'nable': '𝐌 𝐄 𝐍 𝐔 - 𝐎 𝐍 / 𝐎 𝐅 𝐅', 
+  'descargas': '𝐌 𝐄 𝐍 𝐔 - 𝐃 𝐄 𝐒 𝐂 𝐀 𝐑 𝐆 𝐀 𝐒',
+  'tools': '𝐌 𝐄 𝐍 𝐔 - 𝐇 𝐄 𝐑 𝐑 𝐀 𝐌 𝐈 𝐄 𝐍 𝐓 𝐀 𝐒',
+  'info': '𝐌 𝐄 𝐍 𝐔 - 𝐈 𝐍 𝐅 𝐎 𝐑 𝐌 𝐀 𝐂 𝐈 𝐎 𝐍',
+  'nsfw': '𝐌 𝐄 𝐍 𝐔 - 𝐍 𝐒 𝐅 𝐖', 
+  'owner': '𝐌 𝐄 𝐍 𝐔 - 𝐎 𝐖 𝐍 𝐄 𝐑', 
+  'audio': '𝐌 𝐄 𝐍 𝐔 - 𝐀 𝐔 𝐃 𝐈 𝐎 𝐒', 
+  'ai': '𝐌 𝐄 𝐍 𝐔 - 𝐀 𝐈',
+  'transformador': '𝐌 𝐄 𝐍 𝐔 - 𝐂 𝐎 𝐍 𝐕 𝐄 𝐑 𝐓 𝐈 𝐃 𝐎 𝐑 𝐄 𝐒',
 }
 
 const defaultMenu = {
-  before: `© mᥱᥒᥙ ᥆𝖿іᥴіᥲᥣ ძᥱ ᥡᥲᥱm᥆rіᑲ᥆𝗍 ☁️
+  before: `Hola %taguser 👋, Soy YaemoriBot
 
-*•/• Info usuario •/•*
+╔═══════⩽✰⩾═══════╗
+║			𝐈 𝐍 𝐅 𝐎 - 𝐔 𝐒 𝐄 𝐑
+╚═══════⩽✰⩾═══════╝ 
+✰્᭄͜͡ Cliente » \`\`\`%name\`\`\`
+✰્᭄͜͡ Exp » \`\`\`%exp\`\`\`
+✰્᭄͜͡ Pais » \`\`\`%pais\`\`\`
+✰્᭄͜͡ Galletas » \`\`\`%cookies\`\`\`
+✰્᭄͜͡ Nivel » \`\`\`%level\`\`\`
+✰્᭄͜͡ Rango » \`\`\`%role\`\`\`
 
-🌸 Cliente » \`\`\`%name\`\`\`
-✨️ Exp » \`\`\`%exp\`\`\`
-🍪 Galletas » \`\`\`%cookies\`\`\`
-🛡 Nivel » \`\`\`%level\`\`\`
-💫 Rango » \`\`\`%role\`\`\`
+╔═══════⩽✰⩾═══════╗
+║			𝐈 𝐍 𝐅 𝐎 - 𝐁 𝐎 𝐓
+╚═══════⩽✰⩾═══════╝ 
+✰્᭄͜͡ Made by » \`\`\`@DevDiego\`\`\`
+✰્᭄͜͡ Bot » \`\`\`%botofc\`\`\`
+✰્᭄͜͡ Fecha » \`\`\`%fecha\`\`\`
+✰્᭄͜͡ Actividad » \`\`\`%muptime\`\`\`
+✰્᭄͜͡ Usuarios » \`\`\`%totalreg\`\`\`
 
-*•/• Info del bot •/•*
-
-👑 Made by » \`\`\`@DevDiego\`\`\`
-🚩 Bot » \`\`\`%botofc\`\`\`
-📆 Fecha » \`\`\`%fecha\`\`\`
-🕖 Actividad » \`\`\`%muptime\`\`\`
-👤 Usuarios » \`\`\`%totalreg\`\`\`
-
-\t*L I S T A  -  D E  -  C O M A N D O S* 
+\t╔═══════⩽✰⩾═══════╗
+║			𝐋𝐈𝐒𝐓𝐀 𝐃𝐄 𝐌𝐄𝐍𝐔𝐒
+╚═══════⩽✰⩾═══════╝  
 `.trimStart(),
-    header: '*•/• %category •/•*\n',
-  body: '✰ %cmd',
-  footer: '',
+    header: '╔═══════⩽✰⩾═══════╗\n║				%category\n╠═══════⩽✰⩾═══════╝║╭──────────────┄\n\n',
+  body: '║│˙˚·͟͟͟͟͟͞͞͞͞✰ %cmd',
+  footer: '║╰──────────────┄\n╚═══════⩽✰⩾═══════╝',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -89,6 +94,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       }) * 1000
     }
     let muptime = clockString(_muptime)
+    let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+     let userNationalityData = api.data.result
     let uptime = clockString(_uptime)
     let totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
@@ -141,6 +148,7 @@ version: _package.version,
 exp: exp - min,
 maxexp: xp,
 botofc: (conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot'), 
+pais: userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido',
 fecha: moment.tz('America/Bogota').format('DD/MM/YY'), 
 totalexp: exp,
 xp4levelup: max - exp,
