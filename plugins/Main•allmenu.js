@@ -2,6 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
+import PhoneNumber from 'awesome-phonenumber'
 
 let tags = {
 'main': '𝐌 𝐄 𝐍 𝐔 - 𝐈 𝐍 𝐅 𝐎',
