@@ -168,16 +168,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.antiSpam = isEnable
       break
 
-   case 'antidelete': 
-     case 'antieliminar': 
-     case 'delete':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-       global.dfail('admin', m, conn)
-       throw false
+  case 'antidelete': 
+    case 'antieliminar': 
+    case 'delete':
+     if (m.isGroup) {
+     if (!(isAdmin || isOwner)) {
+     global.dfail('admin', m, conn)
+     throw false
      }}
-     chat.delete = isEnable
-     break
+    chat.delete = !isEnable
+    break
 
   case 'autobio':
     case 'status':
