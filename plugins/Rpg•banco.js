@@ -7,7 +7,7 @@ let handler = async (m, {conn, usedPrefix}) => {
    let user = global.db.data.users[who]
    const texto = `${who == m.sender ? `Tienes *${user.bank} Galletas 🍪* en el Banco` : `El usuario @${who.split('@')[0]} tiene *${user.bank} Galletas 🍪* en el Banco`}`
 
-   await conn.sendButton(m.chat, texto, wm, img, [['Retirar Todo', `${usedPrefix}retirar all`], ['Meter Al Banco Todo', `${usedPrefix}dep all`] ], null, null, { mentions: [who] })
+   await conn.sendButton(m.chat, texto, wm, img, [['Retirar Todo', `${usedPrefix}retirar all`], ['Meter Al Banco Todo', `${usedPrefix}dep all`] ], rcanal, null, { mentions: [who] })
 }
 
 handler.help = ['bank']
