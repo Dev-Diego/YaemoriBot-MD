@@ -6,7 +6,6 @@ export function before(m, { conn }) {
 let user = global.db.data.users[m.sender]
 let chat = global.db.data.chats[m.chat]
 if (!chat.autolevelup)
-global.db.data.users[m.sender].cookies += 5
 return !0
 
 let before = user.level * 
