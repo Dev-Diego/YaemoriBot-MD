@@ -6,7 +6,7 @@ export async function before(m) {
   }
 
   const usedPrefix = global.prefix.exec(m.text)[0];
-  const command = m.text.slice(length).trim().split(' ')[0].toLowerCase();
+  const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
 
   const validCommand = (command, plugins) => {
     for (let plugin of Object.values(plugins)) {
