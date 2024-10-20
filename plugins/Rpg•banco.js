@@ -7,7 +7,7 @@ let handler = async (m, {conn, usedPrefix}) => {
    let user = global.db.data.users[who]
    const texto = `${who == m.sender ? `🌵 Tienes: *${user.bank}* Galletas en el banco.` : `El usuario ${nombre} tiene *${user.bank}* Galletas 🍪 en el Banco`}`
 
-   await conn.reply(m.chat, texto, m, reply)
+   await conn.reply(m.chat, texto, m, rcanal)
 }
 
 handler.help = ['bank']
