@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 
 // Handler para el comando de Pokedex
 let handler = async (m, { conn, text }) => {
-  if (conn.user.jid !== 'insert-your-bot-jid-here@s.whatsapp.net') {
+  if (conn.user.jid !== 'https://github.com/Dev-Diego/YaemoriBot-MD') {
     return conn.reply(m.chat, '*Este comando solo funciona en el bot oficial.*', m);
   }
 
