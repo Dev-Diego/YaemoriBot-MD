@@ -44,13 +44,14 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 
  case 'levelup':
     case 'autonivel':
+    case 'autolevelup':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.levelup = isEnable
+      chat.autolevelup = isEnable
       break
 
  case 'antibot':
