@@ -27,6 +27,6 @@ const handler = async (m, {conn, usedPrefix, text}) => {
 };
 handler.command = ['pvp', 'suit', 'suitpvp'];
 handler.group = true;
-
+handler.game = true;
 
 export default handler;
