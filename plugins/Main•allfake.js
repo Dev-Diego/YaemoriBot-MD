@@ -39,6 +39,7 @@ global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
 global.namechannel = '© All Rightd Reserved • YaemoriBot'
 
 //fechas
+global.d = new Date(new Date + 3600000)
 global.locale = 'es'
 global.dia = d.toLocaleDateString(locale, {weekday: 'long'})
 global.fecha = d.toLocaleDateString('es', {day: 'numeric', month: 'numeric', year: 'numeric'})
