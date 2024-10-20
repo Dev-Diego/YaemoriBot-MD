@@ -6,6 +6,7 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   conn.suit = conn.suit ? conn.suit : {};
   if (Object.values(conn.suit).find((room) => room.id.startsWith('suit') && [room.p, room.p2].includes(m.sender))) return conn.reply(m.chat, '🌵 Termina tu partida antes de iniciar otra.', m, rcanal);
   const textquien = `╰⊱❗️⊱ *ACCIÓN MAL USADA* ⊱❗️⊱╮\n\n𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇, 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n𝙋𝙪𝙚𝙙𝙚𝙨 𝙪𝙨𝙖𝙧 𝙚𝙨𝙩𝙤𝙨 𝙘𝙤𝙢𝙖𝙣𝙙𝙤𝙨:\n#pvp piedra\n#pvp papel\n#pvp tijera\n\n𝙊 𝙋𝙪𝙚𝙙𝙚𝙨 𝙀𝙩𝙞𝙦𝙪𝙚𝙩𝙖 𝙖 𝙪𝙣𝙖 𝙥𝙚𝙧𝙨𝙤𝙣𝙖 𝙚𝙟𝙚𝙢𝙥𝙡𝙤 :\n#pvp @0`;
+  const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
   if (!m.mentionedJid[0]) return m.reply(textquien, m.chat, {mentions: conn.parseMention(textquien)});
   if (Object.values(conn.suit).find((room) => room.id.startsWith('suit') && [room.p, room.p2].includes(m.mentionedJid[0]))) throw `🌵 El usuario se encuentra en otra partida.`;
   const id = 'suit_' + new Date() * 1;
