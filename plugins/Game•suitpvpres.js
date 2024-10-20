@@ -76,6 +76,7 @@ delete this.suit[room.id]}}
 return !0
 }
 handler.exp = 0
+handler.game = true
 export default handler
 function random(arr) {
 return arr[Math.floor(Math.random() * arr.length)]}
