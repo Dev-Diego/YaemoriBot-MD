@@ -42,9 +42,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.restrict = isEnable
       break
 
- case 'levelup':
+ case 'autolevelup':
     case 'autonivel':
-    case 'autolevelup':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -271,7 +270,7 @@ ${usedPrefix + command} autoread
 *🚩 Funciones de grupos*
 
 ${usedPrefix + command} welcome 
-${usedPrefix + command} levelup
+${usedPrefix + command} autolevelup
 ${usedPrefix + command} antibot
 ${usedPrefix + command} reaccion
 ${usedPrefix + command} simi
