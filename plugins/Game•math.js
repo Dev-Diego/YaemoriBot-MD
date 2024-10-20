@@ -1,7 +1,7 @@
 global.math = global.math ? global.math : {};
 const handler = async (m, {conn, args, usedPrefix, command}) => {
   const mat =`
-🌵 Ingrese la dificultad con la que deseas jugar\n\n🚩 Dificultades disponibles: *${Object.keys(modes).join(' | ')}*\n`\Ejemplo:`\ *${usedPrefix + command} dificil*
+🌵 Ingrese la dificultad con la que deseas jugar\n\n🚩 Dificultades disponibles: *${Object.keys(modes).join(' | ')}*\nEjemplo: *${usedPrefix + command} dificil*
 `.trim();
   if (args.length < 1) return await conn.reply(m.chat, mat, m, rcanal);
 
