@@ -6,11 +6,11 @@ export function before(m, { conn }) {
 let user = global.db.data.users[m.sender]
 let chat = global.db.data.chats[m.chat]
 if (!chat.autolevelup)
+global.db.data.users[m.sender].cookies += 5
 return !0
 
 let before = user.level * 
 while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
-global.db.data.users[m.sender].cookies += 5
 if (before !== user.level) {
 m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🎁 Recompensa » *+5 Galletas*\n📆 Fecha » *${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*
 `.trim())
