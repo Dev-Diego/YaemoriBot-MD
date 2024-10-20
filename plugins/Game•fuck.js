@@ -4,6 +4,7 @@ import uploadImage from '../lib/uploadImage.js'
 import { sticker } from '../lib/sticker.js';
 
 let handler = async (m, { conn, usedPrefix }) => {
+    if (!db.data.chats[m.chat].modohorny && m.isGroup) return conn.reply(m.chat, '🚩 *¡Estos comandos están desactivados!*', m, fake);
     let who;
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
     else who = m.chat;
