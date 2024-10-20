@@ -11,9 +11,7 @@ return !0
 let before = user.level * 1
 while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 if (before !== user.level) {
-m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🎁 Recompensa » *+5 Galletas*\n📆 Fecha » *fecha: ${moment.tz('America/Bogota').format('DD/MM/YY')}*
-
-> *\`¡Has alcanzado un Nuevo Nivel!\`*
+m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🎁 Recompensa » *+5 Galletas*\n📆 Fecha » *fecha: ${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*
 `.trim())
     }
 } 
