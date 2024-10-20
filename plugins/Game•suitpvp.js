@@ -9,10 +9,10 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   if (!m.mentionedJid[0]) return m.reply(textquien, m.chat, {mentions: conn.parseMention(textquien)});
   if (Object.values(conn.suit).find((room) => room.id.startsWith('suit') && [room.p, room.p2].includes(m.mentionedJid[0]))) throw `🌵 El usuario se encuentra en otra partida.`;
   const id = 'suit_' + new Date() * 1;
-  const caption = `╰⊱❕⊱ *INFORMACIÓN* ⊱❕⊱╮\n\n🎮👾 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮👾\n\n@${m.sender.split`@`[0]} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 @${m.mentionedJid[0].split`@`[0]} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
+  const caption = `╰⊱❕⊱ *INFORMACIÓN* ⊱❕⊱╮\n\n🎮👾 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮👾\n\n${nombre} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${text} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
   const imgplaygame = `https://www.merca2.es/wp-content/uploads/2020/05/Piedra-papel-o-tijera-0003318_1584-825x259.jpeg`;
   conn.suit[id] = {
-    chat: await stars.sendMessage(m.chat, { text: caption, mentions: stars.parseMention(caption) }, { quoted: m }),
+    chat: await conn.reply(m.chat, caption, m, rcanal),
     id: id,
     p: m.sender,
     p2: m.mentionedJid[0],
