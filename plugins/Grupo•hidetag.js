@@ -28,7 +28,7 @@ let masss = more.repeat(850)
 let htextos = `${text ? text : "*Hola!!*"}`
 if ((isMedia && quoted.mtype === 'imageMessage') && htextos) {
 var mediax = await quoted.download?.()
-conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: htextos, mentions: users }, { quoted: nulm })
+conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: htextos, mentions: users }, { quoted: null })
 } else if ((isMedia && quoted.mtype === 'videoMessage') && htextos) {
 var mediax = await quoted.download?.()
 conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: htextos }, { quoted: null })
