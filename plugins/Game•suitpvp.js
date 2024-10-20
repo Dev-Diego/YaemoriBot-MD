@@ -12,8 +12,8 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   const id = 'suit_' + new Date() * 1;
   const caption = `╰⊱❕⊱ *INFORMACIÓN* ⊱❕⊱╮\n\n🎮👾 𝙂𝘼𝙈𝙀𝙎 - 𝙋𝙑𝙋 - 𝙂𝘼𝙈𝙀𝙎 🎮👾\n\n${taguser} 𝘿𝙀𝙎𝘼𝙁𝙄𝘼 𝘼 ${text} 𝘼 𝙐𝙉 (𝙋𝙑𝙋) 𝘿𝙀 𝙋𝙄𝙀𝘿𝙍𝘼, 𝙋𝘼𝙋𝙀𝙇 𝙊 𝙏𝙄𝙅𝙀𝙍𝘼\n\n_*Escribe (aceptar) para aceptar*_\n_*Escribe (rechazar) para rechazar*_`;
   const imgplaygame = `https://www.merca2.es/wp-content/uploads/2020/05/Piedra-papel-o-tijera-0003318_1584-825x259.jpeg`;
-    return conn.reply(m.chat, caption, m, {mentions: await conn.parseMention(caption)});
   conn.suit[id] = {
+    chat: await conn.reply(m.chat, caption, m, {mentions: await conn.parseMention(caption)}),
     id: id,
     p: m.sender,
     p2: m.mentionedJid[0],
