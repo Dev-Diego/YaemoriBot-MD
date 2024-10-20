@@ -2,7 +2,7 @@ import { performance } from 'perf_hooks'
 
 var handler = async (m, { conn, text }) => {
 
-if (!text) return conn.reply(m.chat, '🎌 *Ingrese el tag de algún usuario*', m, fake, )
+if (!text) return conn.reply(m.chat, '🚩 *Ingrese el tag de algún usuario*', m, fake, )
 let who
 if (m.isGroup) who = m.mentionedJid[0]
 else who = m.chat
