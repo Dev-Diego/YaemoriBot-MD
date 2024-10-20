@@ -38,6 +38,7 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 txt+= '.͜°˖ `ᴄʀᴇᴀᴅᴏʀ ::`' + ` DevDiego\n`;
 txt+= '.͜°˖ `ʙᴏᴛ ::`' + ` YaemoriBot-MD\n`;
 txt+= '.͜°˖ `ꜰᴇᴄʜᴀ ::`' + ` ${moment.tz('America/Bogota').format('DD/MM/YY')}\n`;
+txt+= '.͜°˖ `ᴅɪᴀ ::`' + ` ${dia}\n`;
 txt+= '.͜°˖ `ᴘᴀɪs ::`' + ` ${userNationality}\n`;
 txt+= '.͜°˖ `ᴘʀᴇꜰɪᴊᴏ ::`' + ` 「 ${usedPrefix} 」\n`;
 txt+= '.͜°˖ `ᴜꜱᴜᴀʀɪᴏꜱ ::`' + ` ${rtotal}\n`;
