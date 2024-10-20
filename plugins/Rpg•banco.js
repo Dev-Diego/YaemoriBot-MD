@@ -5,7 +5,7 @@ let handler = async (m, {conn, usedPrefix}) => {
    if (who == conn.user.jid) return m.react('✖️')
    if (!(who in global.db.data.users)) return m.reply(`*El usuario no se encuentra en mi base de datos*`)
    let user = global.db.data.users[who]
-   const texto = `${who == m.sender ? `🌵 Tienes: *${user.bank}* Galletas en el banco.` : `El usuario ${nombre} tiene *${user.bank}* Galletas 🍪 en el Banco`}`
+   const texto = `${who == m.sender ? `🌵 Tienes: *${user.bank}* Galletas en el banco.` : `🌵 Ese usuario tiene *${user.bank}* Galletas 🍪 en el Banco`}`
 
    await conn.reply(m.chat, texto, m, rcanal)
 }
