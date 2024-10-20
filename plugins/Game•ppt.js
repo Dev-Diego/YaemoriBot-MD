@@ -6,8 +6,7 @@ const handler = async (m, {conn, text, command, usedPrefix, args}) => {
   const time = global.db.data.users[m.sender].wait + 10000;
   if (new Date - global.db.data.users[m.sender].wait < 10000) throw `*🕓 Tendrás que esperar ${Math.floor((time - new Date()) / 1000)} segundos antes de poder volver a jugar*`;
 
-conn.reply(m.chat, `*Piedra 🗿, Papel 📄 o Tijera ✂️*\n\n*🌵 Puedes usar estos comandos:*\n*• ${usedPrefix + command} piedra*\n*• ${usedPrefix + command} papel*\n*• ${usedPrefix + command} tijera*`, m);
- if (!args[0]) return 
+ if (!args[0]) return conn.reply(m.chat, `*Piedra 🗿, Papel 📄 o Tijera ✂️*\n\n*🌵 Puedes usar estos comandos:*\n*• ${usedPrefix + command} piedra*\n*• ${usedPrefix + command} papel*\n*• ${usedPrefix + command} tijera*`, m);
   let astro = Math.random();
   if (astro < 0.34) {
     astro = 'piedra';
@@ -19,46 +18,46 @@ conn.reply(m.chat, `*Piedra 🗿, Papel 📄 o Tijera ✂️*\n\n*🌵 Puedes us
   const textm = text.toLowerCase();
   if (textm == astro) {
     global.db.data.users[m.sender].cookies += 10;
-    m.reply(`*🌵 Empate!*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +10 Cookies*`);
+    m.reply(`*🌵 Empate!*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +10 Cookies*`);
   } else if (text == 'papel') {
     if (astro == 'piedra') {
       global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
     } else {
       global.db.data.users[m.sender].Cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
+      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
     }
   } else if (text == 'tijera') {
     if (astro == 'papel') {
       global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
     } else {
       global.db.data.users[m.sender].Cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
+      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
     }
   } else if (textm == 'tijera') {
     if (astro == 'papel') {
       global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
     } else {
       global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
+      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
     }
   } else if (textm == 'papel') {
     if (astro == 'piedra') {
       global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
     } else {
       global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
+      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
     }
   } else if (textm == 'piedra') {
     if (astro == 'tijera') {
       global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Cookies*`);
     } else {
       global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*👉🏻 Tu: ${textm}*\n*👉🏻 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
+      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Cookies*`);
     }
   }
   global.db.data.users[m.sender].wait = new Date * 1;
