@@ -17,12 +17,12 @@ const handler = async (m, {conn, usedPrefix}) => {
 ✨️ *${json.question}*
 
 ⏱️ *Tiempo:* ${(timeout / 1000).toFixed(2)} Segundos
-🎁 *Premio:* *+${poin}* Centavos 🪙`.trim();
+🎁 *Premio:* *+${poin}* Galletas 🍪`.trim();
   conn.tekateki[id] = [
     await conn.reply(m.chat, caption, m), json,
     poin,
     setTimeout(async () => {
-      if (conn.tekateki[id]) await conn.reply(m.chat, `🤍 Se acabó el tiempo!\n*Respuesta:* ${json.response}`, conn.tekateki[id][0]);
+      if (conn.tekateki[id]) await conn.reply(m.chat, `🚩 Se acabó el tiempo!\n*Respuesta:* ${json.response}`, conn.tekateki[id][0]);
       delete conn.tekateki[id];
     }, timeout)];
 };
