@@ -5,7 +5,12 @@ let handler = async (m, {conn, usedPrefix}) => {
    if (who == conn.user.jid) return m.react('✖️')
    if (!(who in global.db.data.users)) return m.reply(`*El usuario no se encuentra en mi base de datos*`)
    let user = global.db.data.users[who]
-   const texto = `${who == m.sender ? `Tienes *${user.bank} Galletas 🍪* en el Banco` : `El usuario @${who.split('@')[0]} tiene *${user.bank} Galletas 🍪* en el Banco`}`
+   const texto = `${who == m.sender ? `*🌴 Banco de @${who.split('@')[0]}*
+
+	➺ *Cartera* : ${user.cookies}
+	➺ *Banco* : ${user.bank} 
+
+> Aquí te dejo los botones, puede retirar todo o puedes aguardar todo, si quieres aguardar unos poco usa *#depositar*` : `El usuario @${who.split('@')[0]} tiene *${user.bank} Galletas 🍪* en el Banco`}`
 
    await conn.sendButton(m.chat, texto, wm, img, [['Retirar Todo', `${usedPrefix}retirar all`], ['Meter Al Banco Todo', `${usedPrefix}dep all`] ], m, { mentions: [who] })
 }
