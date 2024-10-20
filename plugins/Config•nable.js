@@ -42,6 +42,17 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       bot.restrict = isEnable
       break
 
+ case 'levelup':
+    case 'autonivel':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.levelup = isEnable
+      break
+
  case 'antibot':
     case 'antibots':
       if (m.isGroup) {
@@ -259,6 +270,7 @@ ${usedPrefix + command} autoread
 *🚩 Funciones de grupos*
 
 ${usedPrefix + command} welcome 
+${usedPrefix + command} levelup
 ${usedPrefix + command} antibot
 ${usedPrefix + command} reaccion
 ${usedPrefix + command} simi
