@@ -8,8 +8,8 @@ const handler = async (m, {conn}) => {
   if (m.quoted.id == global.math[id][0].id) {
     const math = global.math[id][1];
     if (m.text == math.result) {
-      conn.reply(m.chat, `🌵 Respuesta correcta.\n🎁 Premio: *${math.bonus} XP*`, m, rcanal);
-      global.db.data.users[m.sender].exp += math.bonus;
+      conn.reply(m.chat, `🌵 Respuesta correcta.\n🎁 Premio: *${math.bonus} Galletas*`, m, rcanal);
+      global.db.data.users[m.sender].cookies += math.bonus;
       clearTimeout(global.math[id][3]);
       delete global.math[id];
     } else {
