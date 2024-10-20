@@ -6,7 +6,7 @@ export async function before(m) {
   }
 
   const usedPrefix = global.prefix.exec(m.text)[0];
-  const command = m.text.slice(usedPrefix.length).trim().split(' ')[0].toLowerCase();
+  const command = m.text.slice(length).trim().split(' ')[0].toLowerCase();
 
   const validCommand = (command, plugins) => {
     for (let plugin of Object.values(plugins)) {
@@ -28,6 +28,8 @@ export async function before(m) {
     await conn.sendPresenceUpdate('composing', m.chat);
   } else {
    const comando = m.text.trim().split(' ')[0];
-   await m.reply(`⚡︎ El comando "${comando}" no es válido.\nUsa "#help" para ver los comandos disponibles.`);
+   await m.reply(`⚡︎ El comando *${comando}* no existe.
+Para ver la lista de comandos usa:
+» *#help*`);
   }
 }
