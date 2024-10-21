@@ -112,6 +112,8 @@ global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJ
 global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: namechannel, serverMessageId: -1 }
 }}, { quoted: m }
 
+global.fake2 = { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: namechannel, serverMessageId: -1 }, forwardingScore: 200, externalAdReply: { title: '𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨', body: dev, thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }}
+
 global.icono = [ 
 'https://qu.ax/uuYfC.jpg',
 'https://qu.ax/fprhC.jpg',
