@@ -175,7 +175,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
      if (!(isAdmin || isOwner)) {
      global.dfail('admin', m, conn)
      throw false
-     }
+     }}
      chat.delete = isEnable
      break
 
