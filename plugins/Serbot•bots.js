@@ -24,7 +24,7 @@ resultado += segundos + " segundos";
 }
 return resultado;
 }
-const message = users.map((v, index) => `(${index + 1})\n🚩 @${v.user.jid.replace(/[^0-9]/g, '')}\n*🌵 Nombre :* *${v.user.name || '-'}*\n*🕝 Tiempo Online :* ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : "Desconocido"}`).join('\n\n••••••••••••••••••••••••••••••••••••\n\n');
+const message = users.map((v, index) => `(${index + 1})\n🚩 @${v.user.jid.replace(/[^0-9]/g, '')}\n*🌵 Nombre :* *${v.user.name || '-'}*\n*🕝 Tiempo Online :* ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : "Desconocido"}`).join('\n\n__________________________\n\n');
   const replyMessage = message.length === 0 ? '*NO HAY SUB BOTS DISPONIBLE. VERIFIQUE MÁS TARDE.*' : message;
 const totalUsers = users.length;
 const responseMessage = `🌵 *LISTA DE SUBBOTS*\n\n🌟 _PUEDES PEDIR PERMISO PARA QUE TE DEJEN UNIR EL BOT A TÚ GRUPO_\n\n\`\`\`CADA USUARIO SUB BOT USA FUNCIÓN COMO QUIERA, EL NÚMERO PRINCIPAL NO SE HACE RESPONSABLE DEL USO DE LA FUNCIÓN \`\`\`\n\nSUBBOT CONECTADO: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
