@@ -39,7 +39,7 @@ let handler = async (m, { conn, text }) => {
       }
     }
   } catch (e) {
-    reportError(e);
+    console.log(e);
   }
 };
 
