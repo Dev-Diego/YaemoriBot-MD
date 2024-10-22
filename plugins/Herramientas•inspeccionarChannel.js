@@ -14,7 +14,7 @@ let handler = async (m, { conn, text }) => {
       return await conn.reply(m.chat, "*No se encontró información del canal.* Verifique que el enlace sea correcto.", m);
     }
     
-    let caption = "*Inspector de enlaces de Canales*\n\n" + processObject(newsletterInfo, "", newsletterInfo?.preview);
+    let caption = "🌵 Id: " + id, newsletterInfo?.preview);
     let pp = newsletterInfo?.preview ? getUrlFromDirectPath(newsletterInfo.preview) : thumb;
     
     if (channelUrl && newsletterInfo) {
@@ -46,49 +46,3 @@ let handler = async (m, { conn, text }) => {
 handler.command = ['id', 'inspeccionarchanel'];
 handler.register = true;
 export default handler;
-
-function formatDate(n, locale = "es", includeTime = true) {
-  if (n > 1e12) {
-    n = Math.floor(n / 1000);  // Convertir de milisegundos a segundos
-  } else if (n < 1e10) {
-    n = Math.floor(n * 1000);  // Convertir de segundos a milisegundos
-  }
-}
-
-function newsletterKey(key) {
-  return _.startCase(key.replace(/_/g, " "))
-    .replace("Id", "Identificador")
-    .replace("State", "Estado")
-    .replace("Creation Time", "Fecha de creación")
-    .replace("Name Time", "✏️ Fecha de modificación del nombre")
-    .replace("Name", "Nombre")
-    .replace("Description Time", "Fecha de modificación de la descripción")
-    .replace("Description", "Descripción")
-    .replace("Invite", "Invitación")
-    .replace("Handle", "Alias")
-    .replace("Picture", "Imagen")
-    .replace("Preview", "Vista previa")
-    .replace("Reaction Codes", "Reacciones")
-    .replace("Subscribers", "Suscriptores")
-    .replace("Verification", "✅ Verificación")
-    .replace("Viewer Metadata", "Datos avanzados");
-}
-
-function processObject(obj, prefix = "", preview) {
-  let caption = "";
-  Object.keys(obj).forEach(key => {
-    const value = obj[key];
-    if (typeof value === "object" && value !== null) {
-      if (Object.keys(value).length > 0) {
-        const sectionName = newsletterKey(prefix + key);
-        caption += `\n*\`${sectionName}\`*\n`;
-        caption += processObject(value, `${prefix}${key}_`);
-      }
-    } else {
-      const shortKey = prefix ? prefix.split("_").pop() + "_" + key : key;
-     const displayValue = formatValue(shortKey, value, preview)
-const translatedKey = newsletterKey(shortKey)
-caption += `- *${translatedKey}:*\n${displayValue}\n\n`
-}})
-return caption.trim()
-}
