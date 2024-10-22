@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text }) => {
-  let newsletterInfo;
   
   if (!channelUrl) {
         conn.reply(m.chat, 'Por favor, proporciona un enlace de canal de WhatsApp.', m, rcanal);
@@ -15,7 +14,7 @@ let handler = async (m, { conn, text }) => {
           return;
         }
 
-        const channelInfo = await client.getChannelInfo(channelId);
+        const channelInfo = await m.getChannelInfo(channelId);
         if (!channelInfo) {
           conn.reply(m.chat, 'No se pudo obtener la información del canal.', m, rcanal);
           return;
