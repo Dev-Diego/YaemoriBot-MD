@@ -4,20 +4,20 @@ let handler = async (m, { conn, text }) => {
   let newsletterInfo;
   
   if (!channelUrl) {
-        client.sendText(message.from, 'Por favor, proporciona un enlace de canal de WhatsApp.');
+        conn.reply(m.chat, 'Por favor, proporciona un enlace de canal de WhatsApp.', m, rcanal);
         return;
       }
 
       try {
         const channelId = getChannelIdFromUrl(channelUrl);
         if (!channelId) {
-          client.sendText(message.from, 'El enlace proporcionado no es válido.');
+          conn.reply(m.chat, 'El enlace proporcionado no es válido.', m, rcanal);
           return;
         }
 
         const channelInfo = await client.getChannelInfo(channelId);
         if (!channelInfo) {
-          client.sendText(message.from, 'No se pudo obtener la información del canal.');
+          conn.reply(m.chat, 'No se pudo obtener la información del canal.', m, rcanal);
           return;
         }
 
@@ -28,9 +28,9 @@ let handler = async (m, { conn, text }) => {
           \n*Número de suscriptores:* ${channelInfo.subscriberCount}
           \n*Fecha de creación:* ${formatDate(channelInfo.creationTime)}
         `;
-        client.sendText(message.from, channelDetails);
+        conn.reply(m.chat, channelDetails, m, rcanal);
       } catch (error) {
-        client.sendText(message.from, 'Hubo un error al intentar obtener la información del canal.');
+        conn.reply(m.chat, 'Hubo un error al intentar obtener la información del canal.', m, rcanal);
     console.log(e);
   }
 };
