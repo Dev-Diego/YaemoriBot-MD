@@ -150,7 +150,7 @@ reportError(e)
 break
 
 }}
-handler.command = /^(superinspect|inspect?2|revisar|inspeccionar)$/i
+handler.command = ['superinspect', 'inspect2', 'inspect', 'revisar', 'inspeccionar']
 handler.register = true
 export default handler 
 
