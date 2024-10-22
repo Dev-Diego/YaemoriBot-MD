@@ -17,7 +17,7 @@ let handler = async (m, { conn, text }) => {
     let caption = "🌵 Id: " + id, newsletterInfo?.preview);
     let pp = newsletterInfo?.preview ? getUrlFromDirectPath(newsletterInfo.preview) : thumb;
     
-    if (channelUrl && newsletterInfo) {
+    if (channelUrl ) {
       await conn.sendMessage(m.chat, {
         text: caption,
         contextInfo: {
@@ -35,7 +35,7 @@ let handler = async (m, { conn, text }) => {
       }, { quoted: fkontak });
       
       if (newsletterInfo.id) {
-        conn.sendMessage(m.chat, { text: newsletterInfo.id }, { quoted: null });
+        conn.sendMessage(m.chat, { text: newsletterInfo.id }, { quoted: m });
       }
     }
   } catch (e) {
