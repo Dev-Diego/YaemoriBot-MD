@@ -15,7 +15,6 @@ let handler = async (m, { conn, text }) => {
     }
     
     let caption = "🌵 Id: " + id, newsletterInfo?.preview);
-    let pp = newsletterInfo?.preview ? getUrlFromDirectPath(newsletterInfo.preview) : thumb;
     
     if (channelUrl ) {
       await conn.sendMessage(m.chat, {
@@ -25,7 +24,7 @@ let handler = async (m, { conn, text }) => {
           externalAdReply: {
             title: "Inspector de Canales",
             body: packname,
-            thumbnailUrl: pp,
+            thumbnailUrl: icons,
             sourceUrl: text,
             mediaType: 1,
             showAdAttribution: false,
