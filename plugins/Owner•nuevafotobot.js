@@ -1,5 +1,8 @@
 async function handler(m, { conn: _envio, usedPrefix }) {
 
+  let d = m.quoted ? m.quoted : m;
+  let img = (d.msg || d).mimetype || d.mediaType || ""
+  if (!img) return m.reply(`🚩 Envie una imagen o responda a la imagen utilizando el comando: ${usedPrefix + command}`)
   try {
      const imagePath = './src/img/catalogo.jpg'
     const imageData = fs.readFileSync(imagePath, { encoding: 'base64' })
