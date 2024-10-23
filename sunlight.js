@@ -79,6 +79,30 @@ global.db.chain = chain(global.db.data)
 }
 loadDatabase()
 
+async function getPublicIP() {
+  try {
+    let response = await fetch("https://api.ipify.org?format=json");
+    let data = await response.json();
+    return data.ip;
+  } catch {
+    return null;
+  }
+}
+
+let allowedIPs = [skydash, skypanel];
+
+getPublicIP().then(ip => {
+  if (allowedIPs.includes(ip)) {
+    getFilesToRun().then(files => {
+      start(files);
+    });
+  } else {
+    console.log(chalk.red("YaemoriBot solo está disponible en el hosting Sky Ultra Plus"));
+    console.log(chalk.cyan(`Sky Plus: ${skydash}`))
+    process.exit(1);
+  }
+})
+
 const {state, saveState, saveCreds} = await useMultiFileAuthState(global.sessions)
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
