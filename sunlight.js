@@ -89,7 +89,7 @@ async function getPublicIP() {
   }
 }
 
-let allowedIPs = [skydash, skypanel];
+let allowedIPs = [`${global.skydash}`, `${global.skypanel}`];
 
 getPublicIP().then(ip => {
   if (allowedIPs.includes(ip)) {
