@@ -1,10 +1,10 @@
 async function handler(m, { conn: _envio, usedPrefix }) {
 
-  let d = m.quoted ? m.quoted : m;
-  let img = (d.msg || d).mimetype || d.mediaType || ""
-  if (!img) return m.reply(`🚩 Envie una imagen o responda a la imagen utilizando el comando: ${usedPrefix + command}`)
+  let q = m.quoted ? m.quoted : m
+  let img = await q.download?.()
+  if (!img) return conn.reply(m.chat, `🚩 Responde a una imagen.`, m, rcanal)
   try {
-     const imagePath = './src/img/catalogo.jpg'
+    const imagePath = './src/img/catalogo.jpg'
     const imageData = fs.readFileSync(imagePath, { encoding: 'base64' })
     await m.setProfilePic(imageData);
     await m.reply('🌵 Foto de perfil cambiada con éxito.');
