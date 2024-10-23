@@ -34,7 +34,7 @@ let handler = async (_0x55976e, {
     try {
         let _0x2538c6 = _0x14ced5[_0x2359c0(0x1c2)][_0x2359c0(0x1b2)]
             , _0xf17176 = _0x55976e[_0x2359c0(0x1bb)] ? _0x55976e['quoted'] : _0x55976e;
-        if (!_0x55976e[_0x2359c0(0x1bb)]) return _0x55976e.reply('🚩 Responde a una *Imagen.*')
+        if (!_0x55976e[_0x2359c0(0x1bb)]) return m.reply('🚩 Responde a una *Imagen.*')
         let _0x353a82 = (_0xf17176[_0x2359c0(0x1b1)] || _0xf17176)[_0x2359c0(0x1cf)] || '';
         var _0x434471 = await _0xf17176[_0x2359c0(0x1ba)]();
         let _0x3aeaf4 = await _0x2538c6;
@@ -66,7 +66,7 @@ let handler = async (_0x55976e, {
             }]
         }), _0x55976e[_0x2359c0(0x1b8)](_0x2359c0(0x1c7));
     } catch {
-        return _0x55976e.reply('🚩 Responde a una *Imagen.*')
+        return m.reply('🚩 Responde a una *Imagen.*')
     }
 };
 handler.tags = ['owner']
