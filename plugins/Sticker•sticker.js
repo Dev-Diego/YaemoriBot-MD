@@ -5,8 +5,8 @@ import { webp2png } from '../lib/webp2mp4.js'
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-let text1 = `✡︎ → Solicitado por:\n✡︎ → Bot:\n✡︎ → Made By:`
-let text2 = `✧ ${nombre}\n✧ YaemoriBot\n✧ DevDiego`
+let text1 = `© YaemoriBot-MD\nAuthor:\nFecha:\nDia:\nCreador`
+let text2 = `${vs}\n${nombre}\n${fecha}\n${dia}\nDevDiego`
 let stiker = false
 try {
 let q = m.quoted ? m.quoted : m
