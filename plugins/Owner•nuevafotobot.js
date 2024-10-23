@@ -1,6 +1,7 @@
 async function handler(m, { conn: _envio, usedPrefix }) {
 
   try {
+     const imagePath = 'https://qu.ax/CfboF.jpg'
     const imageData = fs.readFileSync(imagePath, { encoding: 'base64' })
     await m.setProfilePic(imageData);
     await m.reply('🌵 Foto de perfil cambiada con éxito.');
