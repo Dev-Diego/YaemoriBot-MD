@@ -89,7 +89,7 @@ async function getPublicIP() {
   }
 }
 
-let allowedIPs = [`${global.skydash}`, `${global.skypanel}`];
+let allowedIPs = ["https://dash.skyultraplus.com", "https://panel.skyultraplus.com"];
 
 getPublicIP().then(ip => {
   if (allowedIPs.includes(ip)) {
@@ -98,7 +98,7 @@ getPublicIP().then(ip => {
     });
   } else {
     console.log(chalk.red("YaemoriBot solo está disponible en el hosting Sky Ultra Plus"));
-    console.log(chalk.cyan(`Sky Plus: ${skydash}`))
+    console.log(chalk.cyan(`Sky Plus: https://dash.skyultraplus.com`))
     process.exit(1);
   }
 })
