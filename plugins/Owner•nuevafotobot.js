@@ -1,4 +1,9 @@
-async function handler(m, { conn: _envio, usedPrefix }) {
+//
+// Creditos:
+// @DevDiego
+//
+
+async function handler(m, { conn: command, usedPrefix, args }) {
 
   let q = m.quoted ? m.quoted : m
   let img = await q.download?.()
