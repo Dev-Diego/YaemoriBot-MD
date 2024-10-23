@@ -1,5 +1,6 @@
 import axios from 'axios';
 import fetch from 'node-fetch';
+import Starlights from "@StarlightsTeam/Scraper";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   if (!text) {
@@ -14,7 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   try {
     let character_id = "99ab5940-1ed9-4543-825b-056f32d0690b"; 
     let name = conn.getName(m.sender);
-    let { msg } = await m.characterAi(character_id, text, name);
+    let { msg } = await Starlights.characterAi(character_id, text, name);
     await conn.reply(m.chat, `${msg.join("\n")}`, m, rcanal);
   } catch (e) {
     await m.react(error);
