@@ -94,6 +94,30 @@ const opcionTexto = chalk.bold.cyan
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
 
+/* async function getPublicIP() {
+  try {
+    let response = await fetch("https://api.ipify.org?format=json");
+    let data = await response.json();
+    return data.ip;
+  } catch {
+    return null;
+  }
+}
+
+let allowedIPs = ["https://dash.skyultraplus.com", "https://panel.skyultraplus.com"];
+
+getPublicIP().then(ip => {
+  if (allowedIPs.includes(ip)) {
+    getFilesToRun().then(files => {
+      start(files);
+    });
+  } else {
+    console.log(chalk.red("YaemoriBot solo está disponible en el hosting Sky Ultra Plus"));
+    console.log(chalk.cyan(`Sky Plus: https://dash.skyultraplus.com`))
+    process.exit(1);
+  }
+}) */
+
 let opcion
 if (methodCodeQR) {
 opcion = '1'
@@ -119,30 +143,6 @@ const filterStrings = [
 console.info = () => {} 
 console.debug = () => {} 
 ['log', 'warn', 'error'].forEach(methodName => redefineConsoleMethod(methodName, filterStrings))
-
-async function getPublicIP() {
-  try {
-    let response = await fetch("https://api.ipify.org?format=json");
-    let data = await response.json();
-    return data.ip;
-  } catch {
-    return null;
-  }
-}
-
-let allowedIPs = ["https://dash.skyultraplus.com", "https://panel.skyultraplus.com"];
-
-getPublicIP().then(ip => {
-  if (allowedIPs.includes(ip)) {
-    getFilesToRun().then(files => {
-      start(files);
-    });
-  } else {
-    console.log(chalk.red("YaemoriBot solo está disponible en el hosting Sky Ultra Plus"));
-    console.log(chalk.cyan(`Sky Plus: https://dash.skyultraplus.com`))
-    process.exit(1);
-  }
-})
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
