@@ -162,7 +162,7 @@ while (true) {
 numeroTelefono = await question(chalk.bgBlack(chalk.bold.yellowBright('Por favor, escriba su número de WhatsApp.\nEjemplo: 57321××××××\n')))
 numeroTelefono = numeroTelefono.replace(/[^0-9]/g, '')
 
-if (numeroTelefono.match(/^\d+$/) && Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith(`21.4.0`))) {
+if (numeroTelefono.match(/^\d+$/) && Object.keys(PHONENUMBER_MCC).some(v => numeroTelefono.startsWith())) {
 break 
 } else {
 console.log(chalk.bgBlack(chalk.bold.redBright("Por favor, escriba su número de WhatsApp.\nEjemplo: 57321××××××.\n")))
