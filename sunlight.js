@@ -128,25 +128,6 @@ if (!opts['test']) {
 
 if (opts['server']) (await import('./server.js')).default(global.conn, PORT)
 
-/* Clear */
-async function clearTmp() {
-  const tmp = [tmpdir(), join(__dirname, './tmp')]
-  const filename = []
-  tmp.forEach(dirname => readdirSync(dirname).forEach(file => filename.push(join(dirname, file))))
-
-  //---
-  return filename.map(file => {
-    const stats = statSync(file)
-    if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 1)) return unlinkSync(file) // 3 minuto
-    return false
-  })
-}
-
-setInterval(async () => {
-        await clearTmp()
-        console.log(chalk.cyan(`Se limpio la carpeta tmp`))
-}, 60000) //3 muntos
-
 async function connectionUpdate(update) {
   const { connection, lastDisconnect, isNewLogin } = update
   if (isNewLogin) conn.isInit = true
