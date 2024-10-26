@@ -83,31 +83,38 @@ const {state, saveState, saveCreds} = await useMultiFileAuthState(global.session
 const msgRetryCounterMap = (MessageRetryMap) => { };
 const msgRetryCounterCache = new NodeCache()
 const {version} = await fetchLatestBaileysVersion();
-// let phoneNumber = global.botNumberCode
+let phoneNumber = global.botNumberCode
 
 const methodCodeQR = process.argv.includes("qr")
-
-/* const methodCode = !!phoneNumber || process.argv.includes("code") */
+const methodCode = !!phoneNumber || process.argv.includes("code")
 const MethodMobile = process.argv.includes("mobile")
-/* const colores = chalk.bgMagenta.white
+const colores = chalk.bgMagenta.white
 const opcionQR = chalk.bold.green
-const opcionTexto = chalk.bold.cyan */
+const opcionTexto = chalk.bold.cyan
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
 
-/* let opcion
+let opcion
 if (methodCodeQR) {
+opcion = '1'
 }
-if (!methodCodeQR !fs.existsSync(`./${sessions}/creds.json`)) */
+if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) {
+do {
+opcion = await question(colores('Seleccione una opción:\n') + opcionQR('1. Con código QR\n') + opcionTexto('2. Con código de texto de 8 dígitos\n--> '))
 
-/* const filterStrings = [
+if (!/^[1-2]$/.test(opcion)) {
+console.log(chalk.bold.redBright(`🔴  NO SE PERMITE NÚMEROS QUE NO SEAN ${chalk.bold.greenBright("1")} O ${chalk.bold.greenBright("2")}, TAMPOCO LETRAS O SÍMBOLOS ESPECIALES.\n${chalk.bold.yellowBright("CONSEJO: COPIE EL NÚMERO DE LA OPCIÓN Y PÉGUELO EN LA CONSOLA.")}`))
+}} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${sessions}/creds.json`))
+} 
+
+const filterStrings = [
 "Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
 "Q2xvc2luZyBvcGVuIHNlc3Npb24=", // "Closing open session"
 "RmFpbGVkIHRvIGRlY3J5cHQ=", // "Failed to decrypt"
 "U2Vzc2lvbiBlcnJvcg==", // "Session error"
 "RXJyb3I6IEJhZCBNQUM=", // "Error: Bad MAC" 
 "RGVjcnlwdGVkIG1lc3NhZ2U=" // "Decrypted message" 
-] */
+]
 
 console.info = () => {} 
 console.debug = () => {} 
@@ -115,9 +122,9 @@ console.debug = () => {}
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
-printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
+printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : true,
 mobile: MethodMobile, 
-browser: [`${nameqr}`, 'Edge', '20.0.04'],
+browser: opcion == '1' ? [`${nameqr}`, 'Edge', '20.0.04'] : methodCodeQR ? [`${nameqr}`, 'Edge', '20.0.04'] : ['Ubuntu', 'Edge', '110.0.1587.56'], 
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -130,14 +137,14 @@ let msg = await store.loadMessage(jid, clave.id)
 return msg?.message || ""
 },
 msgRetryCounterCache, // Resolver mensajes en espera
-// msgRetryCounterMap, // Determinar si se debe volver a intentar enviar un mensaje o no
+msgRetryCounterMap, // Determinar si se debe volver a intentar enviar un mensaje o no
 defaultQueryTimeoutMs: undefined,
 version,  
 }
 
 global.conn = makeWASocket(connectionOptions);
 
-/* if (!fs.existsSync(`./${sessions}/creds.json`)) {
+if (!fs.existsSync(`./${sessions}/creds.json`)) {
 if (opcion === '2' || methodCode) {
 
 opcion = '2'
@@ -169,7 +176,7 @@ codigo = codigo?.match(/.{1,4}/g)?.join("-") || codigo
 console.log(chalk.black(chalk.bgGreen(`👑 CÓDIGO DE VINCULACIÓN 👑`)), chalk.black(chalk.white(codigo)))
 }, 3000)
 }}
-}*/
+}
 
 conn.isInit = false;
 conn.well = false;
@@ -426,4 +433,4 @@ if (stopped === 'close' || !conn || !conn.user) return
 await purgeOldFiles()
 console.log(chalk.bold.cyanBright(`\n╭» 🟠 ARCHIVOS 🟠\n│→ ARCHIVOS RESIDUALES ELIMINADAS\n╰― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― ― 🗑️♻️`))}, 1000 * 60 * 10)
 
-// _quickTest().then(() => conn.logger.info(chalk.bold(`🔵  H E C H O\n`.trim()))).catch(console.error)
+_quickTest().then(() => conn.logger.info(chalk.bold(`🔵  H E C H O\n`.trim()))).catch(console.error)
