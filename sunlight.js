@@ -95,10 +95,10 @@ const opcionTexto = chalk.bold.cyan */
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 const question = (texto) => new Promise((resolver) => rl.question(texto, resolver))
 
-let opcion
+/* let opcion
 if (methodCodeQR) {
 }
-if (!methodCodeQR !fs.existsSync(`./${sessions}/creds.json`)) 
+if (!methodCodeQR !fs.existsSync(`./${sessions}/creds.json`)) */
 
 /* const filterStrings = [
 "Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
