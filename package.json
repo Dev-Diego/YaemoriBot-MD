@@ -37,6 +37,7 @@
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@whiskeysockets/baileys": "^6.7.9",
+"baileys": "git+https://github.com/Skidy89/baileys.git#master",
 "@adiwajshing/keyed-db": "^0.2.4",
 "@bochilteam/scraper": "^4.2.4",
 "@bochilteam/scraper-sosmed": "^1.0.5",
@@ -92,7 +93,6 @@
 "hispamemes": "^1.0.7",
 "openai": "^3.3.0",
 "aptoide-scraper": "github:DIEGO-OFC/dv-aptoide-scraper",
-"baileys": "github:Skidy89/baileys",
 "megajs": "^1.1.3",
 "mime-types": "^2.1.35",
 "api-dylux": "^1.7.2",
