@@ -98,7 +98,7 @@ const question = (texto) => new Promise((resolver) => rl.question(texto, resolve
 let opcion
 if (methodCodeQR) {
 }
-if (!methodCodeQR && !methodCode && !fs.existsSync(`./${sessions}/creds.json`)) 
+if (!methodCodeQR !fs.existsSync(`./${sessions}/creds.json`)) 
 
 /* const filterStrings = [
 "Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
