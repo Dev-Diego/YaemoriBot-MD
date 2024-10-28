@@ -27,9 +27,9 @@ return res.data
 console.log(`Error : ${e}`)
 }}
 
-let who = m.messageStubParameters[0] + '@s.whatsapp.net'
+const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+global fotoperfil = await conn.profilePictureUrl(who, 'image').catch(_ => icons)
 let user = global.db.data.users[who]
-//let pushname = user ? user.name : await conn.getName(who)
 let pushname = m.pushName || 'Sin nombre'
 
 //creador y otros
