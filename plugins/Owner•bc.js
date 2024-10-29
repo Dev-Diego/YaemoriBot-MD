@@ -3,13 +3,13 @@
 import {randomBytes} from 'crypto';
 
 const handler = async (m, {conn, command, participants, usedPrefix, text}) => {
-  if (!text) return '🚩 Te faltó el texto que quieres transmitir a todos los chats.';
+  if (!text) return conn.reply(m.chat, '🚩 Te faltó el texto que quieres transmitir a todos los chats.', m);
   const fkontak = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${conn.user.jid.split('@')[0]}:${conn.user.jid.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
   const cc4 = text ? m : m.quoted ? await m.getQuotedObj() : false || m;
   const teks4 = text ? text : cc4.text;
   const groups2 = Object.keys(await conn.groupFetchAllParticipating());
   const chats2 = Object.keys(global.db.data.users).filter((user) => user.endsWith('@s.whatsapp.net'));
-  await conn.reply(m.chat, '⭐️ *El texto se está enviando a los chats*', m, fake);
+  await conn.reply(m.chat, '🧋✨️ *El texto se está enviando a todos los chats*', m, fake);
   const start2 = new Date().getTime();
   const usersTag2 = participants.map((u) => conn.decodeJid(u.id));
   let totalPri2 = 0;
@@ -17,12 +17,12 @@ const handler = async (m, {conn, command, participants, usedPrefix, text}) => {
     const group = groups2[i];
     const delay = i * 4000; // 4 seg
     setTimeout(async () => {
-      await conn.reply(group, `⭐️ M E N S A J E ⭐️\n\n` + teks4, {mentions: usersTag2}, {quoted: fkontak});
+      await conn.reply(group, teks4, {mentions: usersTag2}, {quoted: null});
     }, delay);
   }
   for (const user of chats2) {
     await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 segundos
-    await conn.reply(user, `⭐️ M E N S A J E ⭐️\n\n` + teks4, fkontak, null);
+    await conn.reply(user, teks4, null, null);
     totalPri2++;
     if (totalPri2 >= 500000) {
       break;
