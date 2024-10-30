@@ -14,7 +14,7 @@ https://dash.skyultraplus.com
 
 ¡Elige Sky Ultra Plus y lleva tu presencia online al siguiente nivel! 🌟🚀💻` 
 
-await conn.sendMessage(m.chat, { text: txt,
+await conn.sendMessage(global.channelid, { text: txt,
 contextInfo:{
 forwardedNewsletterMessageInfo: { 
 newsletterJid: '120363301598733462@newsletter', 
