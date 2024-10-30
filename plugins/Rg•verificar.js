@@ -6,7 +6,6 @@ import fetch from 'node-fetch'
 
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
-    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
      let userNationalityData = api.data.result
@@ -34,7 +33,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
-regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age} años\n`
+regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age} años\n
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「🎁」𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
 regbot += `• 15 Cookies 🍪\n`
@@ -45,7 +44,7 @@ regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
 await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
-let chtxt = `👤 *Usuario*: ${m.pushName || 'Anónimo'}\n🌎 *Pais:* ${userNationality}\n🗃 *Verificación:* ${user.name}\n🌸 *Edad:* ${user.age} años\n📂 *Usuarios registrados:* ${rtotalreg}\n🐢 *Bot:* ${packname}`.trim()
+let chtxt = `👤 *Usuario*: ${m.pushName || 'Anónimo'}\n🌎 *Pais:* ${userNationality}\n🗃 *Verificación:* ${user.name}\n🌸 *Edad:* ${user.age} años\n🐢 *Bot:* ${packname}`.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "🔔 Notificación General 🔔 ",
