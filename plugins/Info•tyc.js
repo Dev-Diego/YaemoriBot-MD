@@ -25,6 +25,7 @@ handler.command = new RegExp
 export default handler*/
 
 const handler = async (m, {conn, text}) => {
+if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compartir al canal?`, m)
 await conn.reply(global.channelid, text, null, rcanal)
 }
 handler.command = ["enviarmensajecanal", "publocidad"]
