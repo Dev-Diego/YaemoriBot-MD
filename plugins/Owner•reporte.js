@@ -1,7 +1,7 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-    if (!text) return conn.reply(m.chat, '⚠ *_️Ingrese el error ue desea reportar._*', m)
-    if (text.length < 10) return conn.reply(m.chat, '⚠️ *_Especifique bien el error, mínimo 10 caracteres._*', m)
-    if (text.length > 1000) return conn.reply(m.chat, '⚠️ *_Máximo 1000 caracteres para enviar el error._*', m)
+    if (!text) return conn.reply(m.chat, '⚠ *Ingrese el error que desea reportar.*', m)
+    if (text.length < 10) return conn.reply(m.chat, '⚠️ *Especifique bien el error, mínimo 10 caracteres.*', m)
+    if (text.length > 1000) return conn.reply(m.chat, '⚠️ *Máximo 1000 caracteres para enviar el error.*', m)
     const teks = `*❌️ \`R E P O R T E\` ❌️*
 
 🍃 Número:
