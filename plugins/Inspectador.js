@@ -441,8 +441,9 @@ reportError(e)
 }
 break
 
-//enviar mensaje al canal
+//Enviar mensaje al canal
 case isCommand12:
+ch
 if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compartir al canal?`, m)
 ch = text
 await conn.reply(global.channelid, text, null, rcanal)
