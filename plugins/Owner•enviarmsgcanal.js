@@ -5,8 +5,8 @@ if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compar
 try {
 await m.react(rwait)
 
-await conn.reply(m.chat, `😺 El texto fué enviado al canal.\n\nhttps://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z`, m, rcanal)
-await conn.reply(global.channelid, text, null, rcanal)
+await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.\n\n🚀 Verifica tu mensaje aquí:\nhttps://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z`, m, rcanal)
+await conn.reply(global.channelid, text, null, fake)
 await m.react(done)
 
 } catch {
