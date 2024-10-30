@@ -3,11 +3,11 @@ let handler = async (m, { conn, text }) => {
 let user = global.db.data.users[m.sender]
 
 user.registered = false
-return conn.reply(m.chat, `🚩 *Usted anuló su registro de *YaemoriBot-MD 🌻✨️*
+return conn.reply(m.chat, `🚩 Usted anuló su registro de *YaemoriBot-MD 🌻✨️*
 
-🚩 *Puede usar #reg nombre.edad para realizar un nuevo registro*`, m, rcanal)
+🚩 Puede usar #reg nombre.edad para realizar un nuevo registro`, m, rcanal)
 
-let chtxt = '`REGISTRO ANULADO`\n\n👤 User: ${user}'
+let chtxt = '`REGISTRO ANULADO`\n\n👤 User: ` + user
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "🔔 Notificación General 🔔 ",
