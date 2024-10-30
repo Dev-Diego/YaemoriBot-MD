@@ -6,7 +6,17 @@ try {
 await m.react(rwait)
 
 await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.\n\n🚀 Verifica tu mensaje aquí:\nhttps://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z`, m, fake)
-await conn.reply(global.channelid, text, null, fake)
+//await conn.reply(global.channelid, text, null, fake)
+await conn.sendMessage(global.channelid, { text: text, contextInfo: {
+externalAdReply: {
+title: "✨️ Bot • Notify",
+body: '🌻 Super • WaBot',
+thumbnailUrl: icons,
+sourceUrl: redes,
+mediaType: 1,
+showAdAttribution: false,
+renderLargerThumbnail: false
+}}}, { quoted: null })
 await m.react(done)
 
 } catch {
