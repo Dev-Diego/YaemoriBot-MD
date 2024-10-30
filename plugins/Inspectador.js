@@ -18,6 +18,7 @@ const isCommand8 = /^(avisoschannel|resiviravisos)\b$/i.test(command)
 const isCommand9 = /^(reactioneschannel|reaccioneschannel)\b$/i.test(command)
 const isCommand10 = /^(nuevonombrecanal)\b$/i.test(command)
 const isCommand11 = /^(nuevadescchannel)\b$/i.test(command)
+const isCommand12 = /^(enviarmsg)\b$/i.test(command)
 
 const channelUrl = text?.match(/(?:https:\/\/)?(?:www\.)?(?:chat\.|wa\.)?whatsapp\.com\/(?:channel\/|joinchat\/)?([0-9A-Za-z]{22,24})/i)?.[1]
 let txtBotAdminCh = '\n\n> *Verifique que el Bot sea admin en el canal, de lo contrario no funcionará el comando*'
@@ -439,11 +440,17 @@ await conn.reply(m.chat, `${packname} ha modificado la descripción del canal *$
 reportError(e)
 }
 break
+case isCommand12:
+if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compartir al canal?`, m)
+
+await conn.reply(global.channelid, text, null, rcanal)
+}
+break
 
 //const channels = _.values(conn.chats).filter(c => c.id && c.id.endsWith("@newsletter"))
 
 }}
-handler.command = ['nuevafotochannel', 'nosilenciarcanal', 'silenciarcanal', 'noseguircanal', 'seguircanal', 'avisoschannel', 'resiviravisos', 'inspect', 'inspeccionar', 'eliminarfotochannel', 'reactioneschannel', 'reaccioneschannel', 'nuevonombrecanal', 'nuevadescchannel']
+handler.command = ['nuevafotochannel', 'nosilenciarcanal', 'silenciarcanal', 'noseguircanal', 'seguircanal', 'avisoschannel', 'resiviravisos', 'inspect', 'inspeccionar', 'eliminarfotochannel', 'reactioneschannel', 'reaccioneschannel', 'nuevonombrecanal', 'nuevadescchannel', 'enviarsmg']
 //handler.register = true
 export default handler 
 
