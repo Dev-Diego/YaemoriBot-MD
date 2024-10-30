@@ -14,6 +14,5 @@ await conn.reply(m.chat, `🐢 No se pudo enviar el mensaje al canal.`, m, rcana
 await m.react(error)}}
 
 handler.command = ['enviarmsg', 'enviarmsgcanal', 'enviarmsgchannel']
-handler.rowner = false
-handler.premium = true
+handler.rowner = true
 export default handler
