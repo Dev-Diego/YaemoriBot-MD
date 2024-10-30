@@ -92,7 +92,7 @@ chat.isBanned = false
 if (!('welcome' in chat))
 chat.welcome = true
 if (!('autolevelup' in chat))
-chat.autolevelup = true
+chat.autolevelup = false
 if (!('audios' in chat))
 chat.audios = false
 if (!('detect' in chat))
@@ -123,7 +123,7 @@ chat.expired = 0
 global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: true,
-autolevelup: true,
+autolevelup: false,
 delete: false,
 onlyLatinos: false,
 audios: false,
