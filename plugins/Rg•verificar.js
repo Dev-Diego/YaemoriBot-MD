@@ -5,6 +5,7 @@ import fetch from 'node-fetch'
 
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
+    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
     let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
      let userNationalityData = api.data.result
      let userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido'
