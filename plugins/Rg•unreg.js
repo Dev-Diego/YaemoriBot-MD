@@ -5,10 +5,8 @@ let user = global.db.data.users[m.sender]
 user.registered = false
 return conn.reply(m.chat, `🚩 Usted anuló su registro de *YaemoriBot-MD 🌻✨️*\n\n🚩 Puede usar #reg nombre.edad para realizar un nuevo registro`, m, rcanal)
 
-user.registered = false
-let chtxt = '`REGISTRO ANULADO`\n\n👤 User: ' + m.pushName || 'Anónimo'
 
-await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
+await conn.sendMessage(global.channelid, { text: '`REGISTRO ANULADO`\n\n👤 User: ' + m.pushName || 'Anónimo', contextInfo: {
 externalAdReply: {
 title: "🔔 Notificación General 🔔 ",
 body: '🐢 Un usuario anuló su registrado',
