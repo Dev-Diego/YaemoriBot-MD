@@ -441,7 +441,7 @@ reportError(e)
 }
 break
 
-//Enviar mensaje al canal
+// Enviar mensaje al canal
 case isCommand12:
 ch
 if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compartir al canal?`, m)
