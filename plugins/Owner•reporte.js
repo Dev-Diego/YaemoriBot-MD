@@ -9,7 +9,7 @@ await conn.sendMessage(global.channelid, { text: m.quoted ? teks + m.quoted.text
 externalAdReply: {
 title: "⚠️ COMANDO FALLIDO ⚠️",
 body: '🧋 Un comando con fallas.',
-thumbnailUrl: icons,
+thumbnailUrl: icono,
 sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
