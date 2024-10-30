@@ -443,6 +443,7 @@ break
 
 // Enviar mensaje al canal
 case isCommand12:
+if (!isOwner || !isROwner) return await conn.reply(m.chat, `*No tienes permiso para usar este comando.*`, m)
 ch
 if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compartir al canal?`, m)
 ch = text
