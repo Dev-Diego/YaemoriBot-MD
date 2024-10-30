@@ -3,9 +3,7 @@ let handler = async (m, { conn, text }) => {
 let user = global.db.data.users[m.sender]
 
 user.registered = false
-/*return conn.reply(m.chat, `🚩 Usted anuló su registro de *YaemoriBot-MD 🌻✨️*
-
-🚩 Puede usar #reg nombre.edad para realizar un nuevo registro`, m, rcanal)*/
+return conn.reply(m.chat, `🚩 Usted anuló su registro de *YaemoriBot-MD 🌻✨️*\n\n🚩 Puede usar #reg nombre.edad para realizar un nuevo registro`, m, rcanal)
 
 let chtxt = '`REGISTRO ANULADO`\n\n👤 User: ' + user
 
