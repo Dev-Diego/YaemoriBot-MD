@@ -1,7 +1,6 @@
 import db from '../lib/database.js'
 import { createHash } from 'crypto'
 import fs from 'fs'
-import PhoneNumber from 'awesome-phonenumber'
 import fetch from 'node-fetch'
 
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
