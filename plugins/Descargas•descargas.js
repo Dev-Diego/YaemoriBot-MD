@@ -9,8 +9,6 @@ let f = `\n\n${String.fromCharCode(68,101,118,101,108,111,112,101,100,32,98,121,
 let isVideo = /supervideo$/.test(command);
 let urls = search.all[0].url;
 
-conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, }, { quoted: m });
-
 let res = await dl_vid(urls)
 let type = isVideo ? 'video' : 'audio';
 let video = res.data.mp4;
