@@ -309,14 +309,14 @@ let handler = async (_0xeda6a0, {
           _0x47e397.ev.off("connection.update", _0x47e397.connectionUpdate);
           _0x47e397.ev.off("creds.update", _0x47e397.credsUpdate);
         }
-        _0x47e397.welcome = lenguajeGB.smsWelcome();
-        _0x47e397.bye = lenguajeGB.smsBye();
-        _0x47e397.spromote = lenguajeGB.smsSpromote();
-        _0x47e397.sdemote = lenguajeGB.smsSdemote();
-        _0x47e397.sDesc = lenguajeGB.smsSdesc();
-        _0x47e397.sSubject = lenguajeGB.smsSsubject();
-        _0x47e397.sIcon = lenguajeGB.smsSicon();
-        _0x47e397.sRevoke = lenguajeGB.smsSrevoke();
+        _0x47e397.welcome = ""
+        _0x47e397.bye = ""
+        _0x47e397.spromote = ""
+        _0x47e397.sdemote = ""
+        _0x47e397.sDesc = ""
+        _0x47e397.sSubject = ""
+        _0x47e397.sIcon = ""
+        _0x47e397.sRevoke = ""
         _0x47e397.handler = _0x146d71.handler.bind(_0x47e397);
         _0x47e397.participantsUpdate = _0x146d71.participantsUpdate.bind(_0x47e397);
         _0x47e397.groupsUpdate = _0x146d71.groupsUpdate.bind(_0x47e397);
