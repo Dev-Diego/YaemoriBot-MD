@@ -1,5 +1,7 @@
 const handler = async (m, {conn, text}) => {
 
+let ch
+
 ch
 if (!text) return await conn.reply(m.chat, `🚩 Envia el link del canak donde quieras enviar el texto, y envia el mensaje que quiera enviar.`, m)
 
