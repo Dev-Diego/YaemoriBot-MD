@@ -7,7 +7,7 @@ user.registered = false
 let txt = `\`REGISTRO ANULADO\`\n\n👤 User: ${m.pushName || 'Anónimo'}\n🌍 Pais: ${global.userNationality}\n🐢 Bot: ${packname}`.trim()
 await conn.sendMessage(global.channelid, { text: txt, contextInfo: {
 externalAdReply: {
-title: "🔔 Notificación General 🔔 ",
+title: "【 🔔 Notificación General 🔔 】",
 body: '🐢 Un usuario anuló su registrado',
 thumbnailUrl: fotoperfil,
 sourceUrl: redes,
