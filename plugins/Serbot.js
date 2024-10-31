@@ -4,9 +4,9 @@ import path, { join } from 'path'
 import ws from 'ws';
 
 let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner}) => {
-const isCommand1 = /^(deletesesion|eliminarsesion|borrarsesion|delsesion|delsession|cerrarsesion)$/i.test(command)  
-const isCommand2 = /^(berhenti|pausesb|detenersb|pausarsb)$/i.test(command)  
-const isCommand3 = /^(listjadibot|bots|subsbots|subbots)$/i.test(command)  
+const isCommand1 = /^(deletesesion|deletebot|deletesesaion)$/i.test(command)  
+const isCommand2 = /^(stop|pausarai)$/i.test(command)  
+const isCommand3 = /^(bots|listjadibots|subbots)$/i.test(command)  
 
 async function reportError(e) {
 await m.reply(`🌻 Ocurrió un error.`)
@@ -18,11 +18,9 @@ case isCommand1:
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let uniqid = `${who.split`@`[0]}`
 const path = `./${jadi}/${uniqid}`
-let comd = `'serbot' : 'jadibot'`
-let comd2 = `'pausarsb' : 'pausesb'`
 
 if (!await fs.existsSync(path)) {
-await conn.sendMessage(m.chat, { text: `🌻 Usted no tiene una sesión, puede crear una usando:\n${usedPrefix}${comd}\n\nSi tiene una *(ID)* puede usar para saltarse el paso anterior usando:*\n*${usedPrefix}${comd}* \`\`\`(ID)\`\`\`` }, { quoted: m })
+await conn.sendMessage(m.chat, { text: `🌻 Usted no tiene una sesión, puede crear una usando:\n${usedPrefix + command}\n\nSi tiene una *(ID)* puede usar para saltarse el paso anterior usando:*\n*${usedPrefix + command}* \`\`\`(ID)\`\`\`` }, { quoted: m })
 return
 }
 if (global.conn.user.jid !== conn.user.jid) return conn.sendMessage(m.chat, {text: `🚩 Use este comando al *Bot* principal.\n\n*https://api.whatsapp.com/send/?phone=${global.conn.user.jid.split`@`[0]}&text=${usedPrefix + command}&type=phone_number&app_absent=0*`}, { quoted: m }) 
@@ -77,5 +75,5 @@ await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseM
 break    
 }}
 
-handler.command = ['deletesesion', 'eliminarsesion', 'borrarsesion', 'delsesion', 'delsession', 'cerrarsesion', 'berhenti', 'pausesb', 'detenersb', 'pausarsb', 'listjadibot', 'bots', 'subsbots', 'subbots']
+handler.command = ['deletesesion', 'deletebot', 'deletesession', 'stop', 'pausarai', 'bots', 'listjadibots', 'subbots']
 export default handler
