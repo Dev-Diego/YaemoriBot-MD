@@ -29,25 +29,13 @@ rows: [
 header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊 ╎ 🎵",
 title: "",
 description: `🎵 Audio.`,
-id: `#play1 mp3 ${text}`,
+id: `#mp3 ${yt_play[0].title}`,
 },
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 ╎ 📽",
 title: "",
 description: `📽 Video.`,
-id: `#play1 mp4 ${text}`,
-},
-{
-header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊𝘿𝙊𝘾 ╎ 🎵",
-title: "",
-description: `🎵 AudioDoc.`,
-id: `#play1 mp3doc ${text}`,
-},
-{
-header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊𝘿𝙊𝘾 ╎ 📽",
-title: "",
-description: `📽 VideoDoc.`,
-id: `#play1 mp4doc ${text}`,
+id: `#mp4 ${yt_play[0].title}`,
 },
 ],
 })
