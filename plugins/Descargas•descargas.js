@@ -1,6 +1,6 @@
 import yts from 'yt-search' 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat, '.....', m, rcanal;
+if (!text) return conn.reply(m.chat, '.....', m, rcanal);
 
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
