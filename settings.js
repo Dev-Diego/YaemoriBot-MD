@@ -33,6 +33,7 @@ global.prems = []
 
 //cambiar a true si el bot detecta sus propios comandos.
 global.isBaileysFail = false
+global.baileys = '@whiskeysockets/baileys'
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.9'
 global.vs = '2.0.7'
