@@ -21,7 +21,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         image: { url: search.all[0].thumbnail }, 
         caption: body + f
     }, { quoted: m,rcanal });
-    m.react('react1')
+  //  m.react('done')
 
     let res = await dl_vid(urls)
     let type = isVideo ? 'video' : 'audio';
