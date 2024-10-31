@@ -1,8 +1,5 @@
 const handler = async (m, {conn, text}) => {
 
-let ch
-
-ch
 if (!text) return await conn.reply(m.chat, `🚩 Y el texto que quiere transmitir al canal?`, m)
 
 try {
