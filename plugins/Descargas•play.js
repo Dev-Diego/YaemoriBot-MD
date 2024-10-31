@@ -29,13 +29,13 @@ rows: [
 header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊 ╎ 🎵",
 title: "",
 description: `🎵 Audio.`,
-id: `#mp3 ${yt_play[0].title}`,
+id: `#supermusic ${yt_play[0].title}`,
 },
 {
 header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 ╎ 📽",
 title: "",
 description: `📽 Video.`,
-id: `#mp4 ${yt_play[0].title}`,
+id: `#supervideo ${yt_play[0].title}`,
 },
 ],
 })
