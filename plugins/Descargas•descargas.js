@@ -1,24 +1,15 @@
 import yts from 'yt-search' 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat, '.....', m, rcanal);
+if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal);
 
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
 let f = `\n\n${String.fromCharCode(68,101,118,101,108,111,112,101,100,32,98,121,32,73,39,109,32,70,122,32,126)}`;
 
-let isVideo = /vid$/.test(command);
+let isVideo = /mp4$/.test(command);
 let urls = search.all[0].url;
-let body = `\`YouTube Play\`
 
-*Título:* ${search.all[0].title}
-*Vistas:* ${search.all[0].views}
-*Duración:* ${search.all[0].timestamp}
-*Subido:* ${search.all[0].ago}
-*Url:* ${urls}
-
-🕒 *Su ${isVideo ? 'Video' : 'Audio'} se está enviando, espere un momento...*`;
-
-conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, caption: body + f }, { quoted: m });
+conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, }, { quoted: m });
 
 let res = await dl_vid(urls)
 let type = isVideo ? 'video' : 'audio';
@@ -27,9 +18,7 @@ let audio = res.data.mp3;
 conn.sendMessage(m.chat, { [type]: { url: isVideo ? video : audio }, gifPlayback: false, mimetype: isVideo ? "video/mp4" : "audio/mpeg" }, { quoted: fkontak });
 }
 
-handler.command = ['mp3', 'vid'];
-handler.help = ['mp3', 'vid'];
-handler.tags = ['descargas'];
+handler.command = ['mp3', 'mp4'];
 export default handler;
 
 async function dl_vid(url) {
