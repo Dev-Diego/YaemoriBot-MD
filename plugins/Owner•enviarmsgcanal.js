@@ -5,6 +5,12 @@ let ch
 ch
 if (!text) return await conn.reply(m.chat, `🚩 Envia el link del canak donde quieras enviar el texto, y envia el mensaje que quiera enviar.`, m)
 
+if (text.includes("@newsletter")) {
+ch = text
+} else {
+ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).catch(e => null)
+}
+
 try {
 await m.react(rwait)
 
