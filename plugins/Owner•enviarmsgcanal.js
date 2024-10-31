@@ -1,12 +1,14 @@
 const handler = async (m, {conn, text}) => {
 
-if (!text) return await conn.reply(m.chat, `🚩 Y el mensaje que quieres compartir al canal?`, m)
+ch
+if (!text) return await conn.reply(m.chat, `🚩 Envia el link del canak donde quieras enviar el texto, y envia el mensaje que quiera enviar.`, m)
 
 try {
 await m.react(rwait)
 
-await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.\n\n🚀 Verifica tu mensaje aquí:\nhttps://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z`, m, fake)
-await conn.reply(global.channelid, text, null, fake)
+ch = await conn.newsletterMetadata("invite", channelUrl).then(data => data.id).catch(e => null)
+await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.`, m, fake)
+await conn.reply(ch, text, null, fake)
 await m.react(done)
 
 } catch {
