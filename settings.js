@@ -36,6 +36,7 @@ global.isBaileysFail = false
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.9'
 global.vs = '2.0.7'
+global vsJB = '5.0'
 global.languaje = 'Español'
 global.nameqr = 'Yaemori Bot - MD'
 global.namebot = 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ'
