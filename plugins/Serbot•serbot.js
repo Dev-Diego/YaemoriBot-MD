@@ -233,10 +233,10 @@ let handler = async (_0xeda6a0, {
           }, {
             'quoted': _0xeda6a0
           });
-          let _0xdb3feb = ("\n👤 *Usuario:* " + (_0xeda6a0.pushName || 'Anónimo') + "\n🗃️ *Registrado:* " + (_0xb91a18.registered ? 'Si' : 'No') + "\n✅ *Verificación:* " + (_0xb91a18.registered ? _0xb91a18.name : 'No') + "\n🔑 *Método de conexión:* " + (_0x3c838b ? "Código de 8 dígitos" : "Código QR") + "\n💻 *Browser:* " + (_0x3c838b ? "Ubuntu" : 'Chrome') + "\n🐈 *Bot:* " + packname + "\n⭐ *Versión del bot:* `" + vs + "`\n💫 *Versión sub bot:* `" + vsJB + "`\n\n> *¡Conviértete en sub-bot ahora!*\nwa.me/" + _0xeda6a0.sender.split`@`[0x0] + '&text=' + (_0x477024 + _0x41db6e) + "\n").trim();
+          let _0xdb3feb = ("\n👤 *Usuario:* " + (_0xeda6a0.pushName || 'Anónimo') + "\n🗃️ *Registrado:* " + (_0xb91a18.registered ? 'Si' : 'No') + "\n✅ *Verificación:* " + (_0xb91a18.registered ? _0xb91a18.name : 'No') + "\n🔑 *Método de conexión:* " + (_0x3c838b ? "Código de 8 dígitos" : "Código QR") + "\n💻 *Browser:* " + (_0x3c838b ? "Ubuntu" : 'Chrome') + "\n🐈 *Bot:* " + packname + "\n⭐ *Versión del bot:* `" + vs + "`\n💫 *Versión sub bot:* `" + vs + "`\n\n> *¡Conviértete en sub-bot ahora!*\nwa.me/" + _0xeda6a0.sender.split`@`[0x0] + '&text=' + (_0x477024 + _0x41db6e) + "\n").trim();
           let _0x17438f = await _0x47e397.profilePictureUrl(_0x233756, 'image')["catch"](_0x416dd6 => gataMenu.getRandom());
           await sleep(0xbb8);
-          await _0x411c82.sendMessage("120363349916000764@newsletter", {
+          await _0x411c82.sendMessage(global.channelid, {
             'text': _0xdb3feb,
             'contextInfo': {
               'externalAdReply': {
