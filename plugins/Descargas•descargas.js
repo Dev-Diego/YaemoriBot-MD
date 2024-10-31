@@ -6,7 +6,7 @@ const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
 let f = `\n\n${String.fromCharCode(68,101,118,101,108,111,112,101,100,32,98,121,32,73,39,109,32,70,122,32,126)}`;
 
-let isVideo = /mp4$/.test(command);
+let isVideo = /supervideo$/.test(command);
 let urls = search.all[0].url;
 
 conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, }, { quoted: m });
@@ -18,7 +18,7 @@ let audio = res.data.mp3;
 conn.sendMessage(m.chat, { [type]: { url: isVideo ? video : audio }, gifPlayback: false, mimetype: isVideo ? "video/mp4" : "audio/mpeg" }, { quoted: fkontak });
 }
 
-handler.command = ['mp3', 'mp4'];
+handler.command = ['supermusic', 'supervideo'];
 export default handler;
 
 async function dl_vid(url) {
