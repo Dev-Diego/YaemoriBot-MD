@@ -25,7 +25,7 @@ handler.command = ['supermusic', 'supervideo'];
 export default handler;
 
 async function dl_vid(url) {
-const response = await fetch('https://deliriussapi-oficial.vercel.app/download', {
+const response = await fetch('https://shinoa.us.kg/api/download/ytdl', {
 method: 'POST',
 headers: {
 'accept': '*/*',
