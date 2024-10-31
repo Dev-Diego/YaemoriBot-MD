@@ -282,7 +282,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdatePicture(ch, media)
 // await conn.reply(m.chat, `🚩 El bot ha cambiando la imagen del canal *${chtitle}* con éxito.`, m, rcanal) 
-await conn.sendMessage(global.channelid, { text: `🚩 El bot ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 El bot ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 Notificación General 🔔 】",
 body: '✨️ Nueva imagen de perfil del canal.',
@@ -311,7 +311,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterRemovePicture(ch)
 //await conn.reply(m.chat, `🚩 El bot ha eliminado la imagen del canal *${chtitle}* con éxito.`, m, rcanal) 
-await conn.sendMessage(global.channelid, { text: `🚩 El bot ha eliminado la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 El bot ha eliminado la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 Notificación General 🔔 】",
 body: '✨️ Imagen eliminada.',
@@ -404,7 +404,7 @@ try {
 const chtitle = await conn.newsletterMetadata(ch.includes("@newsletter") ? "jid" : "invite", ch.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterReactionMode(ch, mode)
 //await conn.reply(m.chat, `🚩 El bot ha establecido el modo de reacciones como \`"${mode}"\` para el canal *${chtitle}*`, m,  rcanal)
-await conn.sendMessage(global.channelid, { text: `🚩 El bot ha establecido el modo de reacciones como \`"${mode}"\` para el canal *${chtitle}*`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 El bot ha establecido el modo de reacciones como \`"${mode}"\` para el canal *${chtitle}*`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 Notificación General 🔔 】",
 body: '✨️ Ajustes en reacciones.',
@@ -440,7 +440,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdateName(ch, name)
 //await conn.reply(m.chat, `🚩 El bot ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, m, rcanal) 
-await conn.sendMessage(global.channelid, { text: `🚩 El bot ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 El bot ha cambiado el nombre del canal *${name}*\n\n*Anterior nombre:* ${chtitle}\n*Nuevo nombre:* ${name}`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 Notificación General 🔔 】",
 body: '✨️ Un nuevo nombre para el canal.',
@@ -475,7 +475,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdateDescription(ch, description)
 // await conn.reply(m.chat, `🚩 El bot ha modificado la descripción del canal *${chtitle}*`, m, rcanal) 
-await conn.sendMessage(global.channelid, { text: `🚩 El bot ha modificado la descripción del canal *${chtitle}*`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩 El bot ha modificado la descripción del canal *${chtitle}*`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 Notificación General 🔔 】",
 body: '✨️ Una nueva descripción al canal.',
