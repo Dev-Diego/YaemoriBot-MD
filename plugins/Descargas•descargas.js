@@ -27,8 +27,8 @@ let audio = res.data.mp3;
 conn.sendMessage(m.chat, { [type]: { url: isVideo ? video : audio }, gifPlayback: false, mimetype: isVideo ? "video/mp4" : "audio/mpeg" }, { quoted: fkontak });
 }
 
-handler.command = ['play1', 'play12'];
-handler.help = ['play1', 'play12'];
+handler.command = ['mp3', 'vid'];
+handler.help = ['mp3', 'vid'];
 handler.tags = ['descargas'];
 export default handler;
 
