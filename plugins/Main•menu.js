@@ -91,7 +91,7 @@ txt+= "✬✭✰✬"
                 header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙀𝙍𝘽𝙊𝙏 𝘾𝙊𝘿𝙀  ╎ ⚡️",
                 title: "",
                 description: `🍟 Ser subbot mediante un codigo de 8 digitos.`,
-                id: `#code`,
+                id: `#serbot code`,
             },
             {
                 header: "𓆩࿔ྀુ⃟🌹⃟𝙎𝙀𝙍𝘽𝙊𝙏 𝙌𝙍 ╎ 📂",
