@@ -477,6 +477,7 @@ if (!m.fromMe) return this.sendMessage(m.chat, { react: { text: emot, key: m.key
 }
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
 }}
+await conn.sendPresenceUpdate('composing', m.chat)
 
 export async function deleteUpdate(message) {
 try {
