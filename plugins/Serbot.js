@@ -67,10 +67,10 @@ resultado += segundos + " segundos";
 }
 return resultado;
 }
-const message = users.map((v, index) => `• 「 ${index + 1} 」\n> Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n> Nombre : ${v.user.name || '-'}\n> Actividad : ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : "Desconocido"}`).join('\n\n__________________________\n\n');
-const replyMessage = message.length === 0 ? `NO HAY SUB BOTS DISPONIBLE. VERIFIQUE MÁS TARDE.` : message;
+const message = users.map((v, index) => `• 「 ${index + 1} 」\n📎 Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n👤 Usuario: ${v.user.name || '-'}\n🕑 Online: ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : "Desconocido"}`).join('\n\n__________________________\n\n');
+const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible por el momento, verifique mas tarde.` : message;
 const totalUsers = users.length;
-const responseMessage = `*🌺 JADIBOT - SERBOT*\n\n✨ \`\`\`PUEDES COMUNICARTE CON EL PROPIETARIO DEL NUMERO DE LA BOT PARA QUE TE DEJEN UNIR A LA BOT EN TU GRUPO\`\`\`\n\n\`\`\`NOTA: LA FUNCION JADIBOT (SERBOT) ESTA RESERVADA PARA QUE LOS USUARIOS TENGAN UNA MAYOR EXPERIENCIA AL MOMENTO DE UTILIZAR NUESTRO PROYECTO, EL PROYECTO COMO NUMERO PRINCIPAL NO SE HACEN RESPONSABLE DE ACCIONES NO APROBADAS POR EL EQUIPO DE DESARROLO DE AI YAEMORI BOT\`\`\`\n\n- SUBBOTS CONECTADOS: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
+const responseMessage = `*🌺 JADIBOT - SERBOT*\n\n✨ Puedes comunicarte con el con el propietario del numero de la Bot para que te dejen unir la bot en tu grupo.\n\n🌻 Nota: La función *Jadibot (serbot)* está reservada para que los usiarios tengan una mayor experiencia al momento  de utilizar nuestro Bot, El numero principal no se hace responsable de mal uso de su bot.\n\n- Sub Bots Conectados: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
 await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseMention(responseMessage)}, {quoted: m})
 break    
 }}
