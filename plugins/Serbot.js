@@ -45,29 +45,32 @@ case isCommand3:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 function convertirMsADiasHorasMinutosSegundos(ms) {
-var segundos = Math.floor(ms / 1000);
-var minutos = Math.floor(segundos / 60);
-var horas = Math.floor(minutos / 60);
-var días = Math.floor(horas / 24);
-segundos %= 60;
-minutos %= 60;
-horas %= 24;
-var resultado = "";
+var segundos = Math.floor(ms / 1000)
+var minutos = Math.floor(segundos / 60)
+var horas = Math.floor(minutos / 60)
+var días = Math.floor(horas / 24)
+
+segundos %= 60
+minutos %= 60
+horas %= 24
+
+var resultado = ''
 if (días !== 0) {
-resultado += días + " días, ";
+resultado += días + ' días, '
 }
 if (horas !== 0) {
-resultado += horas + " horas, ";
+resultado += horas + ' horas, '
 }
 if (minutos !== 0) {
-resultado += minutos + " minutos, ";
+resultado += minutos + ' minutos, '
 }
 if (segundos !== 0) {
-resultado += segundos + " segundos";
+resultado += segundos + ' segundos'
 }
-return resultado;
+
+return resultado
 }
-const message = users.map((v, index) => `• 「 ${index + 1} 」\n📎 Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\n🕑 Online: ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : "Desconocido"}`).join('\n\n__________________________\n\n');
+const message = users.map((v, index) => `• 「 ${index + 1} 」\n📎 Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\n🕑 Online: ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}`).join('\n\n__________________________\n\n');
 const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible por el momento, verifique mas tarde.` : message;
 const totalUsers = users.length;
 const responseMessage = `🌻 *LISTA DE SUBBOTS*\n\n⭐️ PUEDES PEDIR PERMISO PARA QUE TE DEJEN UNIR EL BOT A TÚ GRUPO\n\n\`\`\`CADA USUARIO SUB BOT USA FUNCIÓN COMO QUIERA, EL NÚMERO PRINCIPAL NO SE HACE RESPONSABLE DEL USO DE LA FUNCIÓN \`\`\`\n\nSUBBOT CONECTADO: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
