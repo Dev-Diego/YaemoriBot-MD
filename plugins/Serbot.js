@@ -62,9 +62,9 @@ resultado += horas + " horas, ";
 if (minutos !== 0) {
 resultado += minutos + " minutos, ";
 }
-if (segundos !== 0) {
+/*if (segundos !== 0) {
 resultado += segundos + " segundos";
-}
+}*/
 return resultado;
 }
 const message = users.map((v, index) => `• 「 ${index + 1} 」\n📎 Wa.me/${v.user.jid.replace(/[^0-9]/g, '')}?text=${usedPrefix}estado\n👤 Usuario: ${v.user.name || 'Sub-Bot'}\n🕑 Online: ${ v.uptime ? convertirMsADiasHorasMinutosSegundos(Date.now() - v.uptime) : 'Desconocido'}`).join('\n\n__________________________\n\n');
