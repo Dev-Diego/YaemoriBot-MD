@@ -3,6 +3,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal);
 
 try {
+await m.react(rwait)
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
 
