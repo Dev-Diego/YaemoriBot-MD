@@ -105,7 +105,7 @@ return
 }}}
 handler.help = ['reg']
 handler.tags = ['rg']
-handler.command = ['verify', 'verificar', 'reg', 'register', 'registrar'] 
+handler.command = ['verify', 'verificar', 'reg', 'register'] 
 export default handler
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
