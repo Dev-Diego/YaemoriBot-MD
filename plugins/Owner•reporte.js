@@ -16,8 +16,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 await conn.sendMessage(global.channelid, { text: m.quoted ? teks + m.quoted.text : teks, contextInfo: {
 externalAdReply: {
-title: "【 ⚠️ COMANDO FALLIDO ⚠️ 】",
-body: '🧋 Un comando con fallas.',
+title: "【 ⚠️ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 𝗖𝗢𝗡 𝗙𝗔𝗟𝗟𝗔𝗦 ️⚠️ 】",
+body: '🌻 ¡Un comando con fallas!',
 thumbnailUrl: icono,
 sourceUrl: redes,
 mediaType: 1,
