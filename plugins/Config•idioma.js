@@ -11,11 +11,11 @@ rows: [{ header: "", title: "Español 🇪🇦", id: `#idioma es`, description: 
 ]})
 return conn.sendList(m.chat, _idioma, null, `🌐 Idiomas`, listSections, { mentions: [m.sender]}, {quoted: m})
 }
-let choice = text.includes('es') ? 'es' : text.includes('en') ? 'en' : text.includes('id') ? 'id' : text.includes('ar') ? 'ar' : text.includes('pt') ? 'pt' : null
+let choice = text.includes('es') ? 'es' : text.includes('en') ? 'en' :  null
 if (!choice) {
 return m.reply('Por favor, seleccione uno de los idiomas disponibles: español o inglés')
 }
-user.lenguaje = choice
+global.languaje = choice
 switch (choice) {
 case 'es':
 return m.reply('Idioma configurado a Español 🇲🇽')
