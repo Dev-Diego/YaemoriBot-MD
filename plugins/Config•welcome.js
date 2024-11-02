@@ -17,7 +17,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let userName = user ? user.name : await conn.getName(who);
 
   if (chat.welcome && m.messageStubType === 27) {
-        this.sendMessage(m.chat, {
+    this.sendMessage(m.chat, {
       audio: { url: vn },
       contextInfo: {
         mentionedJid: getMentionedJid(),
