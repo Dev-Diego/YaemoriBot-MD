@@ -4,9 +4,9 @@ global.db.data.chats[m.chat].isBanned = false
 conn.reply(m.chat, `🚩 *Este chat fue desbaneado con éxito*`, m, rcanal)
 
 }
-handler.help = ['banchat']
+handler.help = ['unbanchat']
 handler.tags = ['grupo']
-handler.command = ['banchat']
+handler.command = ['unbanchat']
 
 handler.botAdmin = true
 handler.admin = true 
