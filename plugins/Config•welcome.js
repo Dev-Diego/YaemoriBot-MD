@@ -22,7 +22,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
       contextInfo: {
         mentionedJid: getMentionedJid(),
         "externalAdReply": {
-          "thumbnail": welc,
+          "thumbnail": icons,
           "title": "  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ",
           "body": `${userName}!`,
           "previewType": "PHOTO",
@@ -46,7 +46,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
           "showAdAttribution": true,
           "containsAutoReply": true,
           "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ́ Ｓ ͟͞  ',
-          "body": `${userName}, se despide.`,
+          body: `${userName}, se despide.`,
           "previewType": "PHOTO",
           "thumbnailUrl": '',
           "thumbnail": icons,
