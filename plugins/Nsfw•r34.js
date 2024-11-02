@@ -17,7 +17,7 @@ const handler = async (m, { conn, args, usedPrefix }) => {
         const randomIndex = Math.floor(Math.random() * data.length);
         const randomImage = data[randomIndex];
         const imageUrl = randomImage.file_url;
-        await conn.sendMessage(m.chat, { image: { url: imageUrl }, caption: `\`❀ *RULE34 NSFW\`*\n✰ *Resultados para:*\n> ${tag}`, mentions: [m.sender] });
+        await conn.sendMessage(m.chat, { image: { url: imageUrl }, caption: `*\`❀ RULE34 NSFW\`*\n🚩 *Resultados para* » ${tag}`, mentions: [m.sender] });
     } catch (error) {
         console.error(error);
         await m.reply('✧ Ocurrió un error inesperado.');
