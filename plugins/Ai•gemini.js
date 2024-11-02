@@ -1,11 +1,8 @@
 import fetch from 'node-fetch'
 
 var handler = async (m, { text,  usedPrefix, command }) => {
-const lang = global.db.data.users[m.sender]?.lenguaje || 'es'
-const _translate = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
-const tradutor = _translate.index.ai_gemini
 
-if (!text) return conn.reply(m.chat, `${traductor.text1}`, m, rcanal)
+if (!text) return conn.reply(m.chat, `${languaje.gemini()} ${usedPrefix + command} Hola`, m, rcanal)
 try {
 await m.react(rwait)
 conn.sendPresenceUpdate('composing', m.chat)
@@ -14,7 +11,7 @@ var res = await apii.json()
 await m.reply(res.result)
 } catch {
 await m.react(error)
-await conn.reply(m.chat, `${traductor.texterror}`, m, rcanal)
+await conn.reply(m.chat, `${lenguaje.geminierror()}`, m, rcanal)
 }}
 handler.command = ['gemini']
 handler.help = ['gemini']
