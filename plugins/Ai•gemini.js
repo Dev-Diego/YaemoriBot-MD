@@ -1,10 +1,4 @@
 import fetch from 'node-fetch'
-//Lenguaje
-let lang = global.db.data.users[m.sender]?.lenguaje || 'es'
-const L = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
-const { 
-ai: { gemini }
-} = L
 
 var handler = async (m, { text,  usedPrefix, command }) => {
 if (!text) return conn.reply(m.chat, `${gemini.text1}`, m, rcanal)
