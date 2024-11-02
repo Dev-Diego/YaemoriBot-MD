@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 //Lenguaje
-let lang = global.db.data.users[m.sender]?.lenguaje || 'es'
+let lang = "en"
 const idioma = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
 const gemini = idioma.plugins.gemini
 
