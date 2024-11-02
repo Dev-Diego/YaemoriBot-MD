@@ -110,7 +110,7 @@ chat.antiLink = false
 if (!('modohorny' in chat))
 chat.modohorny = false
 if (!('reaction' in chat))
-chat.reaction = false
+chat.reaction = true
 if (!('simi' in chat))
 chat.simi = false
 if (!('antiver' in chat))
@@ -135,7 +135,7 @@ antiLink: false,
 simi: false,
 antiver: false,
 modohorny: false, 
-reaction: false,
+reaction: true,
 expired: 0, 
 }
 var settings = global.db.data.settings[this.user.jid]
