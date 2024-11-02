@@ -1,5 +1,5 @@
-import es from './es.js'; //Español 
-import en from './en.js'; //Ingles
+import espanol from './es.js'; //Español 
+import ingles from './en.js'; //Ingles
 
-export const es = es
-export const en = en
+export const es = espanol
+export const en = ingles
