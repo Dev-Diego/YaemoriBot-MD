@@ -1,9 +1,9 @@
 import fetch from 'node-fetch'
 
 //Lenguaje
-let lang = "en"
+const lang = global.db.data.users[anu.participants]?.lenguaje || 'es'
 const idioma = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
-const gemini11 = idioma.plugins.gemini
+const gemini11 = idioma.plugins.aigemini
 
 var handler = async (m, { text,  usedPrefix, command }) => {
 if (!text) return conn.reply(m.chat, `${gemini11.text1}`, m, rcanal)
