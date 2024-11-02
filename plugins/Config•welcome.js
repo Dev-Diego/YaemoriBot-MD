@@ -17,23 +17,21 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let userName = user ? user.name : await conn.getName(who);
 
   if (chat.welcome && m.messageStubType === 27) {
-    this.sendMessage(m.chat, {
+        this.sendMessage(m.chat, {
       audio: { url: vn },
       contextInfo: {
         mentionedJid: getMentionedJid(),
         "externalAdReply": {
-          "thumbnail": icons,
-          "title": "  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ",
-          "body": `${userName}!`,
-          "previewType": "PHOTO",
-          "thumbnailUrl": null,
           "showAdAttribution": true,
-          sourceUrl: redes
+          "containsAutoReply": true,
+          "title": '  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ',
+          body: `${userName}`,
+          "previewType": "PHOTO",
+          "thumbnailUrl": '',
+          "thumbnail": icons,
+          "sourceUrl": redes
         }
-      },
-      ptt: true,
-      mimetype: 'audio/mpeg',
-      fileName: 'welcome.mp3'
+      }
     }, { quoted: fkontak });
   }
 
