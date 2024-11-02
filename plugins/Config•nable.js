@@ -79,15 +79,13 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 
  case 'antifake':
     case 'antifakes':
-    case 'antiarabes':
-    case 'antiarab':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
           throw false
         }
       }
-      chat.onlyLatinos = isEnable
+      chat.antifake = isEnable
       break
 
  case 'modoadmin':
