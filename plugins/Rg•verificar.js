@@ -98,4 +98,4 @@ renderLargerThumbnail: false
 }
 }
 handler.command = ['verify', 'verificar', 'reg', 'register', 'idiomagb']
-export default handler*/
+export default handler
