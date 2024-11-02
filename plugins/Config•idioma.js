@@ -13,5 +13,5 @@ m.reply(`Idioma definido a Inglês 🇬🇧`)
 
 handler.help = ['idioma']
 handler.tags = ['rg']
-handler.command = ['idioma']
+handler.command = ['idioma', 'es', 'en']
 export default handler
