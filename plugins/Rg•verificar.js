@@ -1,96 +1,119 @@
-import { createHash } from 'crypto'  
+/*import { createHash } from 'crypto'  
 import fetch from 'node-fetch'
-import PhoneNumber from 'awesome-phonenumber'
-import moment from 'moment-timezone'
-import axios from 'axios'
-
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i 
-let msg, user, userNationality, tag, aa, pp, ppch, codigo, nombre, edad, finalizar, codigosIdiomas, nombresIdiomas
 let handler = async function (m, { conn, text, usedPrefix, command }) {
-codigosIdiomas = ['es', 'en']
-nombresIdiomas = {
+let codigosIdiomas = ['es', 'en', 'pt', 'id', 'ar']
+let nombresIdiomas = {
 'es': 'Español',
-'en': 'English'
+'en': 'English',
+'pt': 'Português',
+'id': 'Bahasa Indonesia',
+'ar': 'Arab (عرب)'
 }
+
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let api = await axios.get(`${apis}/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
-let userNationalityData = api.data.result
-userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido' 
+let pp = await conn.profilePictureUrl(who, 'image').catch(_ => gataImg.getRandom())
 
-pp = await conn.profilePictureUrl(who, 'image').catch(_ => icons)
-ppch = await conn.profilePictureUrl(who, 'image').catch(_ => icons)
-
-tag = `${m.sender.split("@")[0]}`
-aa = tag + '@s.whatsapp.net'
-user = global.db.data.users[m.sender]
+function pickRandom(list) {
+return list[Math.floor(Math.random() * list.length)]
+} 
+let tag = `${m.sender.split("@")[0]}`
+let aa = tag + '@s.whatsapp.net'
+let user = global.db.data.users[m.sender]
 
 if (/^(verify|verificar|reg(ister)?)$/i.test(command)) {
-if (user.registered === true) return m.reply('🍭 Ya estás registrado.\n\n*¿Quiere volver a registrarse?*\n\nUse este comando para eliminar su registro.\n*${usedPrefix}unreg*')
-if (!Reg.test(text)) return m.reply('🌹 Formato incorrecto.\n\nUso del comamdo: *${usedPrefix + command} nombre.edad*\nEjemplo : *${usedPrefix + command} ${name2}.666*')
+if (user.registered === true) return m.reply(lenguajeGB.smsVerify0(usedPrefix) + '*')
+if (!Reg.test(text)) return m.reply(lenguajeGB.smsVerify1(usedPrefix, command))
 let [_, name, splitter, age] = text.match(Reg)  
-if (!name) return m.reply('🚩 El nombre no puede estar vacío.')
-if (!age) return m.reply('🚩 La edad no puede estar vacía.')
+if (!name) return m.reply(lenguajeGB.smsVerify2())
+if (!age) return m.reply(lenguajeGB.smsVerify3())
 age = parseInt(age)
+if (age > 50) return m.reply(lenguajeGB.smsVerify4()) 
+if (age < 10) return m.reply(lenguajeGB.smsVerify5())
+if (name.length >= 30) return m.reply(lenguajeGB.smsVerify6())
+user.name = name + 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ'.trim()
+user.age = age
+let listaIdiomasTexto = ''
+listaIdiomasTexto += '*╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*\n' 
+listaIdiomasTexto += '*┆ 🌐 IDIOMA DINÁMICO 🌐*\n' 
+listaIdiomasTexto += '*┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*\n' 
+codigosIdiomas.forEach((codigo, index) => {
+listaIdiomasTexto += `*┆* \`\`\`[ ${index + 1} ] » ${nombresIdiomas[codigo]}\`\`\`\n`
+})
+listaIdiomasTexto += '*╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*\n'    
+let genText = `🌟 *NUEVA FUNCIÓN - MULTI LENGUAJE DINÁMICO (BETA)*\n
+👉 *ESCRIBA EL NÚMERO PARA ELEGIR EL IDIOMA, EJEMPLO:*
+✓ \`\`\`${usedPrefix}languaje 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}languaje 2\`\`\`\n
+${listaIdiomasTexto}`
+await conn.sendMessage(m.chat, { text: genText }, { quoted: m })        
+} 
 
-if (age > 100) return m.reply('👴🏻 Wow el abuelo quiere jugar al bot.') 
-if (age < 10) return m.reply('🚼  hay un abuelo bebé jsjsj.')
-if (name.length >= 30) return m.reply('🚩 El nombre es demasiado largo.')  
-edad = age
-nombre = name
-
-let texto = 'Elije Tu Idioma 🚩\n\n```[ 1 ] » Español```\n```[ 2 ] » English```'    
-await conn.sendMessage(m.chat, { text: texto }, { quoted: m })        
-finalizar = true
+if (command == 'idiomagb') {        
+if (!user.name || !user.age) return conn.sendMessage(m.chat, { text: `${lenguajeGB['smsAvisoFG']()}*REGISTRE SU NOMBRE Y EDAD PARA PODER USAR ESTE COMANDO*` }, { quoted: m })   
+var emojiANumero = { "0️⃣": "0", "1️⃣": "1", "2️⃣": "2" }
+text = text.replace(/[\u{0030}-\u{0039}]\u{FE0F}\u{20E3}/gu, function(match) {
+return emojiANumero[match] || match
+})
+let idioma = ''
+function asignarIdioma(text) { 
+if (!text) return conn.sendMessage(m.chat, { text: `*ESCRIBA UN NÚMERO PARA ELEGIR EL IDIOMA, EJEMPLO:*\n\n✓ \`\`\`${usedPrefix}idiomagb 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}idiomagb 2\`\`\`` }, { quoted: m })          
+if (text < 1 || (text > 5 && text)) {
+conn.reply(m.chat, `*"${text}" NO ES VÁLIDO PARA ELEGIR, RECUERDE USAR EL EMOJI NUMÉRICO O TEXTO NUMÉRICO PARA SELECCIONAR EL IDIOMA, EJEMPLO:*\n\n✓ \`\`\`${usedPrefix}idiomagb 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}idiomagb 2\`\`\``, m) 
 }
-handler.before = async function (m, { conn }) {
-if (user?.registered === true || user?.registered === undefined) return
-if (!finalizar) return
-if (m.quoted && m.quoted.id == msg.key.id) {
-if (!/^\d+$/.test(m.text)) return conn.reply(m.chat, '🌺 Solo se permiten números del `1` al `2` de acuerdo con el orden de idiomas disponibles', m)
-}
-const numero = parseInt(m.text, 10)
-let isVerified = m.quoted ? (m.quoted.id == msg.key.id && !isNaN(numero) && numero >= 1 && numero <= codigosIdiomas.length) : false
-if (isVerified) {
-user.Language = codigosIdiomas[numero - 1]
-nombresIdiomas = nombresIdiomas[user.Language]
-user.name = nombre + '✓'.trim()
-user.age = edad
+switch (text) {
+case "1️⃣":
+case "1":
+idioma = 'es'
+break
+case "2️⃣":
+case "2":
+idioma = 'en'
+break
+case "3️⃣":
+case "3":
+idioma = 'pt'
+break
+case "4️⃣":
+case "4":
+idioma = 'id'
+break   
+case "5️⃣":
+case "5":
+idioma = 'ar'
+break
+default:
+if (text == 0 || text > 5) return
+return conn.reply(m.chat, `${lenguajeGB['smsAvisoAG']()}*RECUERDE USAR EL EMOJI NUMÉRICO O TEXTO NUMÉRICO PARA SELECCIONAR EL IDIOMA, EJEMPLO*\n\n✓ \`\`\`${usedPrefix}idiomagb 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}idiomagb 2\`\`\``, m)
+}}
+asignarIdioma(text)
+user.GBLanguage = idioma
+if (!user.GBLanguage) return m.reply(`${lenguajeGB['smsAvisoFG']()}*NO SE LOGRÓ CONFIGURAR EL IDIOMA, INTENTE DE NUEVO POR FAVOR*`)
+if (codigosIdiomas.includes(user.GBLanguage)) {
+nombresIdiomas = nombresIdiomas[user.GBLanguage]
+} else {
+nombresIdiomas = `IDIOMA NO DETECTADO`
+}  
+await m.reply(`${lenguajeGB['smsAvisoIIG']()}*EN CASO QUE QUIERA CAMBIAR O ELIMINAR EL IDIOMA DEBE DE ELIMINAR SU REGISTRO PRIMERO*`)
 user.regTime = + new Date
 user.registered = true
 let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)        
-let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
-regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age} años\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `「🎁」𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
-regbot += `• 15 Cookies 🍪\n`
-regbot += `• 5 MiniCoins 🪙\n`
-regbot += `• 245 Experiencia 💸\n`
-regbot += `• 12 Tokens 💰\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `${packname}`
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)  
-let chtxt = `🌐 *Idioma:* ${nombresIdiomas}\n👤 *Usuario* » ${m.pushName || 'Anónimo'}\n🌎 *Pais* » ${global.userNationality}\n🗃 *Verificación* » ${user.name}\n🌺 *Edad* » ${user.age} años\n📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}`.trim()
-await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
-externalAdReply: {
-title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
-body: '🥳 ¡Un usuario nuevo en mi base de datos!',
-thumbnailUrl: pp,
-sourceUrl: redes,
-mediaType: 1,
-showAdAttribution: false,
-renderLargerThumbnail: false
-}}}, { quoted: null })
+let caption = `${lenguajeGB.smsVerify7()}
+*⎔ IDIOMA* 
+• ${nombresIdiomas}
+*⎔ ${lenguajeGB.smsPerfil1()}* 
+• @${tag}
+*⎔ ${lenguajeGB.smsPerfil2()}* 
+• ${user.name}
+*⎔ ${lenguajeGB.smsPerfil3()}*
+• ${user.age}
+*⎔ ${lenguajeGB.smsVerify9()}*
+• 'ͧͧͧͦꙶͣͤ✓ᚲᴳᴮ'
+*⎔ ${lenguajeGB.smsPerfil5()}*
+• \`\`\`${sn}\`\`\``.trim()
+await conn.sendFile(m.chat, pp, 'gata.jpg', caption, m, false, { mentions: [aa] }) 
+await m.reply(lenguajeGB.smsVerify8(usedPrefix)) 
+await m.reply(`${sn}`) 
 }
-finalizar = '' 
-return
-}}}
-handler.help = ['reg']
-handler.tags = ['rg']
-handler.command = ['verify', 'verificar', 'reg', 'register'] 
-export default handler
-
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));}
+}
+handler.command = /^(verify|verificar|reg(ister)?|idiomagb)$/i
+export default handler*/
