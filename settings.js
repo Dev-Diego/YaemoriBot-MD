@@ -6,6 +6,7 @@ import cheerio from 'cheerio'
 import fetch from 'node-fetch'
 import axios from 'axios'
 import moment from 'moment-timezone' 
+import { en, es } from './src/idiomas/total-idiomas.js'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
@@ -38,6 +39,7 @@ global.libreria = 'Baileys'
 global.baileys = 'V 6.7.5'
 global.vs = '2.0.7'
 global.vsJB = '5.0'
+global.lenguajeYL = es 
 global.languaje = 'Español'
 global.nameqr = 'Yaemori Bot - MD'
 global.namebot = 'ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ'
