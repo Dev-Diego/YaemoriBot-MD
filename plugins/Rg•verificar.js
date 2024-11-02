@@ -39,11 +39,11 @@ regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
 await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
-let chtxt = `👤 *Usuario*: ${m.pushName || 'Anónimo'}\n🌎 *Pais:* ${global.userNationality}\n🗃 *Verificación:* ${user.name}\n🌸 *Edad:* ${user.age} años\n🐢 *Bot:* ${packname}`.trim()
+let chtxt = `👤 *Usuario* » ${m.pushName || 'Anónimo'}\n🌎 *Pais* » ${global.userNationality}\n🗃 *Verificación* » ${user.name}\n🌺 *Edad* » ${user.age} años\n📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}`.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
-title: "【 🔔 Notificación General 🔔 】",
-body: '🐢 Un usuario registrado',
+title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
+body: '🥳 ¡Un usuario nuevo en mi base de datos!',
 thumbnailUrl: fotoperfil,
 sourceUrl: redes,
 mediaType: 1,
