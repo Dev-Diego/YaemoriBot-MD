@@ -168,14 +168,14 @@ const gif = await response.buffer()
 
 //await conn.reply(m.chat, '*Próximamente se remitirá el menú.*', fkontak, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: packname, body: dev, sourceUrl: redeshost, thumbnail: await (await fetch(fotoperfil)).buffer() }}})
 
-await m.react('🧋') 
+await m.react('🌻') 
 
 await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363263466636910@newsletter', newsletterName: '© ᥡᥲᥱm᥆rіᑲ᥆𝗍 - ᥴһᥲᥒᥒᥱᥣ 🌱', serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨', body: dev, thumbnailUrl: fotoperfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: fkontak })
 
   } catch (e) {
     await m.react(error)
-    conn.reply(m.chat, `「✘」 *Ocurrió un error al enviar el menú*\n\n${e}`, m, fake, )
+    conn.reply(m.chat, `✘ Ocurrió un error al enviar el menú principal.\n\n${e}`, m, fake)
     throw e
   }
 }
