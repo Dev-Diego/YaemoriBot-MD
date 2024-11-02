@@ -9,14 +9,14 @@ sigla = args[0].toLowerCase()
 
 if (command === 'idioma') {
 } else if (sigla === 'es') {
-global.db.data.users[m.sender].language = 'es'
+global.db.data.users[m.sender].Language = 'es'
 m.reply(`Idioma definido a Español 🇪🇸`)
 
 } else if (sigla === 'en') {
-global.db.data.users[m.sender].language = 'en'
+global.db.data.users[m.sender].Language = 'en'
 m.reply(`Idioma definido a Inglês 🇬🇧`)
 
-}else {
+}} else {
 m.reply(`🚩 Elije el idioma.\n\n[ es ] Español.\n[ en ] Ingles.`)
 }}
 
