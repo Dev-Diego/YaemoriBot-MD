@@ -1,7 +1,7 @@
 const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
 try {
-data.db.data.users[m.sender].language
+data.db.data.users[m.sender].Language
 let sigla // Args user
 if (args[0] != undefined) {
 sigla = args[0].toLowerCase()
