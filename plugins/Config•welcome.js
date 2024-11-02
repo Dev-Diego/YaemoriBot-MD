@@ -22,16 +22,18 @@ export async function before(m, { conn, participants, groupMetadata }) {
       contextInfo: {
         mentionedJid: getMentionedJid(),
         "externalAdReply": {
-          "showAdAttribution": true,
-          "containsAutoReply": true,
-          "title": '  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ',
-          body: `${userName}`,
+          "thumbnail": welc,
+          "title": "  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ",
+          "body": `${userName}!`,
           "previewType": "PHOTO",
-          "thumbnailUrl": '',
-          "thumbnail": icons,
-          "sourceUrl": redes
+          "thumbnailUrl": null,
+          "showAdAttribution": true,
+          sourceUrl: redes
         }
-      }
+      },
+      ptt: true,
+      mimetype: 'audio/mpeg',
+      fileName: 'welcome.mp3'
     }, { quoted: fkontak });
   }
 
@@ -44,7 +46,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
           "showAdAttribution": true,
           "containsAutoReply": true,
           "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ́ Ｓ ͟͞  ',
-          body: `${userName}, se despide.`,
+          "body": `${userName}, se despide.`,
           "previewType": "PHOTO",
           "thumbnailUrl": '',
           "thumbnail": icons,
