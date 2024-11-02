@@ -7,7 +7,7 @@ import fetch from 'node-fetch'
 
 let handler = async (m, { text, usedPrefix, command }) => {
 
-if (!text) return conn.reply(m.chat, `🚩 Escribe el nonbre del scraper.\nEjemplo: ${usedPrefix + command} yt-search`, m, rcanal)
+if (!text) return conn.reply(m.chat, `🚩 Escribe el nombre del scraper.\nEjemplo: ${usedPrefix + command} yt-search`, m, rcanal)
 
 try {
 
