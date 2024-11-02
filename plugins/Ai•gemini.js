@@ -6,7 +6,7 @@ const idioma = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
 const gemini11 = idioma.plugins.aigemini
 
 var handler = async (m, { text,  usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat, `${idioma.plugins.aigemini.text1`, m, rcanal)
+if (!text) return conn.reply(m.chat, `${idioma.plugins.aigemini.text1}`, m, rcanal)
 try {
 await m.react(rwait)
 conn.sendPresenceUpdate('composing', m.chat)
