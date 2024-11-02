@@ -65,6 +65,7 @@ if (!('useDocument' in user))
 user.useDocument = false
 if (!isNumber(user.level))
 user.level = 0
+if (!('Language' in user)) user.Language = m.Language
 if (!isNumber(user.bank))
 user.bank = 0
 } else
@@ -81,6 +82,7 @@ afkReason: '',
 banned: false,
 useDocument: false,
 bank: 0,
+Language: 0,
 level: 0,
 }
 let chat = global.db.data.chats[m.chat]
