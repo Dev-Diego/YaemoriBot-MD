@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 var handler = async (m, { text,  usedPrefix, command }) => {
 const lang = global.db.data.users[m.sender]?.lenguaje || 'es'
 const _translate = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
-const tradutor = _translate.plugins.ai_gemini
+const tradutor = _translate.index.ai_gemini
 
 if (!text) return conn.reply(m.chat, `${traductor.text1}`, m, rcanal)
 try {
