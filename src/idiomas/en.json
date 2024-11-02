@@ -1,12 +1,6 @@
-{
-"index": {
-"ai": {
-"text": "Ia"
-},
+const lenguaje = () => { return 'en' } //Ingles
 
-"ai_gemini": {
-"text1": "『🪐』It seems that the default language is English.\n\n• 𝙋𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙚𝙧 𝙮𝙤𝙪𝙧 𝙨𝙠𝙞𝙣:\n${usedPrefix + command} Hello",
-"texterror": "『📣』It is always a good time for us to be patient, we always take care of you."
-}
+const gemini = () => { return `『🪐』It seems that the coronavirus is not a problem for us.\n\n• 𝙋𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙡𝙤:\n` }
+const geminierror = () => { return `『📣』It is always a good time for us to be patient, we always take care of you.` } 
 
-}}
+export default { lenguaje, gemini, geminierror }
