@@ -39,6 +39,7 @@ if (!isNumber(user.exp))
 user.exp = 0
 if (!isNumber(user.cookies))
 user.cookies = 10
+if (!('lenguaje' in user)) user.lenguaje = 'es'
 if (!('muto' in user))
 user.muto = false
 if (!('premium' in user)) 
@@ -74,6 +75,7 @@ cookies: 10,
 muto: false,
 registered: false,
 name: m.name,
+languaje: es,
 age: -1,
 regTime: -1,
 afk: -1,
