@@ -97,8 +97,8 @@ if (!('audios' in chat))
 chat.audios = false
 if (!('detect' in chat))
 chat.detect = true
-if (!('onlyLatinos' in chat))
-chat.onlyLatinos = true 
+if (!('antifake' in chat))
+chat.antifake = false
 if (!('antiBot' in chat))
 chat.antiBot = false
 if (!('antiBot2' in chat))
@@ -125,7 +125,7 @@ isBanned: false,
 welcome: true,
 autolevelup: false,
 delete: false,
-onlyLatinos: false,
+antifake: false,
 audios: false,
 detect: true,
 antiBot: false,
