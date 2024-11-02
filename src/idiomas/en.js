@@ -6,7 +6,7 @@
 },
 
 "ia": {
-"text1: "Prueba",
+"text1": "Prueba",
 "text2": "prueba"
 }
 
