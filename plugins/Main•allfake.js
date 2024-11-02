@@ -45,7 +45,7 @@ global.namechannel = '© All Rightd Reserved • YaemoriBot'
 //ids
 global.channelid = '120363310433406751@newsletter'
 global.canalIdYL = ["120363160031023229@newsletter", "120363310433406751@newsletter", "120363263466636910@newsletter"]
-global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🚩", "ᥡᥲᥱm᥆rі ᑲ᥆𝗍 ᰔᩚ"]
+global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🚩", "© All Rightd Reserved • YaemoriBot"]
 global.channelRD = await getRandomChannel()
 
 //fechas
@@ -128,6 +128,6 @@ global.icono = [
 'https://qu.ax/YHLEj.jpg'
 ].getRandom()
 
-global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.canalIdYL, serverMessageId: 100, newsletterName: channelRD.canalNombreYL, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
+global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
 
 export default handler
