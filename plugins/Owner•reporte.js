@@ -16,8 +16,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 await conn.sendMessage(global.channelid, { text: m.quoted ? teks + m.quoted.text : teks, contextInfo: {
 externalAdReply: {
-title: "【 ⚠️ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 𝗖𝗢𝗡 𝗙𝗔𝗟𝗟𝗔𝗦 ️⚠️ 】",
-body: '🌻 ¡Un comando con fallas!',
+title: "【 ⚠️ 𝗥𝗘𝗣𝗢𝗥𝗧𝗘 ️⚠️ 】",
+body: '🌻 ¡Un reporte de un usuario!',
 thumbnailUrl: icono,
 sourceUrl: redes,
 mediaType: 1,
@@ -25,7 +25,7 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
 
-    m.reply('⚠️ *_El reporte se envío a mi creador, cualquier informe falso puede ocasionar baneo._*')
+    m.reply('⚠️ *El reporte se envío a mi creador, cualquier informe falso puede ocasionar baneo.*')
 }
 handler.help = ['reportar']
 handler.tags = ['info']
