@@ -38,7 +38,7 @@ regbot += `• 12 Tokens 💰\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+await conn.sendMessage(m.chat, { text: regbot, contextInfo:{forwardedNewsletterMessageInfo: { newsletterJid: 'global.ch', serverMessageId: '', newsletterName: 'YaemoriBot - Test 🚩' }, forwardingScore: 9999999, isForwarded: true, "externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', "body": dev, "previewType": "PHOTO", thumbnail: imagen1, sourceUrl: [yt, channel, tiktok, correo].getRandom()}}}, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
 let chtxt = `👤 *Usuario* » ${m.pushName || 'Anónimo'}\n🌎 *Pais* » ${global.userNationality}\n🗃 *Verificación* » ${user.name}\n🌺 *Edad* » ${user.age} años\n📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}`.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
