@@ -3,10 +3,10 @@ import fetch from 'node-fetch'
 //Lenguaje
 let lang = "en"
 const idioma = JSON.parse(fs.readFileSync(`./src/idiomas/${lang}.json`))
-const gemini = idioma.plugins.gemini
+const gemini11 = idioma.plugins.gemini
 
 var handler = async (m, { text,  usedPrefix, command }) => {
-if (!text) return conn.reply(m.chat, `${gemini.text1}`, m, rcanal)
+if (!text) return conn.reply(m.chat, `${gemini11.text1}`, m, rcanal)
 try {
 await m.react(rwait)
 conn.sendPresenceUpdate('composing', m.chat)
@@ -15,7 +15,7 @@ var res = await apii.json()
 await m.reply(res.result)
 } catch {
 await m.react(error)
-await conn.reply(m.chat, `${gemini.texterror}`, m, rcanal)
+await conn.reply(m.chat, `${gemini11.texterror}`, m, rcanal)
 }}
 handler.command = ['gemini']
 handler.help = ['gemini']
