@@ -140,6 +140,6 @@ return list[Math.floor(Math.random() * list.length)]
 async function getRandomChannel() {
 let randomIndex = Math.floor(Math.random() * canalIdYL.length)
 let id = canalIdYL[randomIndex]
-let nombre = canalNombreYL[randomIndex]
+let name = canalNombreYL[randomIndex]
 return { id, name }
 }         
