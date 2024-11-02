@@ -4,11 +4,11 @@ let user = global.db.data.users[m.sender]
 
 user.registered = false
 
-let txt = `\`REGISTRO ANULADO\`\n\n👤 User: ${m.pushName || 'Anónimo'}\n🌍 Pais: ${global.userNationality}\n🐢 Bot: ${packname}`.trim()
+let txt = `\`REGISTRO ANULADO\`\n\n👤 *User* » ${m.pushName || 'Anónimo'}\n🌍 *Pais* » ${global.userNationality}\n🌺 *Bot* » ${packname}`.trim()
 await conn.sendMessage(global.channelid, { text: txt, contextInfo: {
 externalAdReply: {
-title: "【 🔔 Notificación General 🔔 】",
-body: '🐢 Un usuario anuló su registro.',
+title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
+body: '😔 ¡Un usuario menos en mi base de datos!',
 thumbnailUrl: fotoperfil,
 sourceUrl: redes,
 mediaType: 1,
