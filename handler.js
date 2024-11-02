@@ -157,7 +157,7 @@ autobio: false,
 antiPrivate: false,
 autoread: false,
 autoread2: false,
-antiSpam: true,
+antiSpam: false,
 status: 0
 }
 } catch (e) {
