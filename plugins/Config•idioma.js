@@ -1,10 +1,5 @@
 const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
-let sigla // Args user
-if (args[0] != undefined) {
-sigla = args[0].toLowerCase()
-}
-
 if (command === 'idioma') {
 return m.reply(`🚩 Elije el idioma.\n\n[ es ] Español.\n[ en ] Ingles.`)
 } else if (sigla === 'es') {
