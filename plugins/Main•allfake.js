@@ -79,6 +79,7 @@ global.waitttt = '🚀 Cargando...'
 var canal = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'
 var canal2 = 'https://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z'
 var canal3 = 'https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A'
+var canal4 = 'https://whatsapp.com/channel/0029VakUvreFHWpyWUr4Jr0g'
 var git = 'https://github.com/Dev-Diego' 
 var youtube = 'https://www.youtube.com/@OfcDiego' 
 var github = 'https://github.com/Dev-Diego/YaemoriBot-MD'  
@@ -89,9 +90,9 @@ var discord = 'https://discord.gg/zvKgtc2RBc'
 let tiktok = 'https://tiktok.com/@dev_diego'
 let correo = 'theyaemoribot@gmail.com'
 
-global.redes = [canal, canal2, canal3, git, youtube, github, dash, panel, status, discord, tiktok, correo].getRandom()
+global.redes = [canal, canal2, canal3, canal4, git, youtube, github, dash, panel, status, discord, tiktok, correo].getRandom()
 
-global.redeshost = [panel, dash, tienda, status, discord, paypal].getRandom()
+global.redeshost = [canal4, dash, panel, status, discord].getRandom()
 
 //Imagen
 let category = "imagen"
