@@ -5,7 +5,7 @@ if (!text) return await conn.reply(m.chat, `🚩 Y el texto que quiere transmiti
 try {
 await m.react(rwait)
 
-await conn.sendMessage(global.channelid, { react: { text: '🌻', key: m.key } })
+await conn.sendMessage(global.channelid, { react: { text: '❤', key: m.key } })
 await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.`, m, fake)
 await conn.reply(global.channelid, text, null, fake)
 await m.react(done)
