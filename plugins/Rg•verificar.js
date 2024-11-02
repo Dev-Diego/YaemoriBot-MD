@@ -38,32 +38,21 @@ if (name.length >= 30) return m.reply('🚩 El nombre es demasiado largo.')
 edad = age
 nombre = name
 
-let listaIdiomasTexto = ''
-listaIdiomasTexto += '*╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*\n' 
-listaIdiomasTexto += '*┆ 🌐 IDIOMA DINÁMICO 🌐*\n' 
-listaIdiomasTexto += '*┆ 🌐 DYNAMIC LANGUAGE 🌐*\n' 
-listaIdiomasTexto += '*┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*\n' 
-codigosIdiomas.forEach((codigo, index) => {
-listaIdiomasTexto += `*┆* \`\`\`[ ${index + 1} ] » ${nombresIdiomas[codigo]}\`\`\`\n`
-})
-listaIdiomasTexto += '*╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*\n'    
-let genText = `
-${listaIdiomasTexto}
-🌟 *MULTI LENGUAJE DINÁMICO* 🌟\n
-👉 *Verificación pausada. Responda a este mensaje con el número del idioma.*\n
-> _El idioma elegido será el que_ ${packname} _usará. Si no está disponible su idioma, selecciona otro o solicita agregarlo en:_ ${yt}
-\n⋯⋯⋯⋯⋯⋯⋯⋯⋯\n
-🌟 *DYNAMIC MULTI LANGUAGE* 🌟\n
-👉 *Verification paused. Reply to this message with the language number.*\n
-> _The language chosen will be the one that_ ${packname} _will use. If your language is not available, select another one or request to add it at:_ ${yt}`
-msg = await conn.sendMessage(m.chat, { text: genText.trim() }, { quoted: m })        
+let texto = '*╭┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*
+*┆ 🌐 IDIOMA DINÁMICO 🌐*
+*┆ 🌐 DYNAMIC LANGUAGE 🌐*
+*┆┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*
+*┆* ```[ 1 ] » Español```
+*┆* ```[ 2 ] » English```
+*╰┄┄┄┄┄┄┄┄┄┄┄┄┄┄୭̥⋆*｡*'    
+await conn.sendMessage(m.chat, { text: texto }, { quoted: m })        
 finalizar = true
 }
 handler.before = async function (m, { conn }) {
 if (user?.registered === true || user?.registered === undefined) return
 if (!finalizar) return
 if (m.quoted && m.quoted.id == msg.key.id) {
-if (!/^\d+$/.test(m.text)) return conn.reply(m.chat, `*Solo se permiten números del \`1\` al \`${codigosIdiomas.length}\` de acuerdo con el orden de idiomas disponibles*\n\n*Only numbers from \`1\` to \`${codigosIdiomas.length}\` are allowed according to the order of available languages*`, m)
+if (!/^\d+$/.test(m.text)) return conn.reply(m.chat, `🌺 Solo se permiten números del \`1\` al \`2\` de acuerdo con el orden de idiomas disponibles`, m)
 }
 const numero = parseInt(m.text, 10)
 let isVerified = m.quoted ? (m.quoted.id == msg.key.id && !isNaN(numero) && numero >= 1 && numero <= codigosIdiomas.length) : false
