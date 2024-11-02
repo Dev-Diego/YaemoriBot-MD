@@ -31,44 +31,41 @@ if (name.length >= 30) return m.reply(lenguajeGB.smsVerify6())
 user.name = name + '✓ᚲ'.trim()
 user.age = age
 let listaIdiomasTexto = ''
-listaIdiomasTexto += `🚩 Elije tu idioma.\n\n[ 1 ] Español\n[ 2 ] Ingles`
+listaIdiomasTexto += `🚩 Elije tu idioma.\n\n[ 1 ] Español\n[ 2 ] Ingles\n\nEjemplo: #idioma 2`
 await conn.sendMessage(m.chat, { text: genText }, { quoted: m })        
 } 
 
 if (command == 'idioma') {        
-if (!user.name || !user.age) return conn.sendMessage(m.chat, { text: `${lenguajeGB['smsAvisoFG']()}*REGISTRE SU NOMBRE Y EDAD PARA PODER USAR ESTE COMANDO*` }, { quoted: m })   
-var emojiANumero = { "0️⃣": "0", "1️⃣": "1", "2️⃣": "2" }
+if (!user.name || !user.age) return conn.sendMessage(m.chat, { text: `🌺 Verifique su edad y nombre para poder usar este comando.` }, { quoted: m })   
+var emojiANumero = { "0", "1", "2" }
 text = text.replace(/[\u{0030}-\u{0039}]\u{FE0F}\u{20E3}/gu, function(match) {
 return emojiANumero[match] || match
 })
 let idioma = ''
 function asignarIdioma(text) { 
-if (!text) return conn.sendMessage(m.chat, { text: `*ESCRIBA UN NÚMERO PARA ELEGIR EL IDIOMA, EJEMPLO:*\n\n✓ \`\`\`${usedPrefix}idiomagb 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}idiomagb 2\`\`\`` }, { quoted: m })          
+if (!text) return conn.sendMessage(m.chat, { text: `🚩 Escriba el numero del idioma\n\n>[ 1 ] Español.\n[ 2 ] Ingles.` }, { quoted: m })          
 if (text < 1 || (text > 5 && text)) {
-conn.reply(m.chat, `*"${text}" NO ES VÁLIDO PARA ELEGIR, RECUERDE USAR EL EMOJI NUMÉRICO O TEXTO NUMÉRICO PARA SELECCIONAR EL IDIOMA, EJEMPLO:*\n\n✓ \`\`\`${usedPrefix}idiomagb 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}idiomagb 2\`\`\``, m) 
+conn.reply(m.chat, `*"${text}" no es válido.`, m) 
 }
 switch (text) {
-case "1️⃣":
 case "1":
 idioma = 'es'
 break
-case "2️⃣":
 case "2":
 idioma = 'en'
 break
 default:
 if (text == 0 || text > 5) return
-return conn.reply(m.chat, `*RECUERDE USAR EL EMOJI NUMÉRICO O TEXTO NUMÉRICO PARA SELECCIONAR EL IDIOMA, EJEMPLO*\n\n✓ \`\`\`${usedPrefix}idiomagb 2️⃣\`\`\`\n✓ \`\`\`${usedPrefix}idiomagb 2\`\`\``, m)
+return conn.reply(m.chat, `🚩 Recuerda usar el numero del idioma.\n\nEjemplo: #idioma 2`, m)
 }}
 asignarIdioma(text)
 user.Language = idioma
-if (!user.Language) return m.reply(`*NO SE LOGRÓ CONFIGURAR EL IDIOMA, INTENTE DE NUEVO POR FAVOR*`)
+if (!user.Language) return m.reply(`🌺 No se logró configurar el idioma.`)
 if (codigosIdiomas.includes(user.Language)) {
 nombresIdiomas = nombresIdiomas[user.Language]
 } else {
-nombresIdiomas = `IDIOMA NO DETECTADO`
+nombresIdiomas = `🌻 Idioma no detectado.`
 }  
-await m.reply(`*EN CASO QUE QUIERA CAMBIAR O ELIMINAR EL IDIOMA DEBE DE ELIMINAR SU REGISTRO PRIMERO*`)
 user.regTime = + new Date
 user.registered = true
 let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)        
@@ -84,7 +81,7 @@ let caption = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤
 • 12 Tokens 💰
 •┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•
 ⪛✰ 𝐀𝐢 𝐘𝐚𝐞𝐦𝐨𝐫𝐢 - 𝐌𝐃 ✰⪜`.trim()
-await conn.sendFile(m.chat, pp, 'gata.jpg', caption, m, false, { mentions: [aa] }) 
+await conn.sendFile(m.chat, pp, 'yaemori.jpg', caption, m, false, { mentions: [aa] }) 
 /*await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
@@ -97,5 +94,5 @@ renderLargerThumbnail: false
 }}}, { quoted: null })*/
 }
 }
-handler.command = ['verify', 'verificar', 'reg', 'register', 'idiomagb']
+handler.command = ['verify', 'verificar', 'reg', 'register', 'idioma']
 export default handler
