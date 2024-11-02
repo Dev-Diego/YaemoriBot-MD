@@ -14,7 +14,7 @@ let choice = text.includes('es') ? 'es' : text.includes('en') ? 'en' : text.incl
 if (!choice) {
 return m.reply('Por favor, seleccione uno de los idiomas disponibles: español o inglés')
 }
-global.lenguajeYL = choice
+user.lenguaje = choice
 switch (choice) {
 case 'es':
 return m.reply('Idioma configurado a Español 🇲🇽')
