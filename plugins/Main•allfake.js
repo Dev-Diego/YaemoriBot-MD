@@ -42,7 +42,7 @@ global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
 global.namechannel = '© All Rightd Reserved • YaemoriBot'
 
-//ids
+//ids channel
 global.channelid = '120363310433406751@newsletter'
 global.canalIdYL = ["120363160031023229@newsletter", "120363310433406751@newsletter", "120363263466636910@newsletter"]
 global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🚩", "© All Rightd Reserved • YaemoriBot"]
@@ -65,8 +65,8 @@ global.error = '✖️'
 //Emojis determinado de Ai Yaemori
 global.emoji = '🚩'
 global.emoji2 = '🍟'
-global.emoji3 = '✨️'
-global.emoji4 = '🍭'
+global.emoji3 = '🌺'
+global.emoji4 = '🌻'
 global.emojis = [emoji, emoji2, emoji3, emoji4].getRandom()
 
 //mensaje en espera
@@ -76,21 +76,20 @@ global.waittt = '🚀 Cargando...'
 global.waitttt = '🚀 Cargando...'
 
 //Enlaces
-var canal = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'  
+var canal = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'
 var canal2 = 'https://whatsapp.com/channel/0029Vam7yUg77qVaz3sIAp0z'
+var canal3 = 'https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A'
 var git = 'https://github.com/Dev-Diego' 
 var youtube = 'https://www.youtube.com/@OfcDiego' 
 var github = 'https://github.com/Dev-Diego/YaemoriBot-MD'  
-var panel = 'https://panel.skyultraplus.com'
 var dash = 'https://dash.skyultraplus.com'
-var tienda = 'https://dash.skyultraplus.com/store'
+var panel = 'https://panel.skyultraplus.com'
 var status = 'https://estado.skyultraplus.com'
-var discord = 'https://discord.com/invite/T7ksHu7mkz'
-var paypal = 'https://paypal.me/corinplus2024'
+var discord = 'https://discord.gg/zvKgtc2RBc'
 let tiktok = 'https://tiktok.com/@dev_diego'
 let correo = 'theyaemoribot@gmail.com'
 
-global.redes = [canal, canal2, git, youtube, github, panel, dash, tienda, status, discord, paypal, tiktok, correo].getRandom()
+global.redes = [canal, canal2, canal3, git, youtube, github, dash, panel, status, discord, tiktok, correo].getRandom()
 
 global.redeshost = [panel, dash, tienda, status, discord, paypal].getRandom()
 
