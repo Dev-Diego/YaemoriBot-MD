@@ -1,7 +1,7 @@
 const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
 if (command === 'idioma') {
-return m.reply(`🚩 Elije el idioma.\n\n[ es ] Español.\n[ en ] Ingles.`)
+return m.reply(`🚩 Elije el idioma.\n\n#es\n#en\nes » Español\nen » Ingles.`)
 } else if (command === 'es') {
 global.db.data.users[m.sender].Language = 'es'
 m.reply(`Idioma definido a Español 🇪🇸`)
