@@ -57,7 +57,7 @@ break
 default:
 if (text == 0 || text > 5) return
 return conn.reply(m.chat, `🚩 Recuerda usar el numero del idioma.\n\nEjemplo: #idioma 2`, m)
-}}
+}
 asignarIdioma(text)
 user.Language = idioma
 if (!user.Language) return m.reply(`🌺 No se logró configurar el idioma.`)
