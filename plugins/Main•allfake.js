@@ -109,7 +109,7 @@ var ase = new Date(); var hour = ase.getHours(); switch(hour){ case 0: hour = 'L
 global.saludo = hour;
 
 //tags
-global.nombre = conn.getName(m.sender)
+global.nombre = m.pushName || 'Sin nombre'
 global.taguser = '@' + m.sender.split("@s.whatsapp.net")
 var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
