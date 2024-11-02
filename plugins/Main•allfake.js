@@ -131,3 +131,15 @@ global.icono = [
 global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
 
 export default handler
+
+
+function pickRandom(list) {
+return list[Math.floor(Math.random() * list.length)]
+  }
+
+async function getRandomChannel() {
+let randomIndex = Math.floor(Math.random() * canalIdYL.length)
+let id = canalIdYL[randomIndex]
+let nombre = canalNombreYL[randomIndex]
+return { id, name }
+}         
