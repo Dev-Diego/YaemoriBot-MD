@@ -1,28 +1,26 @@
-/*let handler = async (m, { conn, text }) => {
+const handler = async (m, { args, usedPrefix, command, isAdmin }) => {
 
-let user = global.db.data.users[m.sender]
-let _idioma = '🚩 *Seleccione su idioma*\n\n> Idiomas disponibles:\nes _(Español)_\nen _(Inglés)_\n\n`Ejemplo:`\n#idioma en'
-if (!text) {
-let listSections = []    
-listSections.push({
-title: '',
-rows: [{ header: "", title: "Español 🇪🇦", id: `#idioma es`, description: `` },
-{ header: "", title: "English 🇺🇸", id: `#idioma en`, description: `` }
-]})
-return conn.sendList(m.chat, _idioma, null, `🌐 Idiomas`, listSections, { mentions: [m.sender]}, {quoted: m})
+try {
+data.db.data.users[m.sender].language
+let sigla // Args user
+if (args[0] != undefined) {
+sigla = args[0].toLowerCase()
 }
-let choice = text.includes('es') ? 'es' : text.includes('en') ? 'en' :  null
-if (!choice) {
-return m.reply('Por favor, seleccione uno de los idiomas disponibles: español o inglés')
-}
-global.languaje = choice
-switch (choice) {
-case 'es':
-return m.reply('Idioma configurado a Español 🇲🇽')
-case 'en':
-return m.reply('Language set to English 🇺🇲')
-}
-}
-handler.command = ['lenguage', 'lenguaje', 'idioma']
-handler.rowner = true
-export default handler*/
+
+if (command === 'idioma') {
+} else if (sigla === 'es') {
+global.db.data.users[m.sender].language = 'es'
+m.reply(`Idioma definido a Español 🇪🇸`)
+
+} else if (sigla === 'en') {
+global.db.data.users[m.sender].language = 'en'
+m.reply(`Idioma definido a Inglês 🇬🇧`)
+
+}else {
+m.reply(`🚩 Elije el idioma.\n\n[ es ] Español.\n[ en ] Ingles.`)
+}}
+
+handler.help = ['idioma']
+handler.tags = ['rg']
+handler.command = ['idioma']
+export default handler
