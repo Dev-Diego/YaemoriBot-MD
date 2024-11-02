@@ -4,7 +4,7 @@
 "text": "Ia"
 },
 
-"gemini": {
+"aigemini": {
 "text1": "『🪐』It seems that the default language is English.\n\n• 𝙋𝙤𝙧 𝙚𝙟𝙚𝙢𝙥𝙚𝙧 𝙮𝙤𝙪𝙧 𝙨𝙠𝙞𝙣:\n${usedPrefix + command} Hello",
 "texterror": "『📣』It is always a good time for us to be patient, we always take care of you."
 }
