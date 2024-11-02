@@ -1,4 +1,4 @@
-let handler = async (m, { conn, text }) => {
+/*let handler = async (m, { conn, text }) => {
 
 let user = global.db.data.users[m.sender]
 let _idioma = '🚩 *Seleccione su idioma*\n\n> Idiomas disponibles:\nes _(Español)_\nen _(Inglés)_\n\n`Ejemplo:`\n#idioma en'
@@ -25,4 +25,4 @@ return m.reply('Language set to English 🇺🇲')
 }
 handler.command = ['lenguage', 'lenguaje', 'idioma']
 handler.rowner = true
-export default handler
+export default handler*/
