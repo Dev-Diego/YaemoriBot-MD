@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 export async function before(m, { conn, participants, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return true;
 
-  let vn = 'https://qu.ax/cUYg.mp3'
+  let vn = 'https://qu.ax/cUYg.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
   let chat = global.db.data.chats[m.chat];
   const getMentionedJid = () => {
@@ -16,47 +16,35 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   let userName = user ? user.name : await conn.getName(who);
 
-  if (chat.welcome && m.messageStubType === 27) {
-    this.sendMessage(m.chat, {
-      audio: { url: vn },
-      contextInfo: {
-        mentionedJid: getMentionedJid(),
-        "externalAdReply": {
-          "thumbnail": icons,
-          "title": "  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ",
-          "body": `${userName}!`,
-          "previewType": "PHOTO",
-          "thumbnailUrl": null,
-          "showAdAttribution": true,
-          sourceUrl: [yt, md, channel].sort(() => 0.5 - Math.random())[0]
-        }
-      },
-      ptt: true,
-      mimetype: 'audio/mpeg',
-      fileName: 'welcome.mp3'
-    }, { quoted: fkontak });
-  }
+ if (chat.welcome && m.messageStubType === 27) {
+    sock.sendMessage(m.chat, { audio: { url: vn }, 
+    contextInfo: { forwardedNewsletterMessageInfo: { 
+    newsletterJid: channelRD.id, 
+    serverMessageId: '', 
+    newsletterName: channelRD.name }, forwardingScore: 9999999, isForwarded: true, mentionedJid:[num], "externalAdReply": { 
+    "title": `  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  `, 
+    "body": `${userName}`, 
+    "previewType": "PHOTO", 
+    "thumbnailUrl": null,
+    "thumbnail": icons, 
+    "sourceUrl": redes, 
+    "showAdAttribution": true}}, 
+     seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
+}
 
   if (chat.welcome && (m.messageStubType === 28 || m.messageStubType === 32)) {
-    this.sendMessage(m.chat, {
-      audio: { url: vn2 },
-      contextInfo: {
-        mentionedJid: getMentionedJid(),
-        "externalAdReply": {
-        "thumbnail": icons,
-        "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ Ｓ ͟͞  ',
-        "body": `${userName}, se despide.`,
-        "previewType": "PHOTO",
-          "showAdAttribution": true,
-          "containsAutoReply": true,
-         "thumbnailUrl": null,
-          "showAdAttribution": true,
-          "sourceUrl": redes
-        }
-      },
-      ptt: true,
-      mimetype: 'audio/mpeg',
-      fileName: 'bye.mp3'
-    }, { quoted: fkontak });
+    sock.sendMessage(m.chat, { audio: { url: vn }, 
+    contextInfo: { forwardedNewsletterMessageInfo: { 
+    newsletterJid: channelRD.id, 
+    serverMessageId: '', 
+    newsletterName: channelRD.name }, forwardingScore: 9999999, isForwarded: true, mentionedJid:[num], "externalAdReply": { 
+    "title": `  ͟͞ Ａ Ｄ Ｉ Ｏ Ｓ ͟͞  `, 
+    "body": `${userName}, se despide.`, 
+    "previewType": "PHOTO", 
+    "thumbnailUrl": null,
+    "thumbnail": icons, 
+    "sourceUrl": redes, 
+    "showAdAttribution": true}}, 
+     seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: null, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
   }
 }
