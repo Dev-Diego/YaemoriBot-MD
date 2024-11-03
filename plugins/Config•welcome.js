@@ -6,9 +6,6 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   let vn = 'https://qu.ax/cUYg.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
-  let apii = await this.getFile(pp)
-  let apii.data = ''
-  let data = ''
   let chat = global.db.data.chats[m.chat];
   const getMentionedJid = () => {
     return m.messageStubParameters.map(param => `${param}@s.whatsapp.net`);
@@ -20,10 +17,12 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let userName = user ? user.name : await conn.getName(who);
 
   if (chat.welcome && m.messageStubType === 27) {
-    this.sendMessage(m.chat, { audio: { url: vn }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": '  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ', "body": `${userName}`, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: [md, channel, yt, correo, tiktok].getRandom()}}, ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak })}
+    this.sendMessage(m.chat, { audio: { url: vn }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": fotoperfil, "title": '  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ', "body": `${userName}`, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: [md, channel, yt, correo, tiktok].getRandom()}}, ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak })
+}
 
   if (chat.welcome && (m.messageStubType === 28 || m.messageStubType === 32)) {
-    this.sendMessage(m.chat, { audio: { url: vn2 }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ́ Ｓ ͟͞  ', "body": `${userName}, se despide.`,, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: [md, channel, yt, correo, tiktok].getRandom()}}, ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak2 })}
+    this.sendMessage(m.chat, { audio: { url: vn2 }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": fotoperfil, "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ́ Ｓ ͟͞  ', "body": `${userName}, se despide.`,, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: [md, channel, yt, correo, tiktok].getRandom()}}, ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak2 })
+}
 }
 
 /*import {WAMessageStubType} from '@whiskeysockets/baileys'
