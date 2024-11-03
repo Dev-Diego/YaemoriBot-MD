@@ -5,7 +5,7 @@ const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 
 const isCommand1 = /^(play|play2)$/i.test(command)  
 const isCommand2 = /^(vidio)$/i.test(command)  
-const isCommand2 = /^(music)$/i.test(command)  
+const isCommand3 = /^(music)$/i.test(command)  
 
 async function reportError(e) {
 await m.reply(`🌻 Ocurrió un error.`)
