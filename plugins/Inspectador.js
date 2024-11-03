@@ -18,7 +18,6 @@ const isCommand8 = /^(avisoschannel|resiviravisos)\b$/i.test(command)
 const isCommand9 = /^(reactioneschannel|reaccioneschannel)\b$/i.test(command)
 const isCommand10 = /^(nuevonombrecanal)\b$/i.test(command)
 const isCommand11 = /^(nuevadescchannel)\b$/i.test(command)
-const isCommand12 = /^(enviarmsg|smschannel)\b$/i.test(command)
 
 const channelUrl = text?.match(/(?:https:\/\/)?(?:www\.)?(?:chat\.|wa\.)?whatsapp\.com\/(?:channel\/|joinchat\/)?([0-9A-Za-z]{22,24})/i)?.[1]
 let txtBotAdminCh = '\n\n> *Verifique que el Bot sea admin en el canal, de lo contrario no funcionará el comando*'
@@ -489,17 +488,6 @@ renderLargerThumbnail: false
 } catch (e) {
 reportError(e)
 }
-break
-
-case isCommand12:
-if (!text) return await conn.reply(m.chat, `🚩 Y el texto que quiere transmitir al canal?`, m)
-try {
-await m.react(rwait)
-await conn.reply(m.chat, `🚩 El link del canal y el texto que quiere que envie.`, m, fake)
-if (text.includes("@newsletter")) {
-ch = text
-await conn.reply(ch, text, null, fake)
-await m.react(done)}
 break
 
 //const channels = _.values(conn.chats).filter(c => c.id && c.id.endsWith("@newsletter"))
