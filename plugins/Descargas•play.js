@@ -12,13 +12,19 @@ let type = isVideo ? 'Video' : 'Audio';
 let video = res.data.mp4;
 let audio = res.data.mp3;
 
-let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
-    txt += `🚩 *Titulo:*\n${search.all[0].title}\n\n`
-    txt += `📅 *Publicado:*\n${search.all[0].ago}\n\n`
-    txt += `👁 *Vistas:*\n${search.all[0].views}\n\n`
-    txt += `🕜 *Duración:*\n${search.all[0].timestamp}\n\n`
-    txt += `📎 *Url:*\n${urls}\n\n`
-    txt += `🕒 *Su ${type} se está enviando, espere un momento...*`
+let txt = `*乂  Y O U T U B E  -  P L A Y  乂*
+
+🚩 *Titulo:*\n${search.all[0].title}
+
+📅 *Publicado:*\n${search.all[0].ago}
+
+👁 *Vistas:*\n${search.all[0].views}
+
+🕜 *Duración:*\n${search.all[0].timestamp}
+
+📎 *Url:*\n${urls}
+
+🕒 *Su ${type} se está enviando, espere un momento...*`
 
 await conn.sendMessage(m.chat, { text: txt, contextInfo: { externalAdReply: { title: search.all[0].title, body: packname, thumbnailUrl: search.all[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
 
