@@ -4,7 +4,8 @@ import yts from "yt-search";
 const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 
 const isCommand1 = /^(play|play2)$/i.test(command)  
-const isCommand2 = /^(music|vidio)$/i.test(command)  
+const isCommand2 = /^(vidio)$/i.test(command)  
+const isCommand2 = /^(music)$/i.test(command)  
 
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, )
 
@@ -58,14 +59,31 @@ await m.react(rwait)
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
 
-let isVideo = /vidio$/.test(command);
 let urls = search.all[0].url;
 
 let res = await dl_vid(urls)
-let type = isVideo ? 'video' : 'audio';
 let video = res.data.mp4;
+await conn.sendMessage(m.chat, { [type]: { url: video }, gifPlayback: false, mimetype: "video/mp4" }, { quoted: fkontak });
+await m.react(done)
+
+} catch {
+await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)
+await m.react(error)}
+break
+
+case isCommand3:
+if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal);
+
+try {
+await m.react(rwait)
+const randomReduction = Math.floor(Math.random() * 5) + 1;
+let search = await yts(text);
+
+let urls = search.all[0].url;
+
+let res = await dl_vid(urls)
 let audio = res.data.mp3;
-await conn.sendMessage(m.chat, { [type]: { url: isVideo ? video : audio }, gifPlayback: false, mimetype: isVideo ? "video/mp4" : "audio/mpeg" }, { quoted: fkontak });
+await conn.sendMessage(m.chat, { [type]: { url: audio }, gifPlayback: false, mimetype: "audio/mpeg" }, { quoted: fkontak });
 await m.react(done)
 
 } catch {
