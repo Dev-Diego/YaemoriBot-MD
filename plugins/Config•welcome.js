@@ -18,10 +18,10 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let userName = user ? user.name : await conn.getName(who);
 
   if (chat.welcome && m.messageStubType === 27) {
-    this.sendMessage(m.chat, { audio: { url: vn }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": `  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  `, "body": `${userName}`, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: redes}},  ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak })}
+    this.sendMessage(m.chat, { audio: { url: vn }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": `  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  `, "body": `${userName}`, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: [md, channel, yt, correo, tiktok].getRandom()}}, ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak })}
 
   if (chat.welcome && (m.messageStubType === 28 || m.messageStubType === 32)) {
-    this.sendMessage(id, { audio: { url: vn2 }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ́ Ｓ ͟͞  ',, "body": `${userName}, se despide.`,, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: redes}},  ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak2 })}
+    this.sendMessage(id, { audio: { url: vn2 }, contextInfo:{ mentionedJid:[user], "externalAdReply": { "thumbnail": apii.data, "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ́ Ｓ ͟͞  ',, "body": `${userName}, se despide.`,, "previewType": "PHOTO", "thumbnailUrl": null, "showAdAttribution": true,  sourceUrl: [md, channel, yt, correo, tiktok].getRandom()}}, ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak2 })}
 }
 
 /*import {WAMessageStubType} from '@whiskeysockets/baileys'
