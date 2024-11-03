@@ -8,13 +8,14 @@ const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
 
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
-    txt += `🚩 *Titulo:*\n${yt_play[0].title}\n\n`
-    txt += `📅 *Publicado:*\n${yt_play[0].ago}\n\n`
-    txt += `🕜 *Duración:*\n${secondString(yt_play[0].duration.seconds)}\n\n`
-    txt += `📎 *Url:*\n${yt_play[0].url}`
+    txt += `🚩 *Titulo:*\n${search.all[0].title}\n\n`
+    txt += `📅 *Publicado:*\n${search.all[0].ago}\n\n`
+    txt += `👁 *Vistas:*\n${search.all[0].views}\n\n`
+    txt += `🕜 *Duración:*\n${search.all[0].timestamp}\n\n`
+    txt += `📎 *Url:*\n${urls}\n\n`
+    txt += `🕒 *Su ${isVideo ? 'Video' : 'Audio'} se está enviando, espere un momento...*`
 
-
-await conn.sendMessage(m.chat, { text: txt, contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
+await conn.sendMessage(m.chat, { text: txt, contextInfo: { externalAdReply: { title: search.all[0].title, body: dev, thumbnailUrl: search.all[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
 
 let isVideo = /play2$/.test(command);
 let urls = search.all[0].url;
