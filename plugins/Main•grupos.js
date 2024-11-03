@@ -17,7 +17,7 @@ let grupos = `*Hola!, te invito a unirte a los grupos oficiales de del Bot para 
 1- 𝙶𝚊𝚝𝚊𝙱𝚘𝚝 💞 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝
 *✰* ${grupo3}
 
-2- 💫 𝙲𝚞𝚛𝚒𝚘𝚜𝚒𝚝𝚢 × 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝 ✨️
+2- 𝙼𝚎𝚐𝚞𝚖𝚒𝚗𝙱𝚘𝚝 💫 𝚈𝚊𝚎𝚖𝚘𝚛𝚒𝙱𝚘𝚝
 *✰* ${grupo4}
 
 *─ׄ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׅ─ׄ⭒─ׄ─ׄ*
