@@ -4,8 +4,9 @@ import fetch from 'node-fetch';
 export async function before(m, { conn, participants, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return true;
 
-  let per = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  let ppimg = await conn.profilePictureUrl(per, 'image').catch(_ => icons)
+  let num = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+  let ppuser = await this.profilePictureUrl(num, 'image')
+  let ppimg = await getBuffer(ppuser)
   let vn = 'https://qu.ax/cGluV.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
   let chat = global.db.data.chats[m.chat];
