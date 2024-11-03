@@ -7,6 +7,7 @@ let handler = async (m, { conn: _envio, command, usedPrefix, args, text, isOwner
 const isCommand1 = /^(deletesesion|deletebot|deletesession|deletesesaion)$/i.test(command)  
 const isCommand2 = /^(stop|pausarai|pausarbot)$/i.test(command)  
 const isCommand3 = /^(bots|listjadibots|subbots)$/i.test(command)  
+const isCommand4 = /^(token|mitoken)$/i.test(command)  
 
 async function reportError(e) {
 await m.reply(`🌻 Ocurrió un error.`)
@@ -72,8 +73,17 @@ const replyMessage = message.length === 0 ? `No hay Sub-Bots disponible por el m
 const totalUsers = users.length;
 const responseMessage = `🌻 *LISTA DE SUBBOTS*\n\n⭐️ PUEDES PEDIR PERMISO PARA QUE TE DEJEN UNIR EL BOT A TÚ GRUPO\n\n\`\`\`CADA USUARIO SUB BOT USA FUNCIÓN COMO QUIERA, EL NÚMERO PRINCIPAL NO SE HACE RESPONSABLE DEL USO DE LA FUNCIÓN \`\`\`\n\nSUBBOT CONECTADO: ${totalUsers || '0'}\n\n${replyMessage.trim()}`.trim();
 await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseMention(responseMessage)}, {quoted: m})
-break    
-}}
+break   
 
-handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarai', 'pausarbot', 'bots', 'listjadibots', 'subbots']
+case isCommand4: 
+const user = m.sender.split("@")[0]
+if (fs.existsSync(`./${jadi}/` + user + "/creds.json")) {
+let token = Buffer.from(fs.readFileSync(`./${jadi}/` + user + "/creds.json"), "utf-8").toString("base64")
+await conn.reply(m.chat, `🚩 El token te permite iniciar sesion en otros bots, recomendamos no compartirlo con nadie.\n\n*Tu token es:*`, m, rcanal)
+await conn.reply(m.chat, token, m, rcanal)
+} else {
+await conn.reply(m.chat, `🚩 No tienes token, crea tu token usando: ${usedPrefix}serbot.`, m, rcanal)
+}}}
+
+handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarai', 'pausarbot', 'bots', 'listjadibots', 'subbots', 'token', 'mitoken']
 export default handler
