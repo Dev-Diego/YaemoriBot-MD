@@ -6,12 +6,9 @@ try {
 await m.react(rwait)
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
+
+let isVideo = /supervideo$/.test(command);
 let urls = search.all[0].url;
-let res = await dl_vid(urls)
-let type = isVideo ? 'Video' : 'Audio';
-let video = res.data.mp4;
-let audio = res.data.mp3;
-let isVideo = /play2$/.test(command);
 
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🚩 *Titulo:*\n${search.all[0].title}\n\n`
@@ -23,6 +20,10 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
 
 await conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, caption: txt }, { quoted: fkontak });
 
+let res = await dl_vid(urls)
+let type = isVideo ? 'video' : 'audio';
+let video = res.data.mp4;
+let audio = res.data.mp3;
 await conn.sendMessage(m.chat, { [type]: { url: isVideo ? video : audio }, gifPlayback: false, mimetype: isVideo ? "video/mp4" : "audio/mpeg" }, { quoted: fkontak });
 await m.react(done)
 
