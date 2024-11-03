@@ -44,19 +44,20 @@ if (chat.antifake) {
 if (prefijosProhibidos.some(prefijo => usersConPrefijo.startsWith(prefijo))) {
 try {
 await conn.groupRequestParticipantsUpdate(m.chat, [rawUser], 'reject');
-m.reply(`😿 La solicitúd de ingreso de: @${users} fué rechazada automáticamente por tener un prefijo prohibido.`);
+await conn.sendMessage(m.chat, { text: `😿 La solicitúd de ingreso de: @${users} fué rechazada automáticamente por tener un prefijo prohibido.`, mentions: [m.sender] }, { quoted: fkontak });
+
 } catch (error) {
 console.error(`❌️ Error al rechazar la solicitud de ${usersConPrefijo}:`, error);
 }} else {
 try {
 await conn.groupRequestParticipantsUpdate(m.chat, [rawUser], 'approve');
-m.reply(`🥳 La solicitud de ingreso de: @${users} fué aprobada automáticamente.`);
+await conn.sendMessage(m.chat, { text: `🥳 La solicitud de ingreso de: @${users} fué aprobada automáticamente.`, mentions: [m.sender] }, { quoted: fkontak });  
 } catch (error) {
 console.error(`❌️ Error al aprobar la solicitud de ${usersConPrefijo}:`, error);
 }}} else {
 try {
 await conn.groupRequestParticipantsUpdate(m.chat, [rawUser], 'approve');
-m.reply(`🥳 La solicitud de ingreso de: @${users} fué aprobada automáticamente ya que #antifake está desactivado.`);
+await conn.sendMessage(m.chat, { text: `🥳 La solicitud de ingreso de: @${users} fué aprobada automáticamente ya que #antifake está desactivado.`, mentions: [m.sender] }, { quoted: fkontak });
 } catch (error) {
 console.error(`❌️ Error al aprobar la solicitud de ${usersConPrefijo}:`, error);
 }}
