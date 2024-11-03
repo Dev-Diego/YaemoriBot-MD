@@ -43,7 +43,7 @@ global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
 global.namechannel = '© All Rightd Reserved • YaemoriBot'
 
 //ids channel
-global.channeid = '120363310333027035@g.us'
+global.channelid = '120363310333027035@g.us'
 global.canalIdYL = ["120363160031023229@newsletter", "120363310433406751@newsletter", "120363263466636910@newsletter"]
 global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🚩", "© All Rightd Reserved • YaemoriBot"]
 global.channelRD = await getRandomChannel()
