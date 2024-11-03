@@ -82,9 +82,9 @@ let token = Buffer.from(fs.readFileSync(`./${jadi}/` + user + "/creds.json"), "u
 await conn.reply(m.chat, `🚩 El token te permite iniciar sesion en otros bots, recomendamos no compartirlo con nadie.\n\n*Tu token es:*`, m, rcanal)
 await conn.reply(m.chat, token, m, rcanal)
 } else {
-await conn.reply(m.chat, `🚩 No tienes token, crea tu token usando: ${usedPrefix}serbot.`, m, rcanal)
+await conn.reply(m.chat, `🚩 No tienes token, crea tu token usando: ${usedPrefix}serbot.`, m, rcanal)}
 break
-}}}
+}}
 
 handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarai', 'pausarbot', 'bots', 'listjadibots', 'subbots', 'token', 'mitoken']
 export default handler
