@@ -7,6 +7,13 @@ const isCommand1 = /^(play|play2)$/i.test(command)
 const isCommand2 = /^(vidio)$/i.test(command)  
 const isCommand2 = /^(music)$/i.test(command)  
 
+async function reportError(e) {
+await m.reply(`🌻 Ocurrió un error.`)
+console.log(e)
+}
+
+switch (true) {
+case isCommand1:
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, )
 
 conn.reply(m.chat, global.wait, m, {
@@ -90,7 +97,7 @@ await m.react(done)
 await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)
 await m.react(error)
 break
-}}
+}}}
 
 handler.help = ['play', 'play2', 'music', 'vidio'];
 handler.tags = ['descargas'];
