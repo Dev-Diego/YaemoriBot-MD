@@ -17,7 +17,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let userName = user ? user.name : await conn.getName(who);
 
  if (chat.welcome && m.messageStubType === 27) {
-    sock.sendMessage(m.chat, { audio: { url: vn }, 
+    this.sendMessage(m.chat, { audio: { url: vn }, 
     contextInfo: { forwardedNewsletterMessageInfo: { 
     newsletterJid: channelRD.id, 
     serverMessageId: '', 
@@ -33,7 +33,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 }
 
   if (chat.welcome && (m.messageStubType === 28 || m.messageStubType === 32)) {
-    sock.sendMessage(m.chat, { audio: { url: vn }, 
+    this.sendMessage(m.chat, { audio: { url: vn }, 
     contextInfo: { forwardedNewsletterMessageInfo: { 
     newsletterJid: channelRD.id, 
     serverMessageId: '', 
