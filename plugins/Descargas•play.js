@@ -10,15 +10,15 @@ let search = await yts(text);
 let isVideo = /supervideo$/.test(command);
 let urls = search.all[0].url;
 
-let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
-    txt += `🚩 *Titulo:*\n${search.all[0].title}\n\n`
-    txt += `📅 *Publicado:*\n${search.all[0].ago}\n\n`
-    txt += `👁 *Vistas:*\n${search.all[0].views}\n\n`
-    txt += `🕜 *Duración:*\n${search.all[0].timestamp}\n\n`
-    txt += `📎 *Url:*\n${urls}\n\n`
-    txt += `🕒 *Su ${type} se está enviando, espere un momento...*`
+let music = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
+    music += `🚩 *Titulo:*\n${search.all[0].title}\n\n`
+    music += `📅 *Publicado:*\n${search.all[0].ago}\n\n`
+    music += `👁 *Vistas:*\n${search.all[0].views}\n\n`
+    music += `🕜 *Duración:*\n${search.all[0].timestamp}\n\n`
+    music += `📎 *Url:*\n${urls}\n\n`
+    music += `🕒 *Su ${type} se está enviando, espere un momento...*`
 
-await conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, caption: txt }, { quoted: fkontak });
+await conn.sendMessage(m.chat, { image: { url: search.all[0].thumbnail }, caption: music }, { quoted: fkontak });
 
 let res = await dl_vid(urls)
 let type = isVideo ? 'video' : 'audio';
