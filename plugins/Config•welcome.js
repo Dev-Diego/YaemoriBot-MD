@@ -6,7 +6,6 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   let vn = 'https://qu.ax/cUYg.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
-  let pp = `${icono}`
   let chat = global.db.data.chats[m.chat];
   const getMentionedJid = () => {
     return m.messageStubParameters.map(param => `${param}@s.whatsapp.net`);
@@ -23,7 +22,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
       contextInfo: {
         mentionedJid: getMentionedJid(),
         "externalAdReply": {
-          "thumbnail": pp,
+          "thumbnail": icono,
           "title": "  ͟͞ Ｗ Ｅ Ｌ Ｃ Ｏ Ｍ Ｅ ͟͞  ",
           "body": `${userName}!`,
           "previewType": "PHOTO",
@@ -44,7 +43,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
       contextInfo: {
         mentionedJid: getMentionedJid(),
         "externalAdReply": {
-        "thumbnail": pp,
+        "thumbnail": icono,
         "title": '  ͟͞ Ａ Ｄ Ｉ Ｏ Ｓ ͟͞  ',
         "body": `${userName}, se despide.`,
         "previewType": "PHOTO",
