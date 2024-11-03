@@ -6,6 +6,11 @@ try {
 await m.react(rwait)
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
+let urls = search.all[0].url;
+let res = await dl_vid(urls)
+let type = isVideo ? 'Video' : 'Audio';
+let video = res.data.mp4;
+let audio = res.data.mp3;
 
 let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🚩 *Titulo:*\n${search.all[0].title}\n\n`
@@ -13,17 +18,12 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `👁 *Vistas:*\n${search.all[0].views}\n\n`
     txt += `🕜 *Duración:*\n${search.all[0].timestamp}\n\n`
     txt += `📎 *Url:*\n${urls}\n\n`
-    txt += `🕒 *Su ${isVideo ? 'Video' : 'Audio'} se está enviando, espere un momento...*`
+    txt += `🕒 *Su ${type} se está enviando, espere un momento...*`
 
-await conn.sendMessage(m.chat, { text: txt, contextInfo: { externalAdReply: { title: search.all[0].title, body: dev, thumbnailUrl: search.all[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
+await conn.sendMessage(m.chat, { text: txt, contextInfo: { externalAdReply: { title: search.all[0].title, body: packname, thumbnailUrl: search.all[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
 
 let isVideo = /play2$/.test(command);
-let urls = search.all[0].url;
 
-let res = await dl_vid(urls)
-let type = isVideo ? 'video' : 'audio';
-let video = res.data.mp4;
-let audio = res.data.mp3;
 await conn.sendMessage(m.chat, { [type]: { url: isVideo ? video : audio }, gifPlayback: false, mimetype: isVideo ? "video/mp4" : "audio/mpeg" }, { quoted: fkontak });
 await m.react(done)
 
