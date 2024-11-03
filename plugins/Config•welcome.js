@@ -4,6 +4,8 @@ import fetch from 'node-fetch';
 export async function before(m, { conn, participants, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return true;
 
+  let per = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+  let ppimg = await conn.profilePictureUrl(per, 'image').catch(_ => icons)
   let vn = 'https://qu.ax/cGluV.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
   let chat = global.db.data.chats[m.chat];
@@ -26,7 +28,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     "body": `${userName}`, 
     "previewType": "PHOTO", 
     "thumbnailUrl": null,
-    "thumbnail": fotoperfil, 
+    "thumbnail": ppimg, 
     "sourceUrl": redes, 
     "showAdAttribution": true}}, 
      seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
@@ -42,7 +44,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     "body": `${userName}, se despide.`, 
     "previewType": "PHOTO", 
     "thumbnailUrl": null,
-    "thumbnail": fotoperfil, 
+    "thumbnail": ppimg, 
     "sourceUrl": redes, 
     "showAdAttribution": true}}, 
      seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
