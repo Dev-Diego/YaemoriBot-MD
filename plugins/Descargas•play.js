@@ -6,7 +6,7 @@ await m.react(rwait)
 const randomReduction = Math.floor(Math.random() * 5) + 1;
 let search = await yts(text);
 
-let isVideo = /supervideo$/.test(command);
+let isVideo = /play2$/.test(command);
 let urls = search.all[0].url;
 
 let music = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
