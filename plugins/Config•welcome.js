@@ -5,8 +5,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return true;
 
   let num = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-  let ppuser = await this.profilePictureUrl(num, 'image')
-  let ppimg = await getBuffer(ppuser)
+  let ppimg = await conn.profilePictureUrl(num, 'image').catch(_ => icons)
   let vn = 'https://qu.ax/cGluV.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
   let chat = global.db.data.chats[m.chat];
