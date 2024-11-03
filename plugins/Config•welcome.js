@@ -33,7 +33,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 }
 
   if (chat.welcome && (m.messageStubType === 28 || m.messageStubType === 32)) {
-    this.sendMessage(m.chat, { audio: { url: vn }, 
+    this.sendMessage(m.chat, { audio: { url: vn2 }, 
     contextInfo: { forwardedNewsletterMessageInfo: { 
     newsletterJid: channelRD.id, 
     serverMessageId: '', 
