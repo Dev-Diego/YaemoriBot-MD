@@ -1,4 +1,4 @@
-import { WAMessageStubType } from '@whiskeysockets/baileys';
+let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
 import fetch from 'node-fetch';
 
 export async function before(m, { conn, participants, groupMetadata }) {
