@@ -6,7 +6,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
 
   let vn = 'https://qu.ax/cUYg.mp3';
   let vn2 = 'https://qu.ax/cTDa.mp3';
-  let pp = `${global.fotoperfil}`
+  let pp = `${icono}`
   let chat = global.db.data.chats[m.chat];
   const getMentionedJid = () => {
     return m.messageStubParameters.map(param => `${param}@s.whatsapp.net`);
