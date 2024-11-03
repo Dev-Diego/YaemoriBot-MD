@@ -3,17 +3,6 @@ import yts from "yt-search";
 
 const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 
-const isCommand1 = /^(play|play2)$/i.test(command)  
-const isCommand2 = /^(vidio)$/i.test(command)  
-const isCommand3 = /^(music)$/i.test(command)  
-
-async function reportError(e) {
-await m.reply(`🌻 Ocurrió un error.`)
-console.log(e)
-}
-
-switch (true) {
-case isCommand1:
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, )
 
 conn.reply(m.chat, global.wait, m, {
@@ -58,50 +47,9 @@ await m.react(error)
 await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)}
 break
 
-case isCommand2:
-if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal);
-
-try {
-await m.react(rwait)
-const randomReduction = Math.floor(Math.random() * 5) + 1;
-let search = await yts(text);
-
-let urls = search.all[0].url;
-
-let res = await dl_vid(urls)
-let video = res.data.mp4;
-await conn.sendMessage(m.chat, { [type]: { url: video }, gifPlayback: false, mimetype: "video/mp4" }, { quoted: fkontak });
-await m.react(done)
-
-} catch {
-await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)
-await m.react(error)}
-break
-
-case isCommand3:
-if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal);
-
-try {
-await m.react(rwait)
-const randomReduction = Math.floor(Math.random() * 5) + 1;
-let search = await yts(text);
-
-let urls = search.all[0].url;
-
-let res = await dl_vid(urls)
-let audio = res.data.mp3;
-await conn.sendMessage(m.chat, { [type]: { url: audio }, gifPlayback: false, mimetype: "audio/mpeg" }, { quoted: fkontak });
-await m.react(done)
-
-} catch {
-await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)
-await m.react(error)
-break
-}}}
-
-handler.help = ['play', 'play2', 'music', 'vidio'];
+handler.help = ['play', 'play2'];
 handler.tags = ['descargas'];
-handler.command = ['play', 'play2', 'music', 'vidio']
+handler.command = ['play', 'play2']
 handler.register = true;
 export default handler;
 
@@ -129,23 +77,4 @@ const hDisplay = h > 0 ? h + (h == 1 ? ' hora, ' : ' horas, ') : '';
 const mDisplay = m > 0 ? m + (m == 1 ? ' minuto, ' : ' minutos, ') : '';
 const sDisplay = s > 0 ? s + (s == 1 ? ' segundo' : ' segundos') : '';
 return dDisplay + hDisplay + mDisplay + sDisplay;
-}
-
-async function dl_vid(url) {
-const response = await fetch('https://shinoa.us.kg/api/download/ytdl', {
-method: 'POST',
-headers: {
-'accept': '*/*',
-'api_key': 'free',
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({
-text: url,
-})});
-
-if (!response.ok) {
-throw new Error(`HTTP error! status: ${response.status}`);
-}
-const data = await response.json();
-return data;
 }
