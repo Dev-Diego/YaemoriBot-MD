@@ -499,10 +499,7 @@ await conn.reply(m.chat, `🚩 El link del canal y el texto que quiere que envie
 if (text.includes("@newsletter")) {
 ch = text
 await conn.reply(ch, text, null, fake)
-await m.react(done)
-} catch {
-await conn.reply(m.chat, `🐢 No se pudo enviar el mensaje al canal.`, m, rcanal)
-await m.react(error)}
+await m.react(done)}
 break
 
 //const channels = _.values(conn.chats).filter(c => c.id && c.id.endsWith("@newsletter"))
