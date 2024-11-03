@@ -76,5 +76,5 @@ await _envio.sendMessage(m.chat, {text: responseMessage, mentions: _envio.parseM
 break   
 }}
 
-handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarai', 'pausarbot', 'bots', 'listjadibots', 'subbots', 'token', 'mitoken']
+handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarai', 'pausarbot', 'bots', 'listjadibots', 'subbots']
 export default handler
