@@ -83,6 +83,7 @@ await conn.reply(m.chat, `🚩 El token te permite iniciar sesion en otros bots,
 await conn.reply(m.chat, token, m, rcanal)
 } else {
 await conn.reply(m.chat, `🚩 No tienes token, crea tu token usando: ${usedPrefix}serbot.`, m, rcanal)
+break
 }}}
 
 handler.command = ['deletesesion', 'deletebot', 'deletesession', 'deletesession', 'stop', 'pausarai', 'pausarbot', 'bots', 'listjadibots', 'subbots', 'token', 'mitoken']
