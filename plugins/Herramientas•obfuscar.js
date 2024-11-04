@@ -17,11 +17,11 @@ return obfucar
 
 } catch (e) {
 await m.react('❌️ Ocurrió un error.\n\n ' + e)
-await m.react(error)}
+await m.react(error)
 
 const obfuscator = obfuscatorOfc(texto)
 conn.reply(m.chat, `obfuscator, m, rcanal)
-await m.react(done)}
+await m.react(done)}}
 
 handler.help = ['obfuscar *<textl>*']
 handler.tags = ['tools']
