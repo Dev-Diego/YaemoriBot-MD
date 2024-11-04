@@ -44,8 +44,7 @@ await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ �
 await m.react(done)
 } catch {
 await m.react(error)
-await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)}
-break
+await conn.reply(m.chat, `✘ *Ocurrío un error*`, m, rcanal)}}
 
 handler.help = ['play', 'play2'];
 handler.tags = ['descargas'];
