@@ -1,4 +1,4 @@
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 if (!text) return conn.reply(m.chat, '🔓 Que codigo deseas deobfuscar?', m, rcanal)
 
