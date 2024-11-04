@@ -35,10 +35,10 @@ reportError(e)
 break
 
 case isCommand2:
-if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, `✨ Si no es *SubBot* comuníquese al numero principal del *Bot* para ser *SubBot*`, m)
+if (global.conn.user.jid == conn.user.jid) conn.reply(m.chat, `🍟 El Bot principal no se puede apagar.`, m, fake)
 else {
-await conn.reply(m.chat, `🚩 Ai desactivada.`, m)
-conn.ws.close()}  
+await conn.reply(m.chat, `🚩 Adiós Ai`, m, fake)
+conn.ws.close()}
 break
 
 case isCommand3:
