@@ -15,7 +15,7 @@ return decrypted;
 };
 
 const decryptedMessage = decryptText(encryptedText);
-conn.reply(m.chat, decryptedMessage, m, fake);
+conn.reply(m.chat, `${decryptedMessage}`, m, fake);
 };
 
 handler.help = ['deobfuscate <texto>'];
