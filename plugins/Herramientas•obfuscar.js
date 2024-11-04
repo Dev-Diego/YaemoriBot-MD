@@ -4,10 +4,10 @@ if (!text) return conn.reply(m.chat, '🔐 Que codigo voy a obfuscar?', m, rcana
 
 try {
 await m.react(rwait)
-const texto = args.join(" ");
-const offset = 5; 
+const texto = args.join(" ")
+const offset = 5
 const obfuscatorOfc = (input) => {
-const used = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const used = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 const obfuscar = input.split('').map(char => {
 const index = used.indexOf(char)
 if (index === -1) return char
