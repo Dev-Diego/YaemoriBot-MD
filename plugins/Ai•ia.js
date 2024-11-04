@@ -44,7 +44,7 @@ export default handler
 // Función para enviar una imagen y obtener el análisis
 async function fetchImageBuffer(content, imageBuffer) {
 try {
-const response = await axios.post("https://Luminai.my.id", {
+const response = await axios.post('https://Luminai.my.id', {
 content: content,
 imageBuffer: imageBuffer 
 }, {
