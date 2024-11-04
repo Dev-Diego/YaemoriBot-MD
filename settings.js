@@ -89,6 +89,7 @@ global.esti = { key: {participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: 
 global.ch = {
 ch1: '120363310433406751@newsletter',
 ch2: '120363263466636910@newsletter',
+ch3: '120363160031023229@newsletter',
 }
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
