@@ -1,26 +1,25 @@
-let handler = async (m, { conn, args }) => {
-    if (!args[0]) return conn.reply(m.chat, '🚩 Por favor, ingresa el texto que deseas encriptar.', m);
+let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
-    const text = args.join(" ");
-    const offset = 5; 
+if (!text) return conn.reply(m.chat, '🔐 Que codigo voy a obfuscar?', m, rcanal)
 
-    const encryptText = (input) => {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        const encrypted = input.split('').map(char => {
-            const index = chars.indexOf(char);
-            if (index === -1) return char; 
-            return chars[(index + offset) % chars.length];
-        }).join('');
-        return encrypted;
-    };
+await m.react(rwait)
+const texto = args.join(" ")
+const offset = 5
+const obfuscatorOfc = (input) => {
+const used = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+const obfuscar = input.split('').map(char => {
+const index = used.indexOf(char)
+if (index === -1) return char
+return used[(index + offset) % used.length]}).join('')
+return obfucar
+}
 
-    const encryptedMessage = encryptText(text);
+const obfuscator = obfuscatorOfc(texto)
+conn.reply(m.chat, obfuscator, m, rcanal)
+await m.react(done)}
 
-    conn.reply(m.chat, `🔐 Texto encriptado: ${encryptedMessage}`, m);
-};
+handler.help = ['obfuscar *<textl>*']
+handler.tags = ['tools']
+handler.command = ['obfuscar', 'incriptar', 'encriptar']
 
-handler.help = ["encrypt <texto>"];
-handler.tags = ['tools'];
-handler.command = /^(encrypt|encriptar)$/i;
-
-export default handler;
+export default handler
