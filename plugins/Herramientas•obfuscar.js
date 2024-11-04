@@ -1,6 +1,6 @@
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
-if (!text) return conn.reply(m.chat, '🔐 Que codigo voy a obfuscar?', m, rcanal);
+if (!text) return conn.reply(m.chat, '🔐 Que codigo voy a obfuscar?', m, rcanal)
 
 try {
 await m.react(rwait)
@@ -20,7 +20,7 @@ await m.react('❌️ Ocurrió un error.\n\n ' + e)
 await m.react(error)
 
 const obfuscator = obfuscatorOfc(texto)
-conn.reply(m.chat, `obfuscator, m, rcanal)
+conn.reply(m.chat, obfuscator, m, rcanal)
 await m.react(done)}}
 
 handler.help = ['obfuscar *<textl>*']
