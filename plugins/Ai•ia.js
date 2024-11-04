@@ -31,7 +31,7 @@ const response = await luminsesi(query, username, prompt)
 await conn.reply(m.chat, response, m, fake)
 } catch (error) {
 console.error('🚩 Error al obtener la respuesta:', error)
-await conn.reply(m.chat, 'Error: intenta más tarde.', m, fake)}}}
+await conn.reply(m.chat, 'Error: intenta más tarde.\n\n' + error, m, fake)}}}
 
 handler.help = ['chatgpt <texto>', 'ia <texto>']
 handler.tags = ['ai']
