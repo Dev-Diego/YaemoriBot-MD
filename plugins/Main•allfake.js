@@ -44,8 +44,8 @@ global.namechannel = '© All Rightd Reserved • YaemoriBot'
 
 //ids channel
 global.channelid = '120363310433406751@newsletter'
-global.canalIdYL = ["120363160031023229@newsletter", "120363310433406751@newsletter", "120363263466636910@newsletter"]
-global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🚩", "© All Rightd Reserved • YaemoriBot"]
+global.canalIdYL = ["120363160031023229@newsletter", "120363310433406751@newsletter", "120363263466636910@newsletter", "120363307382381547@newsletter"]
+global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🚩", "© All Rightd Reserved • YaemoriBot", "Megumin Bot - Channel 💥"]
 global.channelRD = await getRandomChannel()
 
 //fechas
