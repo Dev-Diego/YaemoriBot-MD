@@ -8,7 +8,7 @@ let txt = `\`REGISTRO ANULADO\`\n\n👤 *User* » ${m.pushName || 'Anónimo'}\n�
 await conn.sendMessage(global.channelid, { text: txt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
-body: '😔 ¡Un usuario menos en mi base de datos!',
+body: '😿 ¡Un usuario menos en mi base de datos!',
 thumbnailUrl: fotoperfil,
 sourceUrl: redes,
 mediaType: 1,
@@ -16,7 +16,7 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
 
-return conn.reply(m.chat, `🚩 Usted anuló su registro de *YaemoriBot-MD 🌻✨️*\n\n🚩 Puede usar #reg nombre.edad para realizar un nuevo registro`, m, rcanal)
+return conn.reply(m.chat, `🚩 Tu registro ha sido anulado correctamente.`, m, rcanal)
 
 }
 handler.help = ['unreg']
