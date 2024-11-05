@@ -19,7 +19,8 @@ let img = await (await fetch('https://i.ibb.co/wLQFn7q/logo-mediafire.jpg')).buf
 await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, fkontak, null, rcanal)
 await conn.sendFile(m.chat, dl_url, title, null, fkontak, null, { mimetype: ext, asDocument: true })
 await m.react(done)
-} catch {
+} catch (e) {
+await m.reply('☁️ Ocurrió un error inesperado\n\n' + e)
 await m.react(error)
 }}
 handler.help = ['mediafire']
