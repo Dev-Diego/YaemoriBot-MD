@@ -282,6 +282,7 @@ ${usedPrefix + command} autoread
 *🚩 Funciones de grupos*
 
 ${usedPrefix + command} welcome 
+${usedPrefix + command} autoresponder
 ${usedPrefix + command} autolevelup
 ${usedPrefix + command} antibot
 ${usedPrefix + command} reaccion
