@@ -1,5 +1,5 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-const pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || './src/grupos.jpg'  
+const pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => icons) 
 let isClose = { // Switch Case Like :v
 'open': 'not_announcement',
 'close': 'announcement',
@@ -20,9 +20,8 @@ if (isClose === 'announcement'){
 m.reply(`🔐 *SOLOS LOS ADMINS PUEDEN ESCRIBIR EN ESTE GRUPO.*`)
 }}
 handler.help = ['group open / close', 'grupo abrir / cerrar']
-handler.tags = ['group']
+handler.tags = ['grupo']
 handler.command = ['group', 'grupo']
 handler.admin = true
 handler.botAdmin = true
-handler.exp = 200
 export default handler
