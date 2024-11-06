@@ -88,6 +88,20 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.antifake = isEnable
       break
 
+  case 'autoresponder':
+    case 'autorespond':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
+      chat.autoresponder = isEnable
+      break
+
  case 'modoadmin':
     case 'soloadmin':
       if (m.isGroup) {
