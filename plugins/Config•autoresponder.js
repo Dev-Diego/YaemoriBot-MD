@@ -57,8 +57,8 @@ if (chat.autoresponder) {
 let result = await luminsesi(query, username, syms1)
 if (result && result.trim().length > 0) {
 await this.reply(m.chat, result, m)
-}}}
+}}
 return true;
-}
+}}
 
 export default handler;
