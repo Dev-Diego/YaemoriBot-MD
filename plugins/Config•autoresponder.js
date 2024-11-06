@@ -1,15 +1,39 @@
 import axios from 'axios';
+import fetch from 'node-fetch';
+import translate from '@vitalets/google-translate-api';
 import { sticker } from '../lib/sticker.js';
 
 let handler = m => m;
 
+let lastMessageTime = {};
+
 handler.all = async function (m, {conn}) {
+m.isBot = m.id.startsWith('BAE5') && m.id.length === 16 || m.id.startsWith('3EB0') && m.id.length === 12 || m.id.startsWith('3EB0') && (m.id.length === 20 || m.id.length === 22) || m.id.startsWith('B24E') && m.id.length === 20;
+if (m.isBot) return
+
 let chat = global.db.data.chats[m.chat];
 let prefixRegex = new RegExp('^[' + (opts['prefix'] || '‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']');
 
 //if (prefixRegex.test(m.text)) return true;
-if (m.mentionedJid.includes(this.user.jid) && m.isGroup && !chat.isBanned) {
-if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') ||  m.text.includes('menu') ||  m.text.includes('estado') || m.text.includes('bots') ||  m.text.includes('serbot') || m.text.includes('jadibot') || m.text.includes('Video') || m.text.includes('Audio') || m.text.includes('audio')) return !0
+if (m.isBot || m.sender.includes('bot') || m.sender.includes('Bot')) {
+return true; 
+}
+
+let currentTime = Date.now();
+if (lastMessageTime[m.sender] && (currentTime - lastMessageTime[m.sender] < 5000)) {
+return true;
+}
+
+lastMessageTime[m.sender] = currentTime;
+
+if (global.db.data.users[m.sender].gameActive === true) {
+return; 
+}
+
+//if (!m.text || m.text.trim().length === 0 || m.mtype !== 'conversation') return;
+if (m.mentionedJid.includes(this.user.jid)) {
+//if (m.mentionedJid.includes(this.user.jid) || (m.quoted && m.quoted.sender === this.user.jid)) {
+if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') ||  m.text.includes('menu') ||  m.text.includes('estado') || m.text.includes('bots') ||  m.text.includes('serbot') || m.text.includes('jadibot') || m.text.includes('Video') || m.text.includes('Audio') || m.text.includes('audio') || m.text.includes('Bot') || m.text.includes('bot') || m.text.includes('Exp') || m.text.includes('diamante') || m.text.includes('cookies') || m.text.includes('Diamante') || m.text.includes('Cookies')) return !0
 await this.sendPresenceUpdate('composing', m.chat);
 
 async function luminsesi(q, username, logic) {
@@ -27,11 +51,15 @@ console.error(error);
 
 let query = m.text;
 let username = `${m.pushName}`;
-const syms1 = `Tu nombre es YaemoriBot-MD y parece haber sido creado por DevDiego. Tu versión actual es 2.0.7, Tú usas el idioma Español. Llamarás a las personas por su nombre ${username}, te gusta ser divertida, y te encanta aprender. Lo más importante es que debes ser amigable con la persona con la que estás hablando. ${username}`
+let syms1 = await fetch('https://raw.githubusercontent.com/Dev-Diego/Dev-Diego/main/src/ChatGpT.txt').then(v => v.text());
 
+if (!chat.autoresponder) return 
+//if (m.fromMe) return
 let result = await luminsesi(query, username, syms1)
-await this.reply(m.chat, result, m, fake)}
-return true
+if (result && result.trim().length > 0) {
+await this.reply(m.chat, result, m)
+}}
+return true;
 }
 
 export default handler;
