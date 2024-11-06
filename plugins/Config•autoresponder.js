@@ -16,7 +16,7 @@ let prefixRegex = new RegExp('^[' + (opts['prefix'] || '‎z/i!#$%+£¢€¥^°=
 
 if (prefixRegex.test(m.text)) return true;
 if (m.isBot || m.sender.includes('bot') || m.sender.includes('Bot')) {
-return true; 
+return true;
 }
 
 let currentTime = Date.now();
