@@ -14,7 +14,7 @@ if (m.isBot) return
 let chat = global.db.data.chats[m.chat];
 let prefixRegex = new RegExp('^[' + (opts['prefix'] || '‎z/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.,\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']');
 
-//if (prefixRegex.test(m.text)) return true;
+if (prefixRegex.test(m.text)) return true;
 if (m.isBot || m.sender.includes('bot') || m.sender.includes('Bot')) {
 return true; 
 }
@@ -31,9 +31,9 @@ return;
 }
 
 //if (!m.text || m.text.trim().length === 0 || m.mtype !== 'conversation') return;
-if (m.mentionedJid.includes(this.user.jid)) {
-//if (m.mentionedJid.includes(this.user.jid) || (m.quoted && m.quoted.sender === this.user.jid)) {
-if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') ||  m.text.includes('menu') ||  m.text.includes('estado') || m.text.includes('bots') ||  m.text.includes('serbot') || m.text.includes('jadibot') || m.text.includes('Video') || m.text.includes('Audio') || m.text.includes('audio') || m.text.includes('Bot') || m.text.includes('bot') || m.text.includes('Exp') || m.text.includes('diamante') || m.text.includes('cookies') || m.text.includes('Diamante') || m.text.includes('Cookies')) return !0
+//if (m.mentionedJid.includes(this.user.jid)) {
+if (m.mentionedJid.includes(this.user.jid) || (m.quoted && m.quoted.sender === this.user.jid)) {
+if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') ||  m.text.includes('menu') ||  m.text.includes('estado') || m.text.includes('bots') ||  m.text.includes('serbot') || m.text.includes('jadibot') || m.text.includes('Video') || m.text.includes('Audio') || m.text.includes('audio') || m.text.includes('Bot') || m.text.includes('bot') || m.text.includes('Exp') || m.text.includes('diamante') || m.text.includes('lolicoins') || m.text.includes('Diamante') || m.text.includes('Lolicoins')) return !0
 await this.sendPresenceUpdate('composing', m.chat);
 
 async function luminsesi(q, username, logic) {
@@ -51,14 +51,14 @@ console.error(error);
 
 let query = m.text;
 let username = `${m.pushName}`;
-let syms1 = await fetch('https://raw.githubusercontent.com/Dev-Diego/Dev-Diego/main/src/ChatGpT.txt').then(v => v.text());
+let syms1 = await fetch('https://raw.githubusercontent.com/elrebelde21/LoliBot-MD/main/src/text-chatgpt.txt').then(v => v.text());
 
 if (chat.autoresponder) {  
 let result = await luminsesi(query, username, syms1)
 if (result && result.trim().length > 0) {
 await this.reply(m.chat, result, m)
-}}
+}}}
 return true;
-}}
+}
 
 export default handler;
