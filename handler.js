@@ -93,6 +93,8 @@ if (!('welcome' in chat))
 chat.welcome = true
 if (!('autolevelup' in chat))
 chat.autolevelup = false
+if (!('autoresponder' in chat))
+chat.autoresponder = false
 if (!('audios' in chat))
 chat.audios = false
 if (!('detect' in chat))
@@ -124,6 +126,7 @@ global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: true,
 autolevelup: false,
+autoresponder: false,
 delete: false,
 antifake: false,
 audios: false,
