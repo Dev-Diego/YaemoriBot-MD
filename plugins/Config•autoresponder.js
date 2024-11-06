@@ -53,8 +53,8 @@ let query = m.text;
 let username = `${m.pushName}`;
 let syms1 = await fetch('https://raw.githubusercontent.com/Dev-Diego/Dev-Diego/main/src/ChatGpT.txt').then(v => v.text());
 
-if (!chat.autoresponder) return 
-//if (m.fromMe) return
+//if (!chat.autoresponder) return 
+if (m.fromMe) return
 let result = await luminsesi(query, username, syms1)
 if (result && result.trim().length > 0) {
 await this.reply(m.chat, result, m)
