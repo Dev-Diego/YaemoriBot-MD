@@ -95,6 +95,7 @@ const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 }
     if (command == 'play2') {
     try {  
+    await m.react(rwait)
     const qu = '360';
     const q = qu + 'p';
     const v = yt_play[0].url;
