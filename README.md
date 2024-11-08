@@ -1,6 +1,7 @@
 <h2 align="center">Yaemori Bot - MD ✨️🌻</h2>
 
-![Yaemori](https://qu.ax/CmyNh.jpg)
+<p align="center">
+ <img width="180px" src="https://qu.ax/CmyNh.jpg" align="center"/>
 
 <p align="center">🦇 WhatsApp Bot Node-Js. 🎃</p>
 </p>
