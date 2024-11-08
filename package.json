@@ -2,7 +2,7 @@
 "name": "YaemoriBot-MD",
 "version": "2.0.7",
 "description": "Simple WhatsApp Bot Multi Device",
-"main": "inicio.js",
+"main": "index.js",
 "type": "module",
 "directories": {
 "lib": "lib",
@@ -10,11 +10,11 @@
 "plugins": "plugins"
 },
 "scripts": {
-"start": "node inicio.js",
-"qr": "node inicio.js qr",
-"code": "node inicio.js code",
+"start": "node index.js",
+"qr": "node index.js qr",
+"code": "node index.js code",
 "test": "node test.js",
-"test2": "nodemon inicio.js", 
+"test2": "nodemon index.js", 
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
