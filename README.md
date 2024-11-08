@@ -1,9 +1,9 @@
 <h2 align="center">Yaemori Bot - MD ✨️🌻</h2>
 
- <p align="center">🦇 WhatsApp Bot Node-Js. 🎃</p>
-</p>
-
 ![Yaemori](https://qu.ax/CmyNh.jpg)
+
+<p align="center">🦇 WhatsApp Bot Node-Js. 🎃</p>
+</p>
 
 ---
 
