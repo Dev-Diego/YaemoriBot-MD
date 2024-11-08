@@ -21,26 +21,7 @@ let txt = `*乂  Y O U T U B E  -  P L A Y  乂*\n\n`
     txt += `🕜 *Duración:*\n${secondString(yt_play[0].duration.seconds)}\n\n`
     txt += `📎 *Url:*\n${yt_play[0].url}`
 
-let listSections = []
-listSections.push({
-title: `✎ SELECCIÓNA LO QUE NECESITES`, highlight_label: ``,
-rows: [
-{
-header: "𓆩࿔ྀુ⃟🌹⃟𝘼𝙐𝘿𝙄𝙊 ╎ 🎵",
-title: "",
-description: `🎵 Audio.`,
-id: `#supermusic ${text}`,
-},
-{
-header: "𓆩࿔ྀુ⃟🌹⃟𝙑𝙄𝘿𝙀𝙊 ╎ 📽",
-title: "",
-description: `📽 Video.`,
-id: `#supervideo ${text}`,
-},
-],
-})
-let menu = ''
-await conn.sendListB(m.chat, menu, txt, ` 𓏲᭨ ̤̤֟✧⏤͟͞ू⃪٭ۣۜ ፝͜⁞Oᴘᴄɪᴏɴᴇs ᭄፝🍟𑜟꙲𒁑⁩`, yt_play[0].thumbnail, listSections, m)
+await conn.sendMessage(m.chat, { text: texto1, contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
 await m.react(done)
 } catch {
 await m.react(error)
