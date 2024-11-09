@@ -33,7 +33,7 @@ const defaultMenu = {
 *˚₊·˚₊· ͟͟͞͞➳❥* 𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨
 
 ╔═══════⩽✰⩾═══════╗
-║                        𝐈 𝐍 𝐅 𝐎 - 𝐔 𝐒 𝐄 𝐑
+║  𝐈 𝐍 𝐅 𝐎 - 𝐔 𝐒 𝐄 𝐑
 ╚═══════⩽✰⩾═══════╝ 
 *˚ ͟͟͞͞➳❥ Cliente » \`\`\`%name\`\`\`
 *˚ ͟͟͞͞➳❥ Exp » \`\`\`%exp\`\`\`
@@ -43,7 +43,7 @@ const defaultMenu = {
 *˚ ͟͟͞͞➳❥ Rango » \`\`\`%role\`\`\`
 
 ╔═══════⩽✰⩾═══════╗
-║                        𝐈 𝐍 𝐅 𝐎 - 𝐁 𝐎 𝐓
+║  𝐈 𝐍 𝐅 𝐎 - 𝐁 𝐎 𝐓
 ╚═══════⩽✰⩾═══════╝ 
 *˚ ͟͟͞͞➳❥ Made by » \`\`\`@DevDiego\`\`\`
 *˚ ͟͟͞͞➳❥ Bot » \`\`\`%botofc\`\`\`
@@ -51,9 +51,9 @@ const defaultMenu = {
 *˚ ͟͟͞͞➳❥ Actividad » \`\`\`%muptime\`\`\`
 *˚ ͟͟͞͞➳❥ Usuarios » \`\`\`%totalreg\`\`\`
 `.trimStart(),
-    header: '╔═══════⩽✰⩾═══════╗\n║                        %category\n╠═══════⩽✰⩾═══════╝\n║╭──────────────┄',
+    header: '╔═══════⩽✰⩾═══════╗\n║                   %category\n╠═══════⩽✰⩾═══════╝\n║╭────────────┄',
   body: '║│˙˚·͟͟͟͟͟͞͞͞͞✰ %cmd',
-  footer: '║╰──────────────┄\n╚═══════⩽✰⩾═══════╝\n',
+  footer: '║╰────────────┄\n╚═══════⩽✰⩾═══════╝\n',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -173,7 +173,7 @@ const pp = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/
 
 await m.react('🧋') 
 
-await conn.sendMessage(m.chat, { video: { url: vid }, caption: menu, contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨', body: dev, thumbnailUrl: fotoperfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
+await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨', body: dev, thumbnailUrl: fotoperfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: null })
 
   } catch (e) {
