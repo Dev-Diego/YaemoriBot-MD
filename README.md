@@ -3,11 +3,13 @@
 <p align="center">🌹 WhatsApp Bot Node-Js.</p>
 </p>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF00FF&lines=©+YaemoriBot-MD;©+Powered+By+DevDiego+💫)](https://git.io/typing-svg)
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Barriecito&duration=3000&pause=500&color=ADF7CC&center=true&vCenter=true&width=435&height=30&lines=©+YaemoriBot-MD;©+Powered+By+DevDiego+💫" alt="Typing SVG" /></a>
 
 ![Yaemori](https://qu.ax/oTXDG.jpg)
 
----
+<p align="center"> 
+<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
+</p> 
 
 ### **`❕️ Información importante`**
 
