@@ -2,7 +2,6 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 const { levelling } = '../lib/levelling.js'
-import PhoneNumber from 'awesome-phonenumber'
 import { promises } from 'fs'
 import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, command }) => {
@@ -62,21 +61,11 @@ level, cookies, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg,
 readmore: readMore
 }
 text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-//let user = global.db.data.users[m.sender]
-//user.registered = false
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let mentionedJid = [who]
 let username = conn.getName(who)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-//let enlace = { contextInfo: { externalAdReply: {title: wm, body: 'support group' , sourceUrl: nna, thumbnail: await(await fetch(img)).buffer() }}}
-  let pp = './Menu2.jpg'
-//let pp = gataVidMenu.getRandom()
-/*await conn.sendMessage(m.chat, {
-        text: `*Hey @${m.sender.split`@`[0]} cargando el menu..`,
-        contextInfo: { 
-          mentionedJid: [m.sender],
-        }
-      }, { quoted: m })*/
+let pp = './src/img/Menu.jpg'
 
 let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 
@@ -443,12 +432,10 @@ let menu = ` *˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 🍥 ${usedPrefix}tovideo
 
 > © ⍴᥆ᥕᥱrᥱძ ᑲᥡ ძᥱ᥎ძіᥱg᥆ ⚡︎`.trim()
-//conn.sendFile(m.chat, pp, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
-let img = await (await fetch(`https://i.ibb.co/10xZ4YZ/file.jpg`)).buffer()  
-conn.sendFile(m.chat, img, 'lp.jpg', menu, m, false, { contextInfo: { mentionedJid }})
-await m.react('✅')        
+  
+conn.sendFile(m.chat, pp, 'yaemori.jpg', menu, m, false, { contextInfo: { mentionedJid }})
+await m.react(emojis)        
 } catch (e) {
-await m.reply(`❌️ Ocurrió un error.\n\n` + e)
 await m.react(error)
 }}
 handler.help = ['menu']
