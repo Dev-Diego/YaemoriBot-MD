@@ -28,9 +28,7 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let mentionedJid = [who]
 let username = conn.getName(who)
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-const vid = ['https://telegra.ph/file/405daebd4bc0d69e5d165.mp4',
-'https://telegra.ph/file/1d0ad9f79f65f39895b08.mp4',
-'https://telegra.ph/file/c25afc1685b13210ce602.mp4']
+const vid = ['https://qu.ax/dCshC.mp4']
 
 let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 *˚₊·˚₊· ͟͟͞͞➳❥* 𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨
