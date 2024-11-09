@@ -2,7 +2,7 @@ let handler = async (m, { conn, isRowner}) => {
 let _muptime
 let totalreg = Object.keys(global.db.data.users).length
 let totalchats = Object.keys(global.db.data.chats).length
-let pp = imagen1
+let pp = icons
 if (process.send) {
 process.send('uptime')
 _muptime = await new Promise(resolve => {
@@ -14,15 +14,13 @@ let muptime = clockString(_muptime)
 const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
 const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) 
 const used = process.memoryUsage()
-let yaemori = `╭─⬣「 *Estado De Ai Yaemori* 」⬣\n`
-yaemori += `│ 🚩 *Creador ∙* DevDiego\n`
-yaemori += `│ 📚 *Grupos Unidos ∙* ${groupsIn.length}\n`
-yaemori += `│ 👤 *Chats Privados ∙* ${chats.length - groupsIn.length}\n`
-yaemori += `│ 💬 *Total De Chats ∙* ${chats.length}\n`
-yaemori += `│ 🍟 *Usuarios Registrados ∙* ${totalreg}\n`
-yaemori += `│ 🍭 *Grupos Registrados ∙* ${totalchats}\n`
-yaemori += `│ 🕜 *Actividad ∙* ${muptime}\n`
-yaemori += `╰─⬣`
+let yaemori = `🌼꙰᠁❥ *◜Creador◞* ⇢ DevDiego\n`
+yaemori += `🌻꙰᠁❥ *◜Grupos Unidos◞* ⇢ ${groupsIn.length}\n`
+yaemori += `🌺꙰᠁❥ *◜Chats Privados◞* ⇢ ${chats.length - groupsIn.length}\n`
+yaemori += `🌼꙰᠁❥ *◜Total De Chats◞* ⇢ ${chats.length}\n`
+yaemori += `🌻꙰᠁❥ *◜Usuarios Registrados◞* ⇢ ${totalreg}\n`
+yaemori += `🌺꙰᠁❥ *◜Grupos Registrados◞* ⇢ ${totalchats}\n`
+yaemori += `🌼꙰᠁❥ *◜Actividad◞* ⇢ ${muptime}\n`
 await conn.sendFile(m.chat, pp, 'yaemori.jpg', yaemori, fkontak, null, rcanal)
 }
 handler.help = ['status']
