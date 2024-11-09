@@ -1,9 +1,11 @@
 <h2 align="center">Yaemori Bot - MD ✨️🌻</h2>
 
-![Yaemori](https://qu.ax/oTXDG.jpg)
-
-<p align="center">🦇 WhatsApp Bot Node-Js. 🎃</p>
+<p align="center">🌹 WhatsApp Bot Node-Js.</p>
 </p>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=FF0000&lines=YaemoriBot-MD+✨️🌻;DevDiego+✨️☁️)](https://git.io/typing-svg)
+
+![Yaemori](https://qu.ax/oTXDG.jpg)
 
 ---
 
