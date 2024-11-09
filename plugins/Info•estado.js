@@ -14,6 +14,7 @@ let muptime = clockString(_muptime)
 let users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
 const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) 
+const totalUsers = users.length;
 let old = performance.now()
 let neww = performance.now()
 let speed = neww - old
