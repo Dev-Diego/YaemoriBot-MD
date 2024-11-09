@@ -17,9 +17,9 @@ let handler = async (m, { conn: star, command, args, text, usedPrefix }) => {
     let txt = '`乂  Y O U T U B E  -  P L A Y`\n\n'
        txt += `
 🚩 *Título:*\n» ${res[0].title}\n`
-       txt += `⏱️ *Duración:*\n» ${secondString(res[0].duration.seconds)}\n`
-       txt += `⭐️ *Publicado:*\n» ${eYear(res[0].ago)}\n`
-       txt += `🌸 *Canal:*\n» ${res[0].author.name || 'Desconocido'}\n`
+       txt += `⏱️ *Duración:*\n» ${secondString(res[0].duration.seconds)}\n\n`
+       txt += `⭐️ *Publicado:*\n» ${eYear(res[0].ago)}\n\n`
+       txt += `🌸 *Canal:*\n» ${res[0].author.name || 'Desconocido'}\n\n`
        txt += `🔗 *Enlace:*\n» ${'https://youtu.be/' + res[0].videoId}\n\n`
        txt += `1 » Audio\n2 » Video\n`
        txt += `> *-* Para descargar responde a este mensaje con *1* o *2*.`
