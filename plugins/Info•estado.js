@@ -1,3 +1,4 @@
+import ws from 'ws'
 let handler = async (m, { conn, usedPrefix, isRowner}) => {
 let _muptime
 let totalreg = Object.keys(global.db.data.users).length
