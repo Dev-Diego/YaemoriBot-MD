@@ -1,4 +1,4 @@
-let handler = async (m, { conn, usedPrefix isRowner}) => {
+let handler = async (m, { conn, usedPrefix, isRowner}) => {
 let _muptime
 let totalreg = Object.keys(global.db.data.users).length
 let totalchats = Object.keys(global.db.data.chats).length
