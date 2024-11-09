@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+/*import fetch from 'node-fetch'
 import yts from 'yt-search'
 
 let handler = async (m, { conn: star, command, args, text, usedPrefix }) => {
@@ -120,4 +120,4 @@ function eYear(txt) {
         return L
     }
     return txt
-}
+}*/
