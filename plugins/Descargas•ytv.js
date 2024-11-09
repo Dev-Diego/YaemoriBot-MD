@@ -44,7 +44,7 @@ const size = await yt.video[q].fileSizeH
 await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `🌸 Aquí está tu video de Youtube.`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
 await m.react(done)
 } catch (E1) {
-await m.react(rwait)  
+await m.react(error)  
 try {  
 await m.react(rwait)
 let mediaa = await ytMp4(youtubeLink)
