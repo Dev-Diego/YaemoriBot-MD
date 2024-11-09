@@ -432,8 +432,19 @@ let menu = ` *˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 🍥 ${usedPrefix}tovideo
 
 > © ⍴᥆ᥕᥱrᥱძ ᑲᥡ ძᥱ᥎ძіᥱg᥆ ⚡︎`.trim()
+
+let category = "video"
+const db = './src/database/db.json'
+const db_ = JSON.parse(fs.readFileSync(db))
+const random = Math.floor(Math.random() * db_.links[category].length)
+const rlink = db_.links[category][random]
+global.vid = rlink
+const response = await fetch(vid)
+const gif = await response.buffer()
   
-conn.sendFile(m.chat, pp, 'yaemori.jpg', menu, m, false, { contextInfo: { mentionedJid }})
+await conn.sendMessage(m.chat, { video: { url: vid }, caption: text.trim(), contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨', body: dev, thumbnailUrl: fotoperfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
+}, }, gifPlayback: true, gifAttribution: 0 }, { quoted: fkontak })
+
 await m.react(emojis)        
 } catch (e) {
 await m.react(error)
