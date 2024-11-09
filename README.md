@@ -3,7 +3,7 @@
 <p align="center">🌹 WhatsApp Bot Node-Js.</p>
 </p>
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Barriecito&duration=3000&pause=500&color=ADF7CC&center=true&vCenter=true&width=435&height=30&lines=©+YaemoriBot-MD;©+Powered+By+DevDiego+💫" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Barriecito&duration=3000&pause=500&color=FF00FF&width=435&height=30&lines=©+YaemoriBot-MD;©+Powered+By+DevDiego+💫" alt="Typing SVG" /></a>
 
 ![Yaemori](https://qu.ax/oTXDG.jpg)
 
