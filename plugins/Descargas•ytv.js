@@ -26,8 +26,14 @@ throw `𝙋𝘼𝙍𝘼 𝙋𝙊𝘿𝙀𝙍 𝙐𝙎𝘼𝙍 𝙀𝙎𝙏𝙀 �
 throw `𝙋𝘼𝙍𝘼 𝙋𝙊𝘿𝙀𝙍 𝙐𝙎𝘼𝙍 𝙀𝙎𝙏𝙀 𝘾𝙊𝙈𝘼𝙉𝘿𝙊 𝘿𝙀 𝙀𝙎𝙏𝘼 𝙁𝙊𝙍𝙈𝘼 (${usedPrefix + command} <numero>), 𝙋𝙊𝙍 𝙁𝘼𝙑𝙊𝙍 𝙍𝙀𝘼𝙇𝙄𝙕𝘼𝙍 𝙇𝘼 𝘽𝙐́𝙎𝙌𝙐𝙀𝘿𝘼 𝘿𝙀 𝙑𝙄́𝘿𝙀𝙊𝙎 𝘾𝙊𝙉 𝙀𝙇 𝘾𝙊𝙈𝘼𝙉𝘿𝙊  ${usedPrefix}playlist <texto>*`;
 }}}  
 
-await conn.reply(m.chat, '`🚀 Cargando....`', m, fake)
 try {
+await m.react(rwait)
+conn.reply(m.chat, global.wait, m, {
+contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+title: packname,
+body: dev,
+previewType: 0, thumbnail: icons,
+sourceUrl: channel }}})
 let qu = args[1] || '360'
 let q = qu + 'p'
 let v = youtubeLink
@@ -36,14 +42,18 @@ const dl_url = await yt.video[q].download()
 const ttl = await yt.title
 const size = await yt.video[q].fileSizeH
 await await conn.sendMessage(m.chat, { video: { url: dl_url }, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `🌸 Aquí está tu video de Youtube.`, thumbnail: await fetch(yt.thumbnail) }, { quoted: m })
+await m.react(done)
 } catch (E1) {
-//console.log('Error 1 ' + E1)  
+await m.react(rwait)  
 try {  
+await m.react(rwait)
 let mediaa = await ytMp4(youtubeLink)
-await conn.sendMessage(m.chat, { video: { url: mediaa.result }, fileName: `error.mp4`, caption: `${packname}`, thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: m })     
+await conn.sendMessage(m.chat, { video: { url: mediaa.result }, fileName: `error.mp4`, caption: `${packname}`, thumbnail: mediaa.thumb, mimetype: 'video/mp4' }, { quoted: m })   
+await m.react(done)  
 } catch (E2) {  
-//console.log('Error 2 ' + E2)   
+await m.react(error)
 try {
+await m.react(rwait)
 let lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${lolkeysapi}&url=${youtubeLink}`)    
 let lolh = await lolhuman.json()
 let n = lolh.result.title || 'error'
@@ -51,8 +61,9 @@ let n2 = lolh.result.link
 let n3 = lolh.result.size
 let n4 = lolh.result.thumbnail
 await conn.sendMessage(m.chat, { video: { url: n2 }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `🌸 Aquí está tu video de Youtube.`, thumbnail: await fetch(n4) }, { quoted: m })
+await m.react(done)
 } catch (E3) {
-//console.log('Error 3 ' + E3)   
+await m.react(error)
 await conn.reply(m.chat, `🚩 Es posible que el archivo sea muy pesado.`, m, rcanal)
 }}}}
 handler.tags = ['descargas']
