@@ -18,7 +18,7 @@ await conn.sendMessage(global.channelid, { text: m.quoted ? teks + m.quoted.text
 externalAdReply: {
 title: "【 ⚠️ 𝗥𝗘𝗣𝗢𝗥𝗧𝗘 ️⚠️ 】",
 body: '🌻 ¡Un reporte de un usuario!',
-thumbnailUrl: icono,
+thumbnailUrl: icons,
 sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
