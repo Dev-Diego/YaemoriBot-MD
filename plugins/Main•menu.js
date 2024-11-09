@@ -451,9 +451,9 @@ await m.react('✅')
 await m.reply(`❌️ Ocurrió un error.\n\n` + e)
 await m.react(error)
 }}
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(menu|allmenu\?)$/i
+handler.command = ['menu', 'menú', 'allmenu', 'allmenú', 'menucompleto']
 //handler.register = true
 handler.exp = 50
 handler.fail = null
