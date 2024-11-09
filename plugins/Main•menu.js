@@ -5,28 +5,28 @@ import { xpRange } from '../lib/levelling.js'
 import PhoneNumber from 'awesome-phonenumber'
 
 let tags = {
-'main': '𝐈 𝐍 𝐅 𝐎',
-'buscador': '𝐁 𝐔 𝐒 𝐐 𝐔 𝐄 𝐃 𝐀 𝐒',
-'fun': '𝐉 𝐔 𝐄 𝐆 𝐎 𝐒',
-'gacha': '𝐆 𝐀 𝐂 𝐇 𝐀',
-'serbot': '𝐉 𝐀 𝐃 𝐈 𝐁 𝐎 𝐓 𝐒',
-'rpg': '𝐑 𝐏 𝐆',
-'rg': '𝐑 𝐄 𝐆 𝐈 𝐒 𝐓 𝐑 𝐎',
-'xp': '𝐄 𝐗 𝐏',
-'sticker': '𝐒 𝐓 𝐈 𝐂 𝐊 𝐄 𝐑 𝐒',
-'anime': '𝐀 𝐍 𝐈 𝐌 𝐄 𝐒',
-'database': '𝐃 𝐀 𝐓 𝐀 𝐁 𝐀 𝐒 𝐄',
-'fix': '𝐅 𝐈 𝐗 𝐌 𝐒 𝐆 𝐄 𝐒 𝐏 𝐄 𝐑 𝐀',
-'grupo': '𝐆 𝐑 𝐔 𝐏 𝐎 𝐒',
-'nable': '𝐎 𝐍 / 𝐎 𝐅 𝐅', 
-'descargas': '𝐃 𝐄 𝐒 𝐂 𝐀 𝐑 𝐆 𝐀 𝐒',
-'tools': '𝐇 𝐄 𝐑 𝐑 𝐀 𝐌 𝐈 𝐄 𝐍 𝐓 𝐀 𝐒',
-'info': '𝐈 𝐍 𝐅 𝐎 𝐑 𝐌 𝐀 𝐂 𝐈 𝐎 𝐍',
-'nsfw': '𝐍 𝐒 𝐅 𝐖', 
-'owner': '𝐎 𝐖 𝐍 𝐄 𝐑', 
-'audio': '𝐀 𝐔 𝐃 𝐈 𝐎 𝐒', 
-'ai': '𝐀 𝐈',
-'transformador': '𝐂 𝐎 𝐍 𝐕 𝐄 𝐑 𝐓 𝐈 𝐃 𝐎 𝐑 𝐄 𝐒',
+'main': 'Info',
+'buscador': 'Busquedas',
+'fun': 'Juegos',
+'gacha': 'Gacha',
+'serbot': 'JadiBots',
+'rpg': 'Rpg',
+'rg': 'Registro',
+'xp': 'Exp',
+'sticker': 'Stickers',
+'anime': 'Animes',
+'database': 'Database',
+'fix': 'Fixmsgespera',
+'grupo': 'Grupos',
+'nable': 'Enable - Disable', 
+'descargas': 'Descargas',
+'tools': 'Herramientas',
+'info': 'Información',
+'nsfw': 'Nsfw', 
+'owner': 'Propietario', 
+'audio': 'Audios', 
+'ai': 'Ai',
+'transformador': 'Convertidores',
 }
 
 const defaultMenu = {
@@ -52,9 +52,9 @@ const defaultMenu = {
 *˚ ͟͟͞͞➳❥ Actividad » \`\`\`%muptime\`\`\`
 *˚ ͟͟͞͞➳❥ Usuarios » \`\`\`%totalreg\`\`\`
 `.trimStart(),
-    header: '╔═══════⩽✰⩾═══════╗\n║                        %category\n╠═══════⩽✰⩾═══════╝\n║╭──────────────┄',
-  body: '║│˙˚·͟͟͟͟͟͞͞͞͞✰ %cmd',
-  footer: '║╰──────────────┄\n╚═══════⩽✰⩾═══════╝\n',
+    header: '*•/•* %category *•/•*',
+  body: '%cmd',
+  footer: '',
   after: `> ${dev}`,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
