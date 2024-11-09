@@ -7,9 +7,7 @@
 
 ![Yaemori](https://qu.ax/oTXDG.jpg)
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ### **`❕️ Información importante`**
 
@@ -20,9 +18,7 @@
 
 </details>
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ### **`💭 Contáctanos`**
 
@@ -37,9 +33,7 @@
 
 </details>
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ### ☁️ SKY ULTRA PLUS
 <a href="https://dash.corinplus.com"><img src="https://qu.ax/zFzXF.png" height="125px"></a>
@@ -62,9 +56,7 @@
 
 </details>
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 #### **`🚀 Instalación por termux`**
 
@@ -113,9 +105,7 @@ npm install
 npm start
 ```
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 #### **🟢 Activar en caso de detenerse en termux**
 
@@ -131,9 +121,7 @@ Si después de instalar el bot en Termux se detiene (pantalla en blanco, pérdid
     npm start
     ```
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 #### **🍬 Obtener otro codigo qr en termux**
 
@@ -154,9 +142,7 @@ Si después de instalar el bot en Termux y iniciar la session del bot (el numero
     npm start
     ```
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ### **🤖 Para activar 24/7 (termux)**
 
@@ -168,9 +154,7 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 
 </details>
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 #### **`💣 Instalación por cloudshell`**
 
@@ -200,31 +184,23 @@ npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 
 </details>
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 #### **`🌌 ACTIVAR EN CODESPACE`**
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?skip_quickstart=true&machine=basicLinux32gb&repo=Dev-Diego/YaemoriBot-MD&ref=main&geo=UsEast)
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
- 
+---
+
 #### **`⏏️ ACTIVAR EN KOYEB`**
 [![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Dev-Diego/YaemoriBot-MD&branch=master&name=yaemoribot-md)
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 #### **`☁️ ACTIVAR EN RENDER`**
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FDev-Diego%2FYaemoriBot-MD)
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ##### **`💻 PARA USUARIOS DE WINDOWS/VPS/RDP`**
 
@@ -271,9 +247,7 @@ Si tiene éxito, le dará un mensaje como: `SUCCESS: specified value was saved`.
 
 </details>
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ## **`🔗 Enlaces útiles`**
 
@@ -285,9 +259,7 @@ Si tiene éxito, le dará un mensaje como: `SUCCESS: specified value was saved`.
 | WhatsApp | Canal Team | [¡Click aquí!](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A) |
 | WhatsApp | Asistente | [¡Click aquí!](wa.me/573218138672) |
 
-<p align="center"> 
-<img src="https://github.com/GataNina-Li/GataNina-Li/blob/main/line.gif" width="400vw"> 
-</p> 
+---
 
 ### **`🌴 COLABORADORES`**
 <a href="https://github.com/Dev-Diego/YaemoriBot-MD/graphs/contributors">
