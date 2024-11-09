@@ -14,6 +14,8 @@ let muptime = clockString(_muptime)
 let totaljadibot = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
 const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) 
+let old = performance.now()
+let neww = performance.now()
 let speed = neww - old
 const used = process.memoryUsage()
 let yaemori = `⭐️ \`\`\`Información - YaemoriBot\`\`\` ⭐️\n\n`
@@ -26,8 +28,8 @@ yaemori += `🌻꙰᠁❥ *◜Usuarios◞* ⇢ ${totalreg}\n`
 yaemori += `🌺꙰᠁❥ *◜Chats Privados◞* ⇢ ${chats.length - groupsIn.length}\n`
 yaemori += `🌻꙰᠁❥ *◜Grupos◞* ⇢ ${groupsIn.length}\n`
 yaemori += `🌺꙰᠁❥ *◜Actividad◞* ⇢ ${muptime}\n`
-yaemori += `🌻꙰᠁❥ *◜Speed◞* ⇢ ${(speed * 1000).toFixed(0) / 1000}\n`
-yaemori += `🌺꙰᠁❥ *◜SubBots◞* ⇢ ${totaljadibot}`
+yaemori += `🌻꙰᠁❥ *◜Velocidad◞* ⇢ ${(speed * 1000).toFixed(0) / 1000}\n`
+yaemori += `🌺꙰᠁❥ *◜SubBots Activos◞* ⇢ ${totaljadibot}`
 await conn.sendFile(m.chat, pp, 'yaemori.jpg', yaemori, fkontak, null, rcanal)
 }
 handler.help = ['status']
