@@ -404,7 +404,7 @@ await conn.sendMessage(m.chat, { video: { url: vid }, caption: menu, contextInfo
 await m.react(emojis)    
     
 } catch (e) {
-await conn.reply(m.chat, `✘ Ocurrió un error al enviar el menú\n\n${e}`, m, fake)
+await m.reply(`✘ Ocurrió un error al enviar el menú\n\n${e}`)
 await m.react(error)
 }}
 
