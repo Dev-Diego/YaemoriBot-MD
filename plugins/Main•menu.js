@@ -19,7 +19,7 @@ process.once('message', resolve)
 setTimeout(resolve, 1000)
 }) * 1000
 }
-let pp = './src/img/Menu.jpg'
+let pp = 'https://github.com/David-Chian/Megumin-Bot-MD/blob/main/src%2Fmenus%2FMenu2.jpg'
 let user = global.db.data.users[m.sender]
 let muptime = clockString(_muptime)
 let uptime = clockString(_uptime)
