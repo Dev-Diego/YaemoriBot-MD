@@ -9,6 +9,10 @@
 
 ---
 
+*`YaemoriBot-MD`* La instalación de este Bot debe ser instalado por *npm install*, ya que *yarn install* no se instala correctamente. Estamos solucionando el error.
+
+---
+
 ### **`❕️ Información importante`**
 
 <details>
