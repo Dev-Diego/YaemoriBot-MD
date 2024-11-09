@@ -60,354 +60,352 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 
 *•/• Información Bot •/•*
 
-🍄 .afk 
-🍄 .grupos
-🍄 .skyplus
-🍄 .instalaryaemori
-🍄 .menu
-🍄 .menu2
-🍄 .hornymenu
-🍄 .runtime
-🍄 .script
-🍄 .blocklist
+🍄 ${usedPrefix}afk 
+🍄 ${usedPrefix}grupos
+🍄 ${usedPrefix}skyplus
+🍄 ${usedPrefix}instalaryaemori
+🍄 ${usedPrefix}menu
+🍄 ${usedPrefix}menu2
+🍄 ${usedPrefix}hornymenu
+🍄 ${usedPrefix}runtime
+🍄 ${usedPrefix}script
+🍄 ${usedPrefix}blocklist
 
 *•/• Busquedas •/•*
 
-🎋 .githubsearch
-🎋 .google <búsqueda>
-🎋 .mercadolibre <búsqueda>
-🎋 .npmjs
-🎋 .tiktoksearch <txt>
-🎋 .tweetposts
-🎋 .ytsearch
-🎋 .imagen <query>
-🎋 .pinterest
+🎋 ${usedPrefix}githubsearch
+🎋 ${usedPrefix}google 
+🎋 ${usedPrefix}mercadolibre
+🎋 ${usedPrefix}npmjs
+🎋 ${usedPrefix}tiktoksearch <txt>
+🎋 ${usedPrefix}tweetposts
+🎋 ${usedPrefix}ytsearch
+🎋 ${usedPrefix}imagen <query>
+🎋 ${usedPrefix}pinterest
 
 *•/• Juegos •/•*
 
-🍧 .abrazar <@usuario>
-🍧 .acertijo
-🍧 .sonrojarse 
-🍧 .gay 
-🍧 .lesbiana 
-🍧 .pajero 
-🍧 .pajera 
-🍧 .puto 
-🍧 .puta 
-🍧 .manco 
-🍧 .manca 
-🍧 .rata 
-🍧 .prostituta 
-🍧 .prostituto 
-🍧 .apostar 
-🍧 .cf
-🍧 .consejo
-🍧 .dance
-🍧 .doxear
-🍧 .formarpareja
-🍧 .violar 
-🍧 .enamorada 
-🍧 .math
-🍧 .meme
-🍧 .acariciar 
-🍧 .personalidad
-🍧 .piropo
-🍧 .pokedex 
-🍧 .pucheros 
-🍧 .ppt
-🍧 .pregunta
-🍧 .dormir 
-🍧 .reto
-🍧 .ruleta 
-🍧 .triste 
-🍧 .ship
-🍧 .love
-🍧 .simi
-🍧 .bot
-🍧 .top
-🍧 .zodiac
-🍧 .slot
+🍧 ${usedPrefix}abrazar <@usuario>
+🍧 ${usedPrefix}acertijo
+🍧 ${usedPrefix}sonrojarse 
+🍧 ${usedPrefix}gay 
+🍧 ${usedPrefix}lesbiana 
+🍧 ${usedPrefix}pajero 
+🍧 ${usedPrefix}pajera 
+🍧 ${usedPrefix}puto 
+🍧 ${usedPrefix}puta 
+🍧 ${usedPrefix}manco 
+🍧 ${usedPrefix}manca 
+🍧 ${usedPrefix}rata 
+🍧 ${usedPrefix}prostituta 
+🍧 ${usedPrefix}prostituto 
+🍧 ${usedPrefix}apostar 
+🍧 ${usedPrefix}cf
+🍧 ${usedPrefix}consejo
+🍧 ${usedPrefix}dance
+🍧 ${usedPrefix}doxear
+🍧 ${usedPrefix}formarpareja
+🍧 ${usedPrefix}violar 
+🍧 ${usedPrefix}enamorada 
+🍧 ${usedPrefix}math
+🍧 ${usedPrefix}meme
+🍧 ${usedPrefix}acariciar 
+🍧 ${usedPrefix}personalidad
+🍧 ${usedPrefix}piropo
+🍧 ${usedPrefix}pokedex 
+🍧 ${usedPrefix}pucheros 
+🍧 ${usedPrefix}ppt
+🍧 ${usedPrefix}pregunta
+🍧 ${usedPrefix}dormir 
+🍧 ${usedPrefix}reto
+🍧 ${usedPrefix}ruleta 
+🍧 ${usedPrefix}triste 
+🍧 ${usedPrefix}ship
+🍧 ${usedPrefix}love
+🍧 ${usedPrefix}simi
+🍧 ${usedPrefix}bot
+🍧 ${usedPrefix}top
+🍧 ${usedPrefix}zodiac
+🍧 ${usedPrefix}slot
 
 *•/• Gacha •/•*
 
-🌹 .character
-🌹 .darrw
-🌹 .obtenidos
-🌹 .c
-🌹 .robarpersonaje
-🌹 .rw
-🌹 .toprw
+🌹 ${usedPrefix}character
+🌹 ${usedPrefix}darrw
+🌹 ${usedPrefix}obtenidos
+🌹 ${usedPrefix}c
+🌹 ${usedPrefix}robarpersonaje
+🌹 ${usedPrefix}rw
+🌹 ${usedPrefix}toprw
 
 *•/• JadiBots •/•*
 
-🌻 .serbot
-🌻 .serbot --code
-🌻 .pausarai
-🌻 .bots
-🌻 .deletebot
+🌻 ${usedPrefix}serbot
+🌻 ${usedPrefix}serbot --code
+🌻 ${usedPrefix}pausarai
+🌻 ${usedPrefix}bots
+🌻 ${usedPrefix}deletebot
 
 *•/• Rpg •/•*
 
-🍁 .bank
-🍁 .cookies
-🍁 .crimen
-🍁 .daily
-🍁 .claim
-🍁 .depositar
-🍁 .lb
-🍁 .levelup
-🍁 .minar
-🍁 .retirar
-🍁 .rob2
-🍁 .rob
-🍁 .addprem 
-🍁 .slut
-🍁 .trabajar
-🍁 .transfer
+🍁 ${usedPrefix}bank
+🍁 ${usedPrefix}cookies
+🍁 ${usedPrefix}crimen
+🍁 ${usedPrefix}daily
+🍁 ${usedPrefix}claim
+🍁 ${usedPrefix}depositar
+🍁 ${usedPrefix}lb
+🍁 ${usedPrefix}levelup
+🍁 ${usedPrefix}minar
+🍁 ${usedPrefix}retirar
+🍁 ${usedPrefix}rob2
+🍁 ${usedPrefix}rob
+🍁 ${usedPrefix}addprem 
+🍁 ${usedPrefix}slut
+🍁 ${usedPrefix}trabajar
+🍁 ${usedPrefix}transfer
 
 *•/• Registro •/•*
 
-✨️ .perfil
-✨️ .unreg
-✨️ .reg
+✨️ ${usedPrefix}perfil
+✨️ ${usedPrefix}unreg
+✨️ ${usedPrefix}reg
 
 *•/• Exp •/•*
 
-🌺 .daily
-🌺 .Buy
-🌺 .Buyall
+🌺 ${usedPrefix}daily
+🌺 ${usedPrefix}Buy
+🌺 ${usedPrefix}Buyall
 
 *•/• Stickers •/•*
 
-🍃 .qc
-🍃 .stiker
-🍃 .wm
+🍃 ${usedPrefix}qc
+🍃 ${usedPrefix}stiker
+🍃 ${usedPrefix}wm
 
 *•/• Animes •/•*
 
-💧 .animelink
-💧 .akira
-💧 .akiyama
-💧 .anna
-💧 .asuna
-💧 .ayuzawa
-💧 .boruto
-💧 .chiho
-💧 .chitoge
-💧 .deidara
-💧 .erza
-💧 .elaina
-💧 .eba
-💧 .emilia
-💧 .hestia
-💧 .hinata
-💧 .inori
-💧 .isuzu
-💧 .itachi
-💧 .itori
-💧 .kaga
-💧 .kagura
-💧 .kaori
-💧 .keneki
-💧 .kotori
-💧 .kurumi
-💧 .madara
-💧 .mikasa
-💧 .miku
-💧 .minato
-💧 .naruto
-💧 .nezuko
-💧 .sagiri
-💧 .sasuke
-💧 .sakura
-💧 .cosplay
-💧 .infoanime
-💧 .lolice
-💧 .waifu
+💧 ${usedPrefix}animelink
+💧 ${usedPrefix}akira
+💧 ${usedPrefix}akiyama
+💧 ${usedPrefix}anna
+💧 ${usedPrefix}asuna
+💧 ${usedPrefix}ayuzawa
+💧 ${usedPrefix}boruto
+💧 ${usedPrefix}chiho
+💧 ${usedPrefix}chitoge
+💧 ${usedPrefix}deidara
+💧 ${usedPrefix}erza
+💧 ${usedPrefix}elaina
+💧 ${usedPrefix}eba
+💧 ${usedPrefix}emilia
+💧 ${usedPrefix}hestia
+💧 ${usedPrefix}hinata
+💧 ${usedPrefix}inori
+💧 ${usedPrefix}isuzu
+💧 ${usedPrefix}itachi
+💧 ${usedPrefix}itori
+💧 ${usedPrefix}kaga
+💧 ${usedPrefix}kagura
+💧 ${usedPrefix}kaori
+💧 ${usedPrefix}keneki
+💧 ${usedPrefix}kotori
+💧 ${usedPrefix}kurumi
+💧 ${usedPrefix}madara
+💧 ${usedPrefix}mikasa
+💧 ${usedPrefix}miku
+💧 ${usedPrefix}minato
+💧 ${usedPrefix}naruto
+💧 ${usedPrefix}nezuko
+💧 ${usedPrefix}sagiri
+💧 ${usedPrefix}sasuke
+💧 ${usedPrefix}sakura
+💧 ${usedPrefix}cosplay
+💧 ${usedPrefix}infoanime
+💧 ${usedPrefix}lolice
+💧 ${usedPrefix}waifu
 
 *•/• Grupos •/•*
 
-🍬 .add
-🍬 .banchat 
-🍬 .grupo abrir / cerrar
-🍬 .delete
-🍬 .demote
-🍬 .encuesta 
-🍬 .hidetag
-🍬 .infogrupo
-🍬 .invite 
-🍬 .kick
-🍬 .link
-🍬 .listadv
-🍬 .promote
-🍬 .revoke
-🍬 .tagall 
-🍬 .invocar 
-🍬 .unbanchat
+🍬 ${usedPrefix}add
+🍬 ${usedPrefix}banchat 
+🍬 ${usedPrefix}grupo abrir / cerrar
+🍬 ${usedPrefix}delete
+🍬 ${usedPrefix}demote
+🍬 ${usedPrefix}encuesta 
+🍬 ${usedPrefix}hidetag
+🍬 ${usedPrefix}infogrupo
+🍬 ${usedPrefix}invite 
+🍬 ${usedPrefix}kick
+🍬 ${usedPrefix}link
+🍬 ${usedPrefix}listadv
+🍬 ${usedPrefix}promote
+🍬 ${usedPrefix}revoke
+🍬 ${usedPrefix}tagall 
+🍬 ${usedPrefix}invocar 
+🍬 ${usedPrefix}unbanchat
 
 *•/• Enable - Disable •/•*
 
-🌸 .enable
-🌸 .disable
+🌸 ${usedPrefix}enable
+🌸 ${usedPrefix}disable
 
 *•/• Descargas •/•*
 
-🍟 .fb
-🍟 .gitclone 
-🍟 .imagen 
-🍟 .ig
-🍟 .mediafire
-🍟 .apkmod
-🍟 .play3
-🍟 .play4
-🍟 .spotify
-🍟 .tiktok
-🍟 .ytmp4 
+🍟 ${usedPrefix}fb
+🍟 ${usedPrefix}gitclone 
+🍟 ${usedPrefix}imagen 
+🍟 ${usedPrefix}ig
+🍟 ${usedPrefix}mediafire
+🍟 ${usedPrefix}apkmod
+🍟 ${usedPrefix}play3
+🍟 ${usedPrefix}play4
+🍟 ${usedPrefix}spotify
+🍟 ${usedPrefix}tiktok
+🍟 ${usedPrefix}ytmp4 
 
 *•/• Herramientas •/•*
 
-🪐 .toanime
-🪐 .tts
-🪐 .imagen
-🪐 .spamwa 
-🪐 .fake
-🪐 .remini
-🪐 .hd
-🪐 .enhance
-🪐 .ssweb
-🪐 .trad
-🪐 .nuevafotochannel
-🪐 .nosilenciarcanal
-🪐 .silenciarcanal
-🪐 .noseguircanal
-🪐 .seguircanal
-🪐 .avisoschannel
-🪐 .resiviravisos
-🪐 .inspect
-🪐 .inspeccionar
-🪐 .eliminarfotochannel
-🪐 .reactioneschannel
-🪐 .reaccioneschannel
-🪐 .nuevonombrecanal
-🪐 .nuevadescchannel
+🪐 ${usedPrefix}toanime
+🪐 ${usedPrefix}tts
+🪐 ${usedPrefix}imagen
+🪐 ${usedPrefix}spamwa 
+🪐 ${usedPrefix}fake
+🪐 ${usedPrefix}remini
+🪐 ${usedPrefix}hd
+🪐 ${usedPrefix}enhance
+🪐 ${usedPrefix}ssweb
+🪐 ${usedPrefix}trad
+🪐 ${usedPrefix}nuevafotochannel
+🪐 ${usedPrefix}nosilenciarcanal
+🪐 ${usedPrefix}silenciarcanal
+🪐 ${usedPrefix}noseguircanal
+🪐 ${usedPrefix}seguircanal
+🪐 ${usedPrefix}avisoschannel
+🪐 ${usedPrefix}resiviravisos
+🪐 ${usedPrefix}inspect
+🪐 ${usedPrefix}eliminarfotochannel
+🪐 ${usedPrefix}reactioneschannel
+🪐 ${usedPrefix}reaccioneschannel
+🪐 ${usedPrefix}nuevonombrecanal
+🪐 ${usedPrefix}nuevadescchannel
 
 *•/• Información •/•*
 
-🌵 .creador
-🌵 .ds
-🌵 .dsowner
-🌵 .fixmsgespera
-🌵 .status
-🌵 .info
-🌵 .ping
-🌵 .sistema
-🌵 .speed
-🌵 .speedtest
-🌵 .reportar
+🌵 ${usedPrefix}creador
+🌵 ${usedPrefix}ds
+🌵 ${usedPrefix}dsowner
+🌵 ${usedPrefix}fixmsgespera
+🌵 ${usedPrefix}status
+🌵 ${usedPrefix}info
+🌵 ${usedPrefix}ping
+🌵 ${usedPrefix}sistema
+🌵 ${usedPrefix}speed
+🌵 ${usedPrefix}speedtest
+🌵 ${usedPrefix}reportar
 
 *•/• Nsfw •/•*
 
-🔥 .nsfwloli
-🔥 .nsfwfoot
-🔥 .nsfwass
-🔥 .nsfwbdsm
-🔥 .nsfwcum
-🔥 .nsfwero
-🔥 .nsfwfemdom
-🔥 .nsfwfoot
-🔥 .nsfwglass
-🔥 .nsfworgy
-🔥 .yuri
-🔥 .yuri2
-🔥 .yaoi
-🔥 .yaoi2
-🔥 .panties
-🔥 .tetas
-🔥 .booty
-🔥 .ecchi
-🔥 .furro
-🔥 .hentai
-🔥 .trapito
-🔥 .imagenlesbians
-🔥 .pene
-🔥 .porno
-🔥 .randomxxx
-🔥 .pechos
-🔥 .r34 <tag>
-🔥 .rule34 <tag>
+🔥 ${usedPrefix}nsfwloli
+🔥 ${usedPrefix}nsfwfoot
+🔥 ${usedPrefix}nsfwass
+🔥 ${usedPrefix}nsfwbdsm
+🔥 ${usedPrefix}nsfwcum
+🔥 ${usedPrefix}nsfwero
+🔥 ${usedPrefix}nsfwfemdom
+🔥 ${usedPrefix}nsfwfoot
+🔥 ${usedPrefix}nsfwglass
+🔥 ${usedPrefix}nsfworgy
+🔥 ${usedPrefix}yuri
+🔥 ${usedPrefix}yuri2
+🔥 ${usedPrefix}yaoi
+🔥 ${usedPrefix}yaoi2
+🔥 ${usedPrefix}panties
+🔥 ${usedPrefix}tetas
+🔥 ${usedPrefix}booty
+🔥 ${usedPrefix}ecchi
+🔥 ${usedPrefix}furro
+🔥 ${usedPrefix}hentai
+🔥 ${usedPrefix}trapito
+🔥 ${usedPrefix}imagenlesbians
+🔥 ${usedPrefix}pene
+🔥 ${usedPrefix}porno
+🔥 ${usedPrefix}randomxxx
+🔥 ${usedPrefix}pechos 
+🔥 ${usedPrefix}rule34 
 
 *•/• Propietario •/•*
 
-🍿.enable
-🍿.disable
-🍿.addcookies 
-🍿.addprem 
-🍿.autoadmin
-🍿.copia
-🍿.banuser 
-🍿.bc
-🍿.bcgc
-🍿.bcgc2
+🍿 ${usedPrefix}enable
+🍿 ${usedPrefix}disable
+🍿 ${usedPrefix}addcookies 
+🍿 ${usedPrefix}addprem 
+🍿 ${usedPrefix}autoadmin
+🍿 ${usedPrefix}copia
+🍿 ${usedPrefix}banuser 
+🍿 ${usedPrefix}bc
+🍿 ${usedPrefix}bcgc
+🍿 ${usedPrefix}bcgc2
 🍿 $
 🍿 >
 🍿 =>
-🍿.cheat
-🍿.cleartmp
-🍿.delprem 
-🍿.dsowner
-🍿.fetch
-🍿.get
-🍿.ip <alamat ip>
-🍿.join <link>
-🍿.grupocrear <nombre>
-🍿.nuevabiobot <teks>
-🍿.nuevafotobot *<imagen>*
-🍿.nuevonombrebot <teks>
-🍿.resetpersonajes
-🍿.restart
-🍿.unbanuser
-🍿.update
+🍿 ${usedPrefix}cheat
+🍿 ${usedPrefix}cleartmp
+🍿 ${usedPrefix}delprem 
+🍿 ${usedPrefix}dsowner
+🍿 ${usedPrefix}fetch
+🍿 ${usedPrefix}get
+🍿 ${usedPrefix}ip <alamat ip>
+🍿 ${usedPrefix}join <link>
+🍿 ${usedPrefix}grupocrear <nombre>
+🍿 ${usedPrefix}nuevabiobot <teks>
+🍿 ${usedPrefix}nuevafotobot *<imagen>*
+🍿 ${usedPrefix}nuevonombrebot <teks>
+🍿 ${usedPrefix}resetpersonajes
+🍿 ${usedPrefix}restart
+🍿 ${usedPrefix}unbanuser
+🍿 ${usedPrefix}update
 
 *•/• Audios •/•*
 
-🐢 .bass
-🐢 .blown
-🐢 .deep
-🐢 .earrape
-🐢 .fast
-🐢 .fat
-🐢 .nightcore
-🐢 .reverse
-🐢 .robot 
-🐢 .slow
-🐢 .smooth
-🐢 .tupai
+🐢 ${usedPrefix}bass
+🐢 ${usedPrefix}blown
+🐢 ${usedPrefix}deep
+🐢 ${usedPrefix}earrape
+🐢 ${usedPrefix}fast
+🐢 ${usedPrefix}fat
+🐢 ${usedPrefix}nightcore
+🐢 ${usedPrefix}reverse
+🐢 ${usedPrefix}robot 
+🐢 ${usedPrefix}slow
+🐢 ${usedPrefix}smooth
+🐢 ${usedPrefix}tupai
 
 *•/• Ai •/•*
 
-🍘 .gemini
-🍘 .chatgpt <texto>
-🍘 .ia <texto>
-🍘 .remini
-🍘 .hd
-🍘 .enhance
+🍘 ${usedPrefix}gemini
+🍘 ${usedPrefix}chatgpt <texto>
+🍘 ${usedPrefix}ia <texto>
+🍘 ${usedPrefix}remini
+🍘 ${usedPrefix}hd
+🍘 ${usedPrefix}enhance
 
 *•/• Convertidores •/•*
 
-🍥 .togifaud
-🍥 .toimg
-🍥 .tourl
-🍥 .tovideo
+🍥 ${usedPrefix}togifaud
+🍥 ${usedPrefix}toimg
+🍥 ${usedPrefix}tourl
+🍥 ${usedPrefix}tovideo
 
-> © ⍴᥆ᥕᥱrᥱძ ᑲᥡ ძᥱ᥎ძіᥱg᥆ ⚡︎`.trim()
+> ${global.dev}`.trim()
 
 await conn.sendMessage(m.chat, { video: { url: vid }, caption: menu, contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '𝙔𝙖𝙚𝙢𝙤𝙧𝙞𝘽𝙤𝙩-𝙈𝘿 🌻✨', body: dev, thumbnailUrl: fotoperfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: null })
 await m.react(emojis)    
     
 } catch (e) {
+await conn.reply(m.chat, `✘ Ocurrió un error al enviar el menú\n\n${e}`, m, fake)
 await m.react(error)
-conn.reply(m.chat, `✘ Ocurrió un error al enviar el menú\n\n${e}`, m, fake)
 }}
 
 handler.help = ['allmenu']
