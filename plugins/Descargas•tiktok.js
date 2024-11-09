@@ -18,7 +18,7 @@ const handler = async (m, {conn, text, args, usedPrefix, command}) => {
     await m.react(rwait)
     await conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id, mentions: [m.sender]});
     const dataF = await tiktok.v1(args[0]);
-    const desc1 = `*_su video descargado_*`;
+    const desc1 = `_💌  ᩭ✎Tiktok sin marca de agua descargado con éxito_`;
     await conn.sendMessage(m.chat, {video: {url: dataF.play}, caption: desc1}, {quoted: m});
  await m.react(done)
   } catch (e1) {
