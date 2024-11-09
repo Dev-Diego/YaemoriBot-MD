@@ -14,7 +14,7 @@ let handler = async (m, { conn: star, command, args, text, usedPrefix }) => {
     let res = await search(args.join(" "))
     let img = await (await fetch(`${res[0].image}`)).buffer()
 
-    let txt = `乂  Y O U T U B E  -  P L A Y\n\n`
+    let txt = `乂  Y O U T U B E  -  P L A Y 乂\n\n`
        txt += `
 🚩 *Título:*\n» ${res[0].title}\n\n`
        txt += `⏱️ *Duración:*\n» ${secondString(res[0].duration.seconds)}\n\n`
