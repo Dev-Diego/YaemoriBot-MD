@@ -5,7 +5,7 @@ import { xpRange } from '../lib/levelling.js'
 import PhoneNumber from 'awesome-phonenumber'
 
 let tags = {
-'main': 'Info',
+'main': 'Informació Bot',
 'buscador': 'Busquedas',
 'fun': 'Juegos',
 'gacha': 'Gacha',
@@ -52,7 +52,7 @@ const defaultMenu = {
 *˚ ͟͟͞͞➳❥ Actividad » \`\`\`%muptime\`\`\`
 *˚ ͟͟͞͞➳❥ Usuarios » \`\`\`%totalreg\`\`\`
 `.trimStart(),
-    header: '*•/•* %category *•/•*',
+    header: '*•/• %category •/•*',
   body: '%cmd',
   footer: '',
   after: `> ${dev}`,
