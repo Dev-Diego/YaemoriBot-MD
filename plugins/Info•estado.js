@@ -11,17 +11,23 @@ setTimeout(resolve, 1000)
 }) * 1000
 }
 let muptime = clockString(_muptime)
+let totaljadibot = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
 const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) 
+let speed = neww - old
 const used = process.memoryUsage()
-let yaemori = `⭐️ INFORMACIÓN - YAEMORIBOT ⭐️\n\n`
-yaemori += `🌼꙰᠁❥ *◜Creador◞* ⇢ DevDiego\n`
-yaemori += `🌻꙰᠁❥ *◜Grupos Unidos◞* ⇢ ${groupsIn.length}\n`
-yaemori += `🌺꙰᠁❥ *◜Chats Privados◞* ⇢ ${chats.length - groupsIn.length}\n`
-yaemori += `🌼꙰᠁❥ *◜Total De Chats◞* ⇢ ${chats.length}\n`
+let yaemori = `⭐️ `\`\`\Información - YaemoriBot`\`\`\ ⭐️\n\n`
+yaemori += `🌺꙰᠁❥ *◜Creador◞* ⇢ DevDiego\n`
+yaemori += `🌻꙰᠁❥ *◜Prefijo◞* ⇢ [ ${usedPrefix} ]\n`
+yaemori += `🌺꙰᠁❥ *◜Versión◞* ⇢ ${vs}\n`
+yaemori += `🌻꙰᠁❥ *◜Chats Privados◞* ⇢ ${chats.length - groupsIn.length}\n`
+yaemori += `🌺꙰᠁❥ *◜Total De Chats◞* ⇢ ${chats.length}\n`
 yaemori += `🌻꙰᠁❥ *◜Usuarios◞* ⇢ ${totalreg}\n`
-yaemori += `🌺꙰᠁❥ *◜Grupos Registrados◞* ⇢ ${totalchats}\n`
-yaemori += `🌼꙰᠁❥ *◜Actividad◞* ⇢ ${muptime}\n`
+yaemori += `🌺꙰᠁❥ *◜Chats Privados◞* ⇢ ${chats.length - groupsIn.length}\n`
+yaemori += `🌻꙰᠁❥ *◜Grupos◞* ⇢ ${groupsIn.length}\n`
+yaemori += `🌺꙰᠁❥ *◜Actividad◞* ⇢ ${muptime}\n`
+yaemori += `🌻꙰᠁❥ *◜Speed◞* ⇢ ${(speed * 1000).toFixed(0) / 1000}\n`
+yaemori += `🌺꙰᠁❥ *◜SubBots◞* ⇢ ${totaljadibot}`
 await conn.sendFile(m.chat, pp, 'yaemori.jpg', yaemori, fkontak, null, rcanal)
 }
 handler.help = ['status']
