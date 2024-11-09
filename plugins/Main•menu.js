@@ -166,7 +166,7 @@ global.vid = rlink
 const response = await fetch(vid)
 const gif = await response.buffer()
 
-await conn.reply(m.chat, '🚀 *Próximamente se remitirá el menú.*', fkontak, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: packname, body: dev, sourceUrl: redeshost, thumbnail: await (await fetch(fotoperfil)).buffer() }}})
+// await conn.reply(m.chat, '🚀 *Próximamente se remitirá el menú.*', fkontak, { contextInfo:{ forwardingScore: 2022, isForwarded: true, externalAdReply: {title: packname, body: dev, sourceUrl: redeshost, thumbnail: await (await fetch(fotoperfil)).buffer() }}})
 
 await m.react(emojis) 
 
