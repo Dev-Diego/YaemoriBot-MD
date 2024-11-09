@@ -16,7 +16,7 @@ const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isCha
 const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) 
 let speed = neww - old
 const used = process.memoryUsage()
-let yaemori = `⭐️ `\`\`\Información - YaemoriBot`\`\`\ ⭐️\n\n`
+let yaemori = `⭐️ \`\`\`Información - YaemoriBot\`\`\` ⭐️\n\n`
 yaemori += `🌺꙰᠁❥ *◜Creador◞* ⇢ DevDiego\n`
 yaemori += `🌻꙰᠁❥ *◜Prefijo◞* ⇢ [ ${usedPrefix} ]\n`
 yaemori += `🌺꙰᠁❥ *◜Versión◞* ⇢ ${vs}\n`
