@@ -1,6 +1,7 @@
-import axios from 'axios'
+import fg from 'api-dylux'
+import { youtubedl, youtubedlv2 } from '@bochilteam/scraper'
 import yts from 'yt-search'
-import _ from 'lodash' 
+import fetch from 'node-fetch' 
 
 let handler = async (m, { conn, args, usedPrefix, text, command }) => {
 let lister = ["mp3", "yta", "audio", "ytv", "video", "vídeo", "mp4", "mp3doc", "ytadoc", "audiodoc", "mp4doc", "ytvdoc", "videodoc", "vídeodoc"]
