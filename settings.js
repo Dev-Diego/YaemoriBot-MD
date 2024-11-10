@@ -64,7 +64,7 @@ global.avatar = fs.readFileSync('./src/img/avatar_contact.jpg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.grupo = 'https://chat.whatsapp.com/DBV1zXbwYjL43uuI6s2Rhu' //YaemoriBot
+global.grupo = 'https://chat.whatsapp.com/GkuIuySiMwb4qJGl3UJtcZ' //YaemoriBot
 global.grupo2 = 'https://chat.whatsapp.com/EVc2XJuZwjnKKdWUsRYmms' //YaemoriBot2
 global.grupo3 = 'https://chat.whatsapp.com/Ksd32KH9zFoDmO1PJt44M7' //GataBot & YaemoriBot
 global.grupo4 = 'https://chat.whatsapp.com/HjVwC835OWgERQYhspnMW8' //Megumin & YaemoriBot
