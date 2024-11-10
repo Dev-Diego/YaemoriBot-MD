@@ -110,7 +110,7 @@ chat.antiBot2 = false
 if (!('modoadmin' in chat))                     
 chat.modoadmin = false   
 if (!('antiLink' in chat))
-chat.antiLink = false
+chat.antiLink = true
 if (!('modohorny' in chat))
 chat.modohorny = false
 if (!('reaction' in chat))
@@ -137,7 +137,7 @@ detect: true,
 antiBot: false,
 antiBot2: false,
 modoadmin: false,
-antiLink: false,
+antiLink: true,
 simi: false,
 antiver: false,
 modohorny: false, 
