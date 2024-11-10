@@ -2,10 +2,11 @@
 
 import axios from 'axios';
 import yts from 'yt-search';
+import _ from 'lodash';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
-   if (!text) return star.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, ${usedPrefix + command} Distancia - Kimberly Contreraxx`, m, rcanal)
+   if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, ${usedPrefix + command} Distancia - Kimberly Contreraxx`, m, rcanal)
   
     let results = await yts(text);
     let tes = results.all[0]
