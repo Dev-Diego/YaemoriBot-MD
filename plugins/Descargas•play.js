@@ -121,8 +121,8 @@ const text = _.get(args, "length") ? args.join(" ") : _.get(m, "quoted.text") ||
   const audioData = await res.json()
   
 await conn.sendMessage(m.chat, { video: { url: audioData.result.downloadUrl }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })
-  } else {
-    await m.reply("🚩 Ocurrio un error.")
+    } catch (e) {
+    await m.reply("🚩 Ocurrio un error.\n\n" + e)
 break
 }}}
 
