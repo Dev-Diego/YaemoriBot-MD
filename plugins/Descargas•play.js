@@ -2,7 +2,6 @@
 
 import axios from 'axios';
 import yts from 'yt-search';
-import _ from 'lodash';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
