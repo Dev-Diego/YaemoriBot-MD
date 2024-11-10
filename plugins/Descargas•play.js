@@ -16,6 +16,13 @@ const cukaDownloader = {
   youtube: async (url, exct) => {
     const format = [ 'mp3', 'mp4' ];
     try {
+      await m.react(rwait)
+      conn.reply(m.chat, '🚀 Enviando el audio....', m, {
+      contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+      title: packname,
+      body: dev,
+      previewType: 0, thumbnail: icons,
+     sourceUrl: channel }}})
       const response = await fetch(`${baseUrl}/download`, {
         method: 'POST',
         headers: {
@@ -34,6 +41,7 @@ const cukaDownloader = {
   },
   tiktok: async (url) => {
     try {
+      await m.react(rwait)
       const response = await fetch(`${baseUrl}/tiktok/download`, {
         method: 'POST',
         headers: {
@@ -53,12 +61,6 @@ const cukaDownloader = {
   spotify: async (url) => {
     try {
       await m.react(rwait)
-      conn.reply(m.chat, '🚀 Enviando el audio....', m, {
-      contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
-      title: packname,
-      body: dev,
-      previewType: 0, thumbnail: icons,
-     sourceUrl: channel }}})
       const response = await fetch(`${baseUrl}/spotify/download`, {
         method: 'POST',
         headers: {
