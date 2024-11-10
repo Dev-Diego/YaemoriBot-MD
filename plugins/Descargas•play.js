@@ -124,7 +124,7 @@ await conn.sendMessage(m.chat, { video: { url: audioData.result.downloadUrl }, f
     } catch (e) {
     await m.reply("🚩 Ocurrio un error.\n\n" + e)
 break
-}}}
+}}}}
 
 handler.help = ['play', 'play2'];
 handler.tags = ['descargas'];
