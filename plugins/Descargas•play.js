@@ -4,7 +4,7 @@ import axios from 'axios';
 import yts from 'yt-search';
 import _ from 'lodash';
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, args, text, usedPrefix, command }) => {
 
 const isCommand1 = /^(play|mp3)$/i.test(command)  
 const isCommand2 = /^(play2|mp4)$/i.test(command)  
@@ -124,7 +124,7 @@ await conn.sendMessage(m.chat, { video: { url: audioData.result.downloadUrl }, f
     } catch (e) {
     await m.reply("🚩 Ocurrio un error.\n\n" + e)
 break
-}}}}
+}}}
 
 handler.help = ['play', 'play2'];
 handler.tags = ['descargas'];
