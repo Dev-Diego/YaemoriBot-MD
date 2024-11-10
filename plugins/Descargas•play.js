@@ -101,6 +101,7 @@ case isCommand2:
 const text = _.get(args, "length") ? args.join(" ") : _.get(m, "quoted.text") || _.get(m, "quoted.caption") || _.get(m, "quoted.description") || ""
   if (typeof text !== 'string' || !text.trim()) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, ${usedPrefix + command} Distancia - Kimberly Contreraxx`, m, rcanal)
 
+  try {
   await m.react(rwait)
   conn.reply(m.chat, '🚀 Enviando su video...', m, {
   contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
