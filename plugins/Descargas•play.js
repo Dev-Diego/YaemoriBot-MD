@@ -44,12 +44,15 @@ let handler = async (m, { conn, command, usedPrefix, args }) => {
   const audioData = await res.json()
   
   if (audioData.status && audioData.result?.downloadUrl) {
-    await conn.sendMessage(m.chat, {
+
+await conn.sendMessage(m.chat, { video: { url: audioData.result.downloadUrl }, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `🚩`, thumbnail: audioData.result.downloadUrl }, { quoted: m })
+
+/*    await conn.sendMessage(m.chat, {
       audio: { url: audioData.result.downloadUrl },
       caption: captvid,
       mimetype: "audio/mpeg",
       contextInfo: infoReply.contextInfo
-    }, { quoted: m })
+    }, { quoted: m })*/
   } else {
     await m.reply("Error al descargar el audio.")
   }
