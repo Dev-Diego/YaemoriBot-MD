@@ -128,7 +128,7 @@ break
 
 handler.help = ['play', 'play2'];
 handler.tags = ['descargas'];
-handler.command = ['play', 'play2'];
+handler.command = ['play', 'mp3', 'play2', 'mp4'];
 handler.register = true;
 
 export default handler;
