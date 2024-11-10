@@ -81,7 +81,7 @@ let dataos = await cukaDownloader.youtube(tes.url, "mp3")
 console.log(dataos)
 let { title, thumbnail, quality, downloadUrl } = dataos
 
-await conn.sendMessage(m.chat, { audio: { url: tes.url }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })
+await conn.sendMessage(m.chat, { audio: { url: dl.url }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m })
 await m.react(done)
 
 }
