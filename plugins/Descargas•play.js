@@ -71,8 +71,16 @@ const cukaDownloader = {
 
 let dataos = await cukaDownloader.youtube(tes.url, "mp3")
 console.log(dataos)
-let { title, thumbnail, quality, downloadUrl } = dataos
-  m.reply(`_✧ Enviando ${title} (${quality})_\n\n> ${tes.url}`)
+let { title, publicado, seconds, author, thumbnail, quality, downloadUrl } = dataos
+    let txt = `乂 Y O U T U B E - P L A Y 乂\n`
+       txt += `
+🚩 *Título:*\n» ${title}\n\n`
+       txt += `⏱️ *Duración:*\n» ${seconds)}\n\n`
+       txt += `⭐️ *Publicado:*\n» ${publicado)}\n\n`
+       txt += `🌸 *Canal:*\n» ${author || 'Desconocido'}\n\n`
+       txt += `🔗 *Enlace:*\n» ${tes.url}`
+
+await conn.reply(txt)
       const doc = {
       audio: { url: downloadUrl },
       mimetype: 'audio/mp4',
