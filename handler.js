@@ -93,6 +93,8 @@ if (!('welcome' in chat))
 chat.welcome = true
 if (!('autolevelup' in chat))
 chat.autolevelup = false
+if (!('autoAceptar' in chat))
+chat.autoAceptar = false
 if (!('autoresponder' in chat))
 chat.autoresponder = false
 if (!('audios' in chat))
@@ -128,6 +130,7 @@ welcome: true,
 autolevelup: false,
 autoresponder: false,
 delete: false,
+autoAceptar: false,
 antifake: false,
 audios: false,
 detect: true,
