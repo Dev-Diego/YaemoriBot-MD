@@ -30,7 +30,7 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
           body: JSON.stringify({ url, format: exct })
       });
 
-await conn.sendMini(m.chat, thumbnail, dev, thumbnail, thumbnail, channel, m)
+await conn.sendMini(m.chat, thumbnail, dev, await (await conn.getFile(thumbnail).data, await (await conn.getFile(thumbnail).data, channel, m)
 
       const data = await response.json();
       return data;
