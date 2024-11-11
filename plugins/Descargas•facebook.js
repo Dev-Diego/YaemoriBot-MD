@@ -5,14 +5,13 @@ if (!args[0]) {
 return conn.reply(m.chat, '🚩 Ingresa Un Link De Facebook', m, rcanal)}
 let res
 try {
-let fbicon = 'https://qu.ax/DeKDw.jpg'
 await m.react(rwait)
 conn.reply(m.chat, `🕒 *Descargando su video de facebook.*`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
 body: dev,
 previewType: 0, 
-thumbnail: fbicon,
+thumbnail: imagen1,
 sourceUrl: channel }}})
 res = await igdl(args[0])
 } catch {
