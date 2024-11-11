@@ -2,12 +2,13 @@ const handler = async (m, {conn, text}) => {
 
 let q = m.quoted ? m.quoted : m
 let img = await q.download()
-if (!img) return await conn.reply(m.chat, '🚩 Te faltó la foto', m)
+let imagen = (q.msg || q).mimetype || q.mediaType || "";
+if (!imagen) return await conn.reply(m.chat, '🚩 Te faltó la foto', m)
 
 try {
 await m.react(rwait)
 
-await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.`, m, fake)
+await conn.reply(m.chat, `🚩 Se envió correctamente al canal.`, m, fake)
 //await conn.reply(global.channelid, text, null, fake)
 await conn.sendFile(global.channelid, img, 'error.jpg', text, m, null, rcanal);
 await m.react(done)
