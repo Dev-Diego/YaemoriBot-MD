@@ -32,7 +32,7 @@ const texto1 = `🚩 *Título*
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
-const apiUrl = `https://shinoa.us.kg/api/download/ytdl?url=${encodeURIComponent(yt_play[0].url)}`;
+const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${encodeURIComponent(yt_play[0].url)}`;
 const apiResponse = await fetch(apiUrl);
 const delius = await apiResponse.json();
 if (!delius.status) return m.react(error);
