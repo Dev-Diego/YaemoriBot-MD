@@ -19,9 +19,9 @@ sourceUrl: channel }}})
 
 const yt_play = await search(args.join(' '))
 let additionalText = ''
-if (command === 'play3' || command == 'playdoc') {
+if (command === 'play' || command == 'mp3') {
 additionalText = 'audio'
-} else if (command === 'play4' || command == 'playdoc2') {
+} else if (command === 'play2' || command == 'mp4') {
 additionalText = 'video'}
 
 let texto1 = `・₊✧★。..・✫・🎸🎧°⋆♡₊˚ 🔮
@@ -47,7 +47,7 @@ let texto1 = `・₊✧★。..・✫・🎸🎧°⋆♡₊˚ 🔮
 > _*🍬 εɳѵเαɳ∂σ รµ ${additionalText}, αɠµαɾ∂ε µɳ ɱσɱεɳƭσ 🍓...*_`.trim()
 await conn.sendMessage(m.chat, { text: texto1, contextInfo: { externalAdReply: { title: yt_play[0].title, body: dev, thumbnailUrl: yt_play[0].thumbnail, mediaType: 1, showAdAttribution: true, renderLargerThumbnail: true }}} , { quoted: fkontak })
 
-if (command == 'play3' || command == 'playdoc') {
+if (command == 'play' || command == 'mp3') {
 
 try {
 
@@ -79,7 +79,7 @@ conn.sendMessage(m.chat, {audio: {url: ress.url}, fileName: __res[0].title + '.m
 await conn.reply(m.chat, '🚩 Ocurrió un error.', m, rcanal, )
 }}}}
 
-if (command == 'play4' || command == 'playdoc2') {
+if (command == 'play2' || command == 'mp4') {
 
 try {
 const qu = '360'
