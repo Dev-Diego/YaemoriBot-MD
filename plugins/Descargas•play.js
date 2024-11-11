@@ -10,23 +10,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     let results = await yts(text);
     let tes = results.all[0]
 
-      let yt_play = await search(args.join(" "))
-      let img = await (await fetch(`${yt_play[0].image}`)).buffer()
-      await conn.sendMessage(m.chat, {
-      text: null,
-      contextInfo: { 
-      forwardingScore: 9999, 
-      isForwarded: true, 
-      externalAdReply: {
-      title: `${yt_play[0].title}`,
-      body: dev,
-      thumbnailUrl: img,
-      thumbnail: img,
-      sourceUrl: `${yt_play[0].url}`,
-      mediaType: 1,
-      renderLargerThumbnail: true
-      }}}, { quoted: fkontak})
-
 const baseUrl = 'https://cuka.rfivecode.com';
 const cukaDownloader = {
   youtube: async (url, exct) => {
