@@ -3,7 +3,7 @@
 import fetch from 'node-fetch'
 import fs from 'fs'
 
-const fantasyDBPath = './fantasy.json'
+const fantasyDBPath = './src/database/data.json'
 const jsonURL = 'https://raw.githubusercontent.com/GataNina-Li/module/main/imagen_json/anime.json'
 
 let handler = async (m, { command, usedPrefix, text, conn }) => {
