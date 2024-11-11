@@ -62,7 +62,7 @@ if (nombreImagen) {
 estado = `*${nombreImagen}* fue comprado por *${conn.getName(idUsuarioExistente)}*`
 }}}
 
-await conn.reply(m.chat, '> *Obteniendo información del personaje...*\n\n_Esto puede tomar tiempo, paciencia por favor_', m)
+await conn.reply(m.chat, '🚀 *Obteniendo información del personaje...*\n\n_Esto puede tomar tiempo, paciencia por favor_', m)
 const preguntas = obtenerPreguntas(nombre, !user.premiumTime ? 1 : 5)
 const respuestas = []
 const modo = `Responderás a esta pregunta únicamente`
@@ -76,41 +76,14 @@ respuestas.push('err-gb')
 }}
 
 let mensaje = `
-> 🌟 *Detalles del personaje* 🌟
+✧ Este es tu personaje
 
-*Nombre:* 
-✓ ${nombre}
-
-*Origen:*
-✓ ${origen}
-
-*Precio:* 
-✓ \`${precio}\` 🍪
-
-*Clase:* 
-✓ ${clase}
-
-*Tipo:* 
-✓ ${tipo}
-
-*Código:* 
-✓ ${codigo}
-
-*Descripción:* 
-✓ ${descripcion}
-
-⟡ *Calificación total del personaje »* \`${calificacionTotal}\`
-⟡ *Cantidad de 👍 (Me gusta) »* \`${cantidadLikes}\`
-⟡ *Cantidad de ❤️ (Me encanta) »* \`${cantidadSuperlikes}\`
-⟡ *Cantidad de 👎 (No me gusta) »* \`${cantidadDislikes}\`
-
-*Estado:* 
-✓ ${estado}
-`
+Nombre » *${nombre}*
+Precio » *${precio}* 🍪`
 
 mensaje += `
-> 👩‍🔬 Función Experimental 🧪
-> ✨ *Información basada en IA* ✨\n
+👩‍🔬 Función Experimental 🧪
+✨ *Información basada en IA* ✨\n
 ${respuestas.some(respuesta => respuesta === 'err-gb') ? '`En este momento no se puede acceder a este recurso`' :
 preguntas.map((pregunta, index) => `*✪ ${pregunta}*\n${respuestas[index]}`).join('\n\n')}
 `
