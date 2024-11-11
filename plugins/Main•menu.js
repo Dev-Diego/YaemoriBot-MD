@@ -243,6 +243,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 🍟 ${usedPrefix}mediafire
 🍟 ${usedPrefix}apkmod
 🍟 ${usedPrefix}play
+🍟 ${usedPrefix}play2
 🍟 ${usedPrefix}play3
 🍟 ${usedPrefix}play4
 🍟 ${usedPrefix}spotify
