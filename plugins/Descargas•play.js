@@ -14,7 +14,7 @@ conn.reply(m.chat, global.wait, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
 body: dev,
-previewType: 0, thumbnail: icons,
+previewType: 0, thumbnail: musicicon,
 sourceUrl: channel }}});
 const yt_play = await search(args.join(' '));
 const ytplay2 = await yts(text);
@@ -75,7 +75,7 @@ conn.reply(m.chat, global.wait, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
 body: dev,
-previewType: 0, thumbnail: icons,
+previewType: 0, thumbnail: vidicon,
 sourceUrl: channel }}});
 const yt_play = await search(args.join(' '));
 const ytplay2 = await yts(text);
