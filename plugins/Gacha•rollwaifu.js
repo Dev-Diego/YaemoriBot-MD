@@ -16,7 +16,7 @@ let calificacionTotal = 0, cantidadLikes = 0, cantidadSuperlikes = 0, cantidadDi
 const personaje = data.infoImg.find(p => p.name.toLowerCase() === text.toLowerCase() || p.code === text)
 
 if (!personaje || !text) {
-return conn.reply(m.chat, `> *No se encontró información para el personaje especificado.*\n\n_Ingrese el nombre o código del personaje_\n\n> Puede ver la lista de personajes disponibles usando *${usedPrefix}fantasyl* o *${usedPrefix}fyl*`, m)
+return conn.reply(m.chat, `🚩 *No se encontró información para el personaje especificado.*\n\n_Ingrese el nombre o código del personaje_\n\n🐢 Puede ver la lista de personajes disponibles usando *${usedPrefix}personajes* o *${usedPrefix}waifup*`, m)
 }
 
 const imagen = personaje.url
