@@ -38,9 +38,9 @@ const delius = await apiResponse.json();
 if (!delius.status) return m.react(error);
 const downloadUrl = delius.data.download.url;
 const fileSize = await getFileSize(downloadUrl);
-await conn.sendMessage(m.chat, { audio: { url: audiop }, mimetype: 'audio/mpeg' }, { quoted: m });
+await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m });
 await m.react(done);
-if (fileSize > LimitAud) return await conn.sendMessage(m.chat, { document: { url: audiop }, mimetype: 'audio/mpeg', fileName: `${yt_play[0].title}.mp3` }, { quoted: m });
+if (fileSize > LimitAud) return await conn.sendMessage(m.chat, { document: { url: downloadUrl }, mimetype: 'audio/mpeg', fileName: `${yt_play[0].title}.mp3` }, { quoted: m });
 await m.react(done);
 } catch (e1) {
 try {
@@ -49,7 +49,7 @@ const res = await fetch(`https://api.zenkey.my.id/api/download/ytmp3?apikey=zenk
 const audioData = await res.json()
 
 if (audioData.status && audioData.result?.downloadUrl) {
-    await conn.sendMessage(m.chat, { audio: { url: audiop }, mimetype: 'audio/mpeg' }, { quoted: m });
+    await conn.sendMessage(m.chat, { audio: { url: audioData.result.downloadUrl }, mimetype: 'audio/mpeg' }, { quoted: m });
 await m.react(done);
 }
 } catch (e2) {
