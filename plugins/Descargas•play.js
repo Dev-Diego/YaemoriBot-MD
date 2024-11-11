@@ -7,7 +7,7 @@ const LimitAud = 725 * 1024 * 1024; //700MB
 const LimitVid = 425 * 1024 * 1024; //425MB
 const handler = async (m, {conn, command, args, text, usedPrefix}) => {
 
-if (command == 'play' || command == 'musica') {
+if (command == 'play' || command == 'mp3') {
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, );
 await m.react(rwait);
 conn.reply(m.chat, global.wait, m, {
@@ -68,7 +68,7 @@ await m.react(error);
 console.log(e3);
 }}}}
 
-if (command == 'play2' || command == 'video') {
+if (command == 'play2' || command == 'mp4') {
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, );
 await m.react(rwait);
 conn.reply(m.chat, global.wait, m, {
@@ -148,8 +148,8 @@ const texto1 = `🚩 *Título*
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 }}
 handler.help = ['play', 'play2'];
-handler.tags = ['downloader'];
-handler.command = ['play', 'play2', 'play3', 'play4', 'audio', 'video']
+handler.tags = ['descargas'];
+handler.command = ['play', 'play2', 'superplay3', 'superplay4', 'mp3', 'mp4']
 //handler.cookies = 3
 handler.register = true 
 export default handler;
