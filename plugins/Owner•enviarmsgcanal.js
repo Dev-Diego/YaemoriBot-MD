@@ -4,9 +4,6 @@ let q = m.quoted ? m.quoted : m
 let img = await q.download()
 if (!img) return await conn.reply(m.chat, '🚩 Te faltó la foto', m)
 
-else {
-if (!text) return await conn.reply(m.chat, `🚩 Y el texto que quiere transmitir al canal?`, m)}
-
 try {
 await m.react(rwait)
 
