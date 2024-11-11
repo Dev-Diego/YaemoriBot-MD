@@ -118,7 +118,7 @@ return conn.reply(m.chat, `🚩 Ocurrió un error.\n\n${e}` m, rcanal, )}
 }
 handler.help = ['play', 'play2']
 handler.tags = ['descargas']
-handler.command = ['play', 'play2', 'mp3', 'mp44']
+handler.command = ['play', 'play2', 'mp3', 'mp4']
 
 //handler.cookies = 1
 handler.register = true
