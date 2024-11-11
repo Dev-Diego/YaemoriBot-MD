@@ -30,7 +30,7 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
           body: JSON.stringify({ url, format: exct })
       });
       let yt_play = await search(args.join(" "))
-
+      let img = await (await fetch(`${yt_play[0].image}`)).buffer()
       await conn.sendMessage(m.chat, {
       text: null,
       contextInfo: { 
