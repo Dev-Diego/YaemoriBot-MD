@@ -10,7 +10,7 @@ await m.react(rwait)
 
 await conn.reply(m.chat, `🚩 Se envió correctamente al canal.`, m, fake)
 //await conn.reply(global.channelid, text, null, fake)
-await conn.sendFile(global.channelid, img, 'error.jpg', text, m, null, rcanal);
+await conn.sendFile(global.channelid, img, 'error.jpg', text, m, null, fake);
 await m.react(done)
 
 } catch {
