@@ -13,6 +13,14 @@ return imageMessage
 }
 
 try {
+await m.react(rwait)
+conn.reply(m.chat, '🐢 Descargando su imagen....', m, {
+contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+title: packname,
+body: dev,
+previewType: 0, thumbnail: icons,
+sourceUrl: channel }}})
+
 let Free = []
 let { data } = await axios.get(`https://api.ryzendesu.vip/api/search/gimage?query=${encodeURIComponent(text)}`)
 let YL = data
@@ -43,8 +51,10 @@ carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ c
 }}}, { quoted: m })
 
 await conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id })
-} catch (error) {
-console.error(error) 
+await m.react(done)
+} catch (e) {
+await m.react(error)
+console.error('🚩 Ocurrió un error.\n\n' + e) 
 }}
 
 handler.tags = ['descargas']
