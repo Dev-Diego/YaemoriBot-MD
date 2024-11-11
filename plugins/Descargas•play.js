@@ -27,9 +27,9 @@ const texto1 = `🚩 *Título*
 🕑 *Duración* 
 » ${secondString(yt_play[0].duration.seconds)}
 
-> _Descargado el audio 🔊, aguarden un momento...._`.trim();
+> _Descargado el audio 🔊, aguarde un momento...._`.trim();
 
-await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, fake);
+await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
 const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp3?url=${encodeURIComponent(yt_play[0].url)}`;
@@ -92,7 +92,7 @@ const texto1 = `🚩 *Título*
 
 > _Si este comando falla usar de la seguirte manera_ » *#ytmp4*`.trim();
 
-await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, fake);
+await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
 await m.react(rwait);
 const apiUrl = `https://deliriussapi-oficial.vercel.app/download/ytmp4?url=${encodeURIComponent(yt_play[0].url)}`;
