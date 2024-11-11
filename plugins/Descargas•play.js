@@ -81,10 +81,7 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
 let dataos = await cukaDownloader.youtube(tes.url, "mp3")
 console.log(dataos)
 let { title, thumbnail, quality, downloadUrl } = dataos
-
-m.reply(`${title} (${quality})_\n\n> ${tes.url}`)
-
- await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m });
+  await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m });
   await m.react(done);
 }
 handler.help = ['play'];
@@ -92,4 +89,4 @@ handler.tags = ['descargas'];
 handler.command = ['play', 'mp3'];
 handler.register = true
 
-export default handler;https://cuka.rfivecode.com
+export default handler;
