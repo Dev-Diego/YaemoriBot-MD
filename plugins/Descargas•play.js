@@ -1,24 +1,92 @@
-import yts from 'yt-search'
-import axios from 'axios'
+// @Kenisawa
 
-let handler = async (m, { conn, text }) => {
-if (!text) return m.reply('ingresa el nombre de una cancion')
-try {
-let ytsres = await yts(text)
-let vid = ytsres.videos[0]
-let { url, title, thumbnail, timestamp, ago } = vid
-let api = await axios.get(`https://widipe.com/download/ytdl?url=${url}`)
-let json = api.data.result
-let { mp3 } = json
+import axios from 'axios';
+import yts from 'yt-search';
 
-let audioMsg = { audio: { url: mp3 },mimetype: 'audio/mpeg',fileName: `${title}.mp3`,contextInfo: {externalAdReply: {showAdAttribution: true,
-mediaType: 2,mediaUrl: url,title: title,body: '© YaemoriBot-MD',sourceUrl: url,thumbnailUrl: thumbnail,renderLargerThumbnail: true}}}
-await conn.sendMessage(m.chat, audioMsg, { quoted: m })
-} catch (error) {
-console.error(error)
-}}
+let handler = async (m, { conn, text, usedPrefix, command }) => {
 
+  if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, )
 
-handler.command = ['play']
+    let results = await yts(text);
+    let tes = results.all[0]
 
-export default handler
+const baseUrl = 'https://cuka.rfivecode.com';
+const cukaDownloader = {
+  youtube: async (url, exct) => {
+    const format = [ 'mp3', 'mp4' ];
+    try {
+      await m.react(rwait)
+      conn.reply(m.chat, global.wait, m, {
+contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
+      title: packname,
+      body: dev,
+      previewType: 0, thumbnail: icons,
+      sourceUrl: channel }}})
+      const response = await fetch(`${baseUrl}/download`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+          body: JSON.stringify({ url, format: exct })
+      });
+
+      const data = await response.json();
+      return data;
+      console.log('Data:' + data);
+    } catch (error) {
+      return { success: false, message: error.message };
+      console.error('Error:', error);
+    }
+  },
+  tiktok: async (url) => {
+    try {
+      await m.react(rwait)
+      const response = await fetch(`${baseUrl}/tiktok/download`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({ url })
+      });
+
+      const data = await response.json();
+      return data;
+      console.log('Data:' + data);
+    } catch (error) {
+      return { success: false, message: error.message };
+      console.error('Error:', error);
+    }
+  },
+  spotify: async (url) => {
+    try {
+      await m.react(rwait)
+      const response = await fetch(`${baseUrl}/spotify/download`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({ url })
+      });
+
+      const data = await response.json();
+      return data;
+      console.log('Data:' + data);
+    } catch (error) {
+      return { success: false, message: error.message };
+      console.error('Error:', error);
+    }
+  }
+}
+
+let dataos = await cukaDownloader.youtube(tes.url, "mp3")
+console.log(dataos)
+let { title, thumbnail, quality, downloadUrl } = dataos
+  await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m });
+  await m.react(done);
+}
+handler.help = ['play'];
+handler.tags = ['descargas'];
+handler.command = ['play', 'mp3'];
+handler.register = true
+
+export default handler;
