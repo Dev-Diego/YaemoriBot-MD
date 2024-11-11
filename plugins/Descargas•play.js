@@ -30,8 +30,6 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
           body: JSON.stringify({ url, format: exct })
       });
 
-await conn.sendMini(m.chat, thumbnail, dev, await (await conn.getFile(thumbnail).data, await (await conn.getFile(thumbnail).data, channel, m)
-
       const data = await response.json();
       return data;
       console.log('Data:' + data);
@@ -83,6 +81,8 @@ await conn.sendMini(m.chat, thumbnail, dev, await (await conn.getFile(thumbnail)
 let dataos = await cukaDownloader.youtube(tes.url, "mp3")
 console.log(dataos)
 let { title, thumbnail, quality, downloadUrl } = dataos
+await conn.sendMini(m.chat, thumbnail, dev, await (await conn.getFile(thumbnail).data, await (await conn.getFile(thumbnail).data, channel, m)
+
   await conn.sendMessage(m.chat, { audio: { url: downloadUrl }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m });
   await m.react(done);
 }
