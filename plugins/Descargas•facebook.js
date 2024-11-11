@@ -11,7 +11,7 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
 title: packname,
 body: dev,
 previewType: 0, 
-thumbnail: imagen1,
+thumbnail: fbicon,
 sourceUrl: channel }}})
 res = await igdl(args[0])
 } catch {
