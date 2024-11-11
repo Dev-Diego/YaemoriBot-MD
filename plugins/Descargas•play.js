@@ -88,9 +88,7 @@ const texto1 = `🚩 *Título*
 🕑 *Duración*
 » ${secondString(yt_play[0].duration.seconds)}
 
-> _Descargado su video 📽, aguarde un momento...._
-
-> _Si este comando falla usar de la seguirte manera_ » *#ytmp4*`.trim();
+> _Descargado su video 📽, aguarde un momento...._`.trim();
 
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
