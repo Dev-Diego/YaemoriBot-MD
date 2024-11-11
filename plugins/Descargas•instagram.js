@@ -9,7 +9,8 @@ conn.reply(m.chat, `🕒 *Enviando El Video...*`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
 body: dev,
-previewType: 0, thumbnail: icons,
+previewType: 0, 
+thumbnail: igicon,
 sourceUrl: channel }}})      
 let res = await igdl(args[0])
 let data = res.data       
