@@ -123,7 +123,7 @@ await m.react(error);
 console.log(e2);
 }}}
 
-if (command == 'play3' || command == 'play4') {
+if (command == 'superplay3' || command == 'superplay4') {
 if (!text) return conn.reply(m.chat, `🚩 *Ingrese el nombre de un video de YouTube*\n\nEjemplo, !${command} Distancia - Kimberly Contreraxx`,  m, rcanal, )
 await m.react(rwait)
 conn.reply(m.chat, global.wait, m, {
@@ -145,7 +145,7 @@ const texto1 = `🚩 *Título*
 👀 *Vistas*
 » ${MilesNumber(yt_play[0].views)}`.trim()
 
-await conn.sendButton(m.chat, texto1, botname, yt_play[0].thumbnail, [['Audio', `${usedPrefix}ytmp3 ${yt_play[0].url}`], ['video', `${usedPrefix}ytmp4 ${yt_play[0].url}`], ['Mas resultados', `${usedPrefix}yts ${text}`]], null, null, m)
+await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 }}
 handler.help = ['play', 'play2'];
 handler.tags = ['downloader'];
