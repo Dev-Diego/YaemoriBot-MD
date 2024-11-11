@@ -30,6 +30,8 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
           body: JSON.stringify({ url, format: exct })
       });
 
+await conn.sendMini(m.chat, thumbnail, dev, thumbnail, thumbnail, channel, m)
+
       const data = await response.json();
       return data;
       console.log('Data:' + data);
@@ -89,4 +91,4 @@ handler.tags = ['descargas'];
 handler.command = ['play', 'mp3'];
 handler.register = true
 
-export default handler;
+export default handler;https://cuka.rfivecode.com
