@@ -32,7 +32,7 @@ txt += `🍄 *Registrado* :: *${registered ? 'Si': 'No'}*\n`
 txt += `💐 *Premium* :: *${prem ? 'Si' : 'No'}*\n`
 
   let mentionedJid = [who]
-await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m)
+await conn.sendFile(m.chat, img, 'thumbnail.jpg', txt, m, rcanal)
 }
 handler.help = ['perfil']
 handler.tags = ['rg']
