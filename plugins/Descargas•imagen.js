@@ -43,7 +43,7 @@ deviceListMetadata: {},
 deviceListMetadataVersion: 2
 },
 interactiveMessage: proto.Message.InteractiveMessage.fromObject({contextInfo: {mentionedJid: [m.sender]},
-body: proto.Message.InteractiveMessage.Body.create({ text: dev }),
+body: proto.Message.InteractiveMessage.Body.create({ text: `${dev}` }),
 footer: proto.Message.InteractiveMessage.Footer.create({ text: 'Imagen Busqueda' }),
 header: proto.Message.InteractiveMessage.Header.create({ hasMediaAttachment: false }),
 carouselMessage: proto.Message.InteractiveMessage.CarouselMessage.fromObject({ cards: [...Free] })
