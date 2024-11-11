@@ -68,7 +68,7 @@ await conn.reply(m.chat, `🚩 Es posible que el archivo sea muy pesado.`, m, rc
 }}}}
 handler.tags = ['descargas']
 handler.help = ['ytmp4 *<url youtube>*']
-handler.command = ['video', 'fgmp4', 'dlmp4', 'getvid', 'yt', 'ytmp4', 'mp4']
+handler.command = ['video', 'fgmp4', 'dlmp4', 'getvid', 'yt', 'ytmp4']
 export default handler
 
 function bytesToSize(bytes) {
