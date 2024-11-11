@@ -54,7 +54,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 │🍂⃟🍟┊Bot » \`\`\`${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot')}\`\`\`
 │🍂⃟☁️┊Librería » \`\`\`Baileys\`\`\`
 │🍂⃟📆┊Fecha » \`\`\`${moment.tz('America/Bogota').format('DD/MM/YY')}\`\`\`
-│🍂⃟🕑┊Tiempo Activo » \`\`\`${uptime}\`\`\`
+│🍂⃟🕑┊Activa » \`\`\`${uptime}\`\`\`
 │🍂⃟👥️️┊Usuarios » \`\`\`${totalreg}\`\`\`
 ╰─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒
 
