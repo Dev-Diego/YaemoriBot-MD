@@ -5,7 +5,7 @@ try {
 await m.react(rwait)
 if (conn.user.jid == conn.user.jid) {
 let stdout = execSync('git pull' + (m.fromMe && text ? ' ' + text : ''))
-await conn.reply(m.chat, stdout.toString(), m)
+await conn.reply(m.chat, stdout.toString(), m, rcanal)
 await m.react(done)}
 } catch (e) {
 await m.react(error)
