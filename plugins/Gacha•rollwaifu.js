@@ -1,9 +1,9 @@
 // Código elaborado por: https://github.com/GataNina-Li
-// Editado Por @Alba070503 xd
 
 import fetch from 'node-fetch'  
 import fs from 'fs'
-const fantasyDBPath = './fantasy.json'
+const fantasyDBPath = './src/database/data.json'
+let gataMenu = icons
 let jsonURL = 'https://raw.githubusercontent.com/GataNina-Li/module/main/imagen_json/anime.json'
 let id_message, pp, dato, fake, user, estado, idUsuarioExistente, nombreImagen, fantasyDB, response, data, userId, voto, emojiSaved = null
 const likeEmojisArrays = ['👍', '👍🏻', '👍🏼', '👍🏽', '👍🏾', '👍🏿']
@@ -69,8 +69,26 @@ if (nuevoPrecio < 50) {
 nuevoPrecio = 50
 }
 
-let txtNewPrice = nuevoPrecio !== dato.price ? `\n乂 *Precio anterior:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n乂 *Nuevo Precio:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*°°°·.°·..·°¯°·._.··._.·°¯°·.·° .·°°*` : `\n乂 *Precio:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
-let info = `Rw`
+let txtNewPrice = nuevoPrecio !== dato.price ? `✰ Precio anterior:*\n> » *${dato.price} 🍪*\n✰ Nuevo Precio:\n> » ${nuevoPrecio} 🍪*\n✰ Precio:\n> » *${dato.price} 🍪*`
+let info = `┏━━━━━━━━━⪩
+┃˚₊ · ͟͟͞͞➳❥ 𝐅𝐄𝐋𝐈𝐂𝐈𝐃𝐀𝐃𝐄𝐒
+┃⏤͟͟͞͞𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐉𝐄 𝐎𝐁𝐓𝐔𝐕𝐈𝐃𝐎
+┗━━━━━━━━━⪩
+
+✰ Nombre:
+> » *${dato.name}*
+✰ Origen:
+> » *${dato.desp}*
+✰ Clase:
+> » *${dato.class}*
+✰  Tipo:
+> » *${dato.type}*
+${txtNewPrice}
+✰ Estado:
+> » Estado: *${estado}*
+
+*✰ Identificacion:*
+${codigoActual}`
 info += `\n\n${estado === 'Libre' ? '_Responde a este mensaje con "c" para comprarlo_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
 id_message = (await conn.sendFile(m.chat, dato.url, 'error.jpg', info.trim(), fkontak, true, {
 contextInfo: {
@@ -81,7 +99,7 @@ showAdAttribution: false,
 title: `${conn.getName(m.sender)}`,
 body: `${dato.desp}`,
 mediaType: 1,
-sourceUrl: accountsgb,
+sourceUrl: redes,
 thumbnailUrl: pp
 }}
 }, { caption: 'imagen_info' })).key.id
@@ -313,7 +331,7 @@ fs.writeFileSync(fantasyDBPath, JSON.stringify(fantasyDB, null, 2), 'utf8')}
 }}}
 //user.fantasy = new Date * 1  
 }}
-handler.command = ["rollwaif", "rw"]
+handler.command = /^(rollwaifu|rw)$/i
 export default handler
 
 function msToTime(duration) {
