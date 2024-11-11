@@ -10,7 +10,7 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
 title: packname,
 body: dev,
 previewType: 0, 
-thumbnail: igicon,
+thumbnail: icons,
 sourceUrl: channel }}})      
 let res = await igdl(args[0])
 let data = res.data       
