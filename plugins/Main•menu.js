@@ -122,16 +122,6 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 🍧 ${usedPrefix}zodiac
 🍧 ${usedPrefix}slot
 
-*•/• Gacha •/•*
-
-🌹 ${usedPrefix}character
-🌹 ${usedPrefix}darrw
-🌹 ${usedPrefix}obtenidos
-🌹 ${usedPrefix}c
-🌹 ${usedPrefix}robarpersonaje
-🌹 ${usedPrefix}rw
-🌹 ${usedPrefix}toprw
-
 *•/• JadiBots •/•*
 
 🌻 ${usedPrefix}serbot
