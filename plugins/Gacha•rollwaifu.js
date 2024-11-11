@@ -70,7 +70,7 @@ nuevoPrecio = 50
 }
 
 let txtNewPrice = nuevoPrecio !== dato.price ? `\n乂 *Precio anterior:* ~\`${dato.price}\`~ *${rpgshop.emoticon('money')}*\n乂 *Nuevo Precio:* \`${nuevoPrecio}\` *${rpgshop.emoticon('money')}*\n*°°°·.°·..·°¯°·._.··._.·°¯°·.·° .·°°*` : `\n乂 *Precio:* \`\`\`${dato.price}\`\`\` *${rpgshop.emoticon('money')}*`
-let info = `*乂 P E R S O N A J E  O B T E N I D O 乂*\n*°°°·.°·..·°¯°·._.··._.·°¯°·.·° .·°°*\n乂 *Nombre:* ${dato.name}\n乂 *Origen:* ${dato.desp}\n*°°°·.°·..·°¯°·._.··._.·°¯°·.·° .·°°*${txtNewPrice}\n乂 *Clase:* ${dato.class}\n乂 *ID:* \`\`\`${codigoActual}\`\`\`\n乂 *Tipo:* ${dato.type}\n*°°°·.°·..·°¯°·._.··._.·°¯°·.·° .·°°*\n乂 *Estado:* ${estado}`
+let info = `Rw`
 info += `\n\n${estado === 'Libre' ? '_Responde a este mensaje con "c" para comprarlo_\n\n' + listaAvisos(usedPrefix, personaje) : listaAvisos(usedPrefix, personaje)}`
 id_message = (await conn.sendFile(m.chat, dato.url, 'error.jpg', info.trim(), fkontak, true, {
 contextInfo: {
