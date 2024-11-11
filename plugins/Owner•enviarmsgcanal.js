@@ -6,10 +6,7 @@ try {
 await m.react(rwait)
 
 await conn.reply(m.chat, `🚩 El texto se envió correctamente al canal.`, m, fake)
-//await conn.reply(global.channelid, text, null, fake)
-let img = await q.download?.()
-let pr = await remini(img, "enhance")
-conn.sendMessage(global.channelid, {image: pr}, {quoted: fkontak});
+await conn.reply(global.channelid, text, null, fake)
 await m.react(done)
 
 } catch {
