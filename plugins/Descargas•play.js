@@ -81,7 +81,7 @@ contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttributio
 let dataos = await cukaDownloader.youtube(tes.url, "mp3")
 console.log(dataos)
 let { title, thumbnail, quality, downloadUrl } = dataos
-  await conn.sendMessage(m.chat, { video: { url: downloadUrl }, fileName: title + '.mp3', mimetype: 'audio/mp4' }, { quoted: m });
+  await conn.sendFile(m.chat, downloadUrl, 'instagram.mp4', '🐢 Aquí tienes.', fkontak)
   await m.react(done);
 }
 handler.help = ['play'];
