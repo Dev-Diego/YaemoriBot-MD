@@ -23,6 +23,7 @@ const texto1 = `🚩 *Título*
 
 📆 *Publicado* 
 » ${yt_play[0].ago}
+
 🕑 *Duración* 
 » ${secondString(yt_play[0].duration.seconds)}
 
