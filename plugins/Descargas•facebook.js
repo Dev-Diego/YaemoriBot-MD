@@ -10,7 +10,8 @@ conn.reply(m.chat, `🕒 *Descargando su video de facebook.*`, m, {
 contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
 title: packname,
 body: dev,
-previewType: 0, thumbnail: icons,
+previewType: 0, 
+thumbnail: 'https://qu.ax/DeKDw.jpg',
 sourceUrl: channel }}})
 res = await igdl(args[0])
 } catch {
