@@ -36,7 +36,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
  
 *•/• Info User •/•*
  
-👤 Cliente » \`\`\`${username}\`\`\`
+👤 Cliente » \`\`\`${nombre}\`\`\`
 🌍 Pais » \`\`\`${global.userNationality}\`\`\`
 🍪 Galletas » \`\`\`${cookies}\`\`\`
 💰 Experiencia » \`\`\`${exp}\`\`\`
