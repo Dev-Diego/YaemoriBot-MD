@@ -2,7 +2,7 @@
 import hispamemes from 'hispamemes'
 let handler = async (m, { conn, usedPrefix, command }) => {
 const meme = hispamemes.meme()
-conn.sendFile(m.chat, meme, '', '', m, null, rcanal)
+conn.sendFile(m.chat, meme, '', '', m, null, fake)
 m.react(emoji2)
 }
 handler.help = ['meme']
