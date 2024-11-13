@@ -25,13 +25,13 @@ await conn.reply(m.chat, '❀ Error al analizar la imagen.', m, fake)}
 if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que el ChatGpT lo responda.`, m)}
 await m.react('💬')
 try {
-const { key } = await conn.sendMessage(m.chat, {text: `❀ ChatGPT está procesando tu petición, espera unos segundos.`}, {quoted: m})
-await delay(1000 * 1)
-await conn.sendMessage(m.chat, {text: response, edit: key})
 const query = text
 const prompt = `${basePrompt}. Responde lo siguiente: ${query}`
 const response = await luminsesi(query, username, prompt)
 //await conn.reply(m.chat, response, m, fake)
+const { key } = await conn.sendMessage(m.chat, {text: `❀ ChatGPT está procesando tu petición, espera unos segundos.`}, {quoted: m})
+await delay(1000 * 1)
+await conn.sendMessage(m.chat, {text: response, edit: key})
 } catch (error) {
 console.error('❀ Error al obtener la respuesta:', error)
 await conn.reply(m.chat, '❀ Error: intenta más tarde.\n\n' + error, m, fake)}}}
