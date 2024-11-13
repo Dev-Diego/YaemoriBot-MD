@@ -22,7 +22,7 @@ await conn.reply(m.chat, description, m, fake)
 console.error('✿ Error al analizar la imagen:', error)
 await conn.reply(m.chat, '❀ Error al analizar la imagen.', m, fake)}
 } else {
-if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que el ChatGpT responda.\n\n> ✦ Ejemplo: ${usedPrefix + command} Hola. `, m, rcanal)}
+if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que el ChatGpT lo responda.`, m)}
 await m.react('💬')
 try {
 const query = text
@@ -30,8 +30,8 @@ const prompt = `${basePrompt}. Responde lo siguiente: ${query}`
 const response = await luminsesi(query, username, prompt)
 await conn.reply(m.chat, response, m, fake)
 } catch (error) {
-console.error('🚩 Error al obtener la respuesta:', error)
-await conn.reply(m.chat, 'Error: intenta más tarde.\n\n' + error, m, fake)}}}
+console.error('❀ Error al obtener la respuesta:', error)
+await conn.reply(m.chat, '❀ Error: intenta más tarde.\n\n' + error, m, fake)}}}
 
 handler.help = ['chatgpt <texto>', 'ia <texto>']
 handler.tags = ['ai']
