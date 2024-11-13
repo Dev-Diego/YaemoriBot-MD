@@ -45,7 +45,7 @@ case isCommand3:
 //if (global.db.data.settings[conn.user.jid].jadibotmd) return m.reply(`🚩 Este comando está desactivado por mi creador.`)
 const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 
-let mensage = `ဣ Número de SubBots Activos:\n\n✿ *Principal* :: ${botofc}
+let mensage = `ဣ Número de SubBots Activos:\n\n✿ *Principal* :: ${ofcbot}
 \n✿ *Sub Bot* :: ${totalUsers || '0'}\n\n${namebot}`
 await conn.reply(m.chat, mensage, m, rcanal)
 break   
