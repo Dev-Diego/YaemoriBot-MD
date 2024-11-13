@@ -28,7 +28,6 @@ try {
 const query = text
 const prompt = `${basePrompt}. Responde lo siguiente: ${query}`
 const response = await luminsesi(query, username, prompt)
-//await conn.reply(m.chat, response, m, fake)
 const { key } = await conn.sendMessage(m.chat, {text: `❀ ChatGPT está procesando tu petición, espera unos segundos.`}, {quoted: m})
 await delay(1000 * 1)
 await conn.sendMessage(m.chat, {text: response, edit: key})
@@ -39,10 +38,11 @@ await conn.reply(m.chat, '❀ Error: intenta más tarde.\n\n' + error, m, fake)}
 handler.help = ['chatgpt <texto>', 'ia <texto>']
 handler.tags = ['ai']
 handler.register = true
-// handler.cookies = 1
 handler.command = ['ia', 'chatgpt']
 
 export default handler
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 // Función para enviar una imagen y obtener el análisis
 async function fetchImageBuffer(content, imageBuffer) {
@@ -71,36 +71,3 @@ return response.data.result
 } catch (error) {
 console.error('🚩 Error al obtener:', error)
 throw error }}
-
-/*import fetch from 'node-fetch';
-import axios from 'axios';
-import translate from '@vitalets/google-translate-api';
-import {Configuration, OpenAIApi} from 'openai';
-const configuration = new Configuration({organization: global.openai_org_id, apiKey: global.openai_key});
-const openaiii = new OpenAIApi(configuration);
-const handler = async (m, {conn, text, usedPrefix, command}) => {
-if (usedPrefix == 'a' || usedPrefix == 'A') return;
-if (!text) return conn.reply(m.chat, `🍟 *Ingrese su petición*\n🚩 *Ejemplo de uso:* ${usedPrefix + command} Como hacer un avión de papel`, m, rcanal)  
-try {
-await m.react(rwait)
-conn.sendPresenceUpdate('composing', m.chat);
-let gpt = await fetch(`https://delirius-api-oficial.vercel.app/api/ia2?text=${text}`)
-let res = await gpt.json()
-await conn.reply(m.chat, res.gpt, m, rcanal)
-await m.react(done)
-} catch {
-try {
-//await m.react(done)
-let gpt = await fetch(`https://delirius-api-oficial.vercel.app/api/chatgpt?q=${text}`)
-let res = await gpt.json()
-await conn.reply(m.chat, res.data, m, rcanal)
-await m.react(done) 
-} catch{
-}}}
-handler.help = ['chatgpt <texto>', 'ia <texto>']
-handler.tags = ['ai']
-handler.register = true
-handler.cookies = 5
-handler.command = ['ia', 'chatgpt']
-
-export default handler;*/
