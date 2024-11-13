@@ -18,3 +18,5 @@ handler.help = ['gemini']
 handler.tags = ['ai']
 
 export default handler
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
