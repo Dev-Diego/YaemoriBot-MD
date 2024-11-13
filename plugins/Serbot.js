@@ -46,7 +46,7 @@ case isCommand3:
 let users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
 const totalUsers = users.length;
 
-let mensage = `ဣ *Número de SubBots Activos:*\n\n✿ *Bot Principal* :: Wa.me/${ofcbot}\n✿ *Sub Bot* :: ${totalUsers || '0'}\n\n${namebot}`
+let mensage = `ဣ *Número de SubBots Activos:*\n\n✿ *Bot Principal* :: +${ofcbot}\n✿ *Sub Bot* :: ${totalUsers || '0'}\n\n${namebot}`
 await conn.reply(m.chat, mensage, m, rcanal)
 break   
 }}
