@@ -26,7 +26,7 @@ if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que el Ch
 await m.react('💬')
 try {
 const { key } = await conn.sendMessage(m.chat, {text: `❀ ChatGPT está procesando tu petición, espera unos segundos.`}, {quoted: m})
-await delay(2000 * 2)
+await delay(1000 * 1)
 await conn.sendMessage(m.chat, {text: response, edit: key})
 const query = text
 const prompt = `${basePrompt}. Responde lo siguiente: ${query}`
