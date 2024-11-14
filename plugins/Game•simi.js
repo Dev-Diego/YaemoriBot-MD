@@ -7,9 +7,8 @@ const handler = async (m, {conn, text, command, args, usedPrefix}) => {
 if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que Simi lo responda.`, m)};
 try {
 await m.react(rwait)
-const { key } = await conn.sendMessage(m.chat, {text: `❀ Simi está procesando tu petición, espera unos segundos.`}, {quoted: m});
 const resSimi = await simitalk(text);
-await conn.sendMessage(m.chat, {text: resSimi.resultado.simsimi, edit: key});
+await conn.sendMessage(m.chat, {text: resSimi.resultado.simsimi, {quoted: m});
 await m.react(done)
 } catch {
 await m.react(error)
