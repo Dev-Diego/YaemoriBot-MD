@@ -4,12 +4,15 @@ import fetch from 'node-fetch';
 
 const handler = async (m, {conn, text, command, args, usedPrefix}) => {
 
-if (!text) conn.reply(m.chat, '✧ Te faltó el texto para hablar con la Bot', m, fake);
+if (!text) { return conn.reply(m.chat, `❀ Ingrese una petición para que el YaemoriBot lo responda.`, m)};
 try {
-// await m.react(emojis);
+await m.react(rwait)
+const { key } = await conn.sendMessage(m.chat, {text: `❀ YaemoriBot está procesando tu petición, espera unos segundos.`}, {quoted: m});
 const resSimi = await simitalk(text);
-conn.sendMessage(m.chat, { text: resSimi.resultado.simsimi }, { quoted: m });
+await conn.sendMessage(m.chat, {text: resSimi.resultado.simsimi, edit: key});
+await m.react(done)
 } catch {
+await m.react(error)
 return conn.reply(m.chat, '❀ Ocurrió un error', m, fake);
 }};
 
@@ -18,6 +21,8 @@ handler.tags = ['fun'];
 handler.register = true;
 handler.command = ['simi', 'bot', 'alexa', 'cortana'];
 export default handler;
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 async function simitalk(ask, apikeyyy = "iJ6FxuA9vxlvz5cKQCt3", language = "es") {
 if (!ask) return { status: false, resultado: { msg: "Debes ingresar un texto para hablar con simsimi." }};
