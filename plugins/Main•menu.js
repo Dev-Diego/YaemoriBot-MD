@@ -143,7 +143,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 │🍂⃟🌸┊${usedPrefix}serbot
 │🍂⃟🌸┊${usedPrefix}serbot --code
 │🍂⃟🌸┊${usedPrefix}pausarai
-│🍂⃟🌸┊${usedPrefix}bots
+│🍂⃟🌸┊${usedPrefix}sockets
 │🍂⃟🌸┊${usedPrefix}deletebot
 ╰─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒
 
