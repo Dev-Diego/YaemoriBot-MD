@@ -12,7 +12,7 @@ handler.before = async (m) => {
     try {
       const ressimi = await simitalk(textodem);
      // await m.conn.sendMessage(m.chat, { text: ressimi.resultado.simsimi }, { quoted: m });
-        await conn.reply(m.chat, ressimi.resultado.simsimi, m, rcanal)
+        await conn.reply(m.chat, ressimi.resultado.simsimi, m)
     } catch {
       throw '🍟 *Ocurrió un error*';
     }
