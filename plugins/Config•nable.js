@@ -75,6 +75,17 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.autoAceptar = isEnable
       break
 
+ case 'autorechazar':
+    case 'rechazarauto':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.autoRechazar = isEnable
+      break
+
  case 'antisubbots':
     case 'antisub':
     case 'antisubot':
@@ -294,6 +305,7 @@ ${usedPrefix + command} autoread
 
 ${usedPrefix + command} welcome 
 ${usedPrefix + command} autoaceptar
+${usedPrefix + command} autorechazar
 ${usedPrefix + command} autoresponder
 ${usedPrefix + command} autolevelup
 ${usedPrefix + command} antibot
