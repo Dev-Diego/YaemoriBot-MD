@@ -7,9 +7,6 @@ if (isBotAdmin && chat.autoRechazar) {
 if (m.sender.startsWith('6')) {
 await conn.groupRequestParticipantsUpdate(m.chat, [m.sender], 'reject')}
 
-if (m.sender.startsWith('57')) {
-await conn.groupRequestParticipantsUpdate(m.chat, [m.sender], 'reject')}
-
 if (m.sender.startsWith('90')) {
 await conn.groupRequestParticipantsUpdate(m.chat, [m.sender], 'reject')}
 
