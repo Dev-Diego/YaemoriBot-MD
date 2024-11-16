@@ -15,6 +15,8 @@ resolve()
 
 export async function handler(chatUpdate) {
 this.msgqueque = this.msgqueque || []
+this.msgqueque = this.msgqueque || [];
+this.uptime = this.uptime || Date.now();
 if (!chatUpdate)
 return
     this.pushMessage(chatUpdate.messages).catch(console.error)
@@ -528,5 +530,10 @@ let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
 unwatchFile(file)
 console.log(chalk.magenta("Se actualizo 'handler.js'"))
-if (global.reloadHandler) console.log(await global.reloadHandler())
-})
+//if (global.reloadHandler) console.log(await global.reloadHandler())
+
+if (global.conns && global.conns.length > 0 ) {
+const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
+for (const userr of users) {
+userr.subreloadHandler(false)
+}}});
