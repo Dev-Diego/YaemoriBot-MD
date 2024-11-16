@@ -18,7 +18,7 @@ async function rollWaifu(msg) {
   const respuesta = `Tu waifu es... ${waifu.nombre}!`;
   const imagen = waifu.imagen;
 
-conn.sendFile(m.chat, imagen, 'rollwaifu.jpg', respuesta, fkontak, m, null, rcanal)}
+conn.sendFile(m.chat, imagen, 'rollwaifu.jpg', respuesta, fkontak, m)}}
 
 handler.help = ['rollwaifu'] 
 handler.tags = ['gacha'] 
