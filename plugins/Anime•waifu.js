@@ -1,23 +1,27 @@
-import fetch from 'node-fetch'
+var handler = async (m, { conn, usedPrefix, command, text }) => {
 
-let handler = async (m, { conn, usedPrefix, command }) => {
-try {
-await m.react(emojis)
-conn.reply(m.chat, '🍟 Buscando Su *Waifu*', m, {
-contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
-title: packname,
-body: dev,
-previewType: 0, thumbnail: icons,
-sourceUrl: channel }}})
-let res = await fetch('https://api.waifu.pics/sfw/waifu')
-if (!res.ok) return
-let json = await res.json()
-if (!json.url) return 
-await conn.sendFile(m.chat, json.url, 'thumbnail.jpg', '《✧》 *W A I F U* 《✧》', fkontak, null, rcanal)
-} catch {
-}}
-handler.help = ['waifu']
-handler.tags = ['anime']
-handler.command = ['waifu']
-handler.register = true 
+// Lista de waifus, pronto se agrega en json
+const waifus = [
+  { nombre: 'Rem', imagen: '(link unavailable)' },
+  { nombre: 'Mikasa', imagen: '(link unavailable)' },
+  { nombre: 'Asuna', imagen: '(link unavailable)' },
+  // Agrega más waifus a la lista
+];
+
+function obtenerWaifuAleatoria() {
+  const index = Math.floor(Math.random() * waifus.length);
+  return waifus[index];
+}
+
+async function rollWaifu(msg) {
+  const waifu = obtenerWaifuAleatoria();
+  const respuesta = `Tu waifu es... ${waifu.nombre}!`;
+  const imagen = waifu.imagen;
+
+conn.sendFile(m.chat, imagen, 'rollwaifu.jpg', respuesta, fkontak, m, null, rcanal)}
+
+handler.help = ['rollwaifu'] 
+handler.tags = ['gacha'] 
+handler.command = ['rollwaifu', 'rw'] 
+
 export default handler
