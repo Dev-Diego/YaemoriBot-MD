@@ -2,9 +2,9 @@ var handler = async (m, { conn, usedPrefix, command, text }) => {
 
 // Lista de waifus, pronto se agrega en json
 const waifus = [
-  { nombre: 'Rem', imagen: '(link unavailable)' },
-  { nombre: 'Mikasa', imagen: '(link unavailable)' },
-  { nombre: 'Asuna', imagen: '(link unavailable)' },
+  { nombre: 'Rem', imagen: imagen1 },
+  { nombre: 'Mikasa', imagen: imagen2 },
+  { nombre: 'Asuna', imagen: imagen3 },
   // Agrega más waifus a la lista
 ];
 
