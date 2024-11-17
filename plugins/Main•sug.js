@@ -12,7 +12,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 let suggestionQueue = {}; 
-//let cooldown = {};   
+//let cooldown = {}; 
+const ADMIN_GROUP_ID = "";  
 const CANAL_ID = global.channelid;
 const MAX_VIDEO_SIZE_MB = 40; // Límite de 40MB X videos
 
@@ -22,7 +23,7 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => "https://qu.ax/QG
 
 let time = global.db.data.users[m.sender].suggetimme + 86400000; //24hs
 if (new Date() - global.db.data.users[m.sender].suggetimme < 86400000) {
-return m.reply(`🕑 Espera ${msToTime(time - new Date())} para poder enviar tu publicación.`);
+return m.reply(`🕑 Espera ${msToTime(time - new Date())} antes de enviar otra vez.`);
 }
 
 if (!text && !m.quoted) return m.reply(`*⚠️ Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.* 📝\n\n> *Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Feedback 🤔\n6. Pregunta ❓\n7. Error 🚨\n8. Queja 😐\n9. Música 🎵\n10. Eventos 🎉\n11. Películas 🍿\n12. Juegos 🎮\n13. Tecnología 🤖\n14. Diseño 🎨\n15. Desarrollo de software 💻\n16. Humor 😂\n17. Soporte técnico 🤝\n18. Frases ✨\n19. Contenido creativo 📸\n\nEjemplo: ${usedPrefix + command} 1 Texto`);
@@ -59,7 +60,7 @@ if (!text && !m.quoted) return m.reply(`*⚠️ Por favor, escribe tu sugerencia
     let [categoryChoice, ...rest] = text.split(' ');
     let suggestionText = rest.join(' ');
 
-    if (!suggestionText && !media) return m.reply(`🐢 Debes agregar un texto o archivo multimedia después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi sugerencia es...`);
+    if (!suggestionText && !media) return m.reply(`🚩 Debes agregar un texto o archivo multimedia después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi sugerencia es...`);
 
     let categories = {
     '1': 'sugerencia',
@@ -84,11 +85,11 @@ if (!text && !m.quoted) return m.reply(`*⚠️ Por favor, escribe tu sugerencia
 };
 
     let category = categories[categoryChoice];
-    if (!category) return m.reply('🍁 Opción inválida. Elige una categoría correcta: 1, 2, 3 o 4.');
+    if (!category) return m.reply('🪐 Opción inválida. Elige una categoría correcta: 1, 2, 3 o 4.');
 
     m.reply(`🚩 Tu publicación fué enviada a los administradores.`);
 
-    let groupMetadata = await conn.groupMetadata('573012482597@s.whatsapp.net');
+    let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
 
 if (!groupAdmins || groupAdmins.length === 0) {
@@ -104,19 +105,19 @@ let confirmMessage = `El usuario @${m.sender.split('@')[0]} ha enviado una publi
 
     if (url) {
         if (/image/.test(mime)) {
-await conn.sendMessage('573012482597@s.whatsapp.net', {image: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })
+await conn.sendMessage(ADMIN_GROUP_ID, {image: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })
         } else if (/video/.test(mime)) {
-await conn.sendMessage('573012482597@s.whatsapp.net', {video: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })        
+await conn.sendMessage(ADMIN_GROUP_ID, {video: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })        
         }
     } else {
-        await conn.sendMessage('573012482597@s.whatsapp.net', {text: confirmMessage, mentions: [m.sender]}, {quoted: m })
+        await conn.sendMessage(ADMIN_GROUP_ID, {text: confirmMessage, mentions: [m.sender]}, {quoted: m })
     }
 };
 
 handler.before = async (response) => {
 if (!response.text || !response.text.match(/^(si|no)\s*(\d+)?/i)) return;
 
-    let groupMetadata = await conn.groupMetadata('573012482597@s.whatsapp.net');
+    let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
     const isAdmin = groupAdmins.some(admin => admin.id === response.sender);
     if (!isAdmin) return;
@@ -132,14 +133,14 @@ if (!response.text || !response.text.match(/^(si|no)\s*(\d+)?/i)) return;
     const { suggestionText, category, sender, senderName, pp, url, mime } = suggestionQueue[suggestionId];
 
         if (action === 'no') {
-await conn.sendMessage('573012482597@s.whatsapp.net', { react: { text: `${global.error}`, key: response.key } });
+await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: `${global.error}`, key: response.key } });
 await conn.reply(sender, `🚩 Los administradores rechazaron tu publicación.`, null, { mentions: [sender] });
 delete suggestionQueue[suggestionId]; 
 return;
 }
 
 if (action === 'si') {
-await conn.sendMessage('573012482597@s.whatsapp.net', { react: { text: `${global.done}`, key: response.key } });
+await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: `${global.done}`, key: response.key } });
 let approvedText = `👤 *Usuario:* ${senderName || 'Anónimo'}\n📝 *${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin descripción'}`;
 let title, body;
 switch (category) {
