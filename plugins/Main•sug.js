@@ -21,10 +21,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 let who = m.mentionedJid && m.mentionedJid.length > 0 ? m.mentionedJid[0] : (m.fromMe ? conn.user.jid : m.sender);
 let pp = await conn.profilePictureUrl(who, 'image').catch(_ => "https://qu.ax/QGAVS.jpg");
 
-let time = global.db.data.users[m.sender].suggetimme + 86400000; //24hs
+/*let time = global.db.data.users[m.sender].suggetimme + 86400000; //24hs
 if (new Date() - global.db.data.users[m.sender].suggetimme < 86400000) {
 return m.reply(`🕑 Espera ${msToTime(time - new Date())} antes de enviar otra vez.`);
-}
+}*/
 
 if (!text && !m.quoted) return m.reply(`*⚠️ Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.* 📝\n\n> *Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Feedback 🤔\n6. Pregunta ❓\n7. Error 🚨\n8. Queja 😐\n9. Música 🎵\n10. Eventos 🎉\n11. Películas 🍿\n12. Juegos 🎮\n13. Tecnología 🤖\n14. Diseño 🎨\n15. Desarrollo de software 💻\n16. Humor 😂\n17. Soporte técnico 🤝\n18. Frases ✨\n19. Contenido creativo 📸\n\nEjemplo: ${usedPrefix + command} 1 Texto`);
 
