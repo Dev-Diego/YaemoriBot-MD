@@ -133,14 +133,14 @@ if (!response.text || !response.text.match(/^(si|no)\s*(\d+)?/i)) return;
     const { suggestionText, category, sender, senderName, pp, url, mime } = suggestionQueue[suggestionId];
 
         if (action === 'no') {
-await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: `${global.error}`, key: response.key } });
+await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "✖️", key: response.key } });
 await conn.reply(sender, `🚩 Los administradores rechazaron tu publicación.`, null, { mentions: [sender] });
 delete suggestionQueue[suggestionId]; 
 return;
 }
 
 if (action === 'si') {
-await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: `${global.done}`, key: response.key } });
+await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: "✅️", key: response.key } });
 let approvedText = `👤 *Usuario:* ${senderName || 'Anónimo'}\n📝 *${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin descripción'}`;
 let title, body;
 switch (category) {
