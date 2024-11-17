@@ -293,7 +293,7 @@ false
 
 if (!isAccept) {
 continue
-global.db.data.settings[mconn.conn.user.jid].botcommandCount += 1;
+global.db.data.settings[mconn.conn.user.jid].botcommandCount += 1
 }
 m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
