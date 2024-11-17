@@ -1,4 +1,4 @@
-//Código echo por: https://github.com/elrebelde21 
+//Código hecho por: https://github.com/elrebelde21 
 
 import { webp2png } from '../lib/webp2mp4.js';
 import uploadFile from '../lib/uploadFile.js';
@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 let suggestionQueue = {}; 
 //let cooldown = {}; 
-const ADMIN_GROUP_ID = "";  
+const ADMIN_GROUP_ID = "120363367574179055@g.us";  
 const CANAL_ID = global.channelid;
 const MAX_VIDEO_SIZE_MB = 40; // Límite de 40MB X videos
 
