@@ -28,6 +28,7 @@ return res.data
 console.log(`Error : ${e}`)
 }}
 
+let bot = global.db.data.settings[this.user.jid]
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 global.fotoperfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 let api = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
@@ -38,6 +39,7 @@ let pushname = m.pushName || 'Sin nombre'
 
 //creador y otros
 global.creador = 'Wa.me/5493876432076'
+global.comandosejecutados = bot.botcommandCount
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
 global.namechannel = '© All Rightd Reserved • YaemoriBot'
