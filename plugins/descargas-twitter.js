@@ -1,15 +1,15 @@
 import axios from 'axios';
 let enviando = false;
 const handler = async (m, {conn, text, usedPrefix, command}) => {
-if (!text) throw `Ejemplo: *${usedPrefix + command}* https://twitter.com/auronplay/status/1586487664274206720?s=20&t=3snvkvwGUIez5iWYQAehpw`;
+if (!text) return conn.reply(m.chat, `🚩 Te faltó el link de una imagen/video de twitter.`, m, rcanal);
 if (enviando) return;
     enviando = true;
 try {
-   m.react('🕒')
+   m.react(rwait)
    const res = await TwitterDL(text);
  if (res?.result.type == 'video') {
-     m.react('✔️')
-     const caption = res?.result.caption ? res.result.caption : '*Aquí tiene su imagen*';
+     m.react(done)
+     const caption = res?.result.caption ? res.result.caption : '🐢 Aquí tienes.';
      for (let i = 0; i < res.result.media.length; i++) {
      await conn.sendMessage(m.chat, {video: {url: res.result.media[i].result[0].url}, caption: caption}, {quoted: m});
      };
@@ -17,8 +17,8 @@ try {
      return;
  } else if (res?.result.type == 'photo') {
      const caption =
-    m.react('✔️')
-    res?.result.caption ? res.result.caption : '*Aquí tiene su imagen*';
+    m.react(done)
+    res?.result.caption ? res.result.caption : '🐢 Aquí tienes.';
      for (let i = 0; i < res.result.media.length; i++) {
      await conn.sendMessage(m.chat, {image: {url: res.result.media[i].url}, caption: caption}, {quoted: m});
      };
@@ -26,15 +26,15 @@ try {
      return;
   }
 } catch {
-    m.react('✖️')
+    m.react(error)
     enviando = false;
-    throw '> Error, intente mas tarde.*';
+    return conn.reply(m.chat, '🚩 Ocurrió un error.', m, fake);
     return;
   }
 };    
 handler.tags = ['descargas']
 handler.help = ['tw']
-handler.command = /^((x|xdl|dlx|twdl|tw|twt|twitter)(dl)?)$/i;
+handler.command = ['x', 'xdl', 'dlx', 'twdl', 'tw', 'twt', 'twitter'];
 export default handler;
 
 const _twitterapi = (id) => `https://info.tweeload.site/status/${id}.json`;
