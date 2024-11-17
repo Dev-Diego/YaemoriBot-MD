@@ -152,6 +152,7 @@ var settings = global.db.data.settings[this.user.jid]
 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
 if (settings) {
 if (!('self' in settings)) settings.self = false
+if (!('botcommandCount' in settings)) settings.botcommandCount = 0
 if (!('restrict' in settings)) settings.restrict = false
 if (!('jadibotmd' in settings)) settings.jadibotmd = true
 if (!('autobio' in settings)) settings.autobio = false
@@ -161,6 +162,7 @@ if (!('autoread2' in settings)) settings.autoread2 = false
 if (!('antiSpam' in settings)) settings.antiSpam = false
 } else global.db.data.settings[this.user.jid] = {
 self: false,
+botcommandCount: 0,
 restrict: false,
 jadibotmd: true,
 autobio: false,
@@ -291,6 +293,7 @@ false
 
 if (!isAccept) {
 continue
+global.db.data.settings[mconn.conn.user.jid].botcommandCount += 1;
 }
 m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
