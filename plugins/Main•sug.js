@@ -12,8 +12,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 let suggestionQueue = {}; 
-//let cooldown = {}; 
-const ADMIN_GROUP_ID = "573012482597@s.whatsapp.net";  
+//let cooldown = {};   
 const CANAL_ID = global.channelid;
 const MAX_VIDEO_SIZE_MB = 40; // Límite de 40MB X videos
 
@@ -89,7 +88,7 @@ if (!text && !m.quoted) return m.reply(`*⚠️ Por favor, escribe tu sugerencia
 
     m.reply(`🚩 Tu publicación fué enviada a los administradores.`);
 
-    let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
+    let groupMetadata = await conn.groupMetadata('573012482597@s.whatsapp.net');
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
 
 if (!groupAdmins || groupAdmins.length === 0) {
@@ -105,19 +104,19 @@ let confirmMessage = `El usuario @${m.sender.split('@')[0]} ha enviado una publi
 
     if (url) {
         if (/image/.test(mime)) {
-await conn.sendMessage(ADMIN_GROUP_ID, {image: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })
+await conn.sendMessage('573012482597@s.whatsapp.net', {image: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })
         } else if (/video/.test(mime)) {
-await conn.sendMessage(ADMIN_GROUP_ID, {video: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })        
+await conn.sendMessage('573012482597@s.whatsapp.net', {video: { url }, caption: confirmMessage, contextInfo:{ mentionedJid:[m.sender]}}, { quoted: m })        
         }
     } else {
-        await conn.sendMessage(ADMIN_GROUP_ID, {text: confirmMessage, mentions: [m.sender]}, {quoted: m })
+        await conn.sendMessage('573012482597@s.whatsapp.net', {text: confirmMessage, mentions: [m.sender]}, {quoted: m })
     }
 };
 
 handler.before = async (response) => {
 if (!response.text || !response.text.match(/^(si|no)\s*(\d+)?/i)) return;
 
-    let groupMetadata = await conn.groupMetadata(ADMIN_GROUP_ID);
+    let groupMetadata = await conn.groupMetadata('573012482597@s.whatsapp.net');
     let groupAdmins = groupMetadata.participants.filter(p => p.admin);
     const isAdmin = groupAdmins.some(admin => admin.id === response.sender);
     if (!isAdmin) return;
@@ -133,14 +132,14 @@ if (!response.text || !response.text.match(/^(si|no)\s*(\d+)?/i)) return;
     const { suggestionText, category, sender, senderName, pp, url, mime } = suggestionQueue[suggestionId];
 
         if (action === 'no') {
-await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: `${global.error}`, key: response.key } });
+await conn.sendMessage('573012482597@s.whatsapp.net', { react: { text: `${global.error}`, key: response.key } });
 await conn.reply(sender, `🚩 Los administradores rechazaron tu publicación.`, null, { mentions: [sender] });
 delete suggestionQueue[suggestionId]; 
 return;
 }
 
 if (action === 'si') {
-await conn.sendMessage(ADMIN_GROUP_ID, { react: { text: `${global.done}`, key: response.key } });
+await conn.sendMessage('573012482597@s.whatsapp.net', { react: { text: `${global.done}`, key: response.key } });
 let approvedText = `👤 *Usuario:* ${senderName || 'Anónimo'}\n📝 *${category.charAt(0).toUpperCase() + category.slice(1)}:* ${suggestionText || 'Sin descripción'}`;
 let title, body;
 switch (category) {
