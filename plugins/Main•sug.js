@@ -181,7 +181,7 @@ break;
 let options = { contextInfo: { externalAdReply: {
 title: title, body: body,
 thumbnailUrl: pp, 
-sourceUrl: accountsgb,
+sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
