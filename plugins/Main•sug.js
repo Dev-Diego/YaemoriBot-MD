@@ -14,7 +14,7 @@ const __dirname = dirname(__filename);
 let suggestionQueue = {}; 
 //let cooldown = {}; 
 const ADMIN_GROUP_ID = "120363367574179055@g.us";  
-const CANAL_ID = global.channelid;
+const CANAL_ID = "120363310433406751@newsletter";
 const MAX_VIDEO_SIZE_MB = 40; // Límite de 40MB X videos
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
