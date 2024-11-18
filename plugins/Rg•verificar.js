@@ -44,7 +44,7 @@ await m.react('📩')
 await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
-🌎 *Pais* » ${global.userNationality}
+🌎 *Pais* » ${global.pais}
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
