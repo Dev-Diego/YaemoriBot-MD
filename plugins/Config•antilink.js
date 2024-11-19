@@ -1,5 +1,4 @@
-const linkRegex1 = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
-let linkRegex2 = /whatsapp.com\/channel\/([0-9A-Za-z]{20,24})/i
+let linkRegex1 = /(https?:\/\/(?:www\.)?(?:t\.me|telegram\.me|whatsapp\.com)\/\S+)|(https?:\/\/chat\.whatsapp\.com\/\S+)|(https?:\/\/whatsapp\.com\/channel\/\S+)/i
 
 export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, participants }) {
 if (!m.isGroup) return 
@@ -12,7 +11,7 @@ const user = `@${m.sender.split`@`[0]}`;
 const groupAdmins = participants.filter(p => p.admin);
 const listAdmin = groupAdmins.map((v, i) => `*» ${i + 1}. @${v.id.split('@')[0]}*`).join('\n');
 let bot = global.db.data.settings[this.user.jid] || {};
-const isGroupLink = linkRegex1.exec(m.text) || linkRegex2.exec(m.text);
+const isGroupLink = linkRegex1.exec(m.text);
 const grupo = `https://chat.whatsapp.com`;
 if (isAdmin && chat.antiLink && m.text.includes(grupo)) return m.reply('🚩 El antilink está activo pero te salvaste por ser adm.');
 if (chat.antiLink && isGroupLink && !isAdmin) {
@@ -20,7 +19,7 @@ if (isBotAdmin) {
 const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`;
 if (m.text.includes(linkThisGroup)) return !0;
 }
-await conn.sendMessage(m.chat, { text: `*「 ANTILINK DETECTADO 」*\n\n• ${user} Rompiste las reglas del Grupo sera eliminado...`, mentions: [m.sender] }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100 });
+await conn.sendMessage(m.chat, { text: `*「 ANTILINK DETECTADO 」*\n\n${user} Rompiste las reglas del Grupo sera eliminado...`, mentions: [m.sender] }, { quoted: m, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100 });
 if (!isBotAdmin) return conn.sendMessage(m.chat, { text: `🚩 El antilink está activo pero no puedo eliminarte porque no soy adm.`, mentions: [...groupAdmins.map(v => v.id)] }, { quoted: m });
 if (isBotAdmin) {
 await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: delet } });
