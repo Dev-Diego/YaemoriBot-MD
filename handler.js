@@ -157,7 +157,6 @@ if (!('jadibotmd' in settings)) settings.jadibotmd = true
 if (!('autobio' in settings)) settings.autobio = false
 if (!('antiPrivate' in settings)) settings.antiPrivate = false
 if (!('autoread' in settings)) settings.autoread = false
-if (!('autoread2' in settings)) settings.autoread2 = false
 if (!('antiSpam' in settings)) settings.antiSpam = false
 } else global.db.data.settings[this.user.jid] = {
 self: false,
@@ -166,7 +165,6 @@ jadibotmd: true,
 autobio: false,
 antiPrivate: false,
 autoread: false,
-autoread2: false,
 antiSpam: false,
 status: 0
 }
@@ -477,9 +475,7 @@ console.log(m, m.quoted, e)}
 let settingsREAD = global.db.data.settings[this.user.jid] || {}  
 if (opts['autoread']) await this.readMessages([m.key])
 if (settingsREAD.autoread2) await this.readMessages([m.key])  
-// if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
-// await conn.sendPresenceUpdate('composing', m.chat)
-// this.sendPresenceUpdate('recording', m.chat)
+if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])
 
 if (db.data.chats[m.chat].reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|yaemori|a|s)/gi)) {
 let emot = pickRandom(["🍟", "😃", "😄", "😁", "😆", "🍓", "😅", "😂", "🤣", "🥲", "☺️", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "🥰", "😘", "😗", "😙", "🌺", "🌸", "😚", "😋", "😛", "😝", "😜", "🤪", "🤨", "🌟", "🤓", "😎", "🥸", "🤩", "🥳", "😏", "💫", "😞", "😔", "😟", "😕", "🙁", "☹️", "😣", "😖", "😫", "😩", "🥺", "😢", "😭", "😤", "😠", "😡", "🤬", "🤯", "😳", "🥵", "🥶", "😶‍🌫️", "😱", "😨", "😰", "😥", "😓", "🤗", "🤔", "🫣", "🤭", "🤖", "🍭", "🤫", "🫠", "🤥", "😶", "📇", "😐", "💧", "😑", "🫨", "😬", "🙄", "😯", "😦", "😧", "😮", "😲", "🥱", "😴", "🤤", "😪", "😮‍💨", "😵", "😵‍💫", "🤐", "🥴", "🤢", "🤮", "🤧", "😷", "🤒", "🤕", "🤑", "🤠", "😈", "👿", "👺", "🧿", "🌩", "👻", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🫶", "👍", "✌️", "🙏", "🫵", "🤏", "🤌", "☝️", "🖕", "🙏", "🫵", "🫂", "🐱", "🤹‍♀️", "🤹‍♂️", "🗿", "✨", "⚡", "🔥", "🌈", "🩷", "❤️", "🧡", "💛", "💚", "🩵", "💙", "💜", "🖤", "🩶", "🤍", "🤎", "💔", "❤️‍🔥", "❤️‍🩹", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "🚩", "👊", "⚡️", "💋", "🫰", "💅", "👑", "🐣", "🐤", "🐈"])
