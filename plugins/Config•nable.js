@@ -143,7 +143,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
          global.dfail('rowner', m, conn)
          throw false
       }
-      global.opts['autoread'] = isEnable
+      global.opts['autoread2'] = isEnable
       break
 
   case 'antiver':
