@@ -277,7 +277,7 @@ const texto1 = `🚩 *Título* :
 ⌚ *Duración* 
 » ${secondString(yt_play[0].duration.seconds)}
 
-> _Descargado su video en documento, aguarden un momento por favor...._`.trim();
+> _Descargado su video en documento, aguarde un momento por favor...._`.trim();
 
 await conn.sendFile(m.chat, yt_play[0].thumbnail, 'error.jpg', texto1, m, null, rcanal);
 try {
