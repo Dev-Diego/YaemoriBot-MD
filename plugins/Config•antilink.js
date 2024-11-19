@@ -1,8 +1,8 @@
 let linkRegex1 = /(https?:\/\/(?:www\.)?(?:t\.me|telegram\.me|whatsapp\.com)\/\S+)|(https?:\/\/chat\.whatsapp\.com\/\S+)|(https?:\/\/whatsapp\.com\/channel\/\S+)/i
 
-export async function before(m, { conn, isAdmin, isBotAdmin, participants }) {
+export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, participants }) {
 if (!m.isGroup) return 
-if (isAdmin || m.fromMe) return
+if (isAdmin || isOwner || m.fromMe || isROwner) return
 
 let chat = global.db.data.chats[m.chat];
 let delet = m.key.participant;
