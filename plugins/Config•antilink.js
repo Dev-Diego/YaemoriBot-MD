@@ -1,8 +1,8 @@
 let linkRegex1 = /(https?:\/\/(?:www\.)?(?:t\.me|telegram\.me|whatsapp\.com)\/\S+)|(https?:\/\/chat\.whatsapp\.com\/\S+)|(https?:\/\/whatsapp\.com\/channel\/\S+)/i
 
-export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner, participants }) {
+export async function before(m, { conn, isAdmin, isBotAdmin, participants }) {
 if (!m.isGroup) return 
-if (isAdmin || isOwner || m.fromMe || isROwner) return
+if (isAdmin || m.fromMe) return
 
 let chat = global.db.data.chats[m.chat];
 let delet = m.key.participant;
@@ -11,7 +11,7 @@ const user = `@${m.sender.split`@`[0]}`;
 const groupAdmins = participants.filter(p => p.admin);
 const listAdmin = groupAdmins.map((v, i) => `*» ${i + 1}. @${v.id.split('@')[0]}*`).join('\n');
 let bot = global.db.data.settings[this.user.jid] || {};
-const isGroupLink = linkRegex1.exec(m.text) || linkRegex2.exec(m.text);
+const isGroupLink = linkRegex1.exec(m.text);
 const grupo = `https://chat.whatsapp.com`;
 if (isAdmin && chat.antiLink && m.text.includes(grupo)) return m.reply('🚩 El antilink está activo pero te salvaste por ser adm.');
 if (chat.antiLink && isGroupLink && !isAdmin) {
