@@ -27,7 +27,7 @@ let mentionedJid = [who]
   global.db.data.users[m.sender].cookies += 15
   global.db.data.users[m.sender].exp += 245
   global.db.data.users[m.sender].joincount += 5
-  let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 17)
+  let sn = createHash('md5').update(m.sender).digest('hex')
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
@@ -42,19 +42,12 @@ regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
 await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
-await m.reply(sn)
 let chtxt = `
-ˏ⸉ˋ‿̩͙‿̩̩̽‿̩͙‿̩̥̩‿̩̩̽‿̩͙‿̩͙‿̩̩̽‿̩͙‿̩͙‿̩̩̽‿̩͙‿̩̥̩‿̩̩̽‿̩͙‘⸊ˎ
-
-︴👤 *Usuario* » ${m.pushName || 'Anónimo'}
-︴🌎 *Pais* » ${global.pais}
-︴🗃 *Verificación* » ${user.name}
-︴🌺 *Edad* » ${user.age}
-︴📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-︴☁️ *Numero de serie* »
-⤷ ${sn}
-ˏ⸉ˋ‿̩͙‿̩̩̽‿̩͙‿̩̥̩‿̩̩̽‿̩͙‿̩͙‿̩̩̽‿̩͙‿̩͙‿̩̩̽‿̩͙‿̩̥̩‿̩̩̽‿̩͙‘⸊ˎ
-
+👤 *Usuario* » ${m.pushName || 'Anónimo'}
+🌎 *Pais* » ${global.pais}
+🗃 *Verificación* » ${user.name}
+🌺 *Edad* » ${user.age}
+📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
