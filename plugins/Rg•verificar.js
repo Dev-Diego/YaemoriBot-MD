@@ -50,7 +50,7 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-🕑 *Hora* » ${moment.tz('America/Bogota').format('HH:mm:ss')}
+🕑 *Hora* » ${moment.tz('America/Bogota').format('HH:MM:SS')}
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
