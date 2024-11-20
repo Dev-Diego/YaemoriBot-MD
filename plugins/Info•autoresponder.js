@@ -1,13 +1,13 @@
 let handler = async (m, { conn, text, usedPrefix, command, isOwner, isAdmin, isROwner }) => {
 if (!(isOwner || isAdmin || isROwner)) {
-conn.reply(m.chat, "🚩 Losiento no puedes personalizar el autoresponder en este grupo/chat.", m, rcanal)
+conn.reply(m.chat, "🚩 Losiento no puedes personalizar el autoresponder en este grupo/chat.", m)
 }
 const chatData = global.db.data.chats[m.chat]
 if (text) {
-if (chatData.sAutoresponder) return conn.reply(m.chat, `⚠️ *Ya hay un prompt en uso, si quieres configurar otro escribe: ${usedPrefix + command}, hazlo sin texto.*`, m, rcanal)
+if (chatData.sAutoresponder) return conn.reply(m.chat, `⚠️ *Ya hay un prompt en uso, si quieres configurar otro escribe: ${usedPrefix + command}, hazlo sin texto.*`, m)
 
 chatData.sAutoresponder = text
-conn.reply(m.chat, `🚩 *Configuración con éxito.*\n\n☁️ Si el autoresponder está desactivado activalo usando:\n> » ${usedPrefix}on autoresponder`, m, rcanal)
+conn.reply(m.chat, `🚩 *Configuración con éxito.*\n\n☁️ Si el autoresponder está desactivado activalo usando:\n> » ${usedPrefix}on autoresponder`, m)
 } else {
 if (chatData.sAutoresponder) {
 chatData.sAutoresponder = ''
