@@ -13,7 +13,7 @@ if (chatData.sAutoresponder) {
 chatData.sAutoresponder = ''
 conn.reply(m.chat, "🗑️ *Prompt borrado con éxito.*", m, fake)
 } else {
-conn.reply(m.chat, `⚠️ No hay Prompt personalizado en este chat.\n\n🪐 Puedes perzonalizar el autoresponder usando:\n> » ${usedPrefix}editautoresponder + texto que quieres que lo interactúe.`, m)
+conn.reply(m.chat, `⚠️ No hay Prompt personalizado en este chat.\n\n🪐 Puedes perzonalizar el autoresponder usando:\n> » ${usedPrefix + command} + texto que quieres que lo interactúe.`, m)
 }}
 }
 
