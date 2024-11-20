@@ -27,7 +27,7 @@ let mentionedJid = [who]
   global.db.data.users[m.sender].cookies += 15
   global.db.data.users[m.sender].exp += 245
   global.db.data.users[m.sender].joincount += 5
-  let sn = createHash('md5').update(m.sender).digest('hex')
+  let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
@@ -49,8 +49,8 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-☁️ *Numero de serie*
-${sn}
+☁️ *Numero de serie* »
+⤷ ${sn}
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
