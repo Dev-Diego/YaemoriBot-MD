@@ -1,19 +1,19 @@
 let handler = async (m, { conn, text, usedPrefix, command, isOwner, isAdmin, isROwner }) => {
 if (!(isOwner || isAdmin || isROwner)) {
-conn.reply(m.chat, "❌ *No tienes permitido personalizar la autorespuesta del bot en este chat.*\n\n💡 *Pídele a un administrador en caso que este chat sea un grupo o al creador del bot que lo haga por ti en este chat.*", m)
+conn.reply(m.chat, "🚩 Losiento no puedes personalizar el autoresponder en este grupo/chat.", m, rcanal)
 }
 const chatData = global.db.data.chats[m.chat]
 if (text) {
-if (chatData.sAutoresponder) return conn.reply(m.chat, `⚠️ *Actualmente hay el siguiente prompt en uso:*\n\n${chatData.sAutoresponder}\n\n💡 *Si quieres cambiarlo, usa el comando sin texto para borrar el prompt actual y luego establece el nuevo prompt.*`, m)
+if (chatData.sAutoresponder) return conn.reply(m.chat, `⚠️ Ya hay un prompt en uso, si quieres configurar otro escribe: #autoresponder, hazlo sin texto.`, m, rcanal)
 
 chatData.sAutoresponder = text
-conn.reply(m.chat, `✅ *Configuración exitosa.*\n\n*Has establecido un nuevo prompt para este chat.*\n💬 A partir de ahora, activa usando *${usedPrefix}on autoresponder*, el bot usará las indicaciones que hayas establecido.\n\n> *Recuerda etiquetar o responder a un mensaje del bot para que te responda.*`, m)
+conn.reply(m.chat, `🚩 Configuración con éxito.\n\n☁️ Si el autoresponder está desactivado activalo usando:\n> » ${usedPrefix}on autoresponder`, m, rcanal)
 } else {
 if (chatData.sAutoresponder) {
 chatData.sAutoresponder = ''
-conn.reply(m.chat, "🗑️ *Prompt borrado con éxito.*", m)
+conn.reply(m.chat, "🗑️ *Prompt borrado con éxito.*", m, fake)
 } else {
-conn.reply(m.chat, `⚠️ *No hay ningún prompt establecido para este chat.*\n\n💡 *Para establecer un nuevo prompt, utiliza el comando seguido del texto que describa las instrucciones para el bot.*\n\n*Por ejemplo:*\n*${usedPrefix + command}* Actúa como un psicólogo y brinda apoyo emocional a los usuarios.`, m)
+conn.reply(m.chat, `⚠️ No hay Prompt personalizado en este chat.\n\n🪐 Puedes perzonalizar el autoresponder usando:\n> » ${usedPrefix}editautoresponder + texto que quieres que lo interactúe.`, m)
 }}
 }
 
