@@ -326,6 +326,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 ┊•*⁀➷ °⭒⭒⭒ *DevDiego*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 │🍂⃟🍟┊${usedPrefix}creador
+│🍂⃟🍟┊${usedPrefix}editautoresponder
 │🍂⃟🍟┊${usedPrefix}ds
 │🍂⃟🍟┊${usedPrefix}dsowner
 │🍂⃟🍟┊${usedPrefix}fixmsgespera
