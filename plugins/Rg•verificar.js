@@ -46,7 +46,7 @@ let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌎 *Pais* » ${global.pais}
 🗃 *Verificación* » ${user.name}
-🌺 *Edad* » ${user.age}
+🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
