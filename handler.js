@@ -299,8 +299,8 @@ m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
 let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[m.sender]
-if (!['owner-unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
-if (name != 'owner-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'tool-delete.js' && chat?.isBanned && !isROwner) return 
+if (!['Grupo•unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
+if (name != 'Grupo•unbanchat.js' && name != 'Owner•exec.js' && name != 'Owner•exec2.js' && name != 'tool-delete.js' && chat?.isBanned && !isROwner) return 
 if (m.text && user.banned && !isROwner) {
 if (user.antispam > 2) return
 m.reply(`🚫 Está baneado(a), no puede usar los comandos de este bot!\n\n${user.bannedReason ? `\n💌 *Motivo:* 
@@ -319,9 +319,9 @@ if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
 let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[m.sender]
 let setting = global.db.data.settings[this.user.jid]
-if (name != 'group-unbanchat.js' && chat?.isBanned)
+if (name != 'Grupo•unbanchat.js' && chat?.isBanned)
 return 
-if (name != 'owner-unbanuser.js' && user?.banned)
+if (name != 'Owner•unbanuser.js' && user?.banned)
 return
 if (name != 'owner-unbanbot.js' && setting?.banned)
 return
@@ -375,7 +375,7 @@ m.reply('chirrido -_-')
 else
 m.exp += xp
 if (!isPrems && plugin.cookies && global.db.data.users[m.sender].cookies < plugin.cookies * 1) {
-conn.reply(m.chat, `Se agotaron tus *🍪 Cookies*`, m, fake)
+conn.reply(m.chat, `Se agotaron tus *🍪 Cookies*`, m)
 continue
 }
 let extra = {
@@ -422,7 +422,7 @@ await plugin.after.call(this, m, extra)
 console.error(e)
 }}
 if (m.cookies)
-conn.reply(m.chat, `Utilizaste *${+m.cookies}* 🍪`, m, fake)
+conn.reply(m.chat, `Utilizaste *${+m.cookies}* 🍪`, m)
 }
 break
 }}
