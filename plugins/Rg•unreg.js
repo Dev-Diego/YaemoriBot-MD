@@ -7,7 +7,14 @@ let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.a
 
 user.registered = false
 
-let txt = `\`REGISTRO ANULADO\`\n\n👤 *User* » ${m.pushName || 'Anónimo'}\n🌍 *Pais* » ${global.pais}\n🌺 *Bot* » ${packname}`.trim()
+let txt = `
+*Un usuario menos en mi base de datos* 😿
+
+👤 *User* » ${m.pushName || 'Anónimo'}
+🌍 *Pais* » ${global.pais}
+📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
+🕑 *Hora* » ${moment.tz('America/Bogota').format('HH:MM:SS')}
+`.trim()
 await conn.sendMessage(global.channelid, { text: txt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
