@@ -8,7 +8,7 @@ let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.a
 user.registered = false
 
 let txt = `
-`\REGISTRO ANULADO`\
+\`REGISTRO ANULADO\`
 
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌍 *Pais* » ${global.pais}
