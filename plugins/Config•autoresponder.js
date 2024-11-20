@@ -59,7 +59,7 @@ Ayuda siempre respondiendo con emojis y siendo divertido, tambien recomienda est
 
 let query = m.text
 let username = m.pushName
-let syms1 = chat.sAutorespond ? chat.sAutorespond : txtDefault
+let syms1 = chat.sAutoresponder ? chat.sAutoresponder : txtDefault
 
 if (chat.autoresponder) { 
 if (m.fromMe) return
