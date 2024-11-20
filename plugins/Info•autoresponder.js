@@ -10,7 +10,7 @@ chatData.sAutoresponder = text
 conn.reply(m.chat, `✅ *Configuración exitosa.*\n\n*Has establecido un nuevo prompt para este chat.*\n💬 A partir de ahora, activa usando *${usedPrefix}on autoresponder*, el bot usará las indicaciones que hayas establecido.\n\n> *Recuerda etiquetar o responder a un mensaje del bot para que te responda.*`, m)
 } else {
 if (chatData.sAutoresponder) {
-chatData.sAutorespond = ''
+chatData.sAutoresponder = ''
 conn.reply(m.chat, "🗑️ *Prompt borrado con éxito.*", m)
 } else {
 conn.reply(m.chat, `⚠️ *No hay ningún prompt establecido para este chat.*\n\n💡 *Para establecer un nuevo prompt, utiliza el comando seguido del texto que describa las instrucciones para el bot.*\n\n*Por ejemplo:*\n*${usedPrefix + command}* Actúa como un psicólogo y brinda apoyo emocional a los usuarios.`, m)
