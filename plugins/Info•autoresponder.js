@@ -4,16 +4,16 @@ conn.reply(m.chat, "🚩 Losiento no puedes personalizar el autoresponder en est
 }
 const chatData = global.db.data.chats[m.chat]
 if (text) {
-if (chatData.sAutoresponder) return conn.reply(m.chat, `⚠️ Ya hay un prompt en uso, si quieres configurar otro escribe: #autoresponder, hazlo sin texto.`, m, rcanal)
+if (chatData.sAutoresponder) return conn.reply(m.chat, `⚠️ *Ya hay un prompt en uso, si quieres configurar otro escribe: ${usedPrefix + command}, hazlo sin texto.*`, m, rcanal)
 
 chatData.sAutoresponder = text
-conn.reply(m.chat, `🚩 Configuración con éxito.\n\n☁️ Si el autoresponder está desactivado activalo usando:\n> » ${usedPrefix}on autoresponder`, m, rcanal)
+conn.reply(m.chat, `🚩 *Configuración con éxito.*\n\n☁️ Si el autoresponder está desactivado activalo usando:\n> » ${usedPrefix}on autoresponder`, m, rcanal)
 } else {
 if (chatData.sAutoresponder) {
 chatData.sAutoresponder = ''
 conn.reply(m.chat, "🗑️ *Prompt borrado con éxito.*", m, fake)
 } else {
-conn.reply(m.chat, `⚠️ No hay Prompt personalizado en este chat.\n\n🪐 Puedes perzonalizar el autoresponder usando:\n> » ${usedPrefix + command} + texto que quieres que lo interactúe.`, m)
+conn.reply(m.chat, `⚠️ *No hay Prompt personalizado en este chat.*\n\n🪐 Puedes perzonalizar el autoresponder usando:\n> » ${usedPrefix + command} + texto que quieres que lo interactúe.`, m)
 }}
 }
 
