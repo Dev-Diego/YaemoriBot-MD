@@ -1,4 +1,4 @@
-let handler = async (m, { conn, usedPrefix, args, text }) => {
+let handler = async (m, { conn, command,  usedPrefix, args, text }) => {
 
 if (command == 'unreg' || command == 'unregister') {
 if (!args[0]) return conn.reply(m.chat, `🚩 Te hace falta el numero de registro. Para ver el numero de registro utiliza:\n${usedPrefix}nserie`, m, rcanal)
