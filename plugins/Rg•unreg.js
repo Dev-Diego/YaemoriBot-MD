@@ -23,6 +23,6 @@ conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `🪐 ¡Numero de Registro! 🪐`
 }}
 handler.help = ['unreg']
 handler.tags = ['rg']
-handler.command = ['unreg', 'unregister', 'borrarregistro', nserie', 'myns', 'sn']
+handler.command = ['unreg', 'unregister', 'borrarregistro', 'nserie', 'myns', 'sn']
 handler.register = true
 export default handler
