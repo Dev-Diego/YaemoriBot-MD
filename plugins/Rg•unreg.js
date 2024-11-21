@@ -1,6 +1,6 @@
 let handler = async (m, { conn, usedPrefix, args, text }) => {
 
-if (!args[0]) return conn.reply(m.chat `🚩 Te hace falta el numero de registro. Para ver el numero de registro utiliza:\n${usedPrefix}nserie`, m, rcanal)
+if (!args[0]) return conn.reply(m.chat, `🚩 Te hace falta el numero de registro. Para ver el numero de registro utiliza:\n${usedPrefix}nserie`, m, rcanal)
 
 let user = global.db.data.users[m.sender]
 
