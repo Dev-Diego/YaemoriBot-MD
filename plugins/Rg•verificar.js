@@ -57,7 +57,6 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-🕑 *Hora* » ${moment.tz('America/Bogota').format('hh:mm:ss')}
 ☁️ *Numero de serie* »
 ⤷ ${sn}
 
