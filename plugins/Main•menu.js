@@ -20,6 +20,9 @@ process.once('message', resolve)
 setTimeout(resolve, 1000)
 }) * 1000
 }
+let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+let paisdata = delirius.data.result
+let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
 let user = global.db.data.users[m.sender]
 let muptime = clockString(_muptime)
 let uptime = clockString(_uptime)
@@ -38,7 +41,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 ┊•*⁀➷ °⭒⭒⭒ *DevDiego*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 │🍂⃟👤┊Cliente » \`\`\`${nombre}\`\`\`
-│🍂⃟🌍┊Pais » \`\`\`${pais}\`\`\`
+│🍂⃟🌍┊Pais » \`\`\`${mundo}\`\`\`
 │🍂⃟🍪┊Galletas » \`\`\`${cookies}\`\`\`
 │🍂⃟💰┊Experiencia » \`\`\`${exp}\`\`\`
 │🍂⃟⭐️┊Rango » \`\`\`${role}\`\`\`
