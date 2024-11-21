@@ -293,8 +293,8 @@ plugin.command === command :
 false
 
 if (!isAccept) {
-continue
-}
+//continue
+//}
 let id = '120363310433406751@newsletter'
 let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 let texto = `
@@ -312,7 +312,7 @@ sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
-}}}, { quoted: null })
+}}}, { quoted: null })}
 m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
 let chat = global.db.data.chats[m.chat]
