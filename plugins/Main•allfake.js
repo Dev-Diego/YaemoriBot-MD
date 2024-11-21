@@ -58,7 +58,7 @@ global.mes = d.toLocaleDateString('es', {month: 'long'})
 global.año = d.toLocaleDateString('es', {year: 'numeric'})
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true})
 
-//Reacciones y mensajes de espera.
+//Reacciones y mensaje de espera.
 global.rwait = '🕒'
 global.done = '✅'
 global.error = '✖️'
