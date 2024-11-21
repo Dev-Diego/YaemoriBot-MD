@@ -1,6 +1,7 @@
 import fs from 'fs'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
+import PhoneNumber from 'awesome-phonenumber'
 const { levelling } = '../lib/levelling.js'
 import { promises } from 'fs'
 import { join } from 'path'
@@ -19,6 +20,9 @@ process.once('message', resolve)
 setTimeout(resolve, 1000)
 }) * 1000
 }
+let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}`)
+let paisdata = delirius.data.result
+let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
 let user = global.db.data.users[m.sender]
 let muptime = clockString(_muptime)
 let uptime = clockString(_uptime)
@@ -37,7 +41,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 ┊•*⁀➷ °⭒⭒⭒ *DevDiego*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 │🍂⃟👤┊Cliente » \`\`\`${nombre}\`\`\`
-│🍂⃟🌍┊Pais » \`\`\`${global.pais}\`\`\`
+│🍂⃟🌍┊Pais » \`\`\`${mundo}\`\`\`
 │🍂⃟🍪┊Galletas » \`\`\`${cookies}\`\`\`
 │🍂⃟💰┊Experiencia » \`\`\`${exp}\`\`\`
 │🍂⃟⭐️┊Rango » \`\`\`${role}\`\`\`
