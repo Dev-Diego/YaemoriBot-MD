@@ -1,6 +1,11 @@
-let handler = async (m, { conn, text }) => {
+let handler = async (m, { conn, usedPrefix, args, text }) => {
 
 let user = global.db.data.users[m.sender]
+
+if (!args[0]) return conn.reply(m.chat `🚩 Te hace falta el numero de registro. Para ver el numero de registro utiliza:\n${usedPrefix}nserie`, m, rcanal)
+
+let sn = createHash('md5').update(m.sender).digest('hex')
+if (args[0] !== sn) return m.reply('⚠️ *Número de registro incorrecto.*')
 
 global.db.data.users[m.sender].money -= 600
 global.db.data.users[m.sender].cookies -= 15
