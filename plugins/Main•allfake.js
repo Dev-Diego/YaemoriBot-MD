@@ -41,6 +41,7 @@ global.creador = 'Wa.me/5493876432076'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
 global.namechannel = '© All Rightd Reserved • YaemoriBot'
+global.listo = '✨️ *Aquí tienes ฅ^•ﻌ•^ฅ*'
 
 //ids channel
 global.channelid = '120363310433406751@newsletter'
