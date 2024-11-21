@@ -2,7 +2,6 @@ import pkg from '@whiskeysockets/baileys'
 import fs from 'fs'
 import fetch from 'node-fetch'
 import axios from 'axios'
-import PhoneNumber from 'awesome-phonenumber'
 import moment from 'moment-timezone'
 const { generateWAMessageFromContent, prepareWAMessageMedia, proto } = pkg
 
@@ -28,17 +27,13 @@ return res.data
 console.log(`Error : ${e}`)
 }}
 
-global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
-let paisdata = delirius.data.result
-global.pais = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
-
 //creador y otros
 global.creador = 'Wa.me/5493876432076'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
 global.namechannel = '© All Rightd Reserved • YaemoriBot'
 global.listo = '✨️ *Aquí tienes ฅ^•ﻌ•^ฅ*'
+global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
 //ids channel
 global.channelid = '120363310433406751@newsletter'
