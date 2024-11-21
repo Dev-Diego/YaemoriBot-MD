@@ -1,4 +1,3 @@
-
 export async function before(m) {
     if (!m.text || !global.prefix.test(m.text)) {
         return;
@@ -27,9 +26,23 @@ export async function before(m) {
         user.commands += 1;
 
         // Notificación del uso del comando
-        let adminNumber = `${global.channelid}`; // Número del administrador
         let commandUser = m.sender;
-        await conn.sendMessage(adminNumber, { text: `🔔 El usuario @${commandUser.split('@')[0]} ha usado el comando *${command}*` }, { mentions: [m.sender] });
+       let chtxt = `
+🥳 Un usuario ha ejecutado un comando.
+
+👤 *User* » ${nombre}
+☁️ *Comando ejecutado* » ${comando}
+       `.trim()
+       await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
+       externalAdReply: {
+       title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
+       body: '🥳 ¡Un nuevo comando ejecutado!',
+       thumbnailUrl: global.fotoperfil,
+       sourceUrl: redes,
+       mediaType: 1,
+       showAdAttribution: false,
+       renderLargerThumbnail: false
+       }}}, { quoted: null })
 
     } else {
         const comando = m.text.trim().split(' ')[0];
