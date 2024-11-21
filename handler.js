@@ -293,16 +293,7 @@ plugin.command === command :
 false
 
 if (!isAccept) {
-//continue
-//}
-let id = '120363310433406751@newsletter'
-let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-let texto = `
-🥳 Nuevo comando usado.
-
-👤 Usuario: ${m.pushName || 'Anónimo'}
-🐢 Comando: ${comando}
-`.trim()
+continue
 await conn.sendMessage(id, { text: texto, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
@@ -312,7 +303,16 @@ sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
-}}}, { quoted: null })}
+}}}, { quoted: null })
+}
+let id = '120363310433406751@newsletter'
+let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+let texto = `
+🥳 Nuevo comando usado.
+
+👤 Usuario: ${m.pushName || 'Anónimo'}
+🐢 Comando: ${comando}
+`.trim()
 m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
 let chat = global.db.data.chats[m.chat]
