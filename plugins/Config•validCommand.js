@@ -30,7 +30,7 @@ export async function before(m) {
        let chtxt = `
 🥳 Un usuario ha ejecutado un comando.
 
-👤 *User* » ${nombre}
+👤 *User* » ${user}
 ☁️ *Comando ejecutado* » ${command}
        `.trim()
        await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
