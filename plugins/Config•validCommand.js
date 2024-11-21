@@ -27,12 +27,11 @@ export async function before(m) {
 
         // Notificación del uso del comando
         let commandUser = m.sender;
-        const comando2 = m.text.trim().split(' ')[0];
        let chtxt = `
 🥳 Un usuario ha ejecutado un comando.
 
 👤 *User* » ${nombre}
-☁️ *Comando ejecutado* » ${comando2}
+☁️ *Comando ejecutado* » ${command}
        `.trim()
        await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
        externalAdReply: {
