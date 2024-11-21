@@ -1,7 +1,6 @@
 const { makeWASocket, useMultiFileAuthState, MessageType } = require('@whiskeysockets/baileys');
-const { writeFile, readFile } = require('fs/promises');
-const pino = require('pino');
-const path = require('path');
+const pino from 'pino';
+const path from 'path';
 
 const adminNumber = `${global.channelid}`; // Número del administrador
 
