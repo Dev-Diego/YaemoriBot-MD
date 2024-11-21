@@ -1,6 +1,6 @@
 let handler = async (m, { conn, usedPrefix, args, text }) => {
 
-if (command == 'unreg' || command == 'borrarregistro' || command == 'unregister') {
+if (command == 'unreg' || command == 'unregister') {
 if (!args[0]) return conn.reply(m.chat, `🚩 Te hace falta el numero de registro. Para ver el numero de registro utiliza:\n${usedPrefix}nserie`, m, rcanal)
 
 let user = global.db.data.users[m.sender]
@@ -16,16 +16,16 @@ global.db.data.users[m.sender].joincount -= 5
 
 return conn.reply(m.chat, `🚩 Tu registro ha sido anulado correctamente.`, m, rcanal)}
 
-if (command == 'nserie' || command == 'myns' || command == 'sn') {
+if (command == 'nserie' || command == 'nregistro') {
 
 let sn = createHash('md5').update(m.sender).digest('hex')
 
-// conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `🪐 ¡Numero de Registro! 🪐`, 'status@broadcast')
-m.reply(sn)
+conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `🪐 ¡Numero de Registro! 🪐`, 'status@broadcast')
+// m.reply(sn)
 
 }}
 handler.help = ['unreg', 'nserie']
 handler.tags = ['rg']
-handler.command = ['unreg', 'unregister', 'borrarregistro', 'nserie', 'myns', 'sn']
+handler.command = ['unreg', 'unregister', 'nserie', 'nregistro']
 handler.register = true
 export default handler
