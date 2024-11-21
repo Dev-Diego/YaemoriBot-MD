@@ -58,25 +58,17 @@ global.mes = d.toLocaleDateString('es', {month: 'long'})
 global.año = d.toLocaleDateString('es', {year: 'numeric'})
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true})
 
-//Reacciones De Comandos.!
+//Reacciones de comandos y mensaje en espera.
 global.rwait = '🕒'
 global.done = '✅'
 global.error = '✖️'
-
-//Emojis determinado de Ai Yaemori
 global.emoji = '🚩'
 global.emoji2 = '🍟'
 global.emoji3 = '🌺'
 global.emoji4 = '🌻'
 global.emoji5 = '✨️'
-global.emoji6 = '☁️'
-global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5, emoji6].getRandom()
-
-//mensaje en espera
 global.wait = '🚀 Cargando...'
-global.waitt = '🚀 Cargando...'
-global.waittt = '🚀 Cargando...'
-global.waitttt = '🚀 Cargando...'
+global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5].getRandom()
 
 //Enlaces
 var canal = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'
