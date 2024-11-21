@@ -20,10 +20,11 @@ if (command == 'nserie' || command == 'myns' || command == 'sn') {
 
 let sn = createHash('md5').update(m.sender).digest('hex')
 
-conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `🪐 ¡Numero de Registro! 🪐`, 'status@broadcast')
+// conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `🪐 ¡Numero de Registro! 🪐`, 'status@broadcast')
+m.reply(sn)
 
 }}
-handler.help = ['unreg']
+handler.help = ['unreg', 'nserie']
 handler.tags = ['rg']
 handler.command = ['unreg', 'unregister', 'borrarregistro', 'nserie', 'myns', 'sn']
 handler.register = true
