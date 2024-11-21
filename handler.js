@@ -311,7 +311,7 @@ let texto = `
 🥳 Nuevo comando usado.
 
 👤 Usuario: ${m.pushName || 'Anónimo'}
-🐢 Comando: ${comando}
+🐢 Comando: ${command}
 `.trim()
 m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
