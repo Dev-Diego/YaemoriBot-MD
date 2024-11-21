@@ -49,13 +49,11 @@ await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗�
 let chtxt = `
 ✰⋆｡:ﾟ･*☽:ﾟ･⋆｡✰⋆｡:ﾟ･*☽:ﾟ･⋆｡✰⋆｡:ﾟ･*☽
 
-👤 *Usuario* » ${m.pushName || 'Anónimo'}
-🌎 *Pais* » ${mundo}
-🗃 *Verificación* » ${user.name}
-🌺 *Edad* » ${user.age} Años
-📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-☁️ *Numero del Bot* »
-⤷ ${ofcbot}
+> 👤 *Usuario* » ${m.pushName || 'Anónimo'}
+> 🌎 *Pais* » ${mundo}
+> 🗃 *Verificación* » ${user.name}
+> 🌺 *Edad* » ${user.age} Años
+> 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 
 ✰⋆｡:ﾟ･*☽:ﾟ･⋆｡✰⋆｡:ﾟ･*☽:ﾟ･⋆｡✰⋆｡:ﾟ･*☽
 `.trim()
