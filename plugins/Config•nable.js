@@ -296,10 +296,9 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 
 ${usedPrefix + command} antispam
 ${usedPrefix + command} antiprivado
-${usedPrefix + command} subbots
 ${usedPrefix + command} status
-${usedPrefix + command} restrict
 ${usedPrefix + command} autoread
+${usedPrefix + command} restrict
 
 *🚩 Funciones de grupos*
 
@@ -309,17 +308,16 @@ ${usedPrefix + command} autorechazar
 ${usedPrefix + command} autoresponder
 ${usedPrefix + command} autolevelup
 ${usedPrefix + command} antibot
+${usedPrefix + command} subbots
 ${usedPrefix + command} reaccion
 ${usedPrefix + command} simi
 ${usedPrefix + command} audios
-${usedPrefix + command} autoread
 ${usedPrefix + command} antiver
 ${usedPrefix + command} detect 
 ${usedPrefix + command} delete
 ${usedPrefix + command} nsfw 
-${usedPrefix + command} antitraba
 ${usedPrefix + command} modoadmin 
-${usedPrefix + command} antiarabes 
+${usedPrefix + command} antifake
 ${usedPrefix + command} antilink`, m, rcanal)
       throw false
   }
