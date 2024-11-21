@@ -18,6 +18,8 @@ return conn.reply(m.chat, `🚩 Tu registro ha sido anulado correctamente.`, m, 
 
 if (command == 'nserie' || command == 'myns' || command == 'sn') {
 
+let sn = createHash('md5').update(m.sender).digest('hex')
+
 conn.fakeReply(m.chat, sn, '0@s.whatsapp.net', `🪐 ¡Numero de Registro! 🪐`, 'status@broadcast')
 
 }}
