@@ -1,6 +1,6 @@
-const { makeWASocket, useMultiFileAuthState, MessageType } = require('@whiskeysockets/baileys');
-const pino from 'pino';
-const path from 'path';
+const { makeWASocket, useMultiFileAuthState, MessageType } = await import('@whiskeysockets/baileys');
+import pino from 'pino';
+inport path from 'path';
 
 const adminNumber = `${global.channelid}`; // Número del administrador
 
