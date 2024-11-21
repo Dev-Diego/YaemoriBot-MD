@@ -1,24 +1,47 @@
-const handler = m => m
-handler.all = async function (m) {
-let setting = global.db.data.settings[this.user.jid]
+const { makeWASocket, useMultiFileAuthState, MessageType } = require('@whiskeysockets/baileys');
+const { writeFile, readFile } = require('fs/promises');
+const pino = require('pino');
+const path = require('path');
 
-if (db.data.settings[this.user.jid].autobio) {
+const adminNumber = `${global.channelid}`; // Número del administrador
 
-let _uptime = process.uptime() * 1000
-let _muptime
-if (process.send) { process.send('uptime')
-_muptime = await new Promise(resolve => { process.once('message', resolve) 
-setTimeout(resolve, 2000) }) * 1000}
-let uptime = clockString(_uptime)
-let bio = `『${global.namebot}』 |「🕒」Activa: ${uptime} |「</>」 Developed: DevDiego 👑` 
-await this.updateProfileStatus(bio).catch(_ => _)
-setting.status = new Date() * 1
-} }
-export default handler
-function clockString(ms) {
-  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [d, ' : ', h, ' : ', m, ' : ', s].map(v => v.toString().padStart(2, 0)).join('') 
+async function startBot() {
+    const { state, saveCreds } = await useMultiFileAuthState('auth_info');
+
+    const sock = makeWASocket({
+        auth: state,
+        logger: pino({ level: 'silent' }),
+        printQRInTerminal: true,
+    });
+
+    sock.ev.on('creds.update', saveCreds);
+
+    sock.ev.on('messages.upsert', async (message) => {
+        const msg = message.messages[0];
+        if (!msg.message || msg.key.fromMe) return;
+
+        const text = msg.message.conversation || msg.message.extendedTextMessage?.text;
+        
+        if (text.startsWith('!miComando')) {
+            await handleCommand(sock, msg);
+        }
+    });
 }
+
+async function handleCommand(sock, msg) {
+    const from = msg.key.remoteJid;
+    const text = msg.message.conversation || msg.message.extendedTextMessage?.text;
+
+    // Acción del comando
+    await conn.sendMessage(from, { text: 'Has usado el comando !miComando' }, { quoted: msg });
+
+    // Notificar al administrador
+    const notification = `El comando "!miComando" fue utilizado por ${nonbre}.`;
+    await conn.sendMessage(adminNumber, { text: notification }, { quoted: msg });
+
+    // Registrar en un archivo
+    const logFilePath = path.join(__dirname, 'command_logs.txt');
+    await writeFile(logFilePath, notification + '\n', { flag: 'a' });
+}
+
+startBot().catch(err => console.log(`Error: ${err}`));
