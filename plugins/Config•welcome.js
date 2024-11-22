@@ -3,14 +3,13 @@ import fetch from 'node-fetch'
 
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0;
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => icons)
-  let img = await (await fetch(`${pp}`)).buffer()
+  
   let userName = user ? user.name : await conn.getName(m.sender);
   let user = global.db.data.users[m.sender];
   let chat = global.db.data.chats[m.chat]
 
   if (chat.welcome && m.messageStubType == 27) {
-   let textowel = `Welcome: ${userName}\n${groupMetadata.subject}`
+   let textowel = `Welcome: ${m.pushName || 'Anónimo'}\n${groupMetadata.subject}`
         let wel = `ゲ◜៹ New Member ៹◞ゲ 
 
 Usuario : @${m.messageStubParameters[0].split`@`[0]} 
@@ -23,7 +22,7 @@ await conn.sendMini(m.chat, textowel, textbot, wel, img, img, channel, estilo)
   }
   
   if (chat.welcome && m.messageStubType == 28) {
-    let textobye = `Bye: ${userName}\n${groupMetadata.subject}`
+    let textobye = `Bye: ${m.pushName || 'Anónimo'}\n${groupMetadata.subject}`
        let bye = `ゲ◜៹ Bye Member ៹◞ゲ 
 
 Usuario: @${m.messageStubParameters[0].split`@`[0]}
@@ -35,7 +34,7 @@ await conn.sendMini(m.chat, textobye, textbot, bye, img, img, channel, estilo)
   }
   
   if (chat.welcome && m.messageStubType == 32) {
-    let textoputo = `Fuera Put@: ${userName}\n${groupMetadata.subject}`
+    let textoputo = `Fuera Put@: ${m.pushName || 'Anónimo'}\n${groupMetadata.subject}`
        let kick = `ゲ◜៹ Bye Member ៹◞ゲ 
 
 Usuario: @${m.messageStubParameters[0].split`@`[0]}
