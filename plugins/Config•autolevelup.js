@@ -1,5 +1,5 @@
 //import db from '../lib/database.js'
-import { canLevelUp } from '../lib/levelling.js'
+import { levelup } from '../lib/canvas.js'
 
 export async function before(m, { conn }) {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
