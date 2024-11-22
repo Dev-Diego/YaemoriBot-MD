@@ -22,7 +22,6 @@ await conn.sendMessage(global.ch.ch1, { text: `👤 *Usuario:* ${name}
 👾 *Rango:* ${user.role}
 
 💰 *Recompensa por alacanzar el nivel ${user.level}:*
-🎁 *Bono:* `X1`
 - *1 🎫 Mini Tickets*
 - *1 🪧 Cartón*
 - *1 〽️ Barra de Oro*
