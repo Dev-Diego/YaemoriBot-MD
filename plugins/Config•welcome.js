@@ -1,4 +1,50 @@
-let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
+let WAMessageStubType = (await import('@whiskeysockets/baileys')).default
+import fetch from 'node-fetch'
+
+export async function before(m, {conn, participants, groupMetadata}) {
+  if (!m.messageStubType || !m.isGroup) return !0;
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => icons)
+  let img = await (await fetch(`${pp}`)).buffer()
+  let chat = global.db.data.chats[m.chat]
+
+  if (chat.welcome && m.messageStubType == 27) {
+   let textowel = `Welcome: ${userName}\n${groupMetadata.subject}`
+        let wel = `ゲ◜៹ New Member ៹◞ゲ 
+
+Usuario : @${m.messageStubParameters[0].split`@`[0]} 
+
+Grupo : ${groupMetadata.subject}
+
+${dev}`
+    
+await conn.sendMini(m.chat, textowel, textbot, wel, img, img, channel, estilo)
+  }
+  
+  if (chat.welcome && m.messageStubType == 28) {
+    let textobye = `Bye: ${userName}\n${groupMetadata.subject}`
+       let bye = `ゲ◜៹ Bye Member ៹◞ゲ 
+
+Usuario: @${m.messageStubParameters[0].split`@`[0]}
+
+Grupo: ${groupMetadata.subject}
+
+${dev}`
+await conn.sendMini(m.chat, textobye, textbot, bye, img, img, channel, estilo)
+  }
+  
+  if (chat.welcome && m.messageStubType == 32) {
+    let textoputo = `Fuera Put@: ${userName}\n${groupMetadata.subject}`
+       let kick = `ゲ◜៹ Bye Member ៹◞ゲ 
+
+Usuario: @${m.messageStubParameters[0].split`@`[0]}
+
+Grupo: ${groupMetadata.subject}
+
+${dev}`
+await conn.sendMini(m.chat, textoputo, textbot, kick, img, img, channel, estilo)
+}}
+
+/*let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
 import fetch from 'node-fetch';
 
 export async function before(m, { conn, participants, groupMetadata }) {
@@ -47,4 +93,4 @@ export async function before(m, { conn, participants, groupMetadata }) {
     "showAdAttribution": true}}, 
      seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
   }
-}
+}*/
