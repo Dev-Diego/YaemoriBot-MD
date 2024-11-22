@@ -3,11 +3,10 @@ import fetch from 'node-fetch'
 
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0;
-  let who = m.messageStubParameters[0] + '@s.whatsapp.net';
-  let user = global.db.data.users[who];
-  let userName = user ? user.name : await conn.getName(who);
   let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => icons)
   let img = await (await fetch(`${pp}`)).buffer()
+  let userName = user ? user.name : await conn.getName(m.sender);
+  let user = global.db.data.users[m.sender];
   let chat = global.db.data.chats[m.chat]
 
   if (chat.welcome && m.messageStubType == 27) {
