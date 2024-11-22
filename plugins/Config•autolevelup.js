@@ -12,7 +12,7 @@ return !0
 let before = user.level * 1
 while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 if (before !== user.level) {
-// await conn.sendMessage(global.channelid, { text: `👤 *Usuario:* ${userName}\n🐢 *Nivel anterior:* ${before}\n✨️ *Nivel actual:* ${user.level}\n👾 *Rango:* ${user.role}`, contextInfo: {
+/* await conn.sendMessage(global.channelid, { text: `👤 *Usuario:* ${userName}\n🐢 *Nivel anterior:* ${before}\n✨️ *Nivel actual:* ${user.level}\n👾 *Rango:* ${user.role}`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Alguien a subido de nivel!',
@@ -21,7 +21,7 @@ sourceUrl: redes,
 mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
-}}}, { quoted: null })
+}}}, { quoted: null })*/
 m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🌵 Rango » *${user.role}*\n📆 Fecha » *${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*
 `.trim())
 await conn.sendMessage(global.channelid, { text: `👤 *Usuario:* ${userName}\n🐢 *Nivel anterior:* ${before}\n✨️ *Nivel actual:* ${user.level}\n👾 *Rango:* ${user.role}`, contextInfo: {
