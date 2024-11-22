@@ -7,20 +7,22 @@ export async function before(m, {conn, participants, groupMetadata}) {
   let img = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
   if (chat.welcome && m.messageStubType == 27) {
    let textowel = `Welcome: ${m.pushName || 'Anónimo'}`
-        let wel = `ゲ◜៹ New Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]} \nGrupo\n» ${groupMetadata.subject}\n${dev}`
+        let wel = `┌─★ *Ai Yaemori - MD* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
 
 await conn.sendMini(m.chat, textowel, dev, wel, img, img, channel, estilo)
   }
 
   if (chat.welcome && m.messageStubType == 28) {
     let textobye = `Bye: ${m.pushName || 'Anónimo'}`
-       let bye = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
+       let bye = `┌─★ *Ai Yaemori - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+
 await conn.sendMini(m.chat, textobye, dev, bye, img, img, channel, estilo)
   }
 
   if (chat.welcome && m.messageStubType == 32) {
     let textoputo = `Adiós: ${m.pushName || 'Anónimo'}`
-       let kick = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
+       let kick = `┌─★ *Ai Yaemori - MD* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+
 await conn.sendMini(m.chat, textoputo, dev, kick, img, img, channel, estilo)
 }}
 
