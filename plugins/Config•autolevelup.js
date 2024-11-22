@@ -5,15 +5,16 @@ export function before(m, { conn }) {
 
 let user = global.db.data.users[m.sender]
 let chat = global.db.data.chats[m.chat]
-if (!chat.autolevelup)
-return !0
+let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+let userName = m.pushName || 'Anónimo'
 let chtxt = `
-👤 *Usuario:* ${nombre}
-🐢 *Nivel anterior:* ${}
+👤 *Usuario:* ${userName}
+🐢 *Nivel anterior:* ${before}
 ✨️ *Nivel actual:* ${user.level}
 👾 *Rango:* ${user.role}
 `.trim()
-
+if (!chat.autolevelup)
+return !0
 let before = user.level * 1
 while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
 if (before !== user.level) {
