@@ -15,20 +15,16 @@ if (before !== user.level) {
 m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🌵 Rango » *${user.role}*\n📆 Fecha » *${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*
 `.trim())
 
-if (level >= 1) {
-let chtxt = `
-👤 *Usuario:* ${m.pushName || 'Anónimo'}
+let chtxt = `👤 *Usuario:* ${m.pushName || 'Anónimo'}
 🐢 *Nivel anterior:* ${before}
-💫 *Nivel actual:* ${level}
+✨️ *Nivel actual:* ${level}
 👾 *Rango:* ${user.role}
-✨️ *Bot:* ${wm}${level % 5 === 0 ? `
-
-💰 *Recompensa por alacanzar el nivel ${level}:*
+💫 *Bot:* ${packname}${level % 5 === 0 ? `\n\n💰 *Recompensa por alacanzar el nivel ${level}:*
 🎁 *Bono:* \`X${Math.floor((level - 1) / 10) + 1}\`
-- *${especialCant * Math.floor((level - 1) / 10) + 1} ${global.rpgshop.emoticon(especial)}*
-- *${especialCant2 * Math.floor((level - 1) / 10) + 1} ${global.rpgshop.emoticon(especial2)}*
-- *${especialCant3 * Math.floor((level - 1) / 10) + 1} ${global.rpgshop.emoticon(especial3)}*
-- *${especialCant4 * Math.floor((level - 1) / 10) + 1} ${global.rpgshop.emoticon(especial4)}*
+- *${especialCant * Math.floor((level - 1) / 10) + 1}*
+- *${especialCant2 * Math.floor((level - 1) / 10) + 1}*
+- *${especialCant3 * Math.floor((level - 1) / 10) + 1}*
+- *${especialCant4 * Math.floor((level - 1) / 10) + 1}*
 
 > 👀 Siguiente recompensa en el *nivel ${level + 5}*` : ''}`.trim()
 await conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
@@ -41,6 +37,5 @@ mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
-}
     }
 } 
