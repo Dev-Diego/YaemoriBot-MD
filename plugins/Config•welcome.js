@@ -7,7 +7,7 @@ export async function before(m, {conn, participants, groupMetadata}) {
   let userName = user ? user.name : await conn.getName(m.sender);
   let user = global.db.data.users[m.sender];
   let chat = global.db.data.chats[m.chat]
-
+  let img = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
   if (chat.welcome && m.messageStubType == 27) {
    let textowel = `Welcome: ${m.pushName || 'Anónimo'}\n${groupMetadata.subject}`
         let wel = `ゲ◜៹ New Member ៹◞ゲ 
