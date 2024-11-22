@@ -1,94 +1,169 @@
-//GataNina-Li
-const roles = {
-'𝗡𝗼𝘃𝗮𝘁𝗼 V 🍷': 0,
-'𝗡𝗼𝘃𝗮𝘁𝗼 IV 🍷': 2,
-'𝗡𝗼𝘃𝗮𝘁𝗼 III 🍷': 4,
-'𝗡𝗼𝘃𝗮𝘁𝗼 II 🍷': 6,
-'𝗡𝗼𝘃𝗮𝘁𝗼 I 🍷': 8,
-'𝗘𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲 V 🍹': 10,
-'𝗘𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲 IV 🍹': 12,
-'𝗘𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲 III 🍹': 14,
-'𝗘𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲 II 🍹': 16,
-'𝗘𝘀𝘁𝘂𝗱𝗶𝗮𝗻𝘁𝗲 I 🍹': 18,
-'𝗥𝗮𝗻𝗴𝗼 𝗺𝗲𝗱𝗶𝗼 V 🥃': 20,
-'𝗥𝗮𝗻𝗴𝗼 𝗺𝗲𝗱𝗶𝗼 IV 🥃': 22,
-'𝗥𝗮𝗻𝗴𝗼 𝗺𝗲𝗱𝗶𝗼 III 🥃': 24,
-'𝗥𝗮𝗻𝗴𝗼 𝗺𝗲𝗱𝗶𝗼 II 🥃': 26,
-'𝗥𝗮𝗻𝗴𝗼 𝗺𝗲𝗱𝗶𝗼 I 🥃': 28,
-'𝗠𝗮𝗲𝘀𝘁𝗿𝗼 V ☁️': 30,
-'𝗠𝗮𝗲𝘀𝘁𝗿𝗼 IV ☁️': 32,
-'𝗠𝗮𝗲𝘀𝘁𝗿𝗼 III ☁️': 34,
-'𝗠𝗮𝗲𝘀𝘁𝗿𝗼 II ☁️': 36,
-'𝗠𝗮𝗲𝘀𝘁𝗿𝗼 I ☁️': 38,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 V 🪐': 40,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 IV 🪐': 42,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 III 🪐': 44,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 II 🪐': 46,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 I 🪐': 48,
-'𝗚𝗲𝗻𝗶𝗼 V 💧': 50,
-'𝗚𝗲𝗻𝗶𝗼 IV 💧': 52,
-'𝗚𝗲𝗻𝗶𝗼 III 💧': 54,
-'𝗚𝗲𝗻𝗶𝗼 II 💧': 56,
-'𝗚𝗲𝗻𝗶𝗼 I 💧': 58,
-'𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 V 🍿': 60,
-'𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 IV 🍿': 62,
-'𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 III 🍿': 64,
-'𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 II 🍿': 66,
-'𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 I 🍿': 68,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 𝗱𝗲𝗹 𝗯𝗼𝘁 V 🌐': 70,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 𝗱𝗲𝗹 𝗯𝗼𝘁 IV 🌐': 72,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 𝗱𝗲𝗹 𝗯𝗼𝘁 III 🌐': 74,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 𝗱𝗲𝗹 𝗯𝗼𝘁 II 🌐': 76,
-'𝗘𝘅𝗽𝗲𝗿𝘁𝗼 𝗱𝗲𝗹 𝗯𝗼𝘁 I 🌐': 78,
-'𝗣𝗿𝗼 V 💰': 80,
-'𝗣𝗿𝗼 IV 💰': 82,
-'𝗣𝗿𝗼 III 💰': 84,
-'𝗣𝗿𝗼 II 💰': 86,
-'𝗣𝗿𝗼 I 💰': 88,
-'𝗣𝗿𝗼 𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 V 🎁': 90,
-'𝗣𝗿𝗼 𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 IV 🎁': 92,
-'𝗣𝗿𝗼 𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 III 🎁': 94,
-'𝗣𝗿𝗼 𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 II 🎁': 96,
-'𝗣𝗿𝗼 𝗦𝘂𝗽𝗲𝗿𝗶𝗼𝗿 I 🎁': 98,
-'𝗥𝗲𝘆 V 💻': 100,
-'𝗥𝗲𝘆 IV 💻': 102,
-'𝗥𝗲𝘆 III 💻': 104,
-'𝗥𝗲𝘆 II 💻': 106,
-'𝗥𝗲𝘆 I 💻': 108,
-'𝗥𝗲𝘆 𝗣𝗿𝗼 V 🎒': 110,
-'𝗥𝗲𝘆 𝗣𝗿𝗼 IV 🎒': 112,
-'𝗥𝗲𝘆 𝗣𝗿𝗼 III 🎒': 114,
-'𝗥𝗲𝘆 𝗣𝗿𝗼 II 🎒': 116,
-'𝗥𝗲𝘆 𝗣𝗿𝗼 I 🎒': 118,
-'𝗜𝗻𝘃𝗲𝗻𝘀𝗶𝗯𝗹𝗲 V 🔔': 120,
-'𝗜𝗻𝘃𝗲𝗻𝘀𝗶𝗯𝗹𝗲 IV 🔔': 122,
-'𝗜𝗻𝘃𝗲𝗻𝘀𝗶𝗯𝗹𝗲 III 🔔': 124,
-'𝗜𝗻𝘃𝗲𝗻𝘀𝗶𝗯𝗹𝗲 II 🔔': 126,
-'𝗜𝗻𝘃𝗲𝗻𝘀𝗶𝗯𝗹𝗲 I 🔔': 128,
-'𝗠𝗶𝗻𝗶 V 🌌': 130,
-'𝗠𝗶𝗻𝗶 IV 🌌': 132,
-'𝗠𝗶𝗻𝗶 III 🌌': 134,
-'𝗠𝗶𝗻𝗶 II 🌌': 136,
-'𝗠𝗶𝗻𝗶 I 🌌': 138,
-'𝗣𝗿𝗲𝗺𝗶𝘂𝗺 V 🏆': 140,
-'𝗣𝗿𝗲𝗺𝗶𝘂𝗺 IV 🏆': 145,
-'𝗣𝗿𝗲𝗺𝗶𝘂𝗺 III 🏆': 150,
-'𝗣𝗿𝗲𝗺𝗶𝘂𝗺 II 🏆': 155,
-'𝗣𝗿𝗲𝗺𝗶𝘂𝗺 I 🏆': 160,
-'𝗥𝗲𝘆 𝗠𝗶𝗻𝗶 V 👑': 170,
-'𝗥𝗲𝘆 𝗠𝗶𝗻𝗶 IV 👑': 185,
-'𝗥𝗲𝘆 𝗠𝗶𝗻𝗶 III 👑': 200,
-'𝗥𝗲𝘆 𝗠𝗶𝗻𝗶 II 👑': 250,
-'𝗥𝗲𝘆 𝗠𝗶𝗻𝗶 I 👑': 300
+export const roles = {
+// Nivel 0-9: Principiantes
+'🌱 *Aventurero(a) - Novato(a) V*': 0,
+'🌱 *Aventurero(a) - Novato(a) IV*': 2,
+'🌱 *Aventurero(a) - Novato(a) III*': 4,
+'🌱 *Aventurero(a) - Novato(a) II*': 6,
+'🌱 *Aventurero(a) - Novato(a) I*': 8,
+
+// Nivel 10-19: Aprendices
+'🛠️ *Aprendiz del Camino V*': 10,
+'🛠️ *Aprendiz del Camino IV*': 12,
+'🛠️ *Aprendiz del Camino III*': 14,
+'🛠️ *Aprendiz del Camino II*': 16,
+'🛠️ *Aprendiz del Camino I*': 18,
+
+// Nivel 20-29: Exploradores
+'⚔️ *Explorador(a) del Valle V*': 20,
+'⚔️ *Explorador(a) del Valle IV*': 22,
+'⚔️ *Explorador(a) del Valle III*': 24,
+'⚔️ *Explorador(a) del Valle II*': 26,
+'⚔️ *Explorador(a) del Valle I*': 28,
+
+// Nivel 30-39: Guerreros
+'🏹 *Guerrero(a) del Alba V*': 30,
+'🏹 *Guerrero(a) del Alba IV*': 32,
+'🏹 *Guerrero(a) del Alba III*': 34,
+'🏹 *Guerrero(a) del Alba II*': 36,
+'🏹 *Guerrero(a) del Alba I*': 38,
+
+// Nivel 40-49: Guardianes
+'🛡️ *Guardián(a) de los Bosques V*': 40,
+'🛡️ *Guardián(a) de los Bosques IV*': 42,
+'🛡️ *Guardián(a) de los Bosques III*': 44,
+'🛡️ *Guardián(a) de los Bosques II*': 46,
+'🛡️ *Guardián(a) de los Bosques I*': 48,
+
+// Nivel 50-59: Magos
+'🔮 *Mago(a) del Crepúsculo V*': 50,
+'🔮 *Mago(a) del Crepúsculo IV*': 52,
+'🔮 *Mago(a) del Crepúsculo III*': 54,
+'🔮 *Mago(a) del Crepúsculo II*': 56,
+'🔮 *Mago(a) del Crepúsculo I*': 58,
+
+// Nivel 60-79: Élite
+'🏅 *Héroe(a) de Oro V*': 60,
+'🏅 *Héroe(a) de Oro IV*': 62,
+'🏅 *Héroe(a) de Oro III*': 64,
+'🏅 *Héroe(a) de Oro II*': 66,
+'🏅 *Héroe(a) de Oro I*': 68,
+'💎 *Paladín(a) de Diamante V*': 70,
+'💎 *Paladín(a) de Diamante IV*': 72,
+'💎 *Paladín(a) de Diamante III*': 74,
+'💎 *Paladín(a) de Diamante II*': 76,
+'💎 *Paladín(a) de Diamante I*': 78,
+
+// Nivel 80-99: Maestros
+'🌌 *Maestro(a) de las Estrellas V*': 80,
+'🌌 *Maestro(a) de las Estrellas IV*': 85,
+'🌌 *Maestro(a) de las Estrellas III*': 90,
+'🌌 *Maestro(a) de las Estrellas II*': 95,
+'🌌 *Maestro(a) de las Estrellas I*': 99,
+
+// Nivel 100-149: Legendarios
+'🌀 *Leyenda de la Aurora V*': 100,
+'🌀 *Leyenda de la Aurora IV*': 110,
+'🌀 *Leyenda de la Aurora III*': 120,
+'🌀 *Leyenda de la Aurora II*': 130,
+'🌀 *Leyenda de la Aurora I*': 140,
+
+// Nivel 150-199: Reyes/Reinas
+'👑 *Rey/Reina del Cosmos V*': 150,
+'👑 *Rey/Reina del Cosmos IV*': 160,
+'👑 *Rey/Reina del Cosmos III*': 170,
+'👑 *Rey/Reina del Cosmos II*': 180,
+'👑 *Rey/Reina del Cosmos I*': 199,
+
+// Nivel 200-299: Campeones
+'🚀 *Campeón(a) Intergaláctico(a) V*': 200,
+'🚀 *Campeón(a) Intergaláctico(a) IV*': 225,
+'🚀 *Campeón(a) Intergaláctico(a) III*': 250,
+'🚀 *Campeón(a) Intergaláctico(a) II*': 275,
+'🚀 *Campeón(a) Intergaláctico(a) I*': 299,
+
+// Nivel 300-399: Luz superior
+'✨ *Luz Primigenia del Cosmos V*': 300,
+'✨ *Luz Primigenia del Cosmos IV*': 325,
+'✨ *Luz Primigenia del Cosmos III*': 350,
+'✨ *Luz Primigenia del Cosmos II*': 375,
+'✨ *Luz Primigenia del Cosmos I*': 399,
+
+// Nivel 400-499: Tejedor supremo
+'🪐 *Tejedor(a) de Órbitas Infinitas V*': 400,
+'🪐 *Tejedor(a) de Órbitas Infinitas IV*': 425,
+'🪐 *Tejedor(a) de Órbitas Infinitas III*': 450,
+'🪐 *Tejedor(a) de Órbitas Infinitas II*': 475,
+'🪐 *Tejedor(a) de Órbitas Infinitas I*': 499,
+
+// Nivel 500-599: Reflejo supremo
+'🪞 *Reflejo Supremo del Destino V*': 500,
+'🪞 *Reflejo Supremo del Destino IV*': 525,
+'🪞 *Reflejo Supremo del Destino III*': 550,
+'🪞 *Reflejo Supremo del Destino II*': 575,
+'🪞 *Reflejo Supremo del Destino I*': 599,
+
+// Nivel 600-699: Metamorfosis
+'🦋 *Metamorfosis Astral V*': 600,
+'🦋 *Metamorfosis Astral IV*': 625,
+'🦋 *Metamorfosis Astral III*': 650,
+'🦋 *Metamorfosis Astral II*': 675,
+'🦋 *Metamorfosis Astral I*': 699,
+
+// Nivel 700-799: Runas del Destino
+'💠 *Gobernante de Runas del Destino V*': 700,
+'💠 *Gobernante de Runas del Destino IV*': 725,
+'💠 *Gobernante de Runas del Destino III*': 750,
+'💠 *Gobernante de Runas del Destino II*': 775,
+'💠 *Gobernante de Runas del Destino I*': 799,
+
+// Nivel 800-899: Mente brillante
+'🧠 *Mente Universal V*': 800,
+'🧠 *Mente Universal IV*': 825,
+'🧠 *Mente Universal III*': 850,
+'🧠 *Mente Universal II*': 875,
+'🧠 *Mente Universal I*': 899,
+
+// Nivel 900-999: Viajero(a)
+'🛸 *Viajero(a) del tiempo V*': 900,
+'🛸 *Viajero(a) del tiempo IV*': 925,
+'🛸 *Viajero(a) del tiempo III*': 950,
+'🛸 *Viajero(a) del tiempo II*': 975,
+'🛸 *Viajero(a) del tiempo I*': 999,
+
+// Nivel 300+: Inmortales
+'🔥 *Héroe(a) Inmortal V*': 1000,
+'🔥 *Héroe(a) Inmortal IV*': 2000,
+'🔥 *Héroe(a) Inmortal III*': 3000,
+'🔥 *Héroe(a) Inmortal II*': 4000,
+'🔥 *Héroe(a) Inmortal I*': 5000,
+'👑🌌 *Eterna Deidad del Multiverso* ⚡': 10000,
 }
 
 let handler = m => m
 handler.before = async function (m, { conn }) {
-        let user = db.data.users[m.sender]
-        let level = user.level
-        let role = (Object.entries(roles).sort((a, b) => b[1] - a[1]).find(([, minLevel]) => level >= minLevel) || Object.entries(roles)[0])[0]
-        user.role = role
-        return !0
-
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => '')
+let user = db.data.users[m.sender]
+let level = user.level
+let currentRole = Object.entries(roles).sort((a, b) => b[1] - a[1]).find(([, minLevel]) => level >= minLevel)[0]
+let nextRole = Object.entries(roles).sort((a, b) => b[1] - a[1]).find(([, minLevel]) => level + 1 >= minLevel)[0]
+if (level < 1) return false
+if (user.role != currentRole) {
+user.role = currentRole
+let userName = m.pushName || 'Anónimo'
+let chtxt = `✨ *¡Felicidades ${userName}!* \n\nTu nuevo rango es ${currentRole}.\n` + (nextRole ? ` Para llegar a ${nextRole}, alcanza el nivel *${roles[nextRole]}*.` : '')
+await conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
+externalAdReply: {
+title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
+body: '🥳 ¡Alguien obtuvo un nuevo Rango!',
+thumbnailUrl: perfil,
+sourceUrl: redes,
+mediaType: 1,
+showAdAttribution: false,
+renderLargerThumbnail: false
+}}}, { quoted: null }) 
+return true
 }
-export default handler 
+return false
+}
+export default handler
