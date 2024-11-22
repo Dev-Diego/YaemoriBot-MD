@@ -142,7 +142,7 @@ export const roles = {
 let handler = m => m
 handler.before = async function (m, { conn }) {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => '')
+let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 let user = db.data.users[m.sender]
 let level = user.level
 let currentRole = Object.entries(roles).sort((a, b) => b[1] - a[1]).find(([, minLevel]) => level >= minLevel)[0]
