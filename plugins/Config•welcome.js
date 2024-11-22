@@ -1,11 +1,11 @@
-import {WAMessageStubType} from '@whiskeysockets/baileys'
-import fetch from 'node-fetch'
+let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
+import fetch from 'node-fetch';
 
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0; 
   let chat = global.db.data.chats[m.chat]
   // let img = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-    let img = './src/img/Menu.jpg'
+    let img = imagen1
   if (chat.welcome && m.messageStubType == 27) {
    let textowel = `Welcome: ${m.pushName || 'Anónimo'}\n${groupMetadata.subject}`
         let wel = `ゲ◜៹ New Member ៹◞ゲ \n\nUsuario : @${m.messageStubParameters[0].split`@`[0]} \n\nGrupo : ${groupMetadata.subject}\n\n${dev}`
