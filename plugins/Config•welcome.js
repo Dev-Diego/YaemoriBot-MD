@@ -9,19 +9,19 @@ export async function before(m, {conn, participants, groupMetadata}) {
    let textowel = `Welcome: ${m.pushName || 'Anónimo'}`
         let wel = `ゲ◜៹ New Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]} \nGrupo\n» ${groupMetadata.subject}\n${dev}`
 
-await conn.sendMini(m.chat, textowel, textbot, wel, img, img, channel, estilo)
+await conn.sendMini(m.chat, textowel, dev, wel, img, img, channel, estilo)
   }
 
   if (chat.welcome && m.messageStubType == 28) {
     let textobye = `Bye: ${m.pushName || 'Anónimo'}`
        let bye = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
-await conn.sendMini(m.chat, textobye, textbot, bye, img, img, channel, estilo)
+await conn.sendMini(m.chat, textobye, dev, bye, img, img, channel, estilo)
   }
 
   if (chat.welcome && m.messageStubType == 32) {
     let textoputo = `Adiós: ${m.pushName || 'Anónimo'}`
        let kick = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
-await conn.sendMini(m.chat, textoputo, textbot, kick, img, img, channel, estilo)
+await conn.sendMini(m.chat, textoputo, dev, kick, img, img, channel, estilo)
 }}
 
 /*let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
