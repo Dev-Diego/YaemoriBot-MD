@@ -5,6 +5,7 @@ export function before(m, { conn }) {
 
 let user = global.db.data.users[m.sender]
 let chat = global.db.data.chats[m.chat]
+let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 let userName = m.pushName || 'Anónimo'
 if (!chat.autolevelup)
 return !0
