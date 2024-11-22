@@ -1,30 +1,4 @@
-let WAMessageStubType = (await import('@whiskeysockets/baileys')).default
-import fetch from 'node-fetch'
-
-export async function before(m, {conn, participants, groupMetadata}) {
-  if (!m.messageStubType || !m.isGroup) return !0; 
-  let chat = global.db.data.chats[m.chat]
-  let img = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-  if (chat.welcome && m.messageStubType == 27) {
-   let textowel = `Welcome: ${m.pushName || 'Anónimo'}`
-        let wel = `ゲ◜៹ New Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]} \nGrupo\n» ${groupMetadata.subject}\n${dev}`
-    
-await conn.sendMini(m.chat, textowel, textbot, wel, img, img, channel, estilo)
-  }
-  
-  if (chat.welcome && m.messageStubType == 28) {
-    let textobye = `Bye: ${m.pushName || 'Anónimo'}`
-       let bye = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
-await conn.sendMini(m.chat, textobye, textbot, bye, img, img, channel, estilo)
-  }
-  
-  if (chat.welcome && m.messageStubType == 32) {
-    let textoputo = `Adiós: ${m.pushName || 'Anónimo'}`
-       let kick = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
-await conn.sendMini(m.chat, textoputo, textbot, kick, img, img, channel, estilo)
-}}
-
-/*let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
+let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
 import fetch from 'node-fetch';
 
 export async function before(m, { conn, participants, groupMetadata }) {
@@ -73,4 +47,30 @@ export async function before(m, { conn, participants, groupMetadata }) {
     "showAdAttribution": true}}, 
      seconds: '4556', ptt: true, mimetype: 'audio/mpeg', fileName: `error.mp3` }, { quoted: fkontak, ephemeralExpiration: 24*60*100, disappearingMessagesInChat: 24*60*100})
   }
-}*/
+}
+
+/*let WAMessageStubType = (await import('@whiskeysockets/baileys')).default
+import fetch from 'node-fetch'
+
+export async function before(m, {conn, participants, groupMetadata}) {
+  if (!m.messageStubType || !m.isGroup) return !0; 
+  let chat = global.db.data.chats[m.chat]
+  let img = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+  if (chat.welcome && m.messageStubType == 27) {
+   let textowel = `Welcome: ${m.pushName || 'Anónimo'}`
+        let wel = `ゲ◜៹ New Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]} \nGrupo\n» ${groupMetadata.subject}\n${dev}`
+
+await conn.sendMini(m.chat, textowel, textbot, wel, img, img, channel, estilo)
+  }
+
+  if (chat.welcome && m.messageStubType == 28) {
+    let textobye = `Bye: ${m.pushName || 'Anónimo'}`
+       let bye = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
+await conn.sendMini(m.chat, textobye, textbot, bye, img, img, channel, estilo)
+  }
+
+  if (chat.welcome && m.messageStubType == 32) {
+    let textoputo = `Adiós: ${m.pushName || 'Anónimo'}`
+       let kick = `ゲ◜៹ Bye Member ៹◞ゲ \n\nUsuario\n» @${m.messageStubParameters[0].split`@`[0]}\nGrupo\n» ${groupMetadata.subject}\n${dev}`
+await conn.sendMini(m.chat, textoputo, textbot, kick, img, img, channel, estilo)
+}}*/
