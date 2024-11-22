@@ -1,4 +1,4 @@
-import { canLevelUp, xpRange } from '../lib/levelling.js'
+/*import { canLevelUp, xpRange } from '../lib/levelling.js'
 import { levelup } from '../lib/canvas.js'
 export function before(m, { conn }) {
 //if (!db.data.chats[m.chat].autonivel && m.isGroup) throw 
@@ -34,4 +34,4 @@ showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
     }
-} 
+} */
