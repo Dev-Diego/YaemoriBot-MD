@@ -152,7 +152,7 @@ if (user.role != currentRole) {
 user.role = currentRole
 let userName = m.pushName || 'Anónimo'
 let chtxt = `✨ *¡Felicidades ${userName}!* \n\nTu nuevo rango es:\n» ${currentRole}.\n` + (nextRole ? ` Para llegar al rango:\n» ${nextRole}\nAlcanza el nivel:\n» *${roles[nextRole]}*.` : '')
-await conn.sendMessage(ch.ch1, { text: chtxt, contextInfo: {
+await conn.sendMessage(global.channnelid, { text: chtxt, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Alguien obtuvo un nuevo Rango!',
