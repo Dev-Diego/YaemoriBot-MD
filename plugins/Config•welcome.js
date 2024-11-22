@@ -1,5 +1,5 @@
-let WAMessageStubType = (await import('@whiskeysockets/baileys')).default;
-import fetch from 'node-fetch';
+let WAMessageStubType = (await import('@whiskeysockets/baileys')).default
+import fetch from 'node-fetch'
 
 export async function before(m, {conn, participants, groupMetadata}) {
   if (!m.messageStubType || !m.isGroup) return !0; 
