@@ -3,7 +3,7 @@ import { canLevelUp } from '../lib/levelling.js'
 
 export async function before(m, { conn }) {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let cookies = `${pickRandom([20, 5, 7, 8, 88, 40, 50, 70, 90, 999, 300])}` * 1
+let cookies = `${pickRandom([20, 5, 7, 8, 88, 40, 50, 70, 90, 999, 300])}` * 1; let exp = `${pickRandom([20, 5, 7, 8, 88, 40, 50, 70, 90, 999, 300])}` * 1
  let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg') 
 let user = global.db.data.users[m.sender]
 let chat = global.db.data.chats[m.chat]
@@ -24,7 +24,7 @@ await conn.sendMessage(global.channelid, { text: `👤 *Usuario:* ${name}
 
 💰 *Recompensa por alacanzar el nivel ${user.level}:*
 - *${cookies} Galletas*
-- *${hasil} Exp*
+- *${exp} Exp*
 
 > 👀 Siguiente recompensa en el otro *nivel*`, contextInfo: {
 externalAdReply: {
@@ -36,11 +36,10 @@ mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
-}
+
 user.cookies += cookies
-let hasil = Math.floor(Math.random() * 1000)
-user.lastmiming = new Date * 1
-}  
+user.exp += exp
+}}
 
 function pickRandom(list) {
 return list[Math.floor(Math.random() * list.length)]}              
