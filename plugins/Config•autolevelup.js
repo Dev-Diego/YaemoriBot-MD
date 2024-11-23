@@ -3,7 +3,6 @@ import { canLevelUp } from '../lib/levelling.js'
 
 export async function before(m, { conn }) {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let cookies = `${pickRandom([20, 5, 7, 8, 88, 40, 50, 70, 90, 999, 300])}` * 1; let exp = `${pickRandom([20, 5, 7, 8, 88, 40, 50, 70, 90, 999, 300])}` * 1
  let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg') 
 let user = global.db.data.users[m.sender]
 let chat = global.db.data.chats[m.chat]
@@ -20,13 +19,7 @@ m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.
 await conn.sendMessage(global.channelid, { text: `👤 *Usuario:* ${name}
 🐢 *Nivel anterior:* ${before}
 ✨️ *Nivel actual:* ${user.level}
-👾 *Rango:* ${user.role}
-
-💰 *Recompensa por alacanzar el nivel ${user.level}:*
-- *${cookies} Galletas*
-- *${exp} Exp*
-
-> 👀 Siguiente recompensa en el otro *nivel*`, contextInfo: {
+👾 *Rango:* ${user.role}`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Un usuario tiene un nuevo nivel!',
@@ -36,9 +29,6 @@ mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
-
-user.cookies += cookies
-user.exp += exp
 }}
 
 function pickRandom(list) {
