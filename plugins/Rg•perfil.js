@@ -28,7 +28,7 @@ txt += `☁️ *Link* :: *wa.me/${who.split`@`[0]}*\n`
 txt += `🍟 *Galletas* :: *${cookies}*\n`
 txt += `🍁 *Nivel* :: *${level}*\n`
 txt += `🌸 *XP* :: Total ${exp}\n`
-txt += `🍄 *Registrado* :: *${registered ? 'Si\n✅ *Verificación:* ' + user.registered ? user.name : 'No'}*\n`
+txt += `🍄 *Registrado* :: *${registered ? 'Si\n✅ *Verificación:* ' + registered ? name : 'No'}*\n`
 txt += `💐 *Premium* :: *${prem ? 'Si' : 'No'}*\n`
 
   let mentionedJid = [who]
