@@ -28,7 +28,7 @@ let nextRole = Object.entries(roles).sort((a, b) => a[1] - b[1]) .find(([, minLe
 if (level >= 1) {
 user.role = currentRole
 let text22 = `✨ *¡Felicidades ${userName}!* \n\nTu nuevo rango es:\n» ${currentRole}.\n` + (nextRole ? ` Para llegar al rango:\n» ${nextRole}\nAlcanza el nivel:\n» *${roles[nextRole]}*.` : '')
-await conn.sendMessage(global.channnelid, { text: text22, contextInfo: {
+await conn.sendMessage(global.channelid, { text: text22, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Alguien obtuvo un nuevo Rango!',
