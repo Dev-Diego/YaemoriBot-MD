@@ -34,7 +34,7 @@ await conn.sendMessage(global.channelid, { text: `👤 *Usuario:* ${name}
 > 👀 Siguiente recompensa en el otro *nivel*`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
-body: '🥳 ¡Un usuario tiene un nuevo nivel!',
+body: '🥳 ¡Un usuario obtiene un nuevo nivel!',
 thumbnailUrl: perfil, 
 sourceUrl: redes,
 mediaType: 1,
@@ -43,10 +43,10 @@ renderLargerThumbnail: false
 }}}, { quoted: null })
 }}   
 
-let hasil = ["20", "5", "7", "8", "88", "40", "50", "70", "90", "999", "300"].getRandom()
+let hasil = ['1', '67', '4', '8', '90', '100', '400', '78', '45', '23', '2', '10'].getRandom()
 
-let hasil2 = ["20", "5", "7", "8", "88", "40", "50", "70", "90", "999", "300"].getRandom()    
+let hasil2 = ['3', '56', '80', '65', '300', '68', '12', '19', '26', '81', '98', '56'].getRandom()    
 
-let hasil3 = ["20", "5", "7", "8", "88", "40", "50", "70", "90", "999", "300"].getRandom()
+let hasil3 = ['24', '200', '76', '99', '77', '66', '16', '22', '33', '44', '55', '70'].getRandom() 
 
-let hasil4 = ["20", "5", "7", "8", "88", "40", "50", "70", "90", "999", "300"].getRandom()
+let hasil4 = ['20', '30', '40', '50', '60', '71', '82', '500', '96', '111', '32', '97'].getRandom() 
