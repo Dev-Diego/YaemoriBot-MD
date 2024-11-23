@@ -11,7 +11,6 @@ if (!chat.autolevelup) return !0
 let before = user.level * 1
 while (canLevelUp(user.level, user.exp, global.multiplier))
 user.level++
-user.role = global.rpg.role(user.level).name
 if (before !== user.level) {
 
 m.reply(`*🎉 ¡ F E L I C I D A D E S ! 🎉*\n\n💫 Nivel Actual » *${user.level}*\n🌵 Rango » *${user.role}*\n📆 Fecha » *${moment.tz('America/Bogota').format('DD/MM/YY')}*\n\n> *\`¡Has alcanzado un Nuevo Nivel!\`*`)
@@ -29,7 +28,4 @@ mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
-}}
-
-function pickRandom(list) {
-return list[Math.floor(Math.random() * list.length)]}              
+}}       
