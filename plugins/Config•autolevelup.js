@@ -78,7 +78,6 @@ mediaType: 1,
 showAdAttribution: false,
 renderLargerThumbnail: false
 }}}, { quoted: null })
-}}   
 }
 
 if (user.level == 5){
