@@ -24,9 +24,12 @@ let mentionedJid = [who]
   if (age > 100) return m.reply('👴🏻 Wow el abuelo quiere jugar al bot.')
   if (age < 5) return m.reply('🚼  hay un abuelo bebé jsjsj. ')
   user.name = name + '✓'.trim()
-  user.age = age
+  //user.age = age
+  user.age = user.age === 0 ? sinDefinir : user.age >= 18 ? user.age += ' Años ' + '(Persona Adulta)' : user.age += ' Años ' + '(Persona Joven)'
   user.regTime = + new Date
+ // user.descripcion = bio        
   user.registered = true
+ // user.descripcion = bio
   global.db.data.users[m.sender].money += 100
   global.db.data.users[m.sender].cookies += 40
   global.db.data.users[m.sender].exp += 300
