@@ -33,15 +33,15 @@ let mentionedJid = [who]
   global.db.data.users[m.sender].joincount += 20
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20)
 let mini = `🗃️ 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 🗃️\n`
-mini += `「☁️」 *Nombre* » ${name}\n`
+mini += `「💭」 *Nombre* » ${name}\n`
 mini += `「🍁」 *Edad* » ${age} años\n\n`
 mini += `「🎁」 𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀\n`
 mini += `🍪 *Cookies* » 40\n`
 mini += `✨️*Exp* » 300\n`
 mini += `💰 *Joincount* » 20\n`
 mini += `🪙 *Money* » 100`
-await m.reply(mini)
 await m.react('🗂')
+await m.reply(mini)
 
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
