@@ -13,7 +13,7 @@ let mentionedJid = [who]
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
   let sinDefinir = '😿 Es privada'
   let biografia = await conn.fetchStatus(m.sender).catch(() => null)
-  bio = biografia.status || sinDefinir
+  let bio = biografia.status || sinDefinir
   let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
   let user = global.db.data.users[m.sender]
   let name2 = conn.getName(m.sender)
@@ -29,10 +29,8 @@ let mentionedJid = [who]
   user.name = name + '✓'.trim()
   user.age = age
   user.persona = age >= 18 ? 'Si' : 'No'
-  user.regTime = + new Date
- user.descripcion = bio        
+  user.regTime = + new Date      
   user.registered = true
- // user.descripcion = bio
   global.db.data.users[m.sender].money += 100
   global.db.data.users[m.sender].cookies += 40
   global.db.data.users[m.sender].exp += 300
@@ -59,7 +57,7 @@ let chtxt = `
 🌺 *Edad* » ${user.age}
 🍁 *Persona Adulto/a* » ${user.persona}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-⭐️ *Biografia* » ${descripcion}
+⭐️ *Biografia* » ${bio}
 ☁️ *Número de registro* »
 ⤷ ${sn}
 `.trim()
