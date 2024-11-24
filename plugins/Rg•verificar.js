@@ -31,7 +31,7 @@ let mentionedJid = [who]
   global.db.data.users[m.sender].cookies += 40
   global.db.data.users[m.sender].exp += 300
   global.db.data.users[m.sender].joincount += 20
-  let sn = createHash('md5').update(m.sender).digest('hex')
+  let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20)
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
@@ -45,13 +45,16 @@ regbot += `• 100 Money 💸\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+// await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+await conn.sendFile(m.chat, perfil, 'error.jpg', regbot, null, rcanal)
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌎 *Pais* » ${mundo}
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
+☁️ *Número de registro* »
+⤷ ${sn}
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
