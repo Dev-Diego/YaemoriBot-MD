@@ -24,8 +24,8 @@ let mentionedJid = [who]
   if (age > 100) return m.reply('👴🏻 Wow el abuelo quiere jugar al bot.')
   if (age < 5) return m.reply('🚼  hay un abuelo bebé jsjsj. ')
   user.name = name + '✓'.trim()
-  //user.age = age
-  user.age = user.age === 0 ? sinDefinir : user.age >= 18 ? user.age += ' Años ' + '(Persona Adulta)' : user.age += ' Años ' + '(Persona Joven)'
+  user.age = age
+  user.persona = user.age === 0 ? 'Desconocido' : user.age >= 18 ? user.age += 'Si' : user.age += 'No'
   user.regTime = + new Date
  // user.descripcion = bio        
   user.registered = true
@@ -38,7 +38,7 @@ let mentionedJid = [who]
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
-regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age}\n`
+regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age} años\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「🎁」𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
 regbot += `• 40 Cookies 🍪\n`
@@ -54,6 +54,7 @@ let chtxt = `
 🌎 *Pais* » ${mundo}
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age}
+🍁 *Persona Adulto/a* » ${user.persona}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 ⭐️ *Biografia* » 😿 Es privado
 ☁️ *Número de registro* »
