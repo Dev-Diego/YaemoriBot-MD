@@ -12,9 +12,6 @@ let mentionedJid = [who]
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
   let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-   let biografia = await conn.fetchStatus(who).catch(_ => biografiaDesc)
-   let bio = biografia.status?.toString() || biografiaDesc
-  let biografiaDesc = '😿 Es privada'
   let user = global.db.data.users[m.sender]
   let name2 = conn.getName(m.sender)
   if (user.registered === true) return m.reply(`🍭 Ya estás registrado.\n\n*¿Quiere volver a registrarse?*\n\nUse este comando para eliminar su registro.\n*${usedPrefix}unreg*`)
@@ -55,7 +52,6 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-⭐️ *Descripción* » ${bio}
 ☁️ *Número de registro* »
 ⤷ ${sn}
 `.trim()
