@@ -46,7 +46,7 @@ regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
 await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
-let numstatus = m.sender.split("@s.whatsapp.net")
+let numstatus = '@' + m.sender.split("@s.whatsapp.net")
 let biografia = await conn.fetchStatus(numstatus +'@s.whatsapp.net').catch(_ => 'Sin Biografía')
 let statusbio = biografia.status?.toString() || 'Sin Biografía'
 let chtxt = `
