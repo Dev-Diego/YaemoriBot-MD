@@ -6,6 +6,7 @@ async function connectToWhatsApp() {
     const { state, saveCreds } = await useMultiFileAuthState('auth_info');
     const { version } = await fetchLatestBaileysVersion();
     const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) });
+    let perfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
     const sock = makeWASocket({
         logger: pino({ level: 'silent' }),
@@ -60,9 +61,19 @@ async function handleCommand(sock, message, text) {
         user.commands += 1;
 
         // Notificación al administrador
-        const notification = `🔔 El comando *${command}* fue utilizado por @${message.pushName || message.participant || message.key.remoteJid}`;
-        
+        const notification = `🔔 El comando *${command}* fue utilizado por ${global.nombre}`;
 
+await conn.sendMessage(global.channelid, { text: norification, contextInfo: {
+externalAdReply: {
+title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
+body: '🥳 ¡Un usuario ha usado un comando!',
+thumbnailUrl: perfil,
+sourceUrl: redes,
+mediaType: 1,
+showAdAttribution: false,
+renderLargerThumbnail: false
+}}}, { quoted: null })
+        
     } else {
         const comando = text.trim().split(' ')[0];
         await sock.sendMessage(from, { text: `⚡︎ El comando *${comando}* no existe.\nPara ver la lista de comandos usa:\n» *#help*` }, { quoted: message });
