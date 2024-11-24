@@ -11,7 +11,7 @@ let mentionedJid = [who]
   let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
-  let sinDefinir = '😿 Es privada'
+  let sinDefinir = 'Es privada 😿'
   let biografia = await conn.fetchStatus(m.sender).catch(() => null)
   let bio = biografia.status || sinDefinir
   let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
