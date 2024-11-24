@@ -32,16 +32,17 @@ let mentionedJid = [who]
   global.db.data.users[m.sender].exp += 300
   global.db.data.users[m.sender].joincount += 20
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20)
-let regbot =`🗃️ *R E G I S T R A D O* 🗃️\n
-💌 *Nombre:* ${name}
-🍭 *Edad* : ${age} años\n
+let mini = `🗃️ *R E G I S T R A D O* 🗃️\n`
+let mini += `☁️ *Nombre:* ${name}\n`
+let mini += `🍁 *Edad* : ${age} años\n\n`
+let mini += ` 🎁 *R E M C O N P E N S A S* 🎁\n`
+let mini += `🍪 *Cookies*: 40\n`
+let mini += `✨️ *Exp*: 300\n`
+let mini += `💰 *Joincount*: 20\n`
+let mini += `🪙 *Money*: 100`
+await m.reply(mini)
+await m.react('🗂')
 
-🎁 *R E M C O N P E N S A* 🎁
-🍪 *Cookies*: 40
-✨️ *Exp*: 300
-💰 *Joincount*: 20
-🪙 *Money*: 100`
-await m.reply(regbot)
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌎 *Pais* » ${mundo}
