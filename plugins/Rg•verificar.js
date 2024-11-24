@@ -32,20 +32,16 @@ let mentionedJid = [who]
   global.db.data.users[m.sender].exp += 300
   global.db.data.users[m.sender].joincount += 20
   let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 20)
-let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
-regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age} años\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `「🎁」𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
-regbot += `• 40 Cookies 🍪\n`
-regbot += `• 20 Joincount 🪙\n`
-regbot += `• 300 Experiencia ✨️\n`
-regbot += `• 100 Money 💸\n`
-regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
-regbot += `${packname}`
-await m.react('📩')
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+let regbot =`🗃️ *R E G I S T R A D O* 🗃️\n
+💌 *Nombre:* ${name}
+🍭 *Edad* : ${age} años\n
+
+🎁 *R E M C O N P E N S A* 🎁
+🍪 *Cookies*: 40
+✨️ *Exp*: 300
+💰 *Joincount*: 20
+🪙 *Money*: 100`
+await m.reply(regbot)
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌎 *Pais* » ${mundo}
