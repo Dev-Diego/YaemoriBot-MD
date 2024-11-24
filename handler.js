@@ -199,6 +199,7 @@ await delay(time)
 }, time)
 }
 
+// if (m.isBaileys) return 
 if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
 return
 }
