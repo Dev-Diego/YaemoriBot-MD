@@ -23,6 +23,7 @@ let mentionedJid = [who]
   age = parseInt(age)
   if (age > 100) return m.reply('👴🏻 Wow el abuelo quiere jugar al bot.')
   if (age < 5) return m.reply('🚼  hay un abuelo bebé jsjsj. ')
+  let biografia = (await this.fetchStatus(user).catch(console.error) || {}).status || '😿 Es privada'
   user.name = name + '✓'.trim()
   user.age = age
   user.regTime = + new Date
@@ -52,6 +53,7 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
+⭐️ *Biografia* » ${biografia}
 ☁️ *Número de registro* »
 ⤷ ${sn}
 `.trim()
