@@ -27,10 +27,10 @@ let mentionedJid = [who]
   user.age = age
   user.regTime = + new Date
   user.registered = true
-  global.db.data.users[m.sender].money += 600
-  global.db.data.users[m.sender].cookies += 15
-  global.db.data.users[m.sender].exp += 245
-  global.db.data.users[m.sender].joincount += 5
+  global.db.data.users[m.sender].money += 100
+  global.db.data.users[m.sender].cookies += 40
+  global.db.data.users[m.sender].exp += 300
+  global.db.data.users[m.sender].joincount += 20
   let sn = createHash('md5').update(m.sender).digest('hex')
 let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
@@ -52,6 +52,14 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
+
+🎁 Recompensas
+40 • Galletas 🍪
+300 • Exp ✨️
+20 • Joincount 🪙
+100 • Money 💸
+
+> ¡Gracias por registrarte en YaemoriBot! 🎉 Disfruta de una experiencia única y personalizada. Nos alegra tenerte con nosotros. 🚀✨
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
