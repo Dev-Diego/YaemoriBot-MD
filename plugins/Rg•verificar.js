@@ -12,7 +12,7 @@ let mentionedJid = [who]
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
   let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
-   let biografia = await conn.fetchStatus(who +'@s.whatsapp.net').catch(_ => biografiaDesc)
+   let biografia = await conn.fetchStatus(who).catch(_ => biografiaDesc)
    let bio = biografia.status?.toString() || biografiaDesc
   let biografiaDesc = '😿 Es privada'
   let user = global.db.data.users[m.sender]
