@@ -81,14 +81,3 @@ renderLargerThumbnail: false
 }
 
 connectToWhatsApp().catch(err => console.log('Error:', err));
-```
-
-### Explicación del Código:
-1. **Inicialización del Socket**: Conecta el bot a WhatsApp utilizando `Baileys`.
-2. **Escucha de Mensajes**: Configura el bot para escuchar mensajes entrantes y detectar comandos que comienzan con el prefijo global.
-3. **Función `handleCommand`**: Maneja los comandos detectados, verifica si el comando es válido, notifica al administrador y cuenta el uso de comandos por usuario.
-4. **Manejo de Errores**: En caso de un comando no válido, el bot envía un mensaje al usuario indicando que el comando no existe.
-
-Este código permite al bot enviar un mensaje cuando un usuario utiliza un comando y también notificar al administrador sobre el uso de comandos. Puedes personalizar los comandos y las acciones según tus necesidades específicas.
-
-Espero que este ejemplo te sea útil. Si necesitas más ajustes o tienes alguna otra sugerencia, ¡estoy aquí para ayudarte! 🌟✨
