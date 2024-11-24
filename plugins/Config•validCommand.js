@@ -61,7 +61,7 @@ async function handleCommand(sock, message, text) {
 
         // Notificación al administrador
         const notification = `🔔 El comando *${command}* fue utilizado por @${message.pushName || message.participant || message.key.remoteJid}`;
-        await sock.sendMessage(adminNumber, { text: notification }, { quoted: message });
+        
 
     } else {
         const comando = text.trim().split(' ')[0];
