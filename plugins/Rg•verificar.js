@@ -25,7 +25,7 @@ let mentionedJid = [who]
   if (age < 5) return m.reply('🚼  hay un abuelo bebé jsjsj. ')
   user.name = name + '✓'.trim()
   user.age = age
-  user.persona = user.age === 0 ? 'Desconocido' : user.age >= 18 ? user.age += 'Si' : user.age += 'No'
+  user.persona = age === 0 ? 'Desconocido' : age >= 18 ? age += 'Si' : age += 'No'
   user.regTime = + new Date
  // user.descripcion = bio        
   user.registered = true
