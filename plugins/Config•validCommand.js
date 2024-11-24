@@ -25,7 +25,7 @@ export async function before(m) {
     user.commands += 1;
         const notification = `🔔 El comando *${command}* fue utilizado por ${global.nombre}`;
 
-await conn.sendMessage(global.channelid, { text: norification, contextInfo: {
+await conn.sendMessage(global.channelid, { text: notification, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '🥳 ¡Un usuario ha usado un comando!',
