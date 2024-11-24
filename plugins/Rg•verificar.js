@@ -25,7 +25,6 @@ let mentionedJid = [who]
   if (age < 5) return m.reply('🚼  hay un abuelo bebé jsjsj. ')
   user.name = name + '✓'.trim()
   user.age = age
-  user.persona = age >= 18 ? 'Si' : 'No'
   user.regTime = + new Date      
   user.registered = true
   global.db.data.users[m.sender].money += 100
@@ -52,7 +51,6 @@ let chtxt = `
 🌎 *Pais* » ${mundo}
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} años
-🍁 *Persona Adulto/a* » ${user.persona}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 ☁️ *Número de registro* »
 ⤷ ${sn}
