@@ -38,14 +38,14 @@ regbot += `「💭」𝗡𝗼𝗺𝗯𝗿𝗲: ${name}\n`
 regbot += `「✨️」𝗘𝗱𝗮𝗱: ${age} años\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `「🎁」𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:\n`
-regbot += `• 15 Cookies 🍪\n`
-regbot += `• 5 MiniCoins 🪙\n`
-regbot += `• 245 Experiencia 💸\n`
-regbot += `• 12 Tokens 💰\n`
+regbot += `• 40 Cookies 🍪\n`
+regbot += `• 20 Joincount 🪙\n`
+regbot += `• 300 Experiencia ✨️\n`
+regbot += `• 100 Money 💸\n`
 regbot += `•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•\n`
 regbot += `${packname}`
 await m.react('📩')
-await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, imagen1, imagen1, channel, m)
+await conn.sendMini(m.chat, '⊱『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢(𝗔) 𝆹𝅥✅』⊰', textbot, regbot, perfil, perfil, channel, m)
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌎 *Pais* » ${mundo}
