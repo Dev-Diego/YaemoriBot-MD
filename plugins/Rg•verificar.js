@@ -54,7 +54,7 @@ let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
 🌎 *Pais* » ${mundo}
 🗃 *Verificación* » ${user.name}
-🌺 *Edad* » ${user.age}
+🌺 *Edad* » ${user.age} años
 🍁 *Persona Adulto/a* » ${user.persona}
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
 ⭐️ *Biografia* » ${bio}
