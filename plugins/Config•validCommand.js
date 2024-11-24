@@ -79,5 +79,3 @@ renderLargerThumbnail: false
         await sock.sendMessage(from, { text: `⚡︎ El comando *${comando}* no existe.\nPara ver la lista de comandos usa:\n» *#help*` }, { quoted: message });
     }
 }
-
-connectToWhatsApp().catch(err => console.log('Error:', err));
