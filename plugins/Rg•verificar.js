@@ -52,14 +52,6 @@ let chtxt = `
 🗃 *Verificación* » ${user.name}
 🌺 *Edad* » ${user.age} Años
 📆 *Fecha* » ${moment.tz('America/Bogota').format('DD/MM/YY')}
-
-🎁 Recompensas
-40 • Galletas 🍪
-300 • Exp ✨️
-20 • Joincount 🪙
-100 • Money 💸
-
-> ¡Gracias por registrarte en YaemoriBot! 🎉 Disfruta de una experiencia única y personalizada. Nos alegra tenerte con nosotros. 🚀✨
 `.trim()
 await conn.sendMessage(global.channelid, { text: chtxt, contextInfo: {
 externalAdReply: {
