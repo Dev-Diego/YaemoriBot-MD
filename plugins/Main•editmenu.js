@@ -53,21 +53,17 @@ const sections = [
 { header: titulo[8], title: nombre[8], description: descripción[8], id: `${usedPrefix + comando[8]}`.trim() }
 ]} 
 ]*/
-/*const list = {
-text: `✨ *¡Empieza a personalizar lo que ves en ${packname}!*\n
-☆ ⌒ ★ ⌒ ☆ ⌒ ★ ⌒ ☆ ⌒ ★ ⌒ ☆
+const edit = `✨ *¡Empieza a personalizar lo que ves en ${packname}!*\n
+☆ ⌒ ★ ⌒  ⌒ ★ ⌒ ☆ ⌒ ★ ⌒ ☆
 🍰 \`Continua si eres alguno de estos roles:\`
 ${m.isGroup ? `✪ Admin: ${isAdmin ? '✅' : '❌'}` : ''}
 ✪ Dueñ@: ${isOwner ? '✅' : '❌'}
 ✪ Bot: ${isROwner ? '✅' : '❌'}
 
 😍 *Disfruta modificando a tú gusto.*
-`,
-footer: wm2,
-buttonText: `⊱ VER OPCIONES ⊰`,
-}*/
+`
 if (command === "editarmenu" || command === "editmenu") {
-return await conn.sendList(m.chat, list.text, list.footer, list.buttonText, sections, null, m)
+return await conn.reply(m.chat, edit, m, fake)
 }
 
 if (command === "editaremoji01") {
