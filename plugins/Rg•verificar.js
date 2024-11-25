@@ -42,8 +42,7 @@ mini += `💰 *Joincount* » 20\n`
 mini += `🪙 *Money* » 100`
 await m.react('🗂')
 // await m.reply(mini)
-await conn.sendMessage(m.chat, caption: mini, mentions: [m.sender], ...rcanal }, { quoted: m })
-
+await conn.sendMessage(m.chat, { image: { url: icons }, caption: mini, mentions: [m.sender], ...rcanal }, { quoted: m })
 
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
