@@ -74,6 +74,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 │🍂⃟🍄┊${usedPrefix}hornymenu
 │🍂⃟🍄┊${usedPrefix}runtime
 │🍂⃟🍄┊${usedPrefix}script
+│🍂⃟🍄┊${usedPrefix}solicitud
 │🍂⃟🍄┊${usedPrefix}blocklist
 ╰─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒
 
