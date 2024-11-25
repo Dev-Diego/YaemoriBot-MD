@@ -17,47 +17,47 @@ const handler = async (m, {conn, text, command, usedPrefix, args}) => {
   }
   const textm = text.toLowerCase();
   if (textm == astro) {
-    global.db.data.users[m.sender].cookies += 10;
-    m.reply(`*🌵 Empate!*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +10 Galletas*`);
+    global.db.data.users[m.sender].chocolates += 10;
+    m.reply(`*😺 Empate!*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio: 10 Chocolates*`);
   } else if (text == 'papel') {
     if (astro == 'piedra') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Galletas*`);
+      global.db.data.users[m.sender].chocolates += 50;
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio: 50 Chocolates*`);
     } else {
-      global.db.data.users[m.sender].Cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Galletas*`);
+      global.db.data.users[m.sender].chocolates -= 30;
+      m.reply(`*😿 ¡Tú pierdes! 😿*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*😾 Te quitan: 30 Chocolates*`);
     }
   } else if (text == 'tijera') {
     if (astro == 'papel') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Galletas*`);
+      global.db.data.users[m.sender].chocolates += 50;
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio: 50 Chocolates*`);
     } else {
-      global.db.data.users[m.sender].Cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Galletas*`);
+      global.db.data.users[m.sender].chocolates -= 30;
+      m.reply(`*😿 ¡Tú pierdes! 😿*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*😾 Te quitan: 30 Chocolates*`);
     }
   } else if (textm == 'tijera') {
     if (astro == 'papel') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Galletas*`);
+      global.db.data.users[m.sender].chocolates += 50;
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio: 50 Chocolates*`);
     } else {
-      global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Galletas*`);
+      global.db.data.users[m.sender].chocolates -= 30;
+      m.reply(`*😿 ¡Tú pierdes! 😿*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*😾 Te quitan: 30 Chocolates*`);
     }
   } else if (textm == 'papel') {
     if (astro == 'piedra') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Galletas*`);
+      global.db.data.users[m.sender].chocolates += 50;
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio: 50 Chocolates*`);
     } else {
-      global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Galletas*`);
+      global.db.data.users[m.sender].chocolates -= 30;
+      m.reply(`*😿 ¡Tú pierdes! 😿*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*😾 Te quitan: 30 Chocolates*`);
     }
   } else if (textm == 'piedra') {
     if (astro == 'tijera') {
-      global.db.data.users[m.sender].cookies += 50;
-      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio +50 Galletas*`);
+      global.db.data.users[m.sender].chocolates += 50;
+      m.reply(`*🥳 Tú ganas! 🎉*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*🎁 Premio: 50 Chocolates*`);
     } else {
-      global.db.data.users[m.sender].cookies -= 30;
-      m.reply(`*🌵 ¡Tú pierdes! 🌵*\n\n*🚩 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*❌ Premio -30 Galletas*`);
+      global.db.data.users[m.sender].chocolates -= 30;
+      m.reply(`*😿 ¡Tú pierdes! 😿*\n\n*🍄 Tu: ${textm}*\n*🌸 El Bot: ${astro}*\n*😾 Te quitan: 30 Chocolates*`);
     }
   }
   global.db.data.users[m.sender].wait = new Date * 1;
