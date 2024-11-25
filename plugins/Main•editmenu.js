@@ -15,7 +15,7 @@ return conn.reply(m.chat, dis + '*No tiene permitido usar este comando, debe de 
 return conn.reply(m.chat, dis + '*No tiene permitido usar este comando, no eres dueño de este bot.*', m)
 }
 
-/*let seccion = [ `${cen1}𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐑 𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎${cen2}` ]
+let seccion = [ `${cen1}𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐑 𝐌𝐄𝐍𝐔 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐎${cen2}` ]
 let titulo = [ "✨ EMOJIS", "🖼️ IMAGEN", "📹 VÍDEO", "🪄 DINÁMICO", "☁️ SIMPLE", "👤 MENCIÓN", "📌 TRUNCAR", "✅ VERIFICADO", "✏️ PERSONALIZAR" ]
 let nombre = [ 
 `༶ Actualmente: ${editMenu.emoji ? 'activado ✅' : 'desactivado ❌'}`, 
@@ -38,9 +38,9 @@ let descripción = [
 "✩‧₊˚ Aplicar \"... Leer más\" antes de los comandos.",
 "✩‧₊˚ Simular mensaje verificado.",
 "✩‧₊˚ Usa esta opción si desea agregar una imagen personalizada."
-]*/
+]
 let comando = [ "editaremoji01", "editarimagen02", "editarvideo03", "editarvi04", "editarsimple05", "editarmencion06", "editardividir07", "editarverificado08", "editarpersonalizar09" ]
-/*const sections = [
+const sections = [
 { title: seccion[0], rows: [
 { header: titulo[0], title: nombre[0], description: descripción[0], id: usedPrefix + comando[0] },
 { header: titulo[1], title: nombre[1], description: descripción[1], id: usedPrefix + comando[1] },
@@ -52,18 +52,22 @@ let comando = [ "editaremoji01", "editarimagen02", "editarvideo03", "editarvi04"
 { header: titulo[7], title: nombre[7], description: descripción[7], id: usedPrefix + comando[7] },
 { header: titulo[8], title: nombre[8], description: descripción[8], id: `${usedPrefix + comando[8]}`.trim() }
 ]} 
-]*/
-const edit = `✨ *¡Empieza a personalizar lo que ves en ${packname}!*\n
-☆ ⌒ ★ ⌒  ⌒ ★ ⌒ ☆ ⌒ ★ ⌒ ☆
+]
+const list = {
+text: `✨ *¡Empieza a personalizar lo que ves en ${packname}!*\n
+☆ ⌒ ★ ⌒ ☆ ⌒ ★ ⌒ ☆ ⌒ ★ ⌒ ☆
 🍰 \`Continua si eres alguno de estos roles:\`
 ${m.isGroup ? `✪ Admin: ${isAdmin ? '✅' : '❌'}` : ''}
 ✪ Dueñ@: ${isOwner ? '✅' : '❌'}
 ✪ Bot: ${isROwner ? '✅' : '❌'}
 
 😍 *Disfruta modificando a tú gusto.*
-`
+`,
+footer: wm2,
+buttonText: `⊱ VER OPCIONES ⊰`,
+}
 if (command === "editarmenu" || command === "editmenu") {
-return await conn.reply(m.chat, edit, m, fake)
+return await conn.sendList(m.chat, list.text, list.footer, list.buttonText, sections, null, m)
 }
 
 if (command === "editaremoji01") {
@@ -218,7 +222,7 @@ return conn.reply(m.chat, hasOwnPropertyError, m)
 }}
 
 }
-handler.command = ['editarmenu', 'editmenu', 'editaremoji01', 'editarimagen02', 'editarvideo03', 'editarvi04', 'editarsimple05', 'editarmencion06', 'editardividir07', 'editarverificado08', 'editarpersonalizar09', 'cambiarppmenu']
+handler.command = /^(editarmenu|editmenu|editaremoji01|editarimagen02|editarvideo03|editarvi04|editarsimple05|editarmencion06|editardividir07|editarverificado08|editarpersonalizar09|cambiarppmenu)$/i
 export default handler
 
 async function IsEnlace(texto) {
