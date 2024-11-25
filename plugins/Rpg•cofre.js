@@ -2,29 +2,26 @@ const handler = async (m, {isPrems, conn}) => {
   const time = global.db.data.users[m.sender].lastcofre + 86400000; // 36000000 10 Horas //86400000 24 Horas
   if (new Date - global.db.data.users[m.sender].lastcofre < 86400000) return m.reply(`🎁 Ya Reclamastes Tu Cofre\n⏰️Regresa En: *${msToTime(time - new Date())}* Para Volver A Reclamar`);
 
-  const img = imagen1;
+  const pp = imagen1;
   const dia = Math.floor(Math.random() * 30);
   const tok = Math.floor(Math.random() * 10);
   const ai = Math.floor(Math.random() * 4000);
   const expp = Math.floor(Math.random() * 5000);
 
-  global.db.data.users[m.sender].cookies += dia;
+  global.db.data.users[m.sender].chocolates += dia;
   global.db.data.users[m.sender].money += ai;
   global.db.data.users[m.sender].joincount += tok;
   global.db.data.users[m.sender].exp += expp;
 
-  const texto = `
-╭━〔 ${global.botname} 〕⬣
-┃🚩 *Obtienes Un Cofre*
-┃ ${saludo}
-╰━━━━━━━━━━━━⬣
+  const texto = `${global.packname}
 
-╭━〔 ${global.botname} 〕⬣
-┃ *${dia} Cookies* 🍪
-┃ *${tok} Tokens* 💰
-┃ *${ai} MiniCoins* 💸
-┃ *${expp} Exp* ⚡
-╰━━━━━━━━━━━━⬣`;
+🍄 *Obtienes Un Cofre*
+${saludo}
+
+${dia} *Chocolates* 🍫
+${tok} *Joincount* 💰
+${ai} *Money* 🪙
+${expp} *Exp* ✨️`;
 
   const fkontak = {
     'key': {
@@ -41,8 +38,7 @@ const handler = async (m, {isPrems, conn}) => {
     'participant': '0@s.whatsapp.net',
   };
 
-  await conn.sendFile(m.chat, img, 'yoshiko.jpg', texto, fkontak);
-  // await conn.sendButton(m.chat, texto, wm, img, [['🔰 𝙼𝙴𝙽𝚄', '/menu'] ], fkontak, m)
+  await conn.sendFile(m.chat, pp, 'mimi.jpg', texto, fkontak, null, rcanal);
   global.db.data.users[m.sender].lastcofre = new Date * 1;
 };
 handler.help = ['daily'];
