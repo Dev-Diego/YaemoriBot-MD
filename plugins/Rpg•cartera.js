@@ -5,16 +5,16 @@ if (!(who in global.db.data.users)) return conn.reply(m.chat, '🍭 El usuario n
 const name = conn.getName(who);
 let txt = `*🌴 Balance de ${name}*
 
-	➺ *Galletas* : ${global.db.data.users[who].cookies} 
+	➺ *Chocolates* : ${global.db.data.users[who].chocolates} 
 	➺ *Banco* : ${global.db.data.users[who].bank} 
 	➺ *Experiencia* : ${global.db.data.users[who].exp}
 
-> Para proteger tus *Galletas* en el banco use *#depositar*`
+> Para proteger tus *Chocolates' en el banco use *#depositar*`
 await conn.reply(m.chat, txt, m, rcanal)
 }
 
-handler.help = ['cookies']
+handler.help = ['chocolates']
 handler.tags = ['rpg']
-handler.command = ['wallet', 'cartera', 'cookies', 'bal', 'galletas']
+handler.command = ['wallet', 'cartera', 'chocolatinas', 'bal', 'chocolates']
 handler.register = true 
 export default handler
