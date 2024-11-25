@@ -1,14 +1,16 @@
 let handler = async (m, { conn, text }) => {
+
 if (!text) return m.reply('🚩 Ingresa un nombre para el grupo.')
-try{
+    
+try {
 m.reply('🚩 *Creando grupo*')
 let group = await conn.groupCreate(text, [m.sender])
-let link = await conn.groupInviteCode(group.gid)
-m.reply('https://chat.whatsapp.com/' + url)
+let link = await conn.groupInviteCode(group.gid);
+m.reply('https://chat.whatsapp.com/' + link)
 } catch (e) {
 m.reply(`🚩 Ocurrió un error.`)
-}
-}
+}}
+
 handler.help = ['grupocrear <nombre>']
 handler.tags = ['owner']
 handler.command = ['creargc', 'newgc', 'creargrupo', 'grupocrear']
