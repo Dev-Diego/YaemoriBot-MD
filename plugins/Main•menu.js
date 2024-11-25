@@ -8,7 +8,7 @@ import { join } from 'path'
 let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, command }) => {
 try {        
 let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-let { exp, cookies, level, role } = global.db.data.users[m.sender]
+let { exp, chocolates, level, role } = global.db.data.users[m.sender]
 let { min, xp, max } = xpRange(level, global.multiplier)
 let name = await conn.getName(m.sender)
 let _uptime = process.uptime() * 1000
@@ -42,7 +42,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 │🍂⃟👤┊Cliente » \`\`\`${nombre}\`\`\`
 │🍂⃟🌍┊Pais » \`\`\`${mundo}\`\`\`
-│🍂⃟🍪┊Galletas » \`\`\`${cookies}\`\`\`
+│🍂⃟🍫┊Chocolates » \`\`\`${chocolates}\`\`\`
 │🍂⃟💰┊Experiencia » \`\`\`${exp}\`\`\`
 │🍂⃟⭐️┊Rango » \`\`\`${role}\`\`\`
 │🍂⃟🧋┊Nivel » \`\`\`${level}\`\`\`
@@ -157,7 +157,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 ┊•*⁀➷ °⭒⭒⭒ *DevDiego*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 │🍂⃟🍁┊${usedPrefix}bank
-│🍂⃟🍁┊${usedPrefix}cookies
+│🍂⃟🍁┊${usedPrefix}chocolates
 │🍂⃟🍁┊${usedPrefix}crimen
 │🍂⃟🍁┊${usedPrefix}daily
 │🍂⃟🍁┊${usedPrefix}claim
