@@ -30,7 +30,7 @@ conn.reply(m.chat, '`🍟 Veamos que numeros tienen!`\n\n'+ `➠ *YaemoriBot* : 
 user.chocolates += count * 2
 conn.reply(m.chat, '`🍟 Veamos que numeros tienen!`\n\n'+ `➠ *YaemoriBot* : ${Aku}\n➠ *${username}* : ${Kamu}\n\n> ${username}, *GANASTE* ${formatNumber(count * 2)} Chocolates 🍫.`.trim(), m, rcanal)
 } else {
-user.cookies += count * 1
+user.chocolates += count * 1
 conn.reply(m.chat, '`🍟 Veamos que numeros tienen!`\n\n'+ `➠ *YaemoriBot* : ${Aku}\n➠ *${username}* : ${Kamu}\n\n> ${username} obtienes ${formatNumber(count * 1)} Chocolates 🍫.`.trim(), m, rcanal)}
 } else conn.reply(m.chat, `No tienes *${formatNumber(count)} Chocolates 🍫* para apostar!`.trim(), m, rcanal)}
 
