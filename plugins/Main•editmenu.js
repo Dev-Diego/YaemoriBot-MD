@@ -38,9 +38,9 @@ let descripción = [
 "✩‧₊˚ Aplicar \"... Leer más\" antes de los comandos.",
 "✩‧₊˚ Simular mensaje verificado.",
 "✩‧₊˚ Usa esta opción si desea agregar una imagen personalizada."
-]
+]*/
 let comando = [ "editaremoji01", "editarimagen02", "editarvideo03", "editarvi04", "editarsimple05", "editarmencion06", "editardividir07", "editarverificado08", "editarpersonalizar09" ]
-const sections = [
+/*const sections = [
 { title: seccion[0], rows: [
 { header: titulo[0], title: nombre[0], description: descripción[0], id: usedPrefix + comando[0] },
 { header: titulo[1], title: nombre[1], description: descripción[1], id: usedPrefix + comando[1] },
