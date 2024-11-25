@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   //  if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
 
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na. Sugerencia 💡\nb. Propuesta 📝\nc. Publicidad 📢\nd. Opinión 💬\nf. Pregunta 🚀\ng. Eventos 🎉\nh. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd. Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
@@ -28,13 +28,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 
     let categories = {
-        '1': 'sugerencia',
-        '2': 'propuesta',
-        '3': 'publicidad',
-        '4': 'opinión',
-        '5': 'pregunta',
-        '6': 'eventos',
-        '7': 'frases'
+        'a': 'sugerencia',
+        'b': 'propuesta',
+        'c': 'publicidad',
+        'd': 'opinión',
+        'e': 'pregunta',
+        'f': 'eventos',
+        'g': 'frases'
     };
 
     let category = categories[categoryChoice];
