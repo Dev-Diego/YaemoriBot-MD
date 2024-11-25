@@ -29,7 +29,7 @@ m = smsg(this, m) || m
 if (!m)
 return
 m.exp = 0
-m.cookies = false
+m.chocolates = false
 try {
 let user = global.db.data.users[m.sender]
 if (typeof user !== 'object')
@@ -38,8 +38,8 @@ global.db.data.users[m.sender] = {}
 if (user) {
 if (!isNumber(user.exp))
 user.exp = 0
-if (!isNumber(user.cookies))
-user.cookies = 10
+if (!isNumber(user.chocolates))
+user.chocolates = 10
 if (!('muto' in user))
 user.muto = false
 if (!('premium' in user)) 
@@ -71,7 +71,7 @@ user.bank = 0
 } else
                 global.db.data.users[m.sender] = {
 exp: 0,
-cookies: 10,
+chocolates: 10,
 muto: false,
 registered: false,
 name: m.name,
@@ -303,8 +303,8 @@ if (!['Grupo•unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwn
 if (name != 'Grupo•unbanchat.js' && name != 'Owner•exec.js' && name != 'Owner•exec2.js' && name != 'Grupo•delete.js' && chat?.isBanned && !isROwner) return 
 if (m.text && user.banned && !isROwner) {
 if (user.antispam > 2) return
-m.reply(`🚫 Está baneado(a), no puede usar los comandos de este bot!\n\n${user.bannedReason ? `\n💌 *Motivo:* 
-${user.bannedReason}` : '💌 *Motivo:* Sin Especificar'}\n\n⚠️ *Si este bot es cuenta oficial y tiene evidencia que respalde que este mensaje es un error, puede exponer su caso en:*\n\n🤍 ${asistencia}`)
+m.reply(`🍄 Estas baneado/a, no puedes. usar comandos en este bot!\n\n${user.bannedReason ? `\n🕵 *Motivo:* 
+${user.bannedReason}` : '🕵 *Motivo:* Sin Especificar'}\n\n🍭 Si quieres que seas desbaneado en este bot escribe a: Wa.me/5218713339906`)
 user.antispam++        
 return
 }
@@ -312,7 +312,7 @@ return
 //Antispam 2                
 if (user.antispam2 && isROwner) return
 let time = global.db.data.users[m.sender].spam + 3000
-if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`[ SPAM ]`) 
+if (new Date - global.db.data.users[m.sender].spam < 3000) return console.log(`⪩ S P A M ⪨`) 
 global.db.data.users[m.sender].spam = new Date * 1
 }
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
@@ -372,8 +372,8 @@ if (xp > 200)
 m.reply('chirrido -_-')
 else
 m.exp += xp
-if (!isPrems && plugin.cookies && global.db.data.users[m.sender].cookies < plugin.cookies * 1) {
-conn.reply(m.chat, `Se agotaron tus *🍪 Cookies*`, m)
+if (!isPrems && plugin.chocolates && global.db.data.users[m.sender].chocolates < plugin.chocolates * 1) {
+conn.reply(m.chat, `Se agotaron tus Chocolates 🍫`, m)
 continue
 }
 let extra = {
@@ -402,7 +402,7 @@ __filename
 try {
 await plugin.call(this, m, extra)
 if (!isPrems)
-m.cookies = m.cookies || plugin.cookies || false
+m.chocolates = m.chocolates || plugin.chocolates || false
 } catch (e) {
 m.error = e
 console.error(e)
@@ -419,8 +419,8 @@ await plugin.after.call(this, m, extra)
 } catch (e) {
 console.error(e)
 }}
-if (m.cookies)
-conn.reply(m.chat, `Utilizaste *${+m.cookies}* 🍪`, m)
+if (m.chocolates)
+conn.reply(m.chat, `Utilizaste ${+m.chocolates} 🍫`, m)
 }
 break
 }}
@@ -441,7 +441,7 @@ await conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id:
 }
 if (m.sender && (user = global.db.data.users[m.sender])) {
 user.exp += m.exp
-user.cookies -= m.cookies * 1
+user.chocolates -= m.chocolates * 1
 }
 
 let stat
