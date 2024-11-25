@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let biot = bio.status?.toString() || 'Sin Info'
   let user = global.db.data.users[who]
   let pp = await conn.profilePictureUrl(who, 'image').catch(_ => icons)
-  let { exp, cookies, name, registered, regTime, age, level } = global.db.data.users[who]
+  let { exp, chocolates, name, registered, regTime, age, level } = global.db.data.users[who]
   let { min, xp, max } = xpRange(user.level, global.multiplier)
   let username = conn.getName(who)
   let prem = global.prems.includes(who.split`@`[0])
@@ -20,12 +20,12 @@ let handler = async (m, { conn, usedPrefix, command}) => {
   let userNationality = userNationalityData ? `${userNationalityData.name} ${userNationalityData.emoji}` : 'Desconocido'
   let img = await (await fetch(`${pp}`)).buffer()
 let txt = `*👤 PERFIL USER*\n\n`
-txt += `⭐️ *Nombre* :: *${name}*\n`
+txt += `🍄 *Nombre* :: *${name}*\n`
 txt += `🪴 *Edad* :: *${registered ? `${age} años` : '×'}*\n`
 txt += `🍟 *Numero* :: *${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}*\n`
 txt += `✨ *Pais* :: *${userNationality}*\n`
 txt += `☁️ *Link* :: *wa.me/${who.split`@`[0]}*\n`
-txt += `🍟 *Galletas* :: *${cookies}*\n`
+txt += `🍫 *Chocolates* :: *${chocolates}*\n`
 txt += `🍁 *Nivel* :: *${level}*\n`
 txt += `🌸 *XP* :: Total ${exp}\n`
 txt += `🍄 *Registrado* :: *${registered ? `Si*\n✅ *Verificación::* *${name}`: 'No'}*\n`
