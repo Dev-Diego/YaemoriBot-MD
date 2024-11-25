@@ -5,7 +5,7 @@ let user = global.db.data.users[m.sender]
 if (!args[0]) return m.reply('🚩 Ingresa la cantidad de *Chocolates 🍫* que deseas Depositar.')
 if ((args[0]) < 1) return m.reply('🚩 Ingresa una cantidad válida de *Chocolates 🍫*.')
 if (args[0] == 'all') {
-let count = parseInt(user.cookies)
+let count = parseInt(user.chocolates)
 user.chocolates -= count * 1
 user.bank += count * 1
 await m.reply(`Depositaste *${count} Chocolates 🍫* al Banco.`)
