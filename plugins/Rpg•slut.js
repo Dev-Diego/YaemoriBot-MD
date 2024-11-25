@@ -8,40 +8,40 @@ let senderName = conn.getName(senderId)
 let tiempo = 5 * 60
 if (cooldowns[m.sender] && Date.now() - cooldowns[m.sender] < tiempo * 1000) {
 let tiempo2 = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempo * 1000 - Date.now()) / 1000))
-m.reply(`🍟 Ya Te Has Postituido Recientemente, Espera ⏱️ *${tiempo2}* Para Volver A Las Calles Y Evitar Destruir Tu culo.`)
+m.reply(`🍄 Ya Te Has Postituido Recientemente, Espera ⏱️ *${tiempo2}* Para Volver A Las Calles Y Evitar Destruir Tu culo.`)
 return
 }
 cooldowns[m.sender] = Date.now()
-let senderCoo = users[senderId].cookies || 0
+let senderCoo = users[senderId].chocolates || 0
 let randomUserId = Object.keys(users)[Math.floor(Math.random() * Object.keys(users).length)]
 while (randomUserId === senderId) {
 randomUserId = Object.keys(users)[Math.floor(Math.random() * Object.keys(users).length)]}
-let randomUserCoo = users[randomUserId].cookies || 0
+let randomUserCoo = users[randomUserId].chocolates || 0
 let minAmount = 15
 let maxAmount = 50
 let amountTaken = Math.floor(Math.random() * (maxAmount - minAmount + 1)) + minAmount
 let randomOption = Math.floor(Math.random() * 3)
 switch (randomOption) {
 case 0:
-users[senderId].cookies += amountTaken
-users[randomUserId].cookies -= amountTaken
+users[senderId].chocolates += amountTaken
+users[randomUserId].chocolates -= amountTaken
 conn.sendMessage(m.chat, {
-text: `🚩¡Te Postituiste Y Ganaste *${amountTaken} Galletas 🍪* Dejaste Casi Seco A @${randomUserId.split("@")[0]}\n\nSe suman *+${amountTaken} Galletas 🍪* a ${senderName}.`,
+text: `🚩¡Te Postituiste Y Ganaste *${amountTaken} Chocolates 🍫* Dejaste Casi Seco A @${randomUserId.split("@")[0]}\n\nSe suman *+${amountTaken} Chocolates 🍫* a ${senderName}.`,
 contextInfo: { 
 mentionedJid: [randomUserId],
 }}, { quoted: m })
 break
 case 1:
 let amountSubtracted = Math.min(Math.floor(Math.random() * (senderCoo - minAmount + 1)) + minAmount, maxAmount)
-users[senderId].cookies -= amountSubtracted
-conn.reply(m.chat, `🚩 Le Rompiste La Verga A Tu Cliente Te Cobro Y Se Te Quitan *-${amountSubtracted} Galletas 🍪* a ${senderName}.`, m, rcanal)
+users[senderId].chocolates -= amountSubtracted
+conn.reply(m.chat, `🚩 Le Rompiste La Verga A Tu Cliente Te Cobro Y Se Te Quitan *-${amountSubtracted} Chocolates 🍫* a ${senderName}.`, m, rcanal)
 break
 case 2:
 let smallAmountTaken = Math.min(Math.floor(Math.random() * (randomUserDolares / 2 - minAmount + 1)) + minAmount, maxAmount)
-users[senderId].cookies += smallAmountTaken
-users[randomUserId].cookies -= smallAmountTaken
+users[senderId].chocolates += smallAmountTaken
+users[randomUserId].chocolates -= smallAmountTaken
 conn.sendMessage(m.chat, {
-text: `🚩 Vuelves A Las Calles Y Te Vas A Un Motel Te Paga ${smallAmountTaken} Galletas 🍪* de @${randomUserId.split("@")[0]}\n\nSe suman *+${smallAmountTaken} Galletas 🍪* a ${senderName}.`,
+text: `🚩 Vuelves A Las Calles Y Te Vas A Un Motel Te Paga ${smallAmountTaken} Chocolates 🍫* de @${randomUserId.split("@")[0]}\n\nSe suman *+${smallAmountTaken} Chocolates 🍫* a ${senderName}.`,
 contextInfo: { 
 mentionedJid: [randomUserId],
 }}, { quoted: m })
