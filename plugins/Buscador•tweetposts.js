@@ -64,6 +64,6 @@ handler.help = ['tweetposts']
 handler.tags = ['buscador']
 handler.command = ['tweetposts']
 handler.register = true
-handler.cookies = 1
+handler.chocolates = 1
 
 export default handler;
