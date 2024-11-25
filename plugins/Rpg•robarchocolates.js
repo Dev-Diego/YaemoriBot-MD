@@ -2,31 +2,31 @@ const ro = 30;
 const handler = async (m, {conn, usedPrefix, command}) => {
   const time = global.db.data.users[m.sender].lastrob2 + 7200000;
   if (new Date - global.db.data.users[m.sender].lastrob2 < 7200000) {
-  conn.reply(m.chat, `*🚩 Hey! Espera ${msToTime(time - new Date())} para volver a robar*`, m, rcanal);
+  conn.reply(m.chat, `*🍄 Hey! Espera ${msToTime(time - new Date())} para volver a robar*`, m, rcanal);
   return;
   }
   let who;
   if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
   else who = m.chat;
   if (!who) {
-  conn.reply(m.chat, `*🚩 Etiqueta al usuario.*`, m, fake)
+  conn.reply(m.chat, `*🍄 Etiqueta al usuario.*`, m, fake)
   return;
     };
   if (!(who in global.db.data.users)) { 
-  conn.reply(m.chat, `*🚩 El usuario no se encuentra en mi base de datos.*`, m, rcanal)
+  conn.reply(m.chat, `*🕵 El usuario no se encuentra en mi base de datos.*`, m, rcanal)
 return;
   }
   const users = global.db.data.users[who];
   const rob = Math.floor(Math.random() * ro);
-  if (users.cookies < rob) return conn.reply(m.chat, `😔 @${who.split`@`[0]} Tiene menos de *${ro} Cookies 🍪*\nNo robes a un pobre :v`, m, {mentions: [who]});
-  global.db.data.users[m.sender].cookies += rob;
-  global.db.data.users[who].cookies -= rob;
-  conn.reply(m.chat, `*🚩 Robastes ${rob} Cookies 🍪 a @${who.split`@`[0]}*`, m, {mentions: [who]});
+  if (users.chocolates < rob) return conn.reply(m.chat, `😿 @${who.split`@`[0]} Tiene menos de *${ro} Chocolates 🍫*\nNo robes a un pobre :v`, m, {mentions: [who]});
+  global.db.data.users[m.sender].chocolates += rob;
+  global.db.data.users[who].chocolates -= rob;
+  conn.reply(m.chat, `*🚔 Robastes ${rob} Chocolates 🍫 a @${who.split`@`[0]}*`, m, {mentions: [who]});
   global.db.data.users[m.sender].lastrob2 = new Date * 1;
 };
 handler.help = ['rob2'];
 handler.tags = ['rpg'];
-handler.command = ['robar2', 'rob2'];
+handler.command = ['robar2', 'rob2', 'robarchocolates'];
 export default handler;
 function msToTime(duration) {
   const milliseconds = parseInt((duration % 1000) / 100);
