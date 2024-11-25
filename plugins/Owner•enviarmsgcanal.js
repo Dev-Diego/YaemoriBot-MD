@@ -17,14 +17,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   //  if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
 
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd. Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na). Sugerencia 💡\nb). Propuesta 📝\nc). Publicidad 📢\nd). Opinión 💬\ne). Pregunta 🚀\nf). Eventos 🎉\ng). Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
     let suggestionText = rest.join(' ');
 
     if (!suggestionText) {
-        return m.reply(`🍄 Debes agregar un texto después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} 1 Mi solicitud es...`);
+        return m.reply(`🍄 Debes agregar un texto después de seleccionar la categoría.\nEjemplo: ${usedPrefix + command} a Mi solicitud es...`);
     }
 
     let categories = {
@@ -39,7 +39,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     let category = categories[categoryChoice];
     if (!category) {
-        return m.reply('🍄 Opción inválida. Elige una categoría correcta: 1, 2, 3 o 4.');
+        return m.reply('🍄 Opción inválida. Elige una categoría correcta: a, b, c o d.');
     }
 
     m.reply(`🍄 Tu Publicación ha sido enviada a los administradores para su revisión.`);
