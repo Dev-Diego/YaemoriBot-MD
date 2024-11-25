@@ -303,7 +303,7 @@ if (!['Grupo•unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwn
 if (name != 'Grupo•unbanchat.js' && name != 'Owner•exec.js' && name != 'Owner•exec2.js' && name != 'Grupo•delete.js' && chat?.isBanned && !isROwner) return 
 if (m.text && user.banned && !isROwner) {
 if (user.antispam > 2) return
-m.reply(`🍄 Estas baneado/a, no puedes. usar comandos en este bot!\n\n${user.bannedReason ? `\n🕵 *Motivo:* 
+m.reply(`🍄 Estas baneado/a, no puedes usar comandos en este bot!\n\n${user.bannedReason ? `\n🕵 *Motivo:* 
 ${user.bannedReason}` : '🕵 *Motivo:* Sin Especificar'}\n\n🍭 Si quieres que seas desbaneado en este bot escribe a: Wa.me/5218713339906`)
 user.antispam++        
 return
