@@ -8,6 +8,7 @@ let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let mentionedJid = [who]
+  let fake2 = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: pp, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
   let delirius = await axios.get(`https://deliriussapi-oficial.vercel.app/tools/country?text=${PhoneNumber('+' + m.sender.replace('@s.whatsapp.net', '')).getNumber('international')}`)
   let paisdata = delirius.data.result
   let mundo = paisdata ? `${paisdata.name} ${paisdata.emoji}` : 'Desconocido'
@@ -41,8 +42,7 @@ mini += `✨️ *Exp* » 300\n`
 mini += `💰 *Joincount* » 20\n`
 mini += `🪙 *Money* » 100`
 await m.react('🗂')
-// await m.reply(mini)
-await conn.sendMessage(m.chat, { image: { url: icons }, caption: mini, mentions: [m.sender], ...rcanal }, { quoted: m })
+await conn.reply(m.chat, mini, m, fake2)
 
 let chtxt = `
 👤 *Usuario* » ${m.pushName || 'Anónimo'}
