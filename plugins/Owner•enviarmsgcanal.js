@@ -103,7 +103,7 @@ title = `【 ⭐️ 𝗡𝗨𝗘𝗩𝗢 𝗘𝗩𝗘𝗡𝗧𝗢 ⭐️ 】`;
 body = `🍁 Nueva sugerencia de un evento`;
 foto = `${pp}`;
 break;
-case 'opinion':
+case 'opinión':
 title = `【 😃 𝗡𝗨𝗘𝗩𝗔 𝗢𝗣𝗜𝗡𝗜𝗢𝗡 😃 】`;
 body = `🍭 Nueva opinion`;
 foto = `${pp}`;
