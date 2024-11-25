@@ -1,4 +1,4 @@
-const items = ['cookies', 'exp'];
+const items = ['chocolates', 'exp'];
 const confirmation = {};
 
 async function handler(m, { conn, args, usedPrefix, command }) {
@@ -11,7 +11,7 @@ async function handler(m, { conn, args, usedPrefix, command }) {
 *┃🚩 Ejemplo:* ${usedPrefix + command} exp 65 @${m.sender.split('@')[0]}
 ┣❣◤▬▭▬▭▬ ◆ ▬▭▬▭▬ ◤❢
 *┃◉ 🪴 Articulos Transferibles.*
-┃▢ *Galletas* = cookies
+┃▢ *Chocolates* = chocolates
 ┃▢ *Experiencia* = exp
 *┗━┅┉┅┄┈┄⟞⟨⟠⟩⟝┄┈┄┉┉┉━┛*
 `.trim();
@@ -19,9 +19,9 @@ async function handler(m, { conn, args, usedPrefix, command }) {
   if (!item.includes(type)) return conn.sendMessage(m.chat, {text: lol, mentions: [m.sender]}, {quoted: m});
   const count = Math.min(Number.MAX_SAFE_INTEGER, Math.max(1, (isNumber(args[1]) ? parseInt(args[1]) : 1))) * 1;
   const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : args[2] ? (args[2].replace(/[@ .+-]/g, '') + '@s.whatsapp.net') : '';
-  if (!who) return conn.sendMessage(m.chat, {text: '*🚩 Mensiona al usuario.*', mentions: [m.sender]}, {quoted: m});
-  if (!(who in global.db.data.users)) return conn.sendMessage(m.chat, {text: `*🌱 El usuario ${who} no esta en la base de datos.*`, mentions: [m.sender]}, {quoted: m});
-  if (user[type] * 1 < count) return conn.sendMessage(m.chat, {text: `*💥 No tienes suficientes ${type} para transferie.*`, mentions: [m.sender]}, {quoted: m});
+  if (!who) return conn.sendMessage(m.chat, {text: '*🍄 Mensiona al usuario.*', mentions: [m.sender]}, {quoted: m});
+  if (!(who in global.db.data.users)) return conn.sendMessage(m.chat, {text: `*🍄 El usuario ${who} no esta en la base de datos.*`, mentions: [m.sender]}, {quoted: m});
+  if (user[type] * 1 < count) return conn.sendMessage(m.chat, {text: `*🍄 No tienes suficientes ${type} para transferie.*`, mentions: [m.sender]}, {quoted: m});
 const confirm = `🌺 *¿Estas seguro que quieres transferir ${count} ${type} a @${(who || '').replace(/@s\.whatsapp\.net/g, '')}?* 
 • *Tienes 60 seg para responder*
 
@@ -29,7 +29,7 @@ const confirm = `🌺 *¿Estas seguro que quieres transferir ${count} ${type} a 
 • *si = para confirmar*
 • *no = para rechazar*`.trim();
   await conn.sendMessage(m.chat, {text: confirm, mentions: [who]}, {quoted: m});
-  confirmation[m.sender] = { sender: m.sender, to: who, message: m, type, count, timeout: setTimeout(() => (conn.sendMessage(m.chat, {text: '*☁️ Se acabó el tiempo, transferencia cancelada.*', mentions: [m.sender]}, {quoted: m}), delete confirmation[m.sender]), 60 * 1000)};
+  confirmation[m.sender] = { sender: m.sender, to: who, message: m, type, count, timeout: setTimeout(() => (conn.sendMessage(m.chat, {text: '*😾 Se acabó el tiempo, transferencia cancelada.*', mentions: [m.sender]}, {quoted: m}), delete confirmation[m.sender]), 60 * 1000)};
 }
 
 handler.before = async (m) => {
@@ -43,7 +43,7 @@ handler.before = async (m) => {
   if (/^No|no$/i.test(m.text)) {
     clearTimeout(timeout);
     delete confirmation[sender];
-    return conn.sendMessage(m.chat, {text: '*🍭 Rechazado, transferencia fué cancelada con éxito.*', mentions: [m.sender]}, {quoted: m});
+    return conn.sendMessage(m.chat, {text: '*😿 Rechazado, transferencia fué cancelada con éxito.*', mentions: [m.sender]}, {quoted: m});
   }
   if (/^Si|si$/i.test(m.text)) {
     const previous = user[type] * 1;
@@ -51,17 +51,17 @@ handler.before = async (m) => {
     user[type] -= count * 1;
     _user[type] += count * 1;
     if (previous > user[type] * 1 && _previous < _user[type] * 1) {
-      conn.sendMessage(m.chat, {text: `*🍭 Se transfirieron ${count} ${type} a @${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, mentions: [to]}, {quoted: m});
+      conn.sendMessage(m.chat, {text: `*🍄 Se transfirieron ${count} ${type} a @${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, mentions: [to]}, {quoted: m});
     } else {
       user[type] = previous;
       _user[type] = _previous;
-      conn.sendMessage(m.chat, {text: `*🌸 Error al transferir ${count} ${type} a @${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, mentions: [to]}, {quoted: m});
+      conn.sendMessage(m.chat, {text: `*😾 Error al transferir ${count} ${type} a @${(to || '').replace(/@s\.whatsapp\.net/g, '')}*`, mentions: [to]}, {quoted: m});
     }
     clearTimeout(timeout);
     delete confirmation[sender];
   }
 };
-handler.help = ['transfer'].map((v) => v + ' [tipo] [cantidad] [@tag]');
+handler.help = ['transfer']
 handler.tags = ['rpg'];
 handler.command = ['payxp', 'transfer', 'darxp', 'transferir'];
 handler.register = true
