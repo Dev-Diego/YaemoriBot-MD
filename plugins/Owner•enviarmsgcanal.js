@@ -17,7 +17,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   //  if (new Date - global.db.data.users[m.sender].lastmiming < 600000) return return m.reply(`🍄 Por favor espera ${msToTime(time - new Date())} antes de enviar otra solicitud.`);
 
     if (!text && !m.quoted) {
-        return m.reply(`*🚩 Por favor, escribe tu sugerencia, pregunta o propuesta o envía un archivo multimedia.*\n\n> *🍄 Elige una categoría:*\n\n1. Sugerencia 💡\n2. Propuesta 📝\n3. Publicidad 📢\n4. Opinión 💬\n5. Pregunta 🚀\n6. Eventos 🎉\n7. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
+        return m.reply(`*🚩 Por favor, escribe tu solicitud.*\n\n> *🍄 Elige una categoría:*\n\na. Sugerencia 💡\nb. Propuesta 📝\nc. Publicidad 📢\nd. Opinión 💬\nf. Pregunta 🚀\ng. Eventos 🎉\nh. Frases ✨\n\n> 🌺 Ejemplo: ${usedPrefix + command} 1 Texto`);
     }
 
     let [categoryChoice, ...rest] = text.split(' ');
