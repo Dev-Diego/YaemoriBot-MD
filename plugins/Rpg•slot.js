@@ -2,8 +2,8 @@ let cooldowns = {}
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
-if (!args[0]) return m.reply('🚩 Ingresa la cantidad de *🍪 Cookies* que deseas apostar.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* 10`)
-if (isNaN(args[0])) return m.reply('🚩 Ingresa la cantidad de *🍪 Cookies* que deseas apostar.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* 10`)
+if (!args[0]) return m.reply('🚩 Ingresa la cantidad de *Chocolates 🍫* que deseas apostar.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* 10`)
+if (isNaN(args[0])) return m.reply('🚩 Ingresa la cantidad de *Chocolates 🍫* que deseas apostar.\n\n`Ejemplo:`\n' + `> *${usedPrefix + command}* 10`)
 let apuesta = parseInt(args[0])
 let users = global.db.data.users[m.sender]
 let tiempoEspera = 15
@@ -12,7 +12,7 @@ let tiempoRestante = segundosAHMS(Math.ceil((cooldowns[m.sender] + tiempoEspera 
 m.reply(`⏱ Espera *${tiempoRestante}* para apostar nuevamente.`)
 return
 }
-let emojis = ["🍎", "🍉", "🍓"];
+let emojis = ["🍄", "✨️", "🍓"];
 let a = Math.floor(Math.random() * emojis.length);
 let b = Math.floor(Math.random() * emojis.length);
 let c = Math.floor(Math.random() * emojis.length);
@@ -36,14 +36,14 @@ if (c == emojis.length) c = 0;
 }
 let end;
 if (a == b && b == c) {
-end = `Acabas de ganar   *${apuesta} 🍪 Cookies.*`
-users.cookies += apuesta
+end = `Acabas de ganar *${apuesta} Chocolates 🍫.*`
+users.chocolates += apuesta
 } else if (a == b || a == c || b == c) {
-end = `Casi lo logras sigue intentando :) \nTen *1 🍪 Cookies.*`
-users.cookies += 1
+end = `Casi lo logras sigue intentando :) \nTen *1 Chocolate 🍫.*`
+users.chocolates += 1
 } else {
-end = `Perdiste  *${apuesta} 🍪 Cookies.*`
-users.cookies -= apuesta
+end = `Perdiste  *${apuesta} Chocolates 🍫.*`
+users.chocolates -= apuesta
 }
 cooldowns[m.sender] = Date.now()
 return await conn.reply(m.chat, `🎰 *S L O T S*\n──────────\n${x[0]} : ${y[0]} : ${z[0]}\n${x[1]} : ${y[1]} : ${z[1]}\n${x[2]} : ${y[2]} : ${z[2]}\n──────────\n\n${end}`, m, rcanal) 
