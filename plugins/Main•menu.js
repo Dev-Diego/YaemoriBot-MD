@@ -383,7 +383,7 @@ let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
 ╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
 │🍂⃟👑┊${usedPrefix}enable
 │🍂⃟👑┊${usedPrefix}disable
-│🍂⃟👑┊${usedPrefix}addcookies 
+│🍂⃟👑┊${usedPrefix}addchocolates 
 │🍂⃟👑┊${usedPrefix}addprem 
 │🍂⃟👑┊${usedPrefix}autoadmin
 │🍂⃟👑┊${usedPrefix}copia
