@@ -1,4 +1,3 @@
-
 let handler = async (m, { conn, text }) => {
 if (!text) return m.reply('🚩 Ingresa un nombre para el grupo.')
 try{
