@@ -4,7 +4,7 @@ let user = global.db.data.users[m.sender]
 
 user.registered = false
 global.db.data.users[m.sender].money -= 100
-global.db.data.users[m.sender].cookies -= 40
+global.db.data.users[m.sender].chocolates -= 40
 global.db.data.users[m.sender].exp -= 300
 global.db.data.users[m.sender].joincount -= 20
 
