@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         'd': 'opinión',
         'e': 'pregunta',
         'f': 'eventos',
-        'g': 'frases'
+        'g': 'frases',
         'h': 'confesión'
     };
 
