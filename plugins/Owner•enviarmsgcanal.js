@@ -140,7 +140,7 @@ renderLargerThumbnail: false
 await conn.sendMessage(channelid, { text: approvedText, contextInfo: options.contextInfo }, { quoted: null });
 // }
 
-await conn.reply(sender, `🍄 Solicitud aceptada, canal:\nhttps://whatsapp.com/channel/0029Vawz6Y91SWsyLezeAb0f`);
+await conn.reply(sender, `🍄 Solicitud aceptada, canal:\n${channel2}`);
 delete suggestionQueue[suggestionId];
 }};
 handler.command = ['sug', 'sugerencia', 'enviarmensaje', 'solicitud', 'enviarsolicitud'];
