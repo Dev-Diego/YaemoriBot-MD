@@ -199,7 +199,8 @@ await delay(time)
 }, time)
 }
 
-if (m.isBaileys) {
+// if (m.isBaileys) return 
+if (m.isBaileys || isBaileysFail && m?.sender === this?.this?.user?.jid) {
 return
 }
 m.exp += Math.ceil(Math.random() * 10)
@@ -222,9 +223,6 @@ continue
 if (plugin.disabled)
 continue
 const __filename = join(___dirname, name)
-if (m.sender === this.user.jid) {
-continue
-}
 if (typeof plugin.all === 'function') {
 try {
 await plugin.all.call(this, m, {
