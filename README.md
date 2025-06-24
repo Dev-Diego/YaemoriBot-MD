@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> **Este proyecto queda en obsoleto debido que este Author ya no tiene acceso a au cuenta ya que fué suspendida, siguelo en whatsapp. [Click Aquí](https://stellarwa.xyz/channel)**
+> **Este proyecto queda en obsoleto debido que este Author ya no tiene acceso a su cuenta ya que fué suspendida, siguelo en whatsapp. [Click Aquí](https://stellarwa.xyz/channel)**
 
 ---
 
