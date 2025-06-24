@@ -1,26 +1,26 @@
 > [!IMPORTANT]
-> **Este proyecto queda en obsoleto debido que este Author ya no tiene acceso a su cuenta ya que fué suspendida, siguelo en whatsapp. [Click Aquí](https://stellarwa.xyz/channel)**
+> **Este proyecto ha quedado obsoleto, ya que el autor perdió acceso a su cuenta suspendida. Puedes seguir sus actualizaciones en WhatsApp: [Haz clic aquí](https://stellarwa.xyz/channel)**
 
 ---
 
-## 🚀 Nuevo Bot Disponible
+## ✨ Presentamos el Nuevo AlyaBot-MD
 
-Descubre **AlyaBot-MD**, el nuevo bot con funciones avanzadas, rendimiento optimizado y una experiencia totalmente renovada.
+Conoce **AlyaBot-MD**, una evolución completa: más rápido, más inteligente y con herramientas totalmente renovadas para brindarte la mejor experiencia.
 
-[![NuevoBot](https://img.shields.io/badge/Nuevo-Bot-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs/AlyaBot-MD)
-
----
-
-## 🐞 Únete al Nuevo Grupo Oficial
-
-Accede al grupo exclusivo del bot para novedades, comandos actualizados y soporte técnico directo.
-
-[![NuevoGrupo](https://img.shields.io/badge/Nuevo-Grupo-ff69b4?style=for-the-badge&logo=whatsapp&logoColor=white)](https://stellarwa.xyz/stellar)
+[![NuevoBot](https://img.shields.io/badge/AlyaBot-MD-GitHub-8e44ad?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs/AlyaBot-MD)
 
 ---
 
-## 🌟 Sígueme en GitHub
+## 💬 Únete al Grupo Oficial
 
-¿Te gusta este proyecto? ¡Dale una estrella y acompáñame en el desarrollo de futuras herramientas!
+Sé parte de la comunidad oficial, recibe asistencia, noticias y comandos nuevos directamente en tu WhatsApp.
 
-[![GitHub](https://img.shields.io/badge/Sígueme-en%20GitHub-24292e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs)
+[![GrupoOficial](https://img.shields.io/badge/Unirme-al%20Grupo-2ecc71?style=for-the-badge&logo=whatsapp&logoColor=white)](https://stellarwa.xyz/stellar)
+
+---
+
+## 💡 Sígueme en GitHub
+
+¿Te interesan mis proyectos? Apóyame con una ⭐ y no te pierdas ninguna actualización.
+
+[![GitHubFollow](https://img.shields.io/badge/Seguir-en%20GitHub-34495e?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs)
