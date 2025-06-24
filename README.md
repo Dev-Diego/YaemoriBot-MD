@@ -10,7 +10,7 @@
 
 ¡Descubre nuestro nuevo bot con características mejoradas y experiencia optimizada!
 
-[![NuevoGrupo](https://img.shields.io/badge/Nuevo-Grupo-ff69b4?style=for-the-badge&logo=github&logoColor=white)](https://stellarwa.xyz/stellar)
+[![NuevoGrupo](https://img.shields.io/badge/Nuevo-Grupo-ff69b4?style=for-the-badge&logo=whatsapp&logoColor=white)](https://stellarwa.xyz/stellar)
 
 ---
 
