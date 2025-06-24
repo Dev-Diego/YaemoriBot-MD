@@ -24,3 +24,5 @@ Sé parte de la comunidad oficial para recibir asistencia, noticias, comandos nu
 ¿Te interesan mis proyectos? Apóyame con una estrella ⭐ y no te pierdas ninguna novedad.
 
 [![GitHubFollow](https://img.shields.io/badge/Seguir-en%20GitHub-2c3e50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs)
+
+[`✩ Derechos reservado del author`](https://stellarwa.xyz/alya)
