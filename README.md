@@ -1,28 +1,39 @@
 > [!IMPORTANT]  
-> Este proyecto ha quedado obsoleto, ya que el autor perdió el acceso a su cuenta original (suspendida). Además, **hemos dejado atrás el proyecto anterior conocido como YaemoriBot**, el cual ha sido reemplazado oficialmente por **Stellar WaBot**, una versión más moderna, estable y potente, basada en código privado para mayor seguridad y rendimiento. Puedes seguir todas las actualizaciones y mejoras desde el canal oficial en WhatsApp: [Haz clic aquí](https://stellarwa.xyz/channel)
+> **Este proyecto ha quedado obsoleto.** El autor perdió acceso a su cuenta original (suspendida).  
+> El antiguo proyecto **YaemoriBot** ha sido oficialmente reemplazado por **Stellar WaBot**, una versión más moderna, estable y segura, basada en código privado para garantizar mayor rendimiento.  
+> 📢 Sigue todas las actualizaciones desde el canal oficial en WhatsApp: [Haz clic aquí](https://whatsapp.com/channel/0029VbApwZ9ISTkEBb6ttS3F)
 
 ---
 
-## ✨ Presentamos el Nuevo AlyaBot-MD
+# ✨ AlyaBot-MD — ¡La Nueva Era!
 
-Conoce **AlyaBot-MD**, una evolución completa: más rápido, más inteligente y con herramientas totalmente renovadas para brindarte la mejor experiencia.
+Presentamos **AlyaBot-MD**, una evolución total:  
+⚡ Más rápido  
+🧠 Más inteligente  
+🛠️ Herramientas renovadas para una experiencia superior
 
-[![NuevoBot](https://img.shields.io/badge/AlyaBot--MD-GitHub-9b59b6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs/AlyaBot-MD)
+[![GitHub](https://img.shields.io/badge/AlyaBot--MD-GitHub-9b59b6?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevZyxlJs/AlyaBot-MD)
 
 ---
 
-## 💬 Únete al Grupo Oficial
+## 💬 Comunidad Oficial
 
-Sé parte de la comunidad oficial para recibir asistencia, noticias, comandos nuevos y actualizaciones directamente en tu WhatsApp.
+Únete al grupo oficial en WhatsApp para:  
+- Recibir asistencia directa  
+- Acceder a comandos nuevos  
+- Mantenerte al día con actualizaciones
 
-[![GrupoOficial](https://img.shields.io/badge/Grupo-Oficial-27ae60?style=for-the-badge&logo=whatsapp&logoColor=white)](https://stellarwa.xyz/stellar)
+[![WhatsApp Grupo](https://img.shields.io/badge/Grupo-Oficial-27ae60?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/Hlci2msF05FDzA615QxH1o)
 
 ---
 
 ## 🌟 Sígueme en GitHub
 
-¿Te interesan mis proyectos? Apóyame con una estrella ⭐ y no te pierdas ninguna novedad.
+¿Te gustan mis proyectos?  
+Apóyame con una estrella ⭐ y mantente al tanto de todas las novedades.
 
-[![GitHubFollow](https://img.shields.io/badge/Seguir-en%20GitHub-2c3e50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevAlexJs)
+[![GitHub Follow](https://img.shields.io/badge/Seguir-en%20GitHub-2c3e50?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DevZyxlJs)
 
-[`✩ Derechos reservado del author`](https://stellarwa.xyz/alya)
+---
+
+[`✩ Derechos reservados del autor`](https://api.stellarwa.xyz)
